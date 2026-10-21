@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>Manual Operatiu — LAYER Sniper 10:00 & Doble Flota (Bloc A + Bloc B)</title>
+<style>
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    background-color: #050811;
+    color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.38;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .page {
+    width: 210mm;
+    height: 297mm;
+    padding: 11mm 13mm;
+    background: radial-gradient(circle at 88% 8%, rgba(16, 185, 129, 0.10) 0%, transparent 40%),
+                radial-gradient(circle at 12% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                #060913;
+    position: relative;
+    page-break-after: always;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 10px;
+  }
+  .footer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 7px;
+    border-top: 1px solid #1e293b;
+    font-size: 8.5px;
+    color: #64748b;
+  }
+  .card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .card-emerald {
+    background: linear-gradient(145deg, rgba(6, 78, 59, 0.30), rgba(15, 23, 42, 0.90));
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .card-amber {
+    background: linear-gradient(145deg, rgba(120, 53, 15, 0.28), rgba(15, 23, 42, 0.90));
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .card-indigo {
+    background: linear-gradient(145deg, rgba(49, 46, 129, 0.32), rgba(15, 23, 42, 0.90));
+    border: 1px solid rgba(129, 140, 248, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .card-cyan {
+    background: linear-gradient(145deg, rgba(22, 78, 99, 0.32), rgba(15, 23, 42, 0.90));
+    border: 1px solid rgba(6, 182, 212, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .card-rose {
+    background: linear-gradient(145deg, rgba(136, 19, 55, 0.28), rgba(15, 23, 42, 0.90));
+    border: 1px solid rgba(244, 63, 94, 0.45);
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge-emerald { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+  .badge-amber { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+  .badge-indigo { background: rgba(129, 140, 248, 0.18); color: #a5b4fc; border: 1px solid rgba(129, 140, 248, 0.4); }
+  .badge-cyan { background: rgba(6, 182, 212, 0.18); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.4); }
+  .badge-rose { background: rgba(244, 63, 94, 0.18); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); }
+
+  h1 { font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: -0.02em; }
+  h2 { font-size: 12.5px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+  h3 { font-size: 11px; font-weight: 700; color: #f8fafc; margin-bottom: 4px; }
+  p, li { font-size: 9.6px; color: #cbd5e1; }
+  ul { padding-left: 14px; }
+  li { margin-bottom: 3px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+  }
+  th {
+    background: #0f172a;
+    color: #94a3b8;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 7px;
+    border: 1px solid #1e293b;
+    text-align: center;
+  }
+  td {
+    padding: 5px 7px;
+    border: 1px solid #1e293b;
+    text-align: center;
+    color: #e2e8f0;
+  }
+  tr:nth-child(even) td {
+    background: rgba(15, 23, 42, 0.45);
+  }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 7px; }
+  .kpi-box {
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 7px 8px;
+    text-align: center;
+  }
+  .kpi-val {
+    font-size: 14px;
+    font-weight: 800;
+    margin-top: 2px;
+  }
+  .kpi-lbl {
+    font-size: 7.5px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 0.04em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== PÀGINA 1: PORTADA EXECUTIVA + ANATOMIA VISUAL + 4 LLEIS ==================== -->
+<div class="page">
+  <div>
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="badge badge-emerald">JJ FAIR PRICING · MNQ 1M</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">SISTEMA AUDITAT SOBRE 121 SESSIONS REALS (MAIG – OCTUBRE)</span>
+      </div>
+      <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 01 / 04</span>
+    </div>
+
+    <!-- Hero Banner -->
+    <div class="card-emerald" style="padding:13px 15px; margin-bottom:10px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
+        <div>
+          <div style="display:flex;gap:6px;margin-bottom:5px;">
+            <span class="badge badge-emerald">PLAYBOOK OFICIAL D'EXECUCIÓ</span>
+            <span class="badge badge-amber">1 BLOC O DOBLE FLOTA A+B (0% SOLAPAMENT)</span>
+          </div>
+          <h1>MANUAL OPERATIU: LAYER SNIPER 10:00</h1>
+          <p style="font-size:10.2px;color:#a7f3d0;margin-top:3px;">
+            Estratègia d'alta precisió sobre el segon toc extrem (<strong class="mono">🔷 LAYER</strong>) amb escut automàtic de Breakeven en <strong class="mono">TP 1</strong> i escalat multi-empresa.
+          </p>
+        </div>
+        <div style="text-align:right;min-width:135px;background:rgba(6,9,19,0.75);padding:8px 10px;border-radius:8px;border:1px solid rgba(16,185,129,0.35);">
+          <div class="kpi-lbl">FINESTRA OPERATIVA</div>
+          <div class="mono" style="font-size:13px;font-weight:800;color:#34d399;">10:00 – 10:59 NY</div>
+          <div class="mono" style="font-size:8.5px;color:#94a3b8;">16:00 – 16:59 CET</div>
+        </div>
+      </div>
+
+      <div class="grid-6" style="margin-top:10px;">
+        <div class="kpi-box">
+          <div class="kpi-lbl">Win Rate (Bloc A)</div>
+          <div class="kpi-val mono" style="color:#34d399;">71.6% – 75.0%</div>
+          <div style="font-size:7.5px;color:#64748b;">83W / 33L / 24BE</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-lbl">Balanç 1 Bloc</div>
+          <div class="kpi-val mono" style="color:#22d3ee;">+1,500 pts</div>
+          <div style="font-size:7.5px;color:#64748b;">+$15,000 / compte (5 MNQ)</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-lbl">Balanç 2 Blocs A+B</div>
+          <div class="kpi-val mono" style="color:#fbbf24;">+1,740 / +2,310p</div>
+          <div style="font-size:7.5px;color:#64748b;">0% Solapament</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-lbl">Max Drawdown</div>
+          <div class="kpi-val mono" style="color:#a5b4fc;">-60p / -120p</div>
+          <div style="font-size:7.5px;color:#64748b;">-$600 / -$1,200 (5 MNQ)</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-lbl">Mesos Positius</div>
+          <div class="kpi-val mono" style="color:#34d399;">6 de 6 (100%)</div>
+          <div style="font-size:7.5px;color:#64748b;">Mai · Jun · Jul · Ago · Set · Oct</div>
+        </div>
+        <div class="kpi-box">
+          <div class="kpi-lbl">Mida Posició</div>
+          <div class="kpi-val mono" style="color:#f43f5e;">5 o 10 MNQ</div>
+          <div style="font-size:7.5px;color:#64748b;">±$300 o ±$600 / trade</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Els 3 Pilars d'Or -->
+    <h2><span>🏛️</span> 1. Els 3 Pilars d'Or: Per Què Operem Exclusivament el LAYER</h2>
+    <div class="grid-3" style="margin-bottom:10px;">
+      <div class="card">
+        <span class="badge badge-cyan" style="margin-bottom:4px;">PILAR 1 · FILTRE D'OBERTURA</span>
+        <h3>Ignorar el Soroll 09:30–09:59 (Bloc A)</h3>
+        <p>Entre les <span class="mono" style="color:#fff;">09:30 i 09:59 NY</span> es produeix el <em>Judas Swing</em> inicial que concentra la majoria d'SLs dels <span class="mono">PRIMARY</span>. A partir de les <span class="mono" style="color:#34d399;">10:00 NY</span> l'estructura institucional ja està fixada.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-emerald" style="margin-bottom:4px;">PILAR 2 · 2n BOS DE CONFIRMACIÓ</span>
+        <h3>El <span class="mono">PRIMARY</span> és l'Alerta; el <span class="mono">LAYER</span> el Gatell</h3>
+        <p>Quan surt un <span class="mono">PRIMARY</span> (ex. <span class="mono">20,000</span>) no entrem. Esperem el <strong>2n BOS de confirmació cap a l'Àncora</strong> que imprimeix <strong style="color:#22d3ee;">🔷 LAYER</strong> (ex. <span class="mono">20,010</span>): entrem amb el gir ja confirmat per estructura.</p>
+      </div>
+      <div class="card">
+        <span class="badge badge-amber" style="margin-bottom:4px;">PILAR 3 · ESCUT TP1 ➔ BE</span>
+        <h3>Protecció Automàtica a Risc Zero</h3>
+        <p>Com que el <span class="mono">PRIMARY</span> va entrar a <span class="mono">20,000</span>, el seu <strong style="color:#34d399;">TP 1 (20,030)</strong> s'assoleix quan el nostre <span class="mono">LAYER (20,010)</span> ja porta <span class="mono">+20p</span> a favor. En tocar <span class="mono">TP 1</span>, pugem l'SL a <strong style="color:#fbbf24;">Breakeven (20,010 = 0p)</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Diagrama SVG: Recreació fidel del Gràfic de TradingView + 4 Passos -->
+    <h2><span>📐</span> 2. Com es Veu al Gràfic de TradingView (Exemple Real Pas a Pas: 20,000 ➔ 20,040)</h2>
+    <div class="card" style="padding:10px 12px; margin-bottom:10px; display:grid; grid-template-columns: 1.45fr 1fr; gap:12px; align-items:center;">
+      <svg viewBox="0 0 430 220" class="w-full h-auto" style="background:#070b14; border-radius:8px; border:1px solid #1e293b;">
+        <!-- 20,040: LAYER TP 2 -->
+        <line x1="15" y1="26" x2="375" y2="26" stroke="#14b8a6" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="380" y="29" fill="#2dd4bf" font-size="8.5" font-weight="bold" font-family="JetBrains Mono, monospace">20,040</text>
+
+        <!-- 20,030: PRIMARY TP 1 -->
+        <line x1="15" y1="62" x2="375" y2="62" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="380" y="65" fill="#4ade80" font-size="8.5" font-weight="bold" font-family="JetBrains Mono, monospace">20,030</text>
+
+        <!-- 20,010: LAYER BUY ENTRY -->
+        <line x1="15" y1="120" x2="375" y2="120" stroke="#06b6d4" stroke-width="1.2" stroke-dasharray="4,2"/>
+        <text x="380" y="123" fill="#22d3ee" font-size="8.5" font-weight="bold" font-family="JetBrains Mono, monospace">20,010</text>
+
+        <!-- 20,000: PRIMARY BUY ENTRY -->
+        <line x1="15" y1="150" x2="375" y2="150" stroke="#64748b" stroke-width="0.9" stroke-dasharray="2,3"/>
+        <text x="380" y="153" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">20,000</text>
+
+        <!-- 19,980: LAYER SL 2 -->
+        <line x1="15" y1="194" x2="375" y2="194" stroke="#a855f7" stroke-width="0.9" stroke-dasharray="3,3"/>
+        <text x="380" y="197" fill="#c084fc" font-size="8.5" font-family="JetBrains Mono, monospace">19,980</text>
+
+        <!-- Green Box TP 1 -->
+        <rect x="58" y="62" width="187" height="88" fill="#16a34a" fill-opacity="0.13" stroke="#22c55e" stroke-width="1.2"/>
+        <text x="63" y="74" fill="#4ade80" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">CAIXA VERDA</text>
+        <text x="63" y="84" fill="#4ade80" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">TP 1 (+30p)</text>
+
+        <!-- Red Box SL 1 -->
+        <rect x="58" y="150" width="82" height="52" fill="#dc2626" fill-opacity="0.10" stroke="#ef4444" stroke-width="0.9" stroke-dasharray="3,2"/>
+        <text x="95" y="198" fill="#f87171" font-size="7.2" font-family="Inter, sans-serif">SL 1 (-30p)</text>
+
+        <!-- Teal Box LAYER TP 2 -->
+        <rect x="142" y="26" width="203" height="94" fill="#0d9488" fill-opacity="0.18" stroke="#14b8a6" stroke-width="1.8"/>
+        <text x="148" y="37" fill="#2dd4bf" font-size="8" font-weight="bold" font-family="Inter, sans-serif">CAIXA TURQUESA: LAYER TP 2 (+30p)</text>
+
+        <!-- Purple Box LAYER SL 2 -->
+        <rect x="142" y="120" width="103" height="74" fill="#7e22ce" fill-opacity="0.14" stroke="#a855f7" stroke-width="1.3"/>
+        <text x="148" y="187" fill="#d8b4fe" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">LAYER SL 2 (-30p)</text>
+
+        <!-- Candlesticks -->
+        <line x1="32" y1="125" x2="32" y2="172" stroke="#64748b" stroke-width="1.2"/>
+        <rect x="27" y="132" width="10" height="34" fill="#334155" stroke="#64748b" stroke-width="1"/>
+
+        <line x1="58" y1="144" x2="58" y2="175" stroke="#e2e8f0" stroke-width="1.2"/>
+        <rect x="53" y="150" width="10" height="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <rect x="22" y="177" width="66" height="16" rx="3" fill="#14532d" stroke="#22c55e" stroke-width="1"/>
+        <text x="55" y="188" text-anchor="middle" fill="#ffffff" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">1. BUY FAR</text>
+
+        <line x1="86" y1="133" x2="86" y2="155" stroke="#e2e8f0" stroke-width="1.2"/>
+        <rect x="81" y="138" width="10" height="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+
+        <line x1="114" y1="135" x2="114" y2="152" stroke="#64748b" stroke-width="1.2"/>
+        <rect x="109" y="138" width="10" height="9" fill="#334155" stroke="#64748b" stroke-width="1"/>
+
+        <line x1="142" y1="115" x2="142" y2="149" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="137" y="120" width="10" height="26" fill="#f8fafc" stroke="#06b6d4" stroke-width="1.5"/>
+        <rect x="102" y="153" width="82" height="18" rx="3" fill="#0e7490" stroke="#22d3ee" stroke-width="1.2"/>
+        <text x="143" y="165" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="bold" font-family="Inter, sans-serif">2. LAYER BUY</text>
+
+        <line x1="176" y1="92" x2="176" y2="124" stroke="#e2e8f0" stroke-width="1.2"/>
+        <rect x="171" y="96" width="10" height="24" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+
+        <line x1="210" y1="88" x2="210" y2="108" stroke="#64748b" stroke-width="1.2"/>
+        <rect x="205" y="95" width="10" height="8" fill="#334155" stroke="#64748b" stroke-width="1"/>
+
+        <line x1="245" y1="58" x2="245" y2="102" stroke="#4ade80" stroke-width="1.5"/>
+        <rect x="240" y="62" width="10" height="33" fill="#f8fafc" stroke="#22c55e" stroke-width="1.5"/>
+        <circle cx="245" cy="62" r="5.5" fill="#fbbf24" stroke="#070b14" stroke-width="1.5"/>
+        <rect x="195" y="42" width="102" height="16" rx="3" fill="#451a03" stroke="#f59e0b" stroke-width="1"/>
+        <text x="246" y="53" text-anchor="middle" fill="#fde68a" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">3. TOCA TP1 ➔ SL A BE!</text>
+
+        <line x1="245" y1="185" x2="245" y2="126" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <polygon points="245,121 241,128 249,128" fill="#fbbf24"/>
+        <rect x="252" y="123" width="90" height="15" rx="3" fill="#451a03" stroke="#fbbf24" stroke-width="0.9"/>
+        <text x="297" y="133" text-anchor="middle" fill="#fde68a" font-size="7.2" font-weight="bold" font-family="Inter, sans-serif">NOU SL = 20,010 (0p)</text>
+
+        <line x1="285" y1="68" x2="285" y2="96" stroke="#64748b" stroke-width="1.2"/>
+        <rect x="280" y="72" width="10" height="18" fill="#334155" stroke="#64748b" stroke-width="1"/>
+
+        <line x1="325" y1="22" x2="325" y2="75" stroke="#2dd4bf" stroke-width="1.5"/>
+        <rect x="320" y="26" width="10" height="44" fill="#f8fafc" stroke="#14b8a6" stroke-width="1.5"/>
+        <circle cx="325" cy="26" r="5.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+        <rect x="282" y="6" width="90" height="16" rx="3" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+        <text x="327" y="17" text-anchor="middle" fill="#6ee7b7" font-size="7.5" font-weight="bold" font-family="Inter, sans-serif">4. LAYER TP2 (+30p)</text>
+      </svg>
+
+      <div style="display:flex;flex-direction:column;gap:6px;font-size:9px;line-height:1.35;">
+        <div style="background:#0f172a;border-left:3px solid #22c55e;padding:5px 8px;border-radius:4px;">
+          <strong style="color:#4ade80;">1. SURT BUY FAR A 20,000 (NO S'OPERA):</strong><br/>
+          L'indicador dibuixa la <strong>Caixa Verda TP 1</strong> fins a <strong class="mono">20,030</strong> (+30p). Nosaltres <strong>no entrem</strong>; només ens serveix de referència.
+        </div>
+        <div style="background:#082f49;border-left:3px solid #22d3ee;padding:5px 8px;border-radius:4px;">
+          <strong style="color:#38bdf8;">2. SURT LAYER BUY A 20,010 (ENTREM AQUÍ!):</strong><br/>
+          Al 2n BOS de confirmació tanca l'espelma <strong>LAYER BUY</strong> a <strong class="mono">20,010</strong>. Entrem amb <strong>TP 2 a 20,040 (+30p)</strong> i <strong>SL 2 a 19,980 (-30p)</strong>.
+        </div>
+        <div style="background:#2e1905;border-left:3px solid #fbbf24;padding:5px 8px;border-radius:4px;">
+          <strong style="color:#fbbf24;">3. EL PREU TOCA 20,030 (TP 1) ➔ ESCUT BE:</strong><br/>
+          Quan l'espelma toca el sostre de la Caixa Verda (<strong class="mono">20,030</strong>), ja portem <strong>+20p</strong> de guany. Pugem l'SL de 19,980 a <strong class="mono">20,010 (Breakeven 0p)</strong>.
+        </div>
+        <div style="background:#052e24;border-left:3px solid #10b981;padding:5px 8px;border-radius:4px;">
+          <strong style="color:#34d399;">4. DESENLLAÇ A RISC ZERO (20,040 o 20,010):</strong><br/>
+          Si puja 10p més fins a <strong class="mono">20,040</strong> cobrem <strong>+30p (+$300 / +$600)</strong>; si es gira, sortim a <strong class="mono">20,010 (0p = $0)</strong>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Les 4 Lleis Innegociables -->
+    <h2><span>⚖️</span> 3. Les 4 Lleis Innegociables d'Execució i Risc</h2>
+    <div class="grid-2">
+      <div class="card-cyan">
+        <h3>LLEI 1 · Gatell d'Entrada (<span class="mono">🔷 LAYER</span>)</h3>
+        <p>S'entra al tancament de l'espelma d'1m que imprimeix <strong style="color:#22d3ee;">🔷 LAYER BUY / SELL</strong> mentre el <span class="mono">PRIMARY</span> segueix obert. Si el <span class="mono">PRIMARY</span> va sortir a les <span class="mono">09:56</span> però el <span class="mono">LAYER</span> surt a les <span class="mono">10:01</span>, <strong>SÍ que s'opera</strong> (mana l'hora del <span class="mono">LAYER</span>).</p>
+      </div>
+      <div class="card-amber">
+        <h3>LLEI 2 · Escut de Breakeven (<span class="mono">TP 1 ➔ BE 0p</span>)</h3>
+        <p>En l'instant exacte en què el preu toca la línia del <strong style="color:#34d399;">TP 1</strong> del <span class="mono">PRIMARY</span>, mous el teu Stop Loss a <strong style="color:#fbbf24;">Breakeven (+1 punt / 4 ticks)</strong>. Aquesta regla ha salvat <strong>35 operacions de -30p</strong> convertint-les en <strong>0p ($0)</strong>.</p>
+      </div>
+      <div class="card-rose">
+        <h3>LLEI 3 · Tall per "Doble SL" en Operació Nostra (<span class="mono">&gt;= 10:00</span>)</h3>
+        <p>Si un clúster que <strong>TU has operat a partir de les 10:00 NY</strong> acaba en <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>), <strong>s'acaba el dia immediatament</strong>. <br><strong style="color:#fda4af;">Important:</strong> Si hi ha hagut un Doble SL entre les <span class="mono">09:30 i 09:59 NY</span> (abans de la nostra finestra), <strong>s'ignora completament</strong> (<span class="mono">5W - 3L, +60p</span> després de les 10h en aquests dies).</p>
+      </div>
+      <div class="card-emerald">
+        <h3>LLEI 4 · Exposició Màxima i Circuit Breaker Diari</h3>
+        <p>Un segon <span class="mono">LAYER</span> mai pot aparèixer fins que el clúster anterior s'hagi tancat: <strong>mai tindràs dues operacions obertes alhora</strong> en un mateix compte. Si un compte acumula <strong>2 SLs en un mateix dia</strong>, s'atura fins l'endemà.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>JJ FAIR PRICING · MANUAL OPERATIU LAYER SNIPER</span>
+    <span class="mono">121 SESSIONS AUDITADES · 0% LOOK-AHEAD BIAS</span>
+    <span>PÀGINA 01 / 04</span>
+  </div>
+</div>
+
+<!-- ==================== PÀGINA 2: ARQUITECTURA DOBLE BLOC (0% SOLAPAMENT) + GRÀFIQUES DE CREIXEMENT ==================== -->
+<div class="page">
+  <div>
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="badge badge-cyan">ESCALAT MULTI-COMPTE · 0% SOLAPAMENT</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">ARQUITECTURA DE DOBLE FLOTA (BLOC A + BLOC B)</span>
+      </div>
+      <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 02 / 04</span>
+    </div>
+
+    <h2><span>🔀</span> 4. Com Dividir 20–40 Comptes en 2 Blocs Independents (0% Solapament)</h2>
+    <p style="margin-bottom:8px;">
+      Per operar 20–40 comptes (<span class="mono">Apex + Lucid + MFFU + Topstep + TPT</span>) en dos Trade Copiers independents <strong>sense que el Bloc B faci mai cap operació del Bloc A (0% d'encavalcament)</strong>, tens dues arquitectures validades sobre les 121 sessions (Maig – Octubre):
+    </p>
+
+    <div class="grid-2" style="margin-bottom:9px;">
+      <div class="card-amber">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span class="badge badge-amber">OPCIÓ 1 (RECOMANADA · 100% PUR LAYER)</span>
+          <span class="mono" style="font-size:9px;color:#34d399;font-weight:800;">+1,740p (71.0% WR)</span>
+        </div>
+        <h3>Repartiment Pur dels <span class="mono">🔷 LAYER</span> del Dia</h3>
+        <ul>
+          <li><strong style="color:#fbbf24;">🅰️ BLOC A (Sniper 10h):</strong> Opera <strong>només el 1r <span class="mono">🔷 LAYER &gt;= 10:00 NY</span></strong> del dia. Màxim 1 trade/dia! <strong class="mono" style="color:#34d399;">75.0% WR · +1,020p · Max DD -60p (6/6 mesos +)</strong>.</li>
+          <li><strong style="color:#a5b4fc;">🅱️ BLOC B (Resta de LAYERs):</strong> Opera el <span class="mono">🔷 LAYER</span> de <span class="mono">09:30–09:59</span> + el <strong>2n/3r <span class="mono">LAYER &gt;= 10:00</span></strong> (si el 1r no ha estat Doble SL). <strong class="mono" style="color:#22d3ee;">67.1% WR · +720p · Max DD -120p</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="card-indigo">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span class="badge badge-indigo">OPCIÓ 2 (MÀXIM VOLUM · +2,310 PUNTS)</span>
+          <span class="mono" style="font-size:9px;color:#22d3ee;font-weight:800;">+2,310p Combinats</span>
+        </div>
+        <h3>Bloc A Tot <span class="mono">LAYER &gt;= 10h</span> + Bloc B Reversió Post-SL</h3>
+        <ul>
+          <li><strong style="color:#34d399;">🅰️ BLOC A (Complet 10h):</strong> Tots els <span class="mono">🔷 LAYER &gt;= 10:00 NY</span> amb aturada si Doble SL. <strong class="mono" style="color:#34d399;">71.6% WR · +1,500p · Max DD -120p (6/6 mesos +)</strong>.</li>
+          <li><strong style="color:#c084fc;">🅱️ BLOC B (Mix Post-SL):</strong> Opera el <span class="mono">🔷 LAYER &lt; 10:00</span> + els <span class="mono">PRIMARY &gt;= 10:00</span> posteriors al 1r SL del dia (<span class="mono">Max 1 SL/dia</span> al Bloc B). <strong class="mono" style="color:#c084fc;">57.7% WR · +810p</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chart 1: Option 1 Equity Curve -->
+    <div class="card" style="margin-bottom:9px; padding:9px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+        <div>
+          <h3 style="font-size:10.5px;color:#ffffff;">📈 GRÀFICA 1 · Creixement Acumulat dels 2 Blocs — Opció 1 (100% LAYER · 0% Solapament · 121 Sessions)</h3>
+        </div>
+        <div style="display:flex;gap:10px;font-size:8px;" class="mono">
+          <span style="color:#34d399;">● Total A+B (+1,740p)</span>
+          <span style="color:#fbbf24;">● 🅰️ Bloc A (+1,020p · 75.0% WR)</span>
+          <span style="color:#a5b4fc;">● 🅱️ Bloc B (+720p · 67.1% WR)</span>
+        </div>
+      </div>
+      <svg viewBox="0 0 680 195" class="w-full h-auto">
+    <defs>
+      <linearGradient id="gradEmerald" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10b981" stop-opacity="0.28"/>
+        <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"/>
+      </linearGradient>
+      <linearGradient id="gradAmber" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0"/>
+      </linearGradient>
+      <linearGradient id="gradIndigo" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#818cf8" stop-opacity="0.16"/>
+        <stop offset="100%" stop-color="#818cf8" stop-opacity="0.0"/>
+      </linearGradient>
+    </defs>
+    <line x1="46" y1="162.0" x2="622" y2="162.0" stroke="#334155" stroke-width="1.2"  />
+<text x="40" y="165.5" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">0p</text>
+<line x1="46" y1="127.5" x2="622" y2="127.5" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="40" y="131.0" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+450p</text>
+<line x1="46" y1="93.0" x2="622" y2="93.0" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="40" y="96.5" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+900p</text>
+<line x1="46" y1="58.5" x2="622" y2="58.5" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="40" y="62.0" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+1350p</text>
+<line x1="46" y1="24.0" x2="622" y2="24.0" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="40" y="27.5" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+1800p</text>
+
+    <line x1="46.0" y1="18" x2="46.0" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="46.0" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Inici Mai</text>
+<line x1="146.0" y1="18" x2="146.0" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="146.0" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Jun</text>
+<line x1="250.7" y1="18" x2="250.7" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="250.7" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Jul</text>
+<line x1="360.2" y1="18" x2="360.2" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="360.2" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Ago</text>
+<line x1="460.1" y1="18" x2="460.1" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="460.1" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Set</text>
+<line x1="564.9" y1="18" x2="564.9" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="564.9" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Oct</text>
+<line x1="622.0" y1="18" x2="622.0" y2="173" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="622.0" y="190" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Dia 121</text>
+
+    <path d="M 46.0,162.0 L 46.0,162.0 L 50.8,157.4 L 55.5,157.4 L 60.3,152.8 L 65.0,150.5 L 69.8,152.8 L 74.6,150.5 L 79.3,150.5 L 84.1,148.2 L 88.8,143.6 L 93.6,139.0 L 98.4,134.4 L 103.1,134.4 L 107.9,132.1 L 112.6,134.4 L 117.4,129.8 L 122.2,129.8 L 126.9,129.8 L 131.7,129.8 L 136.4,127.5 L 141.2,125.2 L 146.0,120.6 L 150.7,120.6 L 155.5,120.6 L 160.2,118.3 L 165.0,120.6 L 169.8,113.7 L 174.5,113.7 L 179.3,111.4 L 184.0,109.1 L 188.8,106.8 L 193.6,104.5 L 198.3,102.2 L 203.1,102.2 L 207.9,102.2 L 212.6,99.9 L 217.4,102.2 L 222.1,99.9 L 226.9,99.9 L 231.7,99.9 L 236.4,102.2 L 241.2,102.2 L 245.9,99.9 L 250.7,102.2 L 255.5,99.9 L 260.2,97.6 L 265.0,97.6 L 269.7,99.9 L 274.5,97.6 L 279.3,97.6 L 284.0,93.0 L 288.8,95.3 L 293.5,86.1 L 298.3,83.8 L 303.1,81.5 L 307.8,79.2 L 312.6,79.2 L 317.3,74.6 L 322.1,76.9 L 326.9,76.9 L 331.6,76.9 L 336.4,72.3 L 341.1,70.0 L 345.9,72.3 L 350.7,70.0 L 355.4,63.1 L 360.2,63.1 L 364.9,65.4 L 369.7,67.7 L 374.5,67.7 L 379.2,70.0 L 384.0,70.0 L 388.7,67.7 L 393.5,67.7 L 398.3,67.7 L 403.0,70.0 L 407.8,72.3 L 412.5,72.3 L 417.3,70.0 L 422.1,63.1 L 426.8,63.1 L 431.6,60.8 L 436.3,63.1 L 441.1,63.1 L 445.9,65.4 L 450.6,65.4 L 455.4,63.1 L 460.1,63.1 L 464.9,65.4 L 469.7,63.1 L 474.4,60.8 L 479.2,56.2 L 484.0,56.2 L 488.7,58.5 L 493.5,58.5 L 498.2,58.5 L 503.0,58.5 L 507.8,53.9 L 512.5,56.2 L 517.3,58.5 L 522.0,56.2 L 526.8,58.5 L 531.6,58.5 L 536.3,60.8 L 541.1,56.2 L 545.8,51.6 L 550.6,49.3 L 555.4,51.6 L 560.1,51.6 L 564.9,47.0 L 569.6,49.3 L 574.4,47.0 L 579.2,42.4 L 583.9,42.4 L 588.7,42.4 L 593.4,42.4 L 598.2,44.7 L 603.0,42.4 L 607.7,37.8 L 612.5,33.2 L 617.2,28.6 L 622.0,28.6 L 622.0,162.0 Z" fill="url(#gradEmerald)" />
+    <polyline fill="none" stroke="#10b981" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" points="46.0,162.0 50.8,157.4 55.5,157.4 60.3,152.8 65.0,150.5 69.8,152.8 74.6,150.5 79.3,150.5 84.1,148.2 88.8,143.6 93.6,139.0 98.4,134.4 103.1,134.4 107.9,132.1 112.6,134.4 117.4,129.8 122.2,129.8 126.9,129.8 131.7,129.8 136.4,127.5 141.2,125.2 146.0,120.6 150.7,120.6 155.5,120.6 160.2,118.3 165.0,120.6 169.8,113.7 174.5,113.7 179.3,111.4 184.0,109.1 188.8,106.8 193.6,104.5 198.3,102.2 203.1,102.2 207.9,102.2 212.6,99.9 217.4,102.2 222.1,99.9 226.9,99.9 231.7,99.9 236.4,102.2 241.2,102.2 245.9,99.9 250.7,102.2 255.5,99.9 260.2,97.6 265.0,97.6 269.7,99.9 274.5,97.6 279.3,97.6 284.0,93.0 288.8,95.3 293.5,86.1 298.3,83.8 303.1,81.5 307.8,79.2 312.6,79.2 317.3,74.6 322.1,76.9 326.9,76.9 331.6,76.9 336.4,72.3 341.1,70.0 345.9,72.3 350.7,70.0 355.4,63.1 360.2,63.1 364.9,65.4 369.7,67.7 374.5,67.7 379.2,70.0 384.0,70.0 388.7,67.7 393.5,67.7 398.3,67.7 403.0,70.0 407.8,72.3 412.5,72.3 417.3,70.0 422.1,63.1 426.8,63.1 431.6,60.8 436.3,63.1 441.1,63.1 445.9,65.4 450.6,65.4 455.4,63.1 460.1,63.1 464.9,65.4 469.7,63.1 474.4,60.8 479.2,56.2 484.0,56.2 488.7,58.5 493.5,58.5 498.2,58.5 503.0,58.5 507.8,53.9 512.5,56.2 517.3,58.5 522.0,56.2 526.8,58.5 531.6,58.5 536.3,60.8 541.1,56.2 545.8,51.6 550.6,49.3 555.4,51.6 560.1,51.6 564.9,47.0 569.6,49.3 574.4,47.0 579.2,42.4 583.9,42.4 588.7,42.4 593.4,42.4 598.2,44.7 603.0,42.4 607.7,37.8 612.5,33.2 617.2,28.6 622.0,28.6" />
+    <circle cx="622.0" cy="28.6" r="4" fill="#10b981" stroke="#060911" stroke-width="1.5" />
+
+    <path d="M 46.0,162.0 L 46.0,162.0 L 50.8,159.7 L 55.5,159.7 L 60.3,157.4 L 65.0,155.1 L 69.8,157.4 L 74.6,155.1 L 79.3,152.8 L 84.1,152.8 L 88.8,150.5 L 93.6,148.2 L 98.4,148.2 L 103.1,150.5 L 107.9,148.2 L 112.6,148.2 L 117.4,145.9 L 122.2,145.9 L 126.9,145.9 L 131.7,145.9 L 136.4,143.6 L 141.2,141.3 L 146.0,139.0 L 150.7,139.0 L 155.5,139.0 L 160.2,136.7 L 165.0,136.7 L 169.8,134.4 L 174.5,134.4 L 179.3,132.1 L 184.0,129.8 L 188.8,129.8 L 193.6,127.5 L 198.3,125.2 L 203.1,125.2 L 207.9,125.2 L 212.6,122.9 L 217.4,122.9 L 222.1,120.6 L 226.9,120.6 L 231.7,120.6 L 236.4,122.9 L 241.2,122.9 L 245.9,120.6 L 250.7,122.9 L 255.5,120.6 L 260.2,118.3 L 265.0,118.3 L 269.7,120.6 L 274.5,118.3 L 279.3,116.0 L 284.0,113.7 L 288.8,116.0 L 293.5,113.7 L 298.3,111.4 L 303.1,109.1 L 307.8,106.8 L 312.6,106.8 L 317.3,104.5 L 322.1,106.8 L 326.9,106.8 L 331.6,106.8 L 336.4,104.5 L 341.1,104.5 L 345.9,106.8 L 350.7,106.8 L 355.4,104.5 L 360.2,104.5 L 364.9,104.5 L 369.7,106.8 L 374.5,106.8 L 379.2,106.8 L 384.0,106.8 L 388.7,106.8 L 393.5,104.5 L 398.3,102.2 L 403.0,102.2 L 407.8,104.5 L 412.5,104.5 L 417.3,102.2 L 422.1,99.9 L 426.8,99.9 L 431.6,97.6 L 436.3,97.6 L 441.1,99.9 L 445.9,99.9 L 450.6,99.9 L 455.4,97.6 L 460.1,97.6 L 464.9,99.9 L 469.7,97.6 L 474.4,95.3 L 479.2,93.0 L 484.0,93.0 L 488.7,93.0 L 493.5,93.0 L 498.2,93.0 L 503.0,90.7 L 507.8,88.4 L 512.5,90.7 L 517.3,90.7 L 522.0,90.7 L 526.8,93.0 L 531.6,90.7 L 536.3,93.0 L 541.1,93.0 L 545.8,90.7 L 550.6,88.4 L 555.4,90.7 L 560.1,93.0 L 564.9,90.7 L 569.6,90.7 L 574.4,88.4 L 579.2,86.1 L 583.9,86.1 L 588.7,86.1 L 593.4,86.1 L 598.2,86.1 L 603.0,83.8 L 607.7,83.8 L 612.5,83.8 L 617.2,83.8 L 622.0,83.8 L 622.0,162.0 Z" fill="url(#gradAmber)" />
+    <polyline fill="none" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="46.0,162.0 50.8,159.7 55.5,159.7 60.3,157.4 65.0,155.1 69.8,157.4 74.6,155.1 79.3,152.8 84.1,152.8 88.8,150.5 93.6,148.2 98.4,148.2 103.1,150.5 107.9,148.2 112.6,148.2 117.4,145.9 122.2,145.9 126.9,145.9 131.7,145.9 136.4,143.6 141.2,141.3 146.0,139.0 150.7,139.0 155.5,139.0 160.2,136.7 165.0,136.7 169.8,134.4 174.5,134.4 179.3,132.1 184.0,129.8 188.8,129.8 193.6,127.5 198.3,125.2 203.1,125.2 207.9,125.2 212.6,122.9 217.4,122.9 222.1,120.6 226.9,120.6 231.7,120.6 236.4,122.9 241.2,122.9 245.9,120.6 250.7,122.9 255.5,120.6 260.2,118.3 265.0,118.3 269.7,120.6 274.5,118.3 279.3,116.0 284.0,113.7 288.8,116.0 293.5,113.7 298.3,111.4 303.1,109.1 307.8,106.8 312.6,106.8 317.3,104.5 322.1,106.8 326.9,106.8 331.6,106.8 336.4,104.5 341.1,104.5 345.9,106.8 350.7,106.8 355.4,104.5 360.2,104.5 364.9,104.5 369.7,106.8 374.5,106.8 379.2,106.8 384.0,106.8 388.7,106.8 393.5,104.5 398.3,102.2 403.0,102.2 407.8,104.5 412.5,104.5 417.3,102.2 422.1,99.9 426.8,99.9 431.6,97.6 436.3,97.6 441.1,99.9 445.9,99.9 450.6,99.9 455.4,97.6 460.1,97.6 464.9,99.9 469.7,97.6 474.4,95.3 479.2,93.0 484.0,93.0 488.7,93.0 493.5,93.0 498.2,93.0 503.0,90.7 507.8,88.4 512.5,90.7 517.3,90.7 522.0,90.7 526.8,93.0 531.6,90.7 536.3,93.0 541.1,93.0 545.8,90.7 550.6,88.4 555.4,90.7 560.1,93.0 564.9,90.7 569.6,90.7 574.4,88.4 579.2,86.1 583.9,86.1 588.7,86.1 593.4,86.1 598.2,86.1 603.0,83.8 607.7,83.8 612.5,83.8 617.2,83.8 622.0,83.8" />
+    <circle cx="622.0" cy="83.8" r="4" fill="#f59e0b" stroke="#060911" stroke-width="1.5" />
+
+    <path d="M 46.0,162.0 L 46.0,162.0 L 50.8,159.7 L 55.5,159.7 L 60.3,157.4 L 65.0,157.4 L 69.8,157.4 L 74.6,157.4 L 79.3,159.7 L 84.1,157.4 L 88.8,155.1 L 93.6,152.8 L 98.4,148.2 L 103.1,145.9 L 107.9,145.9 L 112.6,148.2 L 117.4,145.9 L 122.2,145.9 L 126.9,145.9 L 131.7,145.9 L 136.4,145.9 L 141.2,145.9 L 146.0,143.6 L 150.7,143.6 L 155.5,143.6 L 160.2,143.6 L 165.0,145.9 L 169.8,141.3 L 174.5,141.3 L 179.3,141.3 L 184.0,141.3 L 188.8,139.0 L 193.6,139.0 L 198.3,139.0 L 203.1,139.0 L 207.9,139.0 L 212.6,139.0 L 217.4,141.3 L 222.1,141.3 L 226.9,141.3 L 231.7,141.3 L 236.4,141.3 L 241.2,141.3 L 245.9,141.3 L 250.7,141.3 L 255.5,141.3 L 260.2,141.3 L 265.0,141.3 L 269.7,141.3 L 274.5,141.3 L 279.3,143.6 L 284.0,141.3 L 288.8,141.3 L 293.5,134.4 L 298.3,134.4 L 303.1,134.4 L 307.8,134.4 L 312.6,134.4 L 317.3,132.1 L 322.1,132.1 L 326.9,132.1 L 331.6,132.1 L 336.4,129.8 L 341.1,127.5 L 345.9,127.5 L 350.7,125.2 L 355.4,120.6 L 360.2,120.6 L 364.9,122.9 L 369.7,122.9 L 374.5,122.9 L 379.2,125.2 L 384.0,125.2 L 388.7,122.9 L 393.5,125.2 L 398.3,127.5 L 403.0,129.8 L 407.8,129.8 L 412.5,129.8 L 417.3,129.8 L 422.1,125.2 L 426.8,125.2 L 431.6,125.2 L 436.3,127.5 L 441.1,125.2 L 445.9,127.5 L 450.6,127.5 L 455.4,127.5 L 460.1,127.5 L 464.9,127.5 L 469.7,127.5 L 474.4,127.5 L 479.2,125.2 L 484.0,125.2 L 488.7,127.5 L 493.5,127.5 L 498.2,127.5 L 503.0,129.8 L 507.8,127.5 L 512.5,127.5 L 517.3,129.8 L 522.0,127.5 L 526.8,127.5 L 531.6,129.8 L 536.3,129.8 L 541.1,125.2 L 545.8,122.9 L 550.6,122.9 L 555.4,122.9 L 560.1,120.6 L 564.9,118.3 L 569.6,120.6 L 574.4,120.6 L 579.2,118.3 L 583.9,118.3 L 588.7,118.3 L 593.4,118.3 L 598.2,120.6 L 603.0,120.6 L 607.7,116.0 L 612.5,111.4 L 617.2,106.8 L 622.0,106.8 L 622.0,162.0 Z" fill="url(#gradIndigo)" />
+    <polyline fill="none" stroke="#818cf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="46.0,162.0 50.8,159.7 55.5,159.7 60.3,157.4 65.0,157.4 69.8,157.4 74.6,157.4 79.3,159.7 84.1,157.4 88.8,155.1 93.6,152.8 98.4,148.2 103.1,145.9 107.9,145.9 112.6,148.2 117.4,145.9 122.2,145.9 126.9,145.9 131.7,145.9 136.4,145.9 141.2,145.9 146.0,143.6 150.7,143.6 155.5,143.6 160.2,143.6 165.0,145.9 169.8,141.3 174.5,141.3 179.3,141.3 184.0,141.3 188.8,139.0 193.6,139.0 198.3,139.0 203.1,139.0 207.9,139.0 212.6,139.0 217.4,141.3 222.1,141.3 226.9,141.3 231.7,141.3 236.4,141.3 241.2,141.3 245.9,141.3 250.7,141.3 255.5,141.3 260.2,141.3 265.0,141.3 269.7,141.3 274.5,141.3 279.3,143.6 284.0,141.3 288.8,141.3 293.5,134.4 298.3,134.4 303.1,134.4 307.8,134.4 312.6,134.4 317.3,132.1 322.1,132.1 326.9,132.1 331.6,132.1 336.4,129.8 341.1,127.5 345.9,127.5 350.7,125.2 355.4,120.6 360.2,120.6 364.9,122.9 369.7,122.9 374.5,122.9 379.2,125.2 384.0,125.2 388.7,122.9 393.5,125.2 398.3,127.5 403.0,129.8 407.8,129.8 412.5,129.8 417.3,129.8 422.1,125.2 426.8,125.2 431.6,125.2 436.3,127.5 441.1,125.2 445.9,127.5 450.6,127.5 455.4,127.5 460.1,127.5 464.9,127.5 469.7,127.5 474.4,127.5 479.2,125.2 484.0,125.2 488.7,127.5 493.5,127.5 498.2,127.5 503.0,129.8 507.8,127.5 512.5,127.5 517.3,129.8 522.0,127.5 526.8,127.5 531.6,129.8 536.3,129.8 541.1,125.2 545.8,122.9 550.6,122.9 555.4,122.9 560.1,120.6 564.9,118.3 569.6,120.6 574.4,120.6 579.2,118.3 583.9,118.3 588.7,118.3 593.4,118.3 598.2,120.6 603.0,120.6 607.7,116.0 612.5,111.4 617.2,106.8 622.0,106.8" />
+    <circle cx="622.0" cy="106.8" r="4" fill="#818cf8" stroke="#060911" stroke-width="1.5" />
+
+    <text x="628" y="31.6" fill="#34d399" font-size="9.5" font-weight="bold" font-family="JetBrains Mono, monospace">+1,740p</text>
+    <text x="628" y="86.8" fill="#fbbf24" font-size="9.5" font-weight="bold" font-family="JetBrains Mono, monospace">+1,020p</text>
+    <text x="628" y="109.8" fill="#a5b4fc" font-size="9.5" font-weight="bold" font-family="JetBrains Mono, monospace">+720p</text>
+  </svg>
+    </div>
+
+    <!-- Chart 2A + 2B Side by Side -->
+    <div style="display:grid;grid-template-columns: 1.45fr 1fr; gap:9px; margin-bottom:9px;">
+      <div class="card" style="padding:9px 11px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <h3 style="font-size:9.8px;color:#ffffff;">📈 GRÀFICA 2 · Creixement Opció 2 (+2,310p)</h3>
+          <div style="display:flex;gap:6px;font-size:7.5px;" class="mono">
+            <span style="color:#22d3ee;">● A+B (+2,310p)</span>
+            <span style="color:#34d399;">● A (+1,500p)</span>
+            <span style="color:#c084fc;">● B (+810p)</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 410 175" class="w-full h-auto">
+    <defs>
+      <linearGradient id="gradCyan2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0"/>
+      </linearGradient>
+    </defs>
+    <line x1="44" y1="145.0" x2="355" y2="145.0" stroke="#334155" stroke-width="1.2"  />
+<text x="38" y="148.5" text-anchor="end" fill="#94a3b8" font-size="8" font-family="JetBrains Mono, monospace">0p</text>
+<line x1="44" y1="114.2" x2="355" y2="114.2" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="38" y="117.8" text-anchor="end" fill="#94a3b8" font-size="8" font-family="JetBrains Mono, monospace">+600p</text>
+<line x1="44" y1="83.5" x2="355" y2="83.5" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="38" y="87.0" text-anchor="end" fill="#94a3b8" font-size="8" font-family="JetBrains Mono, monospace">+1200p</text>
+<line x1="44" y1="52.8" x2="355" y2="52.8" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="38" y="56.2" text-anchor="end" fill="#94a3b8" font-size="8" font-family="JetBrains Mono, monospace">+1800p</text>
+<line x1="44" y1="26.6" x2="355" y2="26.6" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="38" y="30.1" text-anchor="end" fill="#94a3b8" font-size="8" font-family="JetBrains Mono, monospace">+2310p</text>
+
+    <line x1="44.0" y1="16" x2="44.0" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="44.0" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Mai</text>
+<line x1="98.0" y1="16" x2="98.0" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="98.0" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Jun</text>
+<line x1="154.5" y1="16" x2="154.5" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="154.5" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Jul</text>
+<line x1="213.6" y1="16" x2="213.6" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="213.6" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Ago</text>
+<line x1="267.6" y1="16" x2="267.6" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="267.6" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Set</text>
+<line x1="324.2" y1="16" x2="324.2" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="324.2" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">Oct</text>
+<line x1="355.0" y1="16" x2="355.0" y2="153" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="355.0" y="170" text-anchor="middle" fill="#64748b" font-size="7.5" font-family="JetBrains Mono, monospace">D121</text>
+
+    <path d="M 44.0,145.0 L 44.0,145.0 L 46.6,143.5 L 49.1,143.5 L 51.7,140.4 L 54.3,138.8 L 56.9,141.9 L 59.4,141.9 L 62.0,140.4 L 64.6,137.3 L 67.1,135.8 L 69.7,132.7 L 72.3,131.2 L 74.8,132.7 L 77.4,131.2 L 80.0,132.7 L 82.6,129.6 L 85.1,129.6 L 87.7,129.6 L 90.3,131.2 L 92.8,131.2 L 95.4,126.5 L 98.0,118.9 L 100.5,120.4 L 103.1,120.4 L 105.7,118.9 L 108.3,118.9 L 110.8,111.2 L 113.4,112.7 L 116.0,112.7 L 118.5,112.7 L 121.1,111.2 L 123.7,109.6 L 126.2,108.1 L 128.8,108.1 L 131.4,108.1 L 134.0,106.6 L 136.5,109.6 L 139.1,102.0 L 141.7,103.5 L 144.2,105.0 L 146.8,106.6 L 149.4,100.4 L 152.0,92.7 L 154.5,92.7 L 157.1,91.2 L 159.7,86.6 L 162.2,86.6 L 164.8,89.7 L 167.4,89.7 L 169.9,89.7 L 172.5,83.5 L 175.1,82.0 L 177.7,75.8 L 180.2,74.3 L 182.8,74.3 L 185.4,69.7 L 187.9,69.7 L 190.5,65.0 L 193.1,68.1 L 195.6,69.7 L 198.2,69.7 L 200.8,68.1 L 203.4,68.1 L 205.9,71.2 L 208.5,71.2 L 211.1,66.6 L 213.6,65.0 L 216.2,66.6 L 218.8,69.7 L 221.3,66.6 L 223.9,68.1 L 226.5,68.1 L 229.1,66.6 L 231.6,68.1 L 234.2,68.1 L 236.8,71.2 L 239.3,74.3 L 241.9,74.3 L 244.5,72.7 L 247.0,62.0 L 249.6,62.0 L 252.2,62.0 L 254.8,62.0 L 257.3,60.4 L 259.9,58.9 L 262.5,58.9 L 265.0,57.4 L 267.6,57.4 L 270.2,60.4 L 272.8,60.4 L 275.3,58.9 L 277.9,54.3 L 280.5,54.3 L 283.0,54.3 L 285.6,52.8 L 288.2,52.8 L 290.7,52.8 L 293.3,45.1 L 295.9,48.1 L 298.5,51.2 L 301.0,49.7 L 303.6,51.2 L 306.2,52.8 L 308.7,55.8 L 311.3,49.7 L 313.9,48.1 L 316.4,46.6 L 319.0,48.1 L 321.6,49.7 L 324.2,45.1 L 326.7,48.1 L 329.3,46.6 L 331.9,45.1 L 334.4,45.1 L 337.0,45.1 L 339.6,45.1 L 342.1,48.1 L 344.7,46.6 L 347.3,38.9 L 349.9,32.8 L 352.4,25.1 L 355.0,26.6 L 355.0,145.0 Z" fill="url(#gradCyan2)" />
+    <polyline fill="none" stroke="#06b6d4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="44.0,145.0 46.6,143.5 49.1,143.5 51.7,140.4 54.3,138.8 56.9,141.9 59.4,141.9 62.0,140.4 64.6,137.3 67.1,135.8 69.7,132.7 72.3,131.2 74.8,132.7 77.4,131.2 80.0,132.7 82.6,129.6 85.1,129.6 87.7,129.6 90.3,131.2 92.8,131.2 95.4,126.5 98.0,118.9 100.5,120.4 103.1,120.4 105.7,118.9 108.3,118.9 110.8,111.2 113.4,112.7 116.0,112.7 118.5,112.7 121.1,111.2 123.7,109.6 126.2,108.1 128.8,108.1 131.4,108.1 134.0,106.6 136.5,109.6 139.1,102.0 141.7,103.5 144.2,105.0 146.8,106.6 149.4,100.4 152.0,92.7 154.5,92.7 157.1,91.2 159.7,86.6 162.2,86.6 164.8,89.7 167.4,89.7 169.9,89.7 172.5,83.5 175.1,82.0 177.7,75.8 180.2,74.3 182.8,74.3 185.4,69.7 187.9,69.7 190.5,65.0 193.1,68.1 195.6,69.7 198.2,69.7 200.8,68.1 203.4,68.1 205.9,71.2 208.5,71.2 211.1,66.6 213.6,65.0 216.2,66.6 218.8,69.7 221.3,66.6 223.9,68.1 226.5,68.1 229.1,66.6 231.6,68.1 234.2,68.1 236.8,71.2 239.3,74.3 241.9,74.3 244.5,72.7 247.0,62.0 249.6,62.0 252.2,62.0 254.8,62.0 257.3,60.4 259.9,58.9 262.5,58.9 265.0,57.4 267.6,57.4 270.2,60.4 272.8,60.4 275.3,58.9 277.9,54.3 280.5,54.3 283.0,54.3 285.6,52.8 288.2,52.8 290.7,52.8 293.3,45.1 295.9,48.1 298.5,51.2 301.0,49.7 303.6,51.2 306.2,52.8 308.7,55.8 311.3,49.7 313.9,48.1 316.4,46.6 319.0,48.1 321.6,49.7 324.2,45.1 326.7,48.1 329.3,46.6 331.9,45.1 334.4,45.1 337.0,45.1 339.6,45.1 342.1,48.1 344.7,46.6 347.3,38.9 349.9,32.8 352.4,25.1 355.0,26.6" />
+    <circle cx="355.0" cy="26.6" r="4" fill="#06b6d4" stroke="#060911" stroke-width="1.5" />
+
+    <polyline fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" points="44.0,145.0 46.6,141.9 49.1,141.9 51.7,140.4 54.3,138.8 56.9,140.4 59.4,138.8 62.0,138.8 64.6,138.8 67.1,137.3 69.7,135.8 72.3,134.2 74.8,135.8 77.4,134.2 80.0,135.8 82.6,132.7 85.1,132.7 87.7,132.7 90.3,132.7 92.8,131.2 95.4,129.6 98.0,126.5 100.5,126.5 103.1,126.5 105.7,126.5 108.3,125.0 110.8,120.4 113.4,120.4 116.0,118.9 118.5,117.3 121.1,117.3 123.7,115.8 126.2,114.2 128.8,115.8 131.4,115.8 134.0,114.2 136.5,115.8 139.1,114.2 141.7,114.2 144.2,114.2 146.8,115.8 149.4,115.8 152.0,114.2 154.5,115.8 157.1,114.2 159.7,112.7 162.2,112.7 164.8,114.2 167.4,112.7 169.9,112.7 172.5,109.6 175.1,111.2 177.7,106.6 180.2,105.0 182.8,103.5 185.4,102.0 187.9,102.0 190.5,100.4 193.1,102.0 195.6,102.0 198.2,102.0 200.8,98.9 203.4,97.3 205.9,98.9 208.5,98.9 211.1,94.3 213.6,94.3 216.2,94.3 218.8,95.8 221.3,95.8 223.9,95.8 226.5,95.8 229.1,94.3 231.6,94.3 234.2,94.3 236.8,95.8 239.3,97.3 241.9,97.3 244.5,95.8 247.0,91.2 249.6,91.2 252.2,89.7 254.8,88.1 257.3,89.7 259.9,86.6 262.5,86.6 265.0,85.0 267.6,85.0 270.2,86.6 272.8,85.0 275.3,83.5 277.9,82.0 280.5,82.0 283.0,80.4 285.6,80.4 288.2,80.4 290.7,80.4 293.3,77.3 295.9,78.9 298.5,80.4 301.0,80.4 303.6,82.0 306.2,82.0 308.7,83.5 311.3,82.0 313.9,80.4 316.4,77.3 319.0,78.9 321.6,80.4 324.2,77.3 326.7,78.9 329.3,77.3 331.9,75.8 334.4,75.8 337.0,75.8 339.6,75.8 342.1,77.3 344.7,75.8 347.3,72.7 349.9,69.7 352.4,68.1 355.0,68.1" />
+    <circle cx="355.0" cy="68.1" r="4" fill="#10b981" stroke="#060911" stroke-width="1.5" />
+
+    <polyline fill="none" stroke="#c084fc" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" points="44.0,145.0 46.6,146.5 49.1,146.5 51.7,145.0 54.3,145.0 56.9,146.5 59.4,148.1 62.0,146.5 64.6,143.5 67.1,143.5 69.7,141.9 72.3,141.9 74.8,141.9 77.4,141.9 80.0,141.9 82.6,141.9 85.1,141.9 87.7,141.9 90.3,143.5 92.8,145.0 95.4,141.9 98.0,137.3 100.5,138.8 103.1,138.8 105.7,137.3 108.3,138.8 110.8,135.8 113.4,137.3 116.0,138.8 118.5,140.4 121.1,138.8 123.7,138.8 126.2,138.8 128.8,137.3 131.4,137.3 134.0,137.3 136.5,138.8 139.1,132.7 141.7,134.2 144.2,135.8 146.8,135.8 149.4,129.6 152.0,123.5 154.5,121.9 157.1,121.9 159.7,118.9 162.2,118.9 164.8,120.4 167.4,121.9 169.9,121.9 172.5,118.9 175.1,115.8 177.7,114.2 180.2,114.2 182.8,115.8 185.4,112.7 187.9,112.7 190.5,109.6 193.1,111.2 195.6,112.7 198.2,112.7 200.8,114.2 203.4,115.8 205.9,117.3 208.5,117.3 211.1,117.3 213.6,115.8 216.2,117.3 218.8,118.9 221.3,115.8 223.9,117.3 226.5,117.3 229.1,117.3 231.6,118.9 234.2,118.9 236.8,120.4 239.3,121.9 241.9,121.9 244.5,121.9 247.0,115.8 249.6,115.8 252.2,117.3 254.8,118.9 257.3,115.8 259.9,117.3 262.5,117.3 265.0,117.3 267.6,117.3 270.2,118.9 272.8,120.4 275.3,120.4 277.9,117.3 280.5,117.3 283.0,118.9 285.6,117.3 288.2,117.3 290.7,117.3 293.3,112.7 295.9,114.2 298.5,115.8 301.0,114.2 303.6,114.2 306.2,115.8 308.7,117.3 311.3,112.7 313.9,112.7 316.4,114.2 319.0,114.2 321.6,114.2 324.2,112.7 326.7,114.2 329.3,114.2 331.9,114.2 334.4,114.2 337.0,114.2 339.6,114.2 342.1,115.8 344.7,115.8 347.3,111.2 349.9,108.1 352.4,102.0 355.0,103.5" />
+    <circle cx="355.0" cy="103.5" r="4" fill="#c084fc" stroke="#060911" stroke-width="1.5" />
+
+    <text x="360" y="29.6" fill="#22d3ee" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+2,310p</text>
+    <text x="360" y="71.1" fill="#34d399" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+1,500p</text>
+    <text x="360" y="106.5" fill="#c084fc" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+810p</text>
+  </svg>
+      </div>
+
+      <div class="card" style="padding:9px 11px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <h3 style="font-size:9.8px;color:#ffffff;">📊 Rendiment Mensual (Punts)</h3>
+          <div style="display:flex;gap:5px;font-size:7px;" class="mono">
+            <span style="color:#10b981;">■ A Complet</span>
+            <span style="color:#f59e0b;">■ A1</span>
+            <span style="color:#818cf8;">■ B1</span>
+          </div>
+        </div>
+        <svg viewBox="0 0 270 175" class="w-full h-auto">
+      <line x1="34" y1="148.5" x2="262" y2="148.5" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="30" y="151.5" text-anchor="end" fill="#94a3b8" font-size="7.5" font-family="JetBrains Mono, monospace">-100p</text>
+      <line x1="34" y1="126.0" x2="262" y2="126.0" stroke="#475569" stroke-width="1.1" />
+      <text x="30" y="129.0" text-anchor="end" fill="#94a3b8" font-size="7.5" font-family="JetBrains Mono, monospace">0p</text>
+      <line x1="34" y1="92.3" x2="262" y2="92.3" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="30" y="95.3" text-anchor="end" fill="#94a3b8" font-size="7.5" font-family="JetBrains Mono, monospace">+150p</text>
+      <line x1="34" y1="58.5" x2="262" y2="58.5" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="30" y="61.5" text-anchor="end" fill="#94a3b8" font-size="7.5" font-family="JetBrains Mono, monospace">+300p</text>
+      <line x1="34" y1="24.8" x2="262" y2="24.8" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,2" />
+      <text x="30" y="27.8" text-anchor="end" fill="#94a3b8" font-size="7.5" font-family="JetBrains Mono, monospace">+450p</text>
+      <rect x="38.0" y="45.0" width="6.8" height="81.0" rx="1.5" fill="#10b981" /><text x="41.4" y="42.5" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+360</text><rect x="46.0" y="58.5" width="6.8" height="67.5" rx="1.5" fill="#f59e0b" /><text x="49.4" y="56.0" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+300</text><rect x="54.0" y="72.0" width="6.8" height="54.0" rx="1.5" fill="#818cf8" /><text x="57.4" y="69.5" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+240</text><text x="49.4" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">MAI</text><rect x="75.5" y="78.8" width="6.8" height="47.2" rx="1.5" fill="#10b981" /><text x="78.9" y="76.3" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+210</text><rect x="83.5" y="78.8" width="6.8" height="47.2" rx="1.5" fill="#f59e0b" /><text x="86.9" y="76.3" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+210</text><rect x="91.5" y="119.3" width="6.8" height="6.7" rx="1.5" fill="#818cf8" /><text x="94.9" y="116.8" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+30</text><text x="86.9" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">JUN</text><rect x="113.0" y="31.5" width="6.8" height="94.5" rx="1.5" fill="#10b981" /><text x="116.4" y="29.0" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+420</text><rect x="121.0" y="72.0" width="6.8" height="54.0" rx="1.5" fill="#f59e0b" /><text x="124.4" y="69.5" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+240</text><rect x="129.0" y="65.3" width="6.8" height="60.7" rx="1.5" fill="#818cf8" /><text x="132.4" y="62.8" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+270</text><text x="124.4" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">JUL</text><rect x="150.5" y="85.5" width="6.8" height="40.5" rx="1.5" fill="#10b981" /><text x="153.9" y="83.0" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+180</text><rect x="158.5" y="105.8" width="6.8" height="20.2" rx="1.5" fill="#f59e0b" /><text x="161.9" y="103.3" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+90</text><rect x="166.5" y="126.0" width="6.8" height="20.2" rx="1.5" fill="#818cf8" /><text x="169.9" y="153.2" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">-90</text><text x="161.9" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">AGO</text><rect x="188.0" y="92.3" width="6.8" height="33.7" rx="1.5" fill="#10b981" /><text x="191.4" y="89.8" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+150</text><rect x="196.0" y="105.8" width="6.8" height="20.2" rx="1.5" fill="#f59e0b" /><text x="199.4" y="103.3" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+90</text><rect x="204.0" y="99.0" width="6.8" height="27.0" rx="1.5" fill="#818cf8" /><text x="207.4" y="96.5" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+120</text><text x="199.4" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">SET</text><rect x="225.5" y="85.5" width="6.8" height="40.5" rx="1.5" fill="#10b981" /><text x="228.9" y="83.0" text-anchor="middle" fill="#10b981" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+180</text><rect x="233.5" y="105.8" width="6.8" height="20.2" rx="1.5" fill="#f59e0b" /><text x="236.9" y="103.3" text-anchor="middle" fill="#f59e0b" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+90</text><rect x="241.5" y="92.3" width="6.8" height="33.7" rx="1.5" fill="#818cf8" /><text x="244.9" y="89.8" text-anchor="middle" fill="#818cf8" font-size="5.8" font-weight="bold" font-family="JetBrains Mono, monospace">+150</text><text x="236.9" y="170" text-anchor="middle" fill="#cbd5e1" font-size="7.5" font-weight="bold" font-family="JetBrains Mono, monospace">OCT</text>
+    </svg>
+      </div>
+    </div>
+
+    <!-- Summary Table of Blocks -->
+    <h2><span>📋</span> Comparativa Auditada de Tots els Blocs (121 Sessions · Maig – Octubre)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:left;">Configuració / Bloc</th>
+          <th>Regla Exacta d'Entrada</th>
+          <th>Trades (121d)</th>
+          <th>W / L / BE</th>
+          <th>Win Rate (W/L)</th>
+          <th>Punts Nets</th>
+          <th>Max DD</th>
+          <th>$/Compte (5 MNQ)</th>
+        </tr>
+      </thead>
+      <tbody class="mono">
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#34d399;">🏆 1 Sol Bloc (LAYER &gt;= 10:00)</td>
+          <td style="font-family:Inter,sans-serif;">Tots els LAYER 10:00–10:59 + Stop Doble SL</td>
+          <td>140</td>
+          <td>83W / 33L / 24BE</td>
+          <td style="color:#34d399;font-weight:800;">71.6%</td>
+          <td style="color:#34d399;font-weight:800;">+1,500p</td>
+          <td>-120p</td>
+          <td style="color:#34d399;font-weight:800;">+$15,000</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#fbbf24;">🅰️ BLOC A (Opció 1 · Sniper)</td>
+          <td style="font-family:Inter,sans-serif;">Només el 1r LAYER &gt;= 10:00 del dia (Màx 1/dia)</td>
+          <td>88</td>
+          <td>51W / 17L / 20BE</td>
+          <td style="color:#fbbf24;font-weight:800;">75.0%</td>
+          <td style="color:#fbbf24;font-weight:800;">+1,020p</td>
+          <td style="color:#34d399;font-weight:800;">-60p</td>
+          <td style="color:#fbbf24;font-weight:800;">+$10,200</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#a5b4fc;">🅱️ BLOC B (Opció 1 · Pur LAYER)</td>
+          <td style="font-family:Inter,sans-serif;">LAYER 09:30–09:59 + 2n/3r LAYER &gt;= 10:00 (Stop DSL)</td>
+          <td>76</td>
+          <td>47W / 23L / 6BE</td>
+          <td style="color:#a5b4fc;font-weight:800;">67.1%</td>
+          <td style="color:#a5b4fc;font-weight:800;">+720p</td>
+          <td>-120p</td>
+          <td style="color:#a5b4fc;font-weight:800;">+$7,200</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#c084fc;">🅱️ BLOC B (Opció 2 · Mix Post-SL)</td>
+          <td style="font-family:Inter,sans-serif;">LAYER &lt; 10:00 + PRIMARY &gt;= 10:00 post-1r SL (Max 1 SL)</td>
+          <td>177</td>
+          <td>101W / 74L / 2BE</td>
+          <td style="color:#c084fc;font-weight:800;">57.7%</td>
+          <td style="color:#c084fc;font-weight:800;">+810p</td>
+          <td>-270p</td>
+          <td style="color:#c084fc;font-weight:800;">+$8,100</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#22d3ee;">🅱️ BLOC B (Opció 3 · Primary 10:15)</td>
+          <td style="font-family:Inter,sans-serif;">Només PRIMARY de 10:15 a 10:44 NY (Max 1 SL/dia)</td>
+          <td>141</td>
+          <td>80W / 61L / 0BE</td>
+          <td style="color:#22d3ee;font-weight:800;">56.7%</td>
+          <td style="color:#22d3ee;font-weight:800;">+570p</td>
+          <td>-150p</td>
+          <td style="color:#22d3ee;font-weight:800;">+$5,700</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer-bar">
+    <span>JJ FAIR PRICING · ARQUITECTURA DOBLE BLOC (0% OVERLAP)</span>
+    <span class="mono">BLOC A + BLOC B · COPY-TRADING INDEPENDENT</span>
+    <span>PÀGINA 02 / 04</span>
+  </div>
+</div>
+
+<!-- ==================== PÀGINA 3: ESCALAT DE FLOTA (5 MNQ CONSOLIDACIÓ VS 10 MNQ ESTIL JJ) ==================== -->
+<div class="page">
+  <div>
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="badge badge-rose">GESTIÓ DE CAPITAL I RETIRADES</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">5 MNQ CONSOLIDACIÓ VS 10 MNQ ESTIL JJ ("EXTRACT & REPLACE")</span>
+      </div>
+      <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 03 / 04</span>
+    </div>
+
+    <h2><span>💰</span> 5. Evolució dels Payouts Cobrats Nets en Butxaca (121 Sessions · Maig – Octubre)</h2>
+    <div class="card" style="margin-bottom:9px; padding:9px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+        <h3 style="font-size:10px;color:#ffffff;">📈 GRÀFICA 3 · Caixa Neta Acumulada al Banc (Payouts Cobrats menys Cost d'Evals i Activacions PA)</h3>
+        <div style="display:flex;gap:9px;font-size:7.8px;" class="mono">
+          <span style="color:#fb7185;">● 30 Acc Doble Bloc 10 MNQ JJ (+$293,520)</span>
+          <span style="color:#34d399;">● 20 Acc 1 Bloc 5 MNQ (+$197,120 · 0 Petats)</span>
+          <span style="color:#fbbf24;">-- 30 Acc Híbrid 10/5 MNQ (+$265,680 · 0 Petats)</span>
+        </div>
+      </div>
+      <svg viewBox="0 0 680 185" class="w-full h-auto">
+    <defs>
+      <linearGradient id="gradRose" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.0"/>
+      </linearGradient>
+      <linearGradient id="gradEmCash" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10b981" stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"/>
+      </linearGradient>
+    </defs>
+    <line x1="52" y1="158.5" x2="610" y2="158.5" stroke="#334155" stroke-width="1.2"  />
+<text x="46" y="162.0" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">$0</text>
+<line x1="52" y1="124.9" x2="610" y2="124.9" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="46" y="128.4" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+$75k</text>
+<line x1="52" y1="91.2" x2="610" y2="91.2" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="46" y="94.8" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+$150k</text>
+<line x1="52" y1="57.6" x2="610" y2="57.6" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="46" y="61.1" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+$225k</text>
+<line x1="52" y1="24.0" x2="610" y2="24.0" stroke="#1e293b" stroke-width="0.8" stroke-dasharray="3,3" />
+<text x="46" y="27.5" text-anchor="end" fill="#94a3b8" font-size="8.5" font-family="JetBrains Mono, monospace">+$300k</text>
+
+    <line x1="52.0" y1="16" x2="52.0" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="52.0" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Inici Mai</text>
+<line x1="148.8" y1="16" x2="148.8" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="148.8" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Jun</text>
+<line x1="250.3" y1="16" x2="250.3" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="250.3" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Jul</text>
+<line x1="356.4" y1="16" x2="356.4" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="356.4" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Ago</text>
+<line x1="453.2" y1="16" x2="453.2" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="453.2" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Set</text>
+<line x1="554.7" y1="16" x2="554.7" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="554.7" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Oct</text>
+<line x1="610.0" y1="16" x2="610.0" y2="163" stroke="#1e293b" stroke-width="0.7" stroke-dasharray="2,3" />
+<text x="610.0" y="180" text-anchor="middle" fill="#64748b" font-size="8" font-family="JetBrains Mono, monospace">Dia 121</text>
+
+    <path d="M 52.0,158.5 L 52.0,158.8 L 56.6,158.8 L 61.2,158.8 L 65.8,158.8 L 70.4,158.8 L 75.1,158.8 L 79.7,158.8 L 84.3,158.8 L 88.9,158.8 L 93.5,159.6 L 98.1,159.6 L 102.7,160.4 L 107.3,160.4 L 112.0,160.4 L 116.6,160.4 L 121.2,160.4 L 125.8,160.4 L 130.4,160.4 L 135.0,160.4 L 139.6,160.4 L 144.2,160.4 L 148.8,147.0 L 153.5,147.0 L 158.1,147.0 L 162.7,147.0 L 167.3,147.0 L 171.9,147.0 L 176.5,147.0 L 181.1,147.0 L 185.7,147.0 L 190.3,133.5 L 195.0,133.5 L 199.6,133.5 L 204.2,133.5 L 208.8,133.5 L 213.4,120.1 L 218.0,120.1 L 222.6,120.1 L 227.2,120.1 L 231.9,120.1 L 236.5,120.1 L 241.1,120.1 L 245.7,120.1 L 250.3,120.1 L 254.9,120.1 L 259.5,120.1 L 264.1,120.1 L 268.7,120.1 L 273.4,106.6 L 278.0,106.8 L 282.6,106.8 L 287.2,106.8 L 291.8,106.8 L 296.4,106.8 L 301.0,107.6 L 305.6,107.6 L 310.2,94.2 L 314.9,94.2 L 319.5,94.2 L 324.1,94.2 L 328.7,94.2 L 333.3,94.2 L 337.9,94.2 L 342.5,94.2 L 347.1,94.2 L 351.8,94.2 L 356.4,94.2 L 361.0,94.2 L 365.6,94.2 L 370.2,94.2 L 374.8,94.2 L 379.4,94.2 L 384.0,94.2 L 388.6,94.2 L 393.3,80.7 L 397.9,80.7 L 402.5,80.7 L 407.1,80.7 L 411.7,80.7 L 416.3,80.7 L 420.9,80.7 L 425.5,80.7 L 430.1,80.7 L 434.8,80.7 L 439.4,80.7 L 444.0,80.7 L 448.6,80.7 L 453.2,80.7 L 457.8,80.7 L 462.4,67.3 L 467.0,67.3 L 471.7,67.3 L 476.3,67.3 L 480.9,67.3 L 485.5,67.3 L 490.1,67.3 L 494.7,67.3 L 499.3,67.3 L 503.9,67.3 L 508.5,67.3 L 513.2,67.3 L 517.8,67.3 L 522.4,53.8 L 527.0,53.8 L 531.6,53.8 L 536.2,53.8 L 540.8,53.8 L 545.4,53.8 L 550.0,40.4 L 554.7,40.4 L 559.3,40.4 L 563.9,40.4 L 568.5,26.9 L 573.1,26.9 L 577.7,26.9 L 582.3,26.9 L 586.9,26.9 L 591.6,26.9 L 596.2,26.9 L 600.8,26.9 L 605.4,26.9 L 610.0,26.9 L 610.0,158.5 Z" fill="url(#gradRose)" />
+    <polyline fill="none" stroke="#f43f5e" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" points="52.0,158.8 56.6,158.8 61.2,158.8 65.8,158.8 70.4,158.8 75.1,158.8 79.7,158.8 84.3,158.8 88.9,158.8 93.5,159.6 98.1,159.6 102.7,160.4 107.3,160.4 112.0,160.4 116.6,160.4 121.2,160.4 125.8,160.4 130.4,160.4 135.0,160.4 139.6,160.4 144.2,160.4 148.8,147.0 153.5,147.0 158.1,147.0 162.7,147.0 167.3,147.0 171.9,147.0 176.5,147.0 181.1,147.0 185.7,147.0 190.3,133.5 195.0,133.5 199.6,133.5 204.2,133.5 208.8,133.5 213.4,120.1 218.0,120.1 222.6,120.1 227.2,120.1 231.9,120.1 236.5,120.1 241.1,120.1 245.7,120.1 250.3,120.1 254.9,120.1 259.5,120.1 264.1,120.1 268.7,120.1 273.4,106.6 278.0,106.8 282.6,106.8 287.2,106.8 291.8,106.8 296.4,106.8 301.0,107.6 305.6,107.6 310.2,94.2 314.9,94.2 319.5,94.2 324.1,94.2 328.7,94.2 333.3,94.2 337.9,94.2 342.5,94.2 347.1,94.2 351.8,94.2 356.4,94.2 361.0,94.2 365.6,94.2 370.2,94.2 374.8,94.2 379.4,94.2 384.0,94.2 388.6,94.2 393.3,80.7 397.9,80.7 402.5,80.7 407.1,80.7 411.7,80.7 416.3,80.7 420.9,80.7 425.5,80.7 430.1,80.7 434.8,80.7 439.4,80.7 444.0,80.7 448.6,80.7 453.2,80.7 457.8,80.7 462.4,67.3 467.0,67.3 471.7,67.3 476.3,67.3 480.9,67.3 485.5,67.3 490.1,67.3 494.7,67.3 499.3,67.3 503.9,67.3 508.5,67.3 513.2,67.3 517.8,67.3 522.4,53.8 527.0,53.8 531.6,53.8 536.2,53.8 540.8,53.8 545.4,53.8 550.0,40.4 554.7,40.4 559.3,40.4 563.9,40.4 568.5,26.9 573.1,26.9 577.7,26.9 582.3,26.9 586.9,26.9 591.6,26.9 596.2,26.9 600.8,26.9 605.4,26.9 610.0,26.9" />
+    <circle cx="610.0" cy="26.9" r="4" fill="#f43f5e" stroke="#060911" stroke-width="1.5" />
+
+    <path d="M 52.0,158.5 L 52.0,158.7 L 56.6,158.7 L 61.2,158.7 L 65.8,158.7 L 70.4,158.7 L 75.1,158.7 L 79.7,158.7 L 84.3,158.7 L 88.9,158.7 L 93.5,158.7 L 98.1,158.7 L 102.7,158.7 L 107.3,158.7 L 112.0,158.7 L 116.6,158.7 L 121.2,158.7 L 125.8,158.7 L 130.4,158.7 L 135.0,158.7 L 139.6,158.7 L 144.2,159.8 L 148.8,159.8 L 153.5,159.8 L 158.1,159.8 L 162.7,159.8 L 167.3,159.8 L 171.9,159.8 L 176.5,159.8 L 181.1,159.8 L 185.7,159.8 L 190.3,159.8 L 195.0,141.9 L 199.6,141.9 L 204.2,141.9 L 208.8,141.9 L 213.4,141.9 L 218.0,141.9 L 222.6,141.9 L 227.2,141.9 L 231.9,141.9 L 236.5,141.9 L 241.1,141.9 L 245.7,141.9 L 250.3,141.9 L 254.9,141.9 L 259.5,141.9 L 264.1,141.9 L 268.7,141.9 L 273.4,141.9 L 278.0,141.9 L 282.6,141.9 L 287.2,141.9 L 291.8,141.9 L 296.4,123.9 L 301.0,123.9 L 305.6,123.9 L 310.2,123.9 L 314.9,123.9 L 319.5,123.9 L 324.1,123.9 L 328.7,123.9 L 333.3,123.9 L 337.9,123.9 L 342.5,123.9 L 347.1,123.9 L 351.8,106.0 L 356.4,106.0 L 361.0,106.0 L 365.6,106.0 L 370.2,106.0 L 374.8,106.0 L 379.4,106.0 L 384.0,106.0 L 388.6,106.0 L 393.3,106.0 L 397.9,106.0 L 402.5,106.0 L 407.1,106.0 L 411.7,106.0 L 416.3,106.0 L 420.9,106.0 L 425.5,106.0 L 430.1,106.0 L 434.8,106.0 L 439.4,106.0 L 444.0,106.0 L 448.6,88.1 L 453.2,88.1 L 457.8,88.1 L 462.4,88.1 L 467.0,88.1 L 471.7,88.1 L 476.3,88.1 L 480.9,88.1 L 485.5,88.1 L 490.1,88.1 L 494.7,88.1 L 499.3,88.1 L 503.9,88.1 L 508.5,88.1 L 513.2,88.1 L 517.8,88.1 L 522.4,88.1 L 527.0,88.1 L 531.6,88.1 L 536.2,88.1 L 540.8,88.1 L 545.4,88.1 L 550.0,88.1 L 554.7,88.1 L 559.3,88.1 L 563.9,88.1 L 568.5,88.1 L 573.1,88.1 L 577.7,88.1 L 582.3,88.1 L 586.9,88.1 L 591.6,88.1 L 596.2,70.1 L 600.8,70.1 L 605.4,70.1 L 610.0,70.1 L 610.0,158.5 Z" fill="url(#gradEmCash)" />
+    <polyline fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="52.0,158.7 56.6,158.7 61.2,158.7 65.8,158.7 70.4,158.7 75.1,158.7 79.7,158.7 84.3,158.7 88.9,158.7 93.5,158.7 98.1,158.7 102.7,158.7 107.3,158.7 112.0,158.7 116.6,158.7 121.2,158.7 125.8,158.7 130.4,158.7 135.0,158.7 139.6,158.7 144.2,159.8 148.8,159.8 153.5,159.8 158.1,159.8 162.7,159.8 167.3,159.8 171.9,159.8 176.5,159.8 181.1,159.8 185.7,159.8 190.3,159.8 195.0,141.9 199.6,141.9 204.2,141.9 208.8,141.9 213.4,141.9 218.0,141.9 222.6,141.9 227.2,141.9 231.9,141.9 236.5,141.9 241.1,141.9 245.7,141.9 250.3,141.9 254.9,141.9 259.5,141.9 264.1,141.9 268.7,141.9 273.4,141.9 278.0,141.9 282.6,141.9 287.2,141.9 291.8,141.9 296.4,123.9 301.0,123.9 305.6,123.9 310.2,123.9 314.9,123.9 319.5,123.9 324.1,123.9 328.7,123.9 333.3,123.9 337.9,123.9 342.5,123.9 347.1,123.9 351.8,106.0 356.4,106.0 361.0,106.0 365.6,106.0 370.2,106.0 374.8,106.0 379.4,106.0 384.0,106.0 388.6,106.0 393.3,106.0 397.9,106.0 402.5,106.0 407.1,106.0 411.7,106.0 416.3,106.0 420.9,106.0 425.5,106.0 430.1,106.0 434.8,106.0 439.4,106.0 444.0,106.0 448.6,88.1 453.2,88.1 457.8,88.1 462.4,88.1 467.0,88.1 471.7,88.1 476.3,88.1 480.9,88.1 485.5,88.1 490.1,88.1 494.7,88.1 499.3,88.1 503.9,88.1 508.5,88.1 513.2,88.1 517.8,88.1 522.4,88.1 527.0,88.1 531.6,88.1 536.2,88.1 540.8,88.1 545.4,88.1 550.0,88.1 554.7,88.1 559.3,88.1 563.9,88.1 568.5,88.1 573.1,88.1 577.7,88.1 582.3,88.1 586.9,88.1 591.6,88.1 596.2,70.1 600.8,70.1 605.4,70.1 610.0,70.1" />
+    <circle cx="610.0" cy="70.1" r="4" fill="#10b981" stroke="#060911" stroke-width="1.5" />
+
+    <polyline fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-dasharray="5,4" stroke-linecap="round" stroke-linejoin="round" points="52.0,158.8 56.6,158.8 61.2,158.8 65.8,158.8 70.4,158.8 75.1,158.8 79.7,158.8 84.3,158.8 88.9,158.8 93.5,159.6 98.1,159.6 102.7,159.6 107.3,159.6 112.0,159.6 116.6,159.6 121.2,159.6 125.8,159.6 130.4,159.6 135.0,159.6 139.6,159.6 144.2,159.6 148.8,146.1 153.5,146.1 158.1,146.1 162.7,146.1 167.3,146.1 171.9,146.1 176.5,146.1 181.1,146.1 185.7,146.1 190.3,147.0 195.0,147.0 199.6,147.0 204.2,147.0 208.8,147.0 213.4,133.5 218.0,133.5 222.6,133.5 227.2,133.5 231.9,133.5 236.5,133.5 241.1,133.5 245.7,133.5 250.3,133.5 254.9,133.5 259.5,133.5 264.1,133.5 268.7,133.5 273.4,120.1 278.0,120.1 282.6,120.1 287.2,120.1 291.8,120.1 296.4,120.1 301.0,120.1 305.6,120.1 310.2,106.6 314.9,106.6 319.5,106.6 324.1,106.6 328.7,106.6 333.3,106.6 337.9,106.6 342.5,106.6 347.1,106.6 351.8,106.6 356.4,106.6 361.0,106.6 365.6,106.6 370.2,106.6 374.8,106.6 379.4,106.6 384.0,106.6 388.6,106.6 393.3,93.2 397.9,93.2 402.5,93.2 407.1,93.2 411.7,93.2 416.3,93.2 420.9,93.2 425.5,93.2 430.1,93.2 434.8,93.2 439.4,93.2 444.0,93.2 448.6,93.2 453.2,93.2 457.8,93.2 462.4,79.7 467.0,79.7 471.7,79.7 476.3,79.7 480.9,79.7 485.5,79.7 490.1,79.7 494.7,79.7 499.3,79.7 503.9,79.7 508.5,79.7 513.2,79.7 517.8,79.7 522.4,66.3 527.0,66.3 531.6,66.3 536.2,66.3 540.8,66.3 545.4,66.3 550.0,66.3 554.7,52.8 559.3,52.8 563.9,52.8 568.5,39.4 573.1,39.4 577.7,39.4 582.3,39.4 586.9,39.4 591.6,39.4 596.2,39.4 600.8,39.4 605.4,39.4 610.0,39.4" />
+    <circle cx="610.0" cy="39.4" r="4" fill="#fbbf24" stroke="#060911" stroke-width="1.5" />
+
+    <text x="615" y="28.9" fill="#fb7185" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+$293,520</text>
+    <text x="615" y="43.4" fill="#fbbf24" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+$265,680</text>
+    <text x="615" y="73.1" fill="#34d399" font-size="8.8" font-weight="bold" font-family="JetBrains Mono, monospace">+$197,120</text>
+  </svg>
+    </div>
+
+    <!-- Comparativa de Modes de Sizing -->
+    <h2><span>⚡</span> 6. Mode Consolidació (<span class="mono">5 MNQ</span>) vs Mode JJ "Extract & Replace" (<span class="mono">10 MNQ</span>)</h2>
+    <div class="grid-2" style="margin-bottom:9px;">
+      <div class="card-emerald">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span class="badge badge-emerald">MODE 1 · CONSOLIDACIÓ SEGURA (5 MNQ = ±$300)</span>
+          <span class="mono" style="font-size:8.5px;color:#34d399;font-weight:700;">0 COMPTES PETATS</span>
+        </div>
+        <h3>Per començar dilluns i blindar els primers cobraments</h3>
+        <ul>
+          <li><strong>Mateixa mida a Eval i PA (<span class="mono">5 MNQ</span>):</strong> Cada TP suma <span class="mono" style="color:#34d399;">+$300</span> i cada SL resta <span class="mono" style="color:#fb7185;">-$300</span>.</li>
+          <li><strong>Risc de Ruïna 0.0%:</strong> Tant el Max DD del Bloc A (<span class="mono">-60p = -$600</span>) com el del Bloc B (<span class="mono">-120p = -$1,200</span>) queden a anys llum dels <span class="mono">$2,000–$2,500</span> de MLL.</li>
+          <li><strong>5 Retirades per Compte en 121 dies (6 mesos):</strong> Amb 10 comptes cobres <strong>50 retirades (<span class="mono" style="color:#34d399;">+$98,560</span> nets)</strong>; amb 20 comptes cobres <strong>100 retirades (<span class="mono" style="color:#34d399;">+$197,120</span> nets)</strong> i mantens tots els PA vius amb coixí.</li>
+        </ul>
+      </div>
+
+      <div class="card-rose">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span class="badge badge-rose">MODE 2 · ESTIL JJ "EXTRACT & REPLACE" (10 MNQ = ±$600)</span>
+          <span class="mono" style="font-size:8.5px;color:#fb7185;font-weight:700;">+$293,520 NETS (30 ACC)</span>
+        </div>
+        <h3>Com funciona el cicle d'extracció ràpida al <span class="mono">🅰️ BLOC A</span></h3>
+        <ul>
+          <li><strong>Per què el Bloc A (<span class="mono">1r LAYER &gt;= 10:00</span>) aguanta <span class="mono">10 MNQ</span>:</strong> Com que només fa <strong>1 trade al dia</strong>, la pèrdua màxima diària és de <span class="mono">-$600</span> i el seu Max DD en 6 mesos és de només <span class="mono">-60p = -$1,200</span> (no peta cap Eval!).</li>
+          <li><strong>Pas d'Eval en 5 Wins (<span class="mono">+$3,000</span>) i 4 Payouts (<span class="mono">+$8,000/compte</span>):</strong> En 10 dies aproves les 15 Evals del Bloc A i cobres <strong>4 retirades de <span class="mono">+$2,000</span> per compte (<span class="mono" style="color:#34d399;">+$120,000</span> ja al teu banc)</strong>.</li>
+          <li><strong>El reciclatge de la "closca buida":</strong> Després del 4t payout, al compte PA només li queden <span class="mono">$900</span> de coixí sobre el MLL (<span class="mono">$50,100</span>). En seguir tirant amb <span class="mono">10 MNQ</span>, 2 SLs cremen la closca buida (que ja t'ha donat <span class="mono">+$8,000</span> per <span class="mono">$144</span> de cost!) i compres una Eval nova de <span class="mono">$19</span>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Avis Tècnic Híbrid A10 / B5 -->
+    <div class="card-amber" style="margin-bottom:9px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <span class="badge badge-amber" style="margin-right:6px;">REGLA D'OR PER A COMPTES 50K</span>
+          <strong style="font-size:10px;color:#ffffff;">Per què utilitzar el Mode Híbrid (<span class="mono" style="color:#fbbf24;">10 MNQ al Bloc A</span> / <span class="mono" style="color:#22d3ee;">5 MNQ al Bloc B</span>) en comptes de 50k?</strong>
+        </div>
+      </div>
+      <p style="margin-top:4px;">
+        Mentre que el <strong>🅰️ Bloc A</strong> té un Max DD de només <span class="mono">-60p</span> (<span class="mono">-$1,200</span> amb 10 MNQ), el <strong>🅱️ Bloc B</strong> té un Max DD de <span class="mono">-120p</span> (4 SLs). Amb <span class="mono">10 MNQ</span>, <span class="mono">-120p</span> serien <span class="mono">-$2,400</span>, xifra que superaria els <span class="mono">$2,000</span> de MLL de Lucid/MFFU/Topstep i quedaria a només <span class="mono">$100</span> del límit d'Apex 50k. Mantenint el <strong>🅱️ Bloc B a <span class="mono">5 MNQ</span> (<span class="mono">-$1,200</span> Max DD)</strong> o <span class="mono">7 MNQ</span>, obtens l'explosivitat de <span class="mono">10 MNQ</span> al Bloc A i seguretat total al Bloc B.
+      </p>
+    </div>
+
+    <!-- Taula d'Escalat Completa -->
+    <h2><span>📊</span> Taula de Rendiment per Volum de Flota i Mida de Contractes (121 Sessions · Maig – Octubre)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:left;">Arquitectura i Flota Inicial</th>
+          <th>Mida MNQ</th>
+          <th>Evals Aprovades</th>
+          <th>Comptes Petats</th>
+          <th>Retirades Cobrades</th>
+          <th>Cost Total (Evals+PA)</th>
+          <th>Payouts Bruts</th>
+          <th>Benefici Net en Butxaca</th>
+        </tr>
+      </thead>
+      <tbody class="mono">
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#e2e8f0;">5 Comptes · 1 Bloc (LAYER &gt;= 10:00)</td>
+          <td>5 MNQ (±$300)</td>
+          <td>5</td>
+          <td style="color:#34d399;">0</td>
+          <td>25</td>
+          <td>-$720</td>
+          <td>+$50,000</td>
+          <td style="color:#34d399;font-weight:800;">+$49,280</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#e2e8f0;">10 Comptes · 1 Bloc (LAYER &gt;= 10:00)</td>
+          <td>5 MNQ (±$300)</td>
+          <td>10</td>
+          <td style="color:#34d399;">0</td>
+          <td>50</td>
+          <td>-$1,440</td>
+          <td>+$100,000</td>
+          <td style="color:#34d399;font-weight:800;">+$98,560</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#34d399;">20 Comptes · 1 Bloc (LAYER &gt;= 10:00)</td>
+          <td>5 MNQ (±$300)</td>
+          <td>20</td>
+          <td style="color:#34d399;">0</td>
+          <td>100</td>
+          <td>-$2,880</td>
+          <td>+$200,000</td>
+          <td style="color:#34d399;font-weight:800;">+$197,120</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#fbbf24;">30 Comptes · Doble Bloc A+B (Opció 1)</td>
+          <td>Híbrid 10 A / 5 B</td>
+          <td>30</td>
+          <td style="color:#34d399;">0</td>
+          <td>135</td>
+          <td>-$4,320</td>
+          <td>+$270,000</td>
+          <td style="color:#fbbf24;font-weight:800;">+$265,680 (30 PA vius!)</td>
+        </tr>
+        <tr>
+          <td style="text-align:left;font-weight:700;color:#fb7185;">30 Comptes · Doble Bloc A+B (Mode JJ Pur)</td>
+          <td>10 MNQ (±$600)</td>
+          <td>45</td>
+          <td style="color:#fb7185;">15 (al Bloc B)</td>
+          <td>150</td>
+          <td>-$6,480</td>
+          <td>+$300,000</td>
+          <td style="color:#fb7185;font-weight:800;">+$293,520</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer-bar">
+    <span>JJ FAIR PRICING · ESCALAT DE FLOTA I GESTIÓ DE PAYOUTS</span>
+    <span class="mono">CONSOLIDACIÓ (5 MNQ) VS EXTRACT & REPLACE (10 MNQ)</span>
+    <span>PÀGINA 03 / 04</span>
+  </div>
+</div>
+
+<!-- ==================== PÀGINA 4: PROTOCOL HORARI PAS A PAS + DIAGRAMA DE DECISIÓ + CHECKLIST DE MONITOR ==================== -->
+<div class="page">
+  <div>
+    <div class="top-bar">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <span class="badge badge-amber">RUTINA DIÀRIA I FULL DE RUTA</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">PROTOCOL D'EXECUCIÓ 15:25 – 17:00 CET (09:25 – 11:00 NY)</span>
+      </div>
+      <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 04 / 04</span>
+    </div>
+
+    <h2><span>⏱️</span> 7. Cronograma Operatiu Diari Pas a Pas (Horari NY i Catalunya CET)</h2>
+    <div class="grid-2" style="margin-bottom:10px;">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span class="badge badge-cyan">FASE 1 · 09:25 NY (15:25 CET)</span>
+          <span class="mono" style="font-size:8.5px;color:#94a3b8;">PREPARACIÓ</span>
+        </div>
+        <h3>Configuració d'ATMs i Trade Copiers</h3>
+        <ul>
+          <li>Obre el gràfic d'<strong>1 minut de l'MNQ</strong> amb l'indicador <span class="mono">JJ Fair Pricing</span>.</li>
+          <li>Revisa que el <strong>Copier del Bloc A</strong> tingui tots els comptes connectats amb l'ATM a <strong class="mono" style="color:#34d399;">5 MNQ</strong> (o <span class="mono" style="color:#fbbf24;">10 MNQ</span> en mode JJ) i <span class="mono">+30p TP / -30p SL</span>.</li>
+          <li>Si operes Doble Flota, verifica que el <strong>Copier del Bloc B</strong> tingui l'ATM a <strong class="mono" style="color:#a5b4fc;">5 MNQ</strong> (<span class="mono">+30p TP / -30p SL</span>).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span class="badge badge-indigo">FASE 2 · 09:30 – 09:59 NY (15:30 – 15:59 CET)</span>
+          <span class="mono" style="font-size:8.5px;color:#a5b4fc;">OBERTURA NY</span>
+        </div>
+        <h3>Bloc A en Espera · Bloc B Atent a <span class="mono">🔷 LAYER</span></h3>
+        <ul>
+          <li>Es fixa la línia groga de l'<strong>Àncora de les 09:30 NY</strong>.</li>
+          <li><strong>🅰️ BLOC A:</strong> No fa absolutament res entre 09:30 i 09:59. Qualsevol SL o Doble SL que passi en aquesta mitja hora <strong>s'ignora completament</strong> per al Bloc A.</li>
+          <li><strong>🅱️ BLOC B (si actives Doble Flota):</strong> Si apareix un <strong style="color:#22d3ee;">🔷 LAYER</strong> entre 09:30 i 09:59, l'executa el Bloc B (amb escut BE en TP 1).</li>
+        </ul>
+      </div>
+
+      <div class="card-emerald">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span class="badge badge-emerald">FASE 3 · 10:00 – 10:59 NY (16:00 – 16:59 CET)</span>
+          <span class="mono" style="font-size:8.5px;color:#34d399;">FINESTRA D'OR</span>
+        </div>
+        <h3>Execució quirúrgica del <span class="mono">🔷 LAYER</span></h3>
+        <ul>
+          <li><strong>En sortir un <span class="mono">PRIMARY</span>:</strong> No entres; localitzes on quedarà la línia verda del <span class="mono">TP 1</span>.</li>
+          <li><strong>En tancar l'espelma <span class="mono">🔷 LAYER</span>:</strong>
+            <br>• Si vas amb <strong>1 Sol Bloc</strong>: entres tots els <span class="mono">LAYER &gt;= 10:00</span> al Copier únic.
+            <br>• Si vas amb <strong>2 Blocs (Opció 1)</strong>: el <strong>1r <span class="mono">LAYER &gt;= 10:00</span></strong> va al <strong>🅰️ Bloc A</strong>; si més tard surt un <strong>2n/3r <span class="mono">LAYER &gt;= 10:00</span></strong> (i el 1r no va ser Doble SL), va al <strong>🅱️ Bloc B</strong>.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-amber">
+        <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
+          <span class="badge badge-amber">FASE 4 · GESTIÓ I TANCAMENT (17:00 CET)</span>
+          <span class="mono" style="font-size:8.5px;color:#fbbf24;">DISCIPLINA ESTRICTA</span>
+        </div>
+        <h3>Escut BE i Final de Sessió</h3>
+        <ul>
+          <li>Mentre el <span class="mono">LAYER</span> està obert, vigila la línia del <strong style="color:#34d399;">TP 1</strong>: tan bon punt el preu la toqui, mou l'SL a <strong style="color:#fbbf24;">BE (+1p)</strong>.</li>
+          <li>Si un clúster de les <span class="mono">10:00+</span> fa <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>), <strong>apagues la plataforma fins demà</strong>.</li>
+          <li>A les <strong>11:00 NY (17:00 CET)</strong> no s'obre cap més operació nova.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Diagrama de Flux SVG de Decisió Ràpida -->
+    <h2><span>🧭</span> 8. Arbre de Decisió en Temps Real (Quin Copier Dispara cada Senyal)</h2>
+    <div class="card" style="padding:10px 12px; margin-bottom:10px;">
+      <svg viewBox="0 0 680 112" class="w-full h-auto">
+        <!-- Box 1 -->
+        <rect x="8" y="34" width="118" height="44" rx="7" fill="#0f172a" stroke="#475569" stroke-width="1.2" />
+        <text x="67" y="53" text-anchor="middle" fill="#cbd5e1" font-size="8.5" font-weight="bold">Surt un PRIMARY</text>
+        <text x="67" y="66" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="JetBrains Mono, monospace">🛑 NO ENTRAR (Alerta)</text>
+
+        <line x1="126" y1="56" x2="152" y2="56" stroke="#38bdf8" stroke-width="1.5" />
+        <polygon points="152,56 146,52 146,60" fill="#38bdf8" />
+
+        <!-- Box 2 -->
+        <rect x="154" y="34" width="132" height="44" rx="7" fill="#083344" stroke="#06b6d4" stroke-width="1.4" />
+        <text x="220" y="52" text-anchor="middle" fill="#67e8f9" font-size="8.5" font-weight="bold">Tanca espelma 🔷 LAYER</text>
+        <text x="220" y="66" text-anchor="middle" fill="#e2e8f0" font-size="8" font-family="JetBrains Mono, monospace">Quina hora és a NY?</text>
+
+        <!-- Branch Up (<10:00) -->
+        <path d="M 286 45 L 315 24 L 340 24" fill="none" stroke="#818cf8" stroke-width="1.5" />
+        <polygon points="340,24 334,20 334,28" fill="#818cf8" />
+        <rect x="342" y="5" width="155" height="38" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.3" />
+        <text x="419" y="20" text-anchor="middle" fill="#a5b4fc" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">09:30 – 09:59 NY (&lt;10:00)</text>
+        <text x="419" y="33" text-anchor="middle" fill="#e2e8f0" font-size="8">➔ Dispara <tspan fill="#a5b4fc" font-weight="bold">🅱️ BLOC B</tspan> (Bloc A ignora)</text>
+
+        <!-- Branch Down (>=10:00) -->
+        <path d="M 286 67 L 315 84 L 340 84" fill="none" stroke="#10b981" stroke-width="1.5" />
+        <polygon points="340,84 334,80 334,88" fill="#10b981" />
+        <rect x="342" y="62" width="155" height="44" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.3" />
+        <text x="419" y="77" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">10:00 – 10:59 NY (&gt;=10:00)</text>
+        <text x="419" y="89" text-anchor="middle" fill="#fde68a" font-size="7.8">• 1r LAYER 10h ➔ <tspan font-weight="bold">🅰️ BLOC A</tspan></text>
+        <text x="419" y="100" text-anchor="middle" fill="#a5b4fc" font-size="7.8">• 2n/3r LAYER 10h ➔ <tspan font-weight="bold">🅱️ BLOC B</tspan></text>
+
+        <!-- Final Box (Shield + Stop) -->
+        <line x1="497" y1="24" x2="525" y2="48" stroke="#64748b" stroke-width="1.2" />
+        <line x1="497" y1="84" x2="525" y2="62" stroke="#10b981" stroke-width="1.5" />
+        <rect x="525" y="28" width="146" height="56" rx="7" fill="#0f172a" stroke="#f59e0b" stroke-width="1.4" />
+        <text x="598" y="45" text-anchor="middle" fill="#fbbf24" font-size="8.5" font-weight="bold">🛡️ GESTIÓ ACTIVA</text>
+        <text x="598" y="59" text-anchor="middle" fill="#34d399" font-size="7.8" font-family="JetBrains Mono, monospace">1. Toca TP1 ➔ SL a BE (0p)</text>
+        <text x="598" y="72" text-anchor="middle" fill="#fb7185" font-size="7.8" font-family="JetBrains Mono, monospace">2. Doble SL 10h+ ➔ Plegar!</text>
+      </svg>
+    </div>
+
+    <!-- Targeta de Monitor (Checklist Pre-Clic) -->
+    <h2><span>✅</span> 9. Targeta de Monitor: Checklist Ràpid de 5 Punts Abans de Fer Clic</h2>
+    <div class="card-emerald" style="padding:12px 14px;">
+      <p style="font-size:9.8px;color:#d1fae5;margin-bottom:8px;font-weight:600;">
+        Abans de prémer <strong class="mono" style="color:#ffffff;">BUY / SELL</strong> al Trade Copier, totes 5 comprovacions han de ser <strong style="color:#34d399;">SÍ</strong>:
+      </p>
+      <div style="display:grid;grid-template-columns:1fr;gap:6px;" class="mono">
+        <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #10b981;font-size:9.2px;">
+          <strong style="color:#34d399;">[ 1 ] FINESTRA HORÀRIA:</strong> El rellotge marca entre les <strong>10:00 i les 10:59 NY (16:00 – 16:59 CET)</strong> per al Bloc A? <em>(O 09:30–09:59 / 2n LAYER &gt;= 10:00 per al Bloc B).</em>
+        </div>
+        <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #06b6d4;font-size:9.2px;">
+          <strong style="color:#22d3ee;">[ 2 ] GATELL CONFIRMAT:</strong> El <span style="color:#fff;">PRIMARY</span> segueix obert i acaba de <strong>tancar</strong> una espelma d'1 minut amb l'etiqueta <strong style="color:#22d3ee;">🔷 LAYER BUY / SELL</strong>?
+        </div>
+        <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #f43f5e;font-size:9.2px;">
+          <strong style="color:#fb7185;">[ 3 ] RÈGIM NET DES DE LES 10:00:</strong> Avui encara <strong>NO hem patit cap Doble SL (P:SL + L:SL) en una operació NOSTRA oberta des de les 10:00 NY</strong>? <em>(Recorda: els SLs de 09:30–09:59 s'ignoren).</em>
+        </div>
+        <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #f59e0b;font-size:9.2px;">
+          <strong style="color:#fbbf24;">[ 4 ] ATM I COPIER CORRECTES:</strong> Tinc seleccionat el Copier del Bloc corresponent (<strong style="color:#fbbf24;">🅰️ Bloc A</strong> o <strong style="color:#a5b4fc;">🅱️ Bloc B</strong>) amb l'ATM a <strong>5 MNQ</strong> (o <strong>10 MNQ</strong> al Bloc A en mode JJ) i <strong>+30p TP / -30p SL</strong>?
+        </div>
+        <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #a855f7;font-size:9.2px;">
+          <strong style="color:#c084fc;">[ 5 ] ESCUT TP 1 LOCALITZAT:</strong> Tinc localitzada la línia verda del <strong>TP 1 del PRIMARY</strong> a la pantalla per arrossegar el meu SL a <strong>Breakeven (+1p)</strong> a l'instant en què el preu la toqui?
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>JJ FAIR PRICING · CHECKLIST OPERATIU PRE-CLIC</span>
+    <span class="mono">DISCIPLINA = CONSISTÈNCIA · ZERO IMPROVISACIÓ</span>
+    <span>PÀGINA 04 / 04</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="ca" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ Layer Sniper Pro 2026 | Playbook Executiu Prop Firm</title>
+    <meta property="og:title" content="🏆 JJ Layer Sniper Pro 2026 — Playbook Executiu Prop Firm">
+    <meta property="og:description" content="Full de ruta operatiu i arquitectura de rotació per a 10, 20 i 30 comptes Apex 50k (Primary >=50p · Layer >=40p).">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#06b6d4">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#070a13',
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151'
+                        },
+                        brand: {
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e',
+                            violet: '#8b5cf6',
+                            blue: '#3b82f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .glass { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); }
+        .glow-cyan { box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35); }
+        .glow-emerald { box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35); }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #374151; }
+    </style>
+</head>
+<body class="bg-dark-950 text-gray-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- Top Navigation Header -->
+    <header class="border-b border-gray-800 bg-dark-900/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-funnel')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan to-brand-emerald flex items-center justify-center font-black text-black shadow-lg glow-cyan text-sm">
+                    JJ
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h1 class="text-base font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent">
+                            CENTRE DE COMANDAMENT QUANT
+                        </h1>
+                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800/80">
+                            Veredicte 30/30 Actiu
+                        </span>
+                    </div>
+                    <p class="text-[11px] text-gray-400">Guia Mestra del Negoci de Prop Trading · Fair Pricing Theory (MNQ)</p>
+                </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <nav class="flex space-x-1 bg-dark-950 p-1 rounded-xl border border-gray-800 text-xs font-medium overflow-x-auto max-w-full">
+                <button onclick="switchTab('tab-funnel')" id="nav-funnel" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-cyan-400 bg-dark-800 font-semibold shadow">
+                    🧭 El Funnel & Protocol Diari
+                </button>
+                <button onclick="switchTab('tab-calculator')" id="nav-calculator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
+                    🧮 Solucionador de Risc
+                </button>
+                <button onclick="switchTab('tab-evaluator')" id="nav-evaluator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
+                    📊 Avaluador de Firmes (EV)
+                </button>
+                <button onclick="switchTab('tab-montecarlo')" id="nav-montecarlo" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
+                    🎲 Simulador Monte Carlo
+                </button>
+                <button onclick="switchTab('tab-comparison')" id="nav-comparison" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
+                    ⚖️ 30/30 vs 38/25 (Veredicte)
+                </button>
+                <a href="visual_backtest.html" class="px-3 py-1.5 rounded-lg transition-all text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 hover:bg-emerald-900/60 font-semibold flex items-center gap-1">
+                    📸 Backtest Visual
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
+
+        <!-- ========================================================================= -->
+        <!-- TAB 0: EL FUNNEL DEL NEGOCI & PROTOCOL DIARI (LA GRAN IMATGE) -->
+        <!-- ========================================================================= -->
+        <section id="tab-funnel" class="tab-content space-y-6">
+            
+            <!-- Hero Banner: Com Funciona el Negoci -->
+            <div class="glass p-6 rounded-2xl border border-cyan-800/40 relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-xs uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
+                                Visió Executiva
+                            </span>
+                            <span class="text-xs text-gray-400">Com transformem avaluacions en retirades al banc</span>
+                        </div>
+                        <h2 class="text-xl font-extrabold text-white tracking-tight">
+                            El Funnel de Negoci: De la Despesa al Payout
+                        </h2>
+                        <p class="text-xs text-gray-300 mt-1 max-w-2xl leading-relaxed">
+                            No operis com un jugador que intenta "passar una prova ràpid". Opera com un negoci d'arbitratge estadístic: comprem inventari (avaluacions) a un cost d'adquisició conegut (<code class="text-cyan-400 font-mono">Cost to Funded</code>) i en retirem beneficis molt superiors mitjançant execució mecànica.
+                        </p>
+                    </div>
+                    <div class="bg-dark-900/90 border border-gray-800 p-3 rounded-xl flex items-center gap-4 text-center">
+                        <div>
+                            <span class="text-[10px] text-gray-400 uppercase block">Despesa Anual (10 / 30 Comptes)</span>
+                            <span class="text-base font-bold text-amber-400 font-mono">$3,260 / $9,780</span>
+                        </div>
+                        <div class="text-gray-600 font-bold text-lg">➔</div>
+                        <div>
+                            <span class="text-[10px] text-gray-400 uppercase block">1r Cicle de Payout</span>
+                            <span class="text-base font-bold text-emerald-400 font-mono">+$10k–$16k / +$30k–$48k</span>
+                        </div>
+                        <div class="text-gray-600 font-bold text-lg">➔</div>
+                        <div>
+                            <span class="text-[10px] text-gray-400 uppercase block">Net Anual (10 / 30 Comptes)</span>
+                            <span class="text-base font-bold text-cyan-400 font-mono">+$192.7k / +$578.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual 4-Stage Funnel Pipeline -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-800/80">
+                    <!-- Stage 1 -->
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-800/60 relative">
+                        <div class="text-xs font-bold text-rose-400 flex items-center justify-between mb-2">
+                            <span>1. PREPARACIÓ EMOCIONAL</span>
+                            <span class="text-[10px] bg-rose-950 px-2 py-0.5 rounded text-rose-300 font-mono">El Pedregal</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Compres un bloc de <strong>10 comptes</strong> (o 30). Has d'estar preparat mentalment per <strong>petar 10 o 20 comptes d'Eval</strong> si arrenques en un mes lateral/baixista abans de veure un sol dòlar. A $19/Eval, petar 20 comptes són només $380 d'inventari.
+                        </p>
+                        <div class="mt-3 text-[11px] text-rose-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
+                            ⚙️ 10 MNQ (±$600/tr) · 30/30<br>
+                            🧠 Assumir 1-2 blocs petats d'inici
+                        </div>
+                    </div>
+
+                    <!-- Stage 2 -->
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-amber-800/60 relative">
+                        <div class="text-xs font-bold text-amber-400 flex items-center justify-between mb-2">
+                            <span>2. BUFFER INTOCABLE</span>
+                            <span class="text-[10px] bg-amber-950 px-2 py-0.5 rounded text-amber-300 font-mono">$52,600 / $52,100</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Un cop aprovats a PA, l'objectiu és superar el mur del <strong>Safety Net Buffer ($52,600 a Apex / $52,100 a Altres 50k)</strong>. Només es pot retirar el que excedeixi d'aquest nivell, deixant el buffer intacte dins del compte.
+                        </p>
+                        <div class="mt-3 text-[11px] text-amber-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
+                            🛡️ Apex: Retirar sobre $52,600<br>
+                            🛡️ Altres: Retirar sobre $52,100
+                        </div>
+                    </div>
+
+                    <!-- Stage 3 -->
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-cyan-800/60 relative">
+                        <div class="text-xs font-bold text-cyan-400 flex items-center justify-between mb-2">
+                            <span>3. EL 1r PAYOUT HO PAGA TOT</span>
+                            <span class="text-[10px] bg-cyan-950 px-2 py-0.5 rounded text-cyan-300 font-mono">Punt d'Inflexió</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Quan enganxes el mes tendencial i cobres el primer cicle en bloc (<strong>+$10,000 a +$16,000 amb 10 comptes</strong>, o <strong>+$30,000 a +$48,000 amb 30 comptes</strong>), pagues de cop totes les Evals i activacions de l'any sencer.
+                        </p>
+                        <div class="mt-3 text-[11px] text-cyan-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
+                            ⚡ SNIPER COMBO ELITE (Max 2/dia)<br>
+                            💰 1 sol cobrament = 3x-5x cost anual
+                        </div>
+                    </div>
+
+                    <!-- Stage 4 -->
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-800/80 bg-emerald-950/20 relative">
+                        <div class="text-xs font-bold text-emerald-300 flex items-center justify-between mb-2">
+                            <span>4. BUCLE DE PAYOUTS (10 ➔ 30)</span>
+                            <span class="text-[10px] bg-emerald-950 px-2 py-0.5 rounded text-emerald-400 font-mono font-bold">Coixí Immortal</span>
+                        </div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            Com que després de retirar sempre queden <strong>&ge;$52,600 / &ge;$52,100</strong> al compte (&ge;$2,500 de coixí real = &gt;4 SLs seguits), els PAs deixen de petar i entren en roda de cobraments cada 8 dies operatius (+$192.7k amb 10c / +$578.2k amb 30c).
+                        </p>
+                        <div class="mt-3 text-[11px] text-emerald-300 font-mono bg-dark-950 p-2 rounded border border-emerald-800/60 font-bold">
+                            🏦 10c: +$192,740 nets (100 payouts)<br>
+                            🚀 30c: +$540k–$578k nets (300 payouts)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-Column Operational Layout: Checklist + Technical Infographic -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <!-- Interactive Daily Execution Checklist -->
+                <div class="glass p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">📋</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">
+                                Checklist Operativa Diària (Interactiva)
+                            </h3>
+                        </div>
+                        <button onclick="resetChecklist()" class="text-[11px] text-gray-400 hover:text-cyan-400 transition underline">
+                            Reiniciar pel nou dia
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Marca cadascun dels passos abans d'enviar cap comanda a Tradovate. Si alguna casella és <strong>NO</strong>, no s'opera.
+                    </p>
+
+                    <div class="space-y-2.5 pt-1 text-xs">
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-1" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>08:15 AM EST:</strong> Comprovar ForexFactory. Hi ha notícia vermella a les 08:30 (CPI, NFP, PPI)? Si n'hi ha, fixar àncora a les 08:29:59.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-2" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>09:30 AM EST:</strong> Traçar l'Àncora de Preu Just. Línia horitzontal persistent al preu d'obertura exacte de les 09:30:00.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-3" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>09:30 - 09:35 AM EST:</strong> Prohibit entrar. Esperar l'expansió d'obertura i que el mercat s'allunyi prou de l'àncora.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-4" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>Filtre de Desviació (50p / 40p):</strong> El <strong>PRIMARY</strong> s'ha activat a <strong>&ge;50 punts</strong> de l'àncora i el 2n BOS (<strong>LAYER</strong>) entra a <strong>&ge;40 punts</strong> en retorn (o &ge;55p per al 2n Layer de les 10h)?</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-5" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>Senyal BOS / Displaçament:</strong> L'indicador ha marcat un trencament d'estructura en direcció de tornada cap a l'àncora?</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-6" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>Regla del 80%:</strong> El Take Profit de 30 punts queda almenys un 80% abans de tocar l'àncora? (No sobrepassa la línia més de 6 pts).</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-7" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>Execució Bracket ATM:</strong> Comanda automàtica amb <strong>120 ticks SL (30 pts)</strong> i <strong>120 ticks TP (30 pts)</strong>. Mans fora del ratolí.</span>
+                        </label>
+                        <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
+                            <input type="checkbox" id="chk-8" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
+                            <span class="text-gray-300"><strong>11:00 AM EST (Hard Stop):</strong> Tancar Tradovate i TradingView. Queda absolutament prohibit operar al migdia o la tarda.</span>
+                        </label>
+                    </div>
+
+                    <div id="chk-status" class="p-3 rounded-xl bg-dark-950 border border-gray-800 flex items-center justify-between text-xs">
+                        <span class="text-gray-400">Estat de Preparació:</span>
+                        <span id="chk-count" class="font-bold text-cyan-400 font-mono">0 / 8 passos completats</span>
+                    </div>
+                </div>
+
+                <!-- Technical Indicator Infographic -->
+                <div class="glass p-6 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-2 border-b border-gray-800 pb-3">
+                        <span class="text-lg">🎯</span>
+                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">
+                            Els 3 Conceptes Tècnics de l'Indicador
+                        </h3>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        L'indicador de TradingView tradueix la <em>Fair Pricing Theory</em> en regles mecàniques sense espai per a la subjectivitat.
+                    </p>
+
+                    <!-- Concept 1 -->
+                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-cyan-400">1. L'Àncora de Preu Just (Fair Price Anchor)</span>
+                            <span class="text-[10px] text-gray-500 font-mono">09:30:00 EST</span>
+                        </div>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            És el preu exacte d'obertura del mercat al comptat. Aquest nivell actua com a <strong>centre de gravetat</strong>. Les institucions utilitzen l'obertura com a referència de valor just del dia.
+                        </p>
+                    </div>
+
+                    <!-- Concept 2 -->
+                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-amber-400">2. La Desviació Injusta (&gt;25 Punts)</span>
+                            <span class="text-[10px] text-gray-500 font-mono">Unfair Move</span>
+                        </div>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            Quan el Nasdaq s'allunya ràpidament més de 25 punts (100 ticks) sense liquiditat suficient, es crea un buit de preu. L'indicador pinta la zona de desviació i espera el gir.
+                        </p>
+                    </div>
+
+                    <!-- Concept 3 -->
+                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold text-emerald-400">3. La Regla del 80% (Zona de Seguretat)</span>
+                            <span class="text-[10px] text-gray-500 font-mono">Target Validation</span>
+                        </div>
+                        <p class="text-[11px] text-gray-300 leading-relaxed">
+                            Com a mínim el <strong>80% del teu Take Profit de 30 punts (24 punts)</strong> ha d'estar situat abans de tocar la línia de l'àncora. Si el preu ja és massa a prop de l'àncora, el recorregut s'ha esgotat i el trade queda invalidat.
+                        </p>
+                    </div>
+
+                    <!-- ATM Bracket Template Box -->
+                    <div class="p-3 rounded-xl border border-emerald-900/50 bg-emerald-950/20 text-xs space-y-1">
+                        <span class="text-emerald-400 font-bold block uppercase tracking-wider text-[11px]">
+                            ⚡ Plantilla de Comanda ATM a Tradovate:
+                        </span>
+                        <div class="font-mono text-gray-200 text-[11px] grid grid-cols-2 gap-2 pt-1">
+                            <div>• Stop Loss: <span class="text-rose-400 font-bold">120 ticks (30 pts)</span></div>
+                            <div>• Take Profit: <span class="text-emerald-400 font-bold">120 ticks (30 pts)</span></div>
+                            <div>• Sizing Eval: <span class="text-cyan-400 font-bold">5 MNQ</span> ($300 risc/guany)</div>
+                            <div>• Sizing Funded: <span class="text-amber-400 font-bold">3 MNQ</span> ($180 risc/guany)</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: SOLUCIONADOR DE RISC & TRAILING TRAP -->
+        <!-- ========================================================================= -->
+        <section id="tab-calculator" class="tab-content hidden space-y-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Controls Panel -->
+                <div class="glass p-6 rounded-2xl space-y-5 lg:col-span-1">
+                    <div class="border-b border-gray-800 pb-3 flex items-center justify-between gap-2">
+                        <h2 class="text-sm font-semibold text-cyan-400 flex items-center gap-1.5 truncate">
+                            <span>⚙️</span> Paràmetres Quant
+                        </h2>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 whitespace-nowrap flex-shrink-0">Part 3 Playbook</span>
+                    </div>
+
+                    <!-- Firm Selector -->
+                    <div>
+                        <label class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Firma & Model de Trailing</label>
+                        <select id="calc-firm" onchange="recalculateRisk()" class="w-full bg-dark-900 border border-gray-700 rounded-xl px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-cyan-500">
+                            <option value="luciddaily" selected>Lucid Daily 50k (EOD / Daily Trailing)</option>
+                            <option value="myfundedfutures">MyFundedFutures 50k (EOD Trailing)</option>
+                            <option value="topstep">Topstep 50k (EOD Trailing - Lock $50,100)</option>
+                            <option value="tradeify">Tradeify 50k (EOD Trailing)</option>
+                            <option value="apex">Apex 50k (Intraday Peak Trailing Trap)</option>
+                        </select>
+                    </div>
+
+                    <!-- Account Size -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-gray-400">Mida del Compte ($)</span>
+                            <span id="lbl-size" class="text-cyan-400 font-bold">$50,000</span>
+                        </div>
+                        <input type="range" id="calc-size" min="25000" max="150000" step="25000" value="50000" oninput="recalculateRisk()" class="w-full accent-cyan-400">
+                    </div>
+
+                    <!-- Win Rate Slider -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-gray-400">Taxa d'Encert (Win Rate)</span>
+                            <span id="lbl-wr" class="text-emerald-400 font-bold">50.0%</span>
+                        </div>
+                        <input type="range" id="calc-wr" min="30" max="75" step="0.5" value="50.0" oninput="recalculateRisk()" class="w-full accent-emerald-400">
+                    </div>
+
+                    <!-- Average R:R -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-gray-400">Ràtio R:R Mitjà (R)</span>
+                            <span id="lbl-rr" class="text-amber-400 font-bold">1.02 R</span>
+                        </div>
+                        <input type="range" id="calc-rr" min="0.8" max="2.5" step="0.05" value="1.02" oninput="recalculateRisk()" class="w-full accent-amber-400">
+                    </div>
+
+                    <!-- Stop Loss Points -->
+                    <div>
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-gray-400">Stop Loss en Punts (MNQ)</span>
+                            <span id="lbl-sl" class="text-rose-400 font-bold">30.0 pts</span>
+                        </div>
+                        <input type="range" id="calc-sl" min="15" max="50" step="1" value="30" oninput="recalculateRisk()" class="w-full accent-rose-400">
+                    </div>
+
+                    <!-- Tail Cut Slider -->
+                    <div class="pt-3 border-t border-gray-800">
+                        <div class="flex justify-between text-xs mb-1">
+                            <span class="text-gray-400">Cua Dreta: % de Target Realitzat</span>
+                            <span id="lbl-tail" class="text-cyan-400 font-bold">100% (Disciplinat)</span>
+                        </div>
+                        <input type="range" id="calc-tail" min="40" max="100" step="5" value="100" oninput="recalculateRisk()" class="w-full accent-cyan-400">
+                        <p class="text-[11px] text-gray-500 mt-1">Baixa la barra per veure el col·lapse matemàtic si tanques abans d'hora.</p>
+                    </div>
+                </div>
+
+                <!-- Live Results Panel -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Metric Cards -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="glass p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block">Expectancy (E[R])</span>
+                            <span id="out-expectancy" class="text-xl font-bold text-emerald-400 mt-1 block">+0.01 R</span>
+                            <span id="out-expectancy-note" class="text-[10px] text-gray-500">Sistema Guanyador (+EV)</span>
+                        </div>
+                        <div class="glass p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block">Win Rate Requerit</span>
+                            <span id="out-bewr" class="text-xl font-bold text-amber-400 mt-1 block">49.5%</span>
+                            <span class="text-[10px] text-gray-500">Breakeven</span>
+                        </div>
+                        <div class="glass p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block">Risc Òptim Recomanat</span>
+                            <span id="out-risk-dollars" class="text-xl font-bold text-cyan-400 mt-1 block">$400 - $600</span>
+                            <span id="out-risk-pct" class="text-[10px] text-gray-500">0.8% - 1.2% del compte</span>
+                        </div>
+                        <div class="glass p-4 rounded-xl border border-gray-800">
+                            <span class="text-xs text-gray-400 block">Contractes MNQ</span>
+                            <span id="out-contracts" class="text-xl font-bold text-violet-400 mt-1 block">6 - 10 MNQ</span>
+                            <span class="text-[10px] text-gray-500">Per a SL de 30 pts</span>
+                        </div>
+                    </div>
+
+                    <!-- The Trailing Trap Visualizer -->
+                    <div class="glass p-6 rounded-2xl border border-gray-800 space-y-4">
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                            <h3 class="text-sm font-semibold text-gray-200 flex items-center gap-2">
+                                <span>⚠️</span> The Trailing Trap: Micro Sizing vs Sizing Calibrat
+                            </h3>
+                            <span class="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800">Part 1 Playbook</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                            <!-- Micro Sizing Card -->
+                            <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-900/40 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold text-rose-400 uppercase">Micro Sizing (1 MNQ)</span>
+                                    <span class="text-xs bg-rose-950 px-2 py-0.5 rounded text-rose-300">Tòpic Retail</span>
+                                </div>
+                                <p class="text-xs text-gray-400">Risc de $60 per trade per fer $60. Requereix <strong class="text-white" id="trap-micro-wins">50</strong> trades guanyadors per fer $3,000.</p>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-[11px]">
+                                        <span class="text-gray-400">Pujades de Terra (Ratchets):</span>
+                                        <span class="text-rose-400 font-bold" id="trap-micro-ratchets">50 vegades</span>
+                                    </div>
+                                    <div class="w-full bg-dark-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-rose-500 h-full w-[95%]"></div>
+                                    </div>
+                                    <span class="text-[10px] text-rose-400/80 block">⚠️ Risc Crític: El terra segueix cada impuls i devora tot el coixí (*buffer*). Qualsevol ratxa de 2 pèrdues trenca el compte.</span>
+                                </div>
+                            </div>
+
+                            <!-- Calibrated Sizing Card -->
+                            <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-900/40 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold text-emerald-400 uppercase">Sizing Calibrat (5-6 MNQ)</span>
+                                    <span class="text-xs bg-emerald-950 px-2 py-0.5 rounded text-emerald-300">JJ Quant Model</span>
+                                </div>
+                                <p class="text-xs text-gray-400">Risc de $300-$360 per trade per fer $300-$360. Requereix només <strong class="text-white" id="trap-calib-wins">8-10</strong> trades guanyadors.</p>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-[11px]">
+                                        <span class="text-gray-400">Pujades de Terra (Ratchets):</span>
+                                        <span class="text-emerald-400 font-bold" id="trap-calib-ratchets">9 vegades</span>
+                                    </div>
+                                    <div class="w-full bg-dark-800 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full w-[20%]"></div>
+                                    </div>
+                                    <span class="text-[10px] text-emerald-400/80 block">✅ Màxima Preservació: El terra puja moltes menys vegades, deixant espai de coixí per absorbir la variància normal.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Tail Alert Box -->
+                    <div id="tail-alert-box" class="p-4 rounded-xl border border-emerald-900/60 bg-emerald-950/20 transition-all">
+                        <div class="flex items-start gap-3">
+                            <span class="text-xl" id="tail-icon">🛡️</span>
+                            <div class="space-y-1">
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400" id="tail-title">CUA DRETA PROTEGIDA (PART 5 PLAYBOOK)</h4>
+                                <p class="text-xs text-gray-300" id="tail-desc">Execució disciplinada al 100% del Take Profit planificat. El Win Rate requerit (49.5%) és igual o inferior al teu encert real (50.0%), garantint esperança positiva.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: AVALUADOR DE FIRMES & EXPECTED VALUE (FIGURA 1 DE JJ) -->
+        <!-- ========================================================================= -->
+        <section id="tab-evaluator" class="tab-content hidden space-y-6">
+            <!-- Header Banner -->
+            <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h2 class="text-lg font-bold text-cyan-400 flex items-center gap-2">
+                        <span>📊</span> Prop Firm Expected Value Analysis & Scorecard
+                    </h2>
+                    <p class="text-xs text-gray-400">Replicació exacta del full de càlcul de JJ Simon (Captura 1) sobre 1 any de dades reals de MNQ.</p>
+                </div>
+                <div class="bg-emerald-950/80 border border-emerald-800 px-4 py-2 rounded-xl text-right">
+                    <span class="text-[10px] uppercase tracking-wider text-emerald-400 block font-semibold">Best Fit (Based on EV)</span>
+                    <span class="text-sm font-bold text-white">MyFundedFutures (6.39x) & Lucid Daily (1.85x)</span>
+                </div>
+            </div>
+
+            <!-- Chart: Cost to Funded vs Avg Payout -->
+            <div class="glass p-6 rounded-2xl border border-gray-800 space-y-3">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xs font-bold uppercase text-gray-300 tracking-wider">
+                        📈 Comparativa Visual: Despesa d'Adquisició (Cost to Funded) vs Retirada Mitjana per Compte
+                    </h3>
+                    <span class="text-[10px] text-gray-500 font-mono">Dades 1 Any MNQ (25 Cohorts)</span>
+                </div>
+                <div class="h-64 w-full">
+                    <canvas id="firmChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="glass rounded-2xl overflow-hidden border border-gray-800">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-dark-800/80 text-gray-400 uppercase text-[11px] border-b border-gray-800">
+                            <tr>
+                                <th class="p-4">Firma</th>
+                                <th class="p-4">Tipus Trailing</th>
+                                <th class="p-4">Pass Rate</th>
+                                <th class="p-4">Cost to Funded</th>
+                                <th class="p-4">Payout Ex 1</th>
+                                <th class="p-4">Payout Ex 2</th>
+                                <th class="p-4">Payout Ex 3</th>
+                                <th class="p-4 bg-dark-900/80 text-emerald-400 font-bold">Avg Payout / Compte</th>
+                                <th class="p-4 text-cyan-400 font-bold">ROI Múltiple</th>
+                                <th class="p-4">Freqüència / Regles</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60 font-mono text-gray-300">
+                            <tr class="hover:bg-dark-800/40 transition">
+                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Lucid Daily
+                                </td>
+                                <td class="p-4 text-gray-400 font-sans">EOD / Daily</td>
+                                <td class="p-4 text-emerald-400 font-bold">24.0% - 50.0%</td>
+                                <td class="p-4">$412.50</td>
+                                <td class="p-4 text-gray-300">$1,275</td>
+                                <td class="p-4 text-gray-300">$1,466</td>
+                                <td class="p-4 text-gray-300">$1,083</td>
+                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$761.92</td>
+                                <td class="p-4 font-bold text-cyan-400">1.85x - 11.5x</td>
+                                <td class="p-4 font-sans text-gray-400">Setmanal, 85% split, sense fee d'activació</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40 transition">
+                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> MyFundedFutures
+                                </td>
+                                <td class="p-4 text-gray-400 font-sans">EOD Trailing</td>
+                                <td class="p-4 text-emerald-400 font-bold">24.0%</td>
+                                <td class="p-4">$416.67</td>
+                                <td class="p-4 text-gray-300">$2,662</td>
+                                <td class="p-4 text-gray-300">$3,061</td>
+                                <td class="p-4 text-gray-300">$2,262</td>
+                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$2,662.25</td>
+                                <td class="p-4 font-bold text-cyan-400">6.39x</td>
+                                <td class="p-4 font-sans text-gray-400">Cada 14 dies, 90% split, 1 sol dia avaluació</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40 transition">
+                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-400"></span> Tradeify
+                                </td>
+                                <td class="p-4 text-gray-400 font-sans">EOD Trailing</td>
+                                <td class="p-4 text-emerald-400 font-bold">24.0%</td>
+                                <td class="p-4">$412.50</td>
+                                <td class="p-4 text-gray-300">$1,350</td>
+                                <td class="p-4 text-gray-300">$1,552</td>
+                                <td class="p-4 text-gray-300">$1,147</td>
+                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$817.58</td>
+                                <td class="p-4 font-bold text-cyan-400">1.98x</td>
+                                <td class="p-4 font-sans text-gray-400">Setmanal, 90% split, sense comissió activació</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40 transition">
+                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-amber-400"></span> Apex Trader Funding
+                                </td>
+                                <td class="p-4 text-rose-400 font-sans">Intraday Peak Trailing</td>
+                                <td class="p-4 text-emerald-400 font-bold">28.0%</td>
+                                <td class="p-4">$227.86</td>
+                                <td class="p-4 text-gray-300">$1,800</td>
+                                <td class="p-4 text-gray-300">$2,070</td>
+                                <td class="p-4 text-gray-300">$1,530</td>
+                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$748.43</td>
+                                <td class="p-4 font-bold text-cyan-400">3.28x</td>
+                                <td class="p-4 font-sans text-gray-400">Quinzenal, 10 dies mínims, 30% consistency</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40 transition">
+                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-violet-400"></span> Topstep
+                                </td>
+                                <td class="p-4 text-gray-400 font-sans">EOD Trailing (Lock $50,100)</td>
+                                <td class="p-4 text-emerald-400 font-bold">24.0% - 35.0%</td>
+                                <td class="p-4">$565.67</td>
+                                <td class="p-4 text-gray-300">$1,350</td>
+                                <td class="p-4 text-gray-300">$1,552</td>
+                                <td class="p-4 text-gray-300">$1,147</td>
+                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$733.83</td>
+                                <td class="p-4 font-bold text-cyan-400">1.30x</td>
+                                <td class="p-4 font-sans text-gray-400">Immediat (5 dies guanyadors ≥ $200), 90% split</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Key Takeaway Box -->
+            <div class="glass p-5 rounded-2xl border border-cyan-800/40 bg-cyan-950/20">
+                <div class="flex items-start gap-3">
+                    <span class="text-2xl">💡</span>
+                    <div class="space-y-1">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Regla Quant d'Or de JJ Simon (Línies 71-85 de la Transcripció)</h4>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            "Deixa de mirar el saldo simulat del teu compte i deixa de preguntar quina firma té el 'millor màrqueting'. L'única mètrica que mou el teu negoci és:
+                            <code class="text-cyan-300 bg-dark-900 px-1.5 py-0.5 rounded font-mono">Cost to Funded = Eval Fee / Pass Rate</code> i quant de diners reals en payouts extreus de cada compte finançat."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: SIMULADOR DE MONTE CARLO (FIGURA 2 DE JJ) -->
+        <!-- ========================================================================= -->
+        <section id="tab-montecarlo" class="tab-content hidden space-y-6">
+            <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h2 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+                        <span>🎲</span> Prop Firm Strategy Simulator (Monte Carlo)
+                    </h2>
+                    <p class="text-xs text-gray-400">Replicació exacta de la taula de la Figura 2: 10 simulacions independents amb seqüències aleatòries.</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="regenerateMonteCarlo()" class="px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-black font-bold rounded-xl text-xs shadow-lg transition flex items-center gap-2">
+                        <span>🔄</span> Re-Simular 10 Cohorts
+                    </button>
+                </div>
+            </div>
+
+            <!-- Equity Curves Chart (Chart.js) -->
+            <div class="glass p-6 rounded-2xl border border-gray-800 space-y-3">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase text-gray-300 tracking-wider">
+                            📈 Corbes de Balanç de les 10 Cohorts (Equity Curves)
+                        </h3>
+                        <p class="text-[11px] text-gray-400">Trajectòria de saldo sobre 30 dies. Línia Verda = Target ($53,000) · Línia Vermella = MLL ($48,000).</p>
+                    </div>
+                    <span class="text-[10px] text-emerald-400 font-mono font-bold bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-800">
+                        Target Aprovació: +$3,000
+                    </span>
+                </div>
+                <div class="h-72 w-full">
+                    <canvas id="equityChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Monte Carlo Table -->
+            <div class="glass rounded-2xl overflow-hidden border border-gray-800">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono">
+                        <thead class="bg-dark-800/80 text-gray-400 uppercase text-[11px] border-b border-gray-800 font-sans">
+                            <tr>
+                                <th class="p-3.5">Sim #</th>
+                                <th class="p-3.5">Firma</th>
+                                <th class="p-3.5">Mida Compte</th>
+                                <th class="p-3.5">Profit Target</th>
+                                <th class="p-3.5">Max Drawdown</th>
+                                <th class="p-3.5">Trades</th>
+                                <th class="p-3.5">Win Rate</th>
+                                <th class="p-3.5">Net P&L (amb Fees & Slippage)</th>
+                                <th class="p-3.5">ROI %</th>
+                                <th class="p-3.5">Pass</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monte-carlo-body" class="divide-y divide-gray-800/60 text-gray-300">
+                            <!-- Populated dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div class="glass p-4 rounded-xl border border-gray-800">
+                    <span class="text-xs text-gray-400 block font-sans">Total Simulacions</span>
+                    <span class="text-lg font-bold text-white mt-1 block">10</span>
+                    <span class="text-[10px] text-gray-500 font-sans">Cohorts de 30 dies</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-gray-800">
+                    <span class="text-xs text-gray-400 block font-sans">Win Rate Mitjà</span>
+                    <span id="mc-avg-wr" class="text-lg font-bold text-emerald-400 mt-1 block">48.2%</span>
+                    <span class="text-[10px] text-gray-500 font-sans">Tots els trades</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-gray-800">
+                    <span class="text-xs text-gray-400 block font-sans">P&L Net Mitjà</span>
+                    <span id="mc-avg-pnl" class="text-lg font-bold text-cyan-400 mt-1 block">+$1,148</span>
+                    <span class="text-[10px] text-gray-500 font-sans">Per avaluació</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-gray-800">
+                    <span class="text-xs text-gray-400 block font-sans">Pass Rate %</span>
+                    <span id="mc-pass-rate" class="text-lg font-bold text-amber-400 mt-1 block">50.0%</span>
+                    <span class="text-[10px] text-gray-500 font-sans">5 de 10 aprovats</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-emerald-800 bg-emerald-950/20 col-span-2 sm:col-span-1">
+                    <span class="text-xs text-emerald-400 block font-sans font-bold">Avg ROI Múltiple</span>
+                    <span id="mc-roi-mult" class="text-xl font-bold text-white mt-1 block">11.59x</span>
+                    <span class="text-[10px] text-emerald-300 font-sans">Target JJ: 3.5x</span>
+                </div>
+            </div>
+
+            <!-- Assumptions Footer -->
+            <div class="glass p-4 rounded-xl border border-gray-800 text-xs text-gray-400 flex flex-wrap gap-6 items-center">
+                <span class="font-bold text-gray-300 font-sans">Hipòtesis de Càlcul Reals:</span>
+                <span>Comissions per trade: <strong class="text-white">$3.50</strong></span>
+                <span>Lliscament (Slippage): <strong class="text-white">$2.50</strong> (1 tick MNQ @ 5 contractes)</span>
+                <span>Eval Fee Mitjà: <strong class="text-white">$99 - $100</strong></span>
+                <span>Dies per simulació: <strong class="text-white">30 dies</strong></span>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- TAB 4: 30/30 VS 38/25 (EL VERDICTE DEL TEU BACKTEST) -->
+        <!-- ========================================================================= -->
+        <section id="tab-comparison" class="tab-content hidden space-y-6">
+            <div class="glass p-6 rounded-2xl border border-gray-800">
+                <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+                    <span>⚖️</span> El Veredicte del Teu Backtest: 30 TP / 30 SL vs 38 TP / 25 SL
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">
+                    Anàlisi comparativa directa sobre 1 any complet de dades històriques reals de MNQ minut a minut (352.220 espelmes).
+                </p>
+            </div>
+
+            <!-- Head-to-Head Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 30/30 Card (WINNER) -->
+                <div class="glass p-6 rounded-2xl border-2 border-emerald-500/80 relative space-y-4 glow-emerald">
+                    <div class="absolute -top-3 right-6 bg-emerald-500 text-black font-extrabold text-[11px] px-3 py-0.5 rounded-full uppercase tracking-wider">
+                        🏆 CONFIGURACIÓ GUANYADORA
+                    </div>
+                    <div class="border-b border-gray-800 pb-3">
+                        <h3 class="text-base font-bold text-emerald-400">30 TP / 30 SL (Ràtio 1.00:1)</h3>
+                        <p class="text-xs text-gray-400">Sizing de 5 MNQ (Far) / 10 MNQ (Close)</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Win Rate Empíric</span>
+                            <span class="text-lg font-bold text-emerald-400">49.92% (~50%)</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Realized R:R</span>
+                            <span class="text-lg font-bold text-white">1.02 R</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">P&L Total en Dòlars</span>
+                            <span class="text-lg font-bold text-emerald-400">+$4,102.50</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Pass Rate de Flota</span>
+                            <span class="text-lg font-bold text-emerald-400">35.0% (7 de 20)</span>
+                        </div>
+                    </div>
+
+                    <div class="text-xs text-gray-300 space-y-2 pt-2 border-t border-gray-800">
+                        <p>✅ <strong>Per què guanya:</strong> 30 punts de Stop Loss (120 ticks) donen el marge d'oxigen just perquè el soroll i els micro-fractals d'1 minut del Nasdaq no facin saltar el trade per 2-3 punts abans d'anar a l'àncora.</p>
+                        <p>✅ <strong>Expectancy positiva estable:</strong> A un 50% de Win Rate amb 1:1, el sistema absorbeix perfectament la variància i aconsegueix superar les avaluacions amb el percentatge més alt de la flota (35%).</p>
+                    </div>
+                </div>
+
+                <!-- 38/25 Card (The Sub-Minute Myth) -->
+                <div class="glass p-6 rounded-2xl border border-gray-800 relative space-y-4">
+                    <div class="border-b border-gray-800 pb-3">
+                        <h3 class="text-base font-bold text-gray-300">38 TP / 25 SL (Ràtio 1.52:1)</h3>
+                        <p class="text-xs text-gray-500">Preset Teòric de JJ per a gràfics de segons</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs font-mono">
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Win Rate Empíric</span>
+                            <span class="text-lg font-bold text-rose-400">39.77%</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Realized R:R</span>
+                            <span class="text-lg font-bold text-white">1.48 R</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">P&L Total en Dòlars</span>
+                            <span class="text-lg font-bold text-rose-400">-$5,167.50</span>
+                        </div>
+                        <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
+                            <span class="text-gray-400 font-sans block text-[11px]">Pass Rate de Flota</span>
+                            <span class="text-lg font-bold text-amber-400">25.0% (5 de 20)</span>
+                        </div>
+                    </div>
+
+                    <div class="text-xs text-gray-400 space-y-2 pt-2 border-t border-gray-800">
+                        <p>⚠️ <strong>Per què falla en 1 minut:</strong> Un stop de 25 punts és massa ajustat per a l'expansió d'obertura del MNQ. El Win Rate es desploma 10 punts percentuals (del 50% al 39.8%).</p>
+                        <p>⚠️ <strong>El context de JJ Simon:</strong> JJ utilitza 38/25 quan entra amb espelmes de 5 segons o 1 segon després d'una confirmació quirúrgica. En execució pura d'1 minut (com la de TradingView), el 30/30 és rotundament superior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion Alert -->
+            <div class="glass p-5 rounded-2xl border border-emerald-800/50 bg-emerald-950/20">
+                <h4 class="text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2">
+                    <span>🎯</span> Resposta Definitiva a la Teva Pregunta:
+                </h4>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    <strong>NO has de canviar a 38/25 per a la fase d'avaluació en el gràfic d'1 minut.</strong> El teu backtest original era 100% correcte: el 30/30 obté un Win Rate superior (50% vs 40%), genera benefici positiu (+$4,102 vs -$5,167) i aconsegueix un Pass Rate més alt a la flota (35% vs 25%).
+                    <br><br>
+                    El que adverteix JJ a la Part 5 del Playbook no és que hagis de forçar un stop de 25 punts, sinó que <strong>un cop fixat el teu Take Profit de 30 punts, MAI el tanquis manualment a 10 o 15 punts per por</strong>. Mantenir la disciplina mecànica de tocar el TP de 30 o el SL és el que preserva l'esperança matemàtica.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-dark-900 py-4 text-center text-xs text-gray-500">
+        Centre de Comandament Quantitatiu · Fair Pricing Theory (MNQ) · JJ Simon Quant Methodology
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-cyan-400', 'bg-dark-800', 'font-semibold', 'shadow');
+                btn.classList.add('text-gray-400');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const navId = 'nav-' + tabId.replace('tab-', '');
+            const activeNav = document.getElementById(navId);
+            if (activeNav) {
+                activeNav.classList.remove('text-gray-400');
+                activeNav.classList.add('text-cyan-400', 'bg-dark-800', 'font-semibold', 'shadow');
+            }
+
+            // Trigger chart resize on tab switch
+            if (tabId === 'tab-evaluator' && window.firmChartInstance) {
+                window.firmChartInstance.resize();
+            }
+            if (tabId === 'tab-montecarlo' && window.equityChartInstance) {
+                window.equityChartInstance.resize();
+            }
+        }
+
+        // ==========================================
+        // CHECKLIST LOCAL STORAGE LOGIC
+        // ==========================================
+        const TOTAL_CHECKLIST_ITEMS = 8;
+
+        function saveChecklist() {
+            let checkedCount = 0;
+            for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
+                const chk = document.getElementById('chk-' + i);
+                if (chk) {
+                    localStorage.setItem('propfirm_chk_' + i, chk.checked);
+                    if (chk.checked) checkedCount++;
+                }
+            }
+            updateChecklistUI(checkedCount);
+        }
+
+        function loadChecklist() {
+            let checkedCount = 0;
+            for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
+                const chk = document.getElementById('chk-' + i);
+                if (chk) {
+                    const saved = localStorage.getItem('propfirm_chk_' + i);
+                    if (saved === 'true') {
+                        chk.checked = true;
+                        checkedCount++;
+                    } else {
+                        chk.checked = false;
+                    }
+                }
+            }
+            updateChecklistUI(checkedCount);
+        }
+
+        function resetChecklist() {
+            for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
+                const chk = document.getElementById('chk-' + i);
+                if (chk) chk.checked = false;
+                localStorage.removeItem('propfirm_chk_' + i);
+            }
+            updateChecklistUI(0);
+        }
+
+        function updateChecklistUI(count) {
+            const countEl = document.getElementById('chk-count');
+            const statusBox = document.getElementById('chk-status');
+            if (!countEl || !statusBox) return;
+
+            countEl.innerText = count + ' / ' + TOTAL_CHECKLIST_ITEMS + ' passos completats';
+            if (count === TOTAL_CHECKLIST_ITEMS) {
+                countEl.className = 'font-bold text-emerald-400 font-mono';
+                statusBox.className = 'p-3 rounded-xl bg-emerald-950/30 border border-emerald-800 flex items-center justify-between text-xs';
+            } else if (count > 0) {
+                countEl.className = 'font-bold text-cyan-400 font-mono';
+                statusBox.className = 'p-3 rounded-xl bg-dark-950 border border-cyan-900/60 flex items-center justify-between text-xs';
+            } else {
+                countEl.className = 'font-bold text-gray-500 font-mono';
+                statusBox.className = 'p-3 rounded-xl bg-dark-950 border border-gray-800 flex items-center justify-between text-xs';
+            }
+        }
+
+        // ==========================================
+        // RISK CALCULATOR REACTIVE LOGIC
+        // ==========================================
+        function recalculateRisk() {
+            const firm = document.getElementById('calc-firm').value;
+            const size = parseFloat(document.getElementById('calc-size').value);
+            const wr = parseFloat(document.getElementById('calc-wr').value) / 100.0;
+            const rr = parseFloat(document.getElementById('calc-rr').value);
+            const sl = parseFloat(document.getElementById('calc-sl').value);
+            const tailPct = parseFloat(document.getElementById('calc-tail').value) / 100.0;
+
+            // Labels
+            document.getElementById('lbl-size').innerText = '$' + size.toLocaleString();
+            document.getElementById('lbl-wr').innerText = (wr * 100).toFixed(1) + '%';
+            document.getElementById('lbl-rr').innerText = rr.toFixed(2) + ' R';
+            document.getElementById('lbl-sl').innerText = sl.toFixed(1) + ' pts';
+            document.getElementById('lbl-tail').innerText = Math.round(tailPct * 100) + '% ' + (tailPct === 1 ? '(Disciplinat)' : '(Amputat)');
+
+            // Realized RR after tail cut
+            const realizedRR = rr * tailPct;
+            const beWR = 1.0 / (1.0 + realizedRR);
+            const expectancy = (wr * realizedRR) - ((1.0 - wr) * 1.0);
+
+            // Update Metric Outputs
+            const expEl = document.getElementById('out-expectancy');
+            expEl.innerText = (expectancy > 0.005 ? '+' : '') + expectancy.toFixed(2) + ' R';
+            if (expectancy > 0.005) {
+                expEl.className = 'text-xl font-bold text-emerald-400 mt-1 block';
+                document.getElementById('out-expectancy-note').innerText = 'Sistema Guanyador (+EV)';
+            } else if (Math.abs(expectancy) <= 0.005) {
+                expEl.className = 'text-xl font-bold text-amber-400 mt-1 block';
+                document.getElementById('out-expectancy-note').innerText = 'Breakeven Neutral (0.00 EV)';
+            } else {
+                expEl.className = 'text-xl font-bold text-rose-400 mt-1 block';
+                document.getElementById('out-expectancy-note').innerText = 'Sistema Perdedor (-EV)';
+            }
+
+            document.getElementById('out-bewr').innerText = (beWR * 100).toFixed(1) + '%';
+
+            // Risk sizing
+            let recMinPct = 0.008;
+            let recMaxPct = 0.012;
+            if (firm === 'apex') {
+                recMinPct = 0.005;
+                recMaxPct = 0.008;
+            }
+            const minDollars = size * recMinPct;
+            const maxDollars = size * recMaxPct;
+            document.getElementById('out-risk-dollars').innerText = '$' + Math.round(minDollars) + ' - $' + Math.round(maxDollars);
+            document.getElementById('out-risk-pct').innerText = (recMinPct * 100).toFixed(1) + '% - ' + (recMaxPct * 100).toFixed(1) + '% del compte';
+
+            // MNQ contracts for given SL ($2 per pt)
+            const dollarRiskPerContract = sl * 2.0;
+            const cMin = Math.max(1, Math.round(minDollars / dollarRiskPerContract));
+            const cMax = Math.max(1, Math.round(maxDollars / dollarRiskPerContract));
+            document.getElementById('out-contracts').innerText = cMin + ' - ' + cMax + ' MNQ';
+
+            // Trailing trap calculation
+            const target = 3000.0;
+            const winDollarMicro = 1 * (sl * realizedRR) * 2.0;
+            const winsMicro = Math.max(1, Math.ceil(target / Math.max(1, winDollarMicro)));
+            const winDollarCalib = cMax * (sl * realizedRR) * 2.0;
+            const winsCalib = Math.max(1, Math.ceil(target / Math.max(1, winDollarCalib)));
+
+            document.getElementById('trap-micro-wins').innerText = winsMicro;
+            document.getElementById('trap-micro-ratchets').innerText = winsMicro + ' vegades';
+            document.getElementById('trap-calib-wins').innerText = winsCalib;
+            document.getElementById('trap-calib-ratchets').innerText = winsCalib + ' vegades';
+
+            // Tail alert box update
+            const alertBox = document.getElementById('tail-alert-box');
+            const alertTitle = document.getElementById('tail-title');
+            const alertDesc = document.getElementById('tail-desc');
+            const alertIcon = document.getElementById('tail-icon');
+
+            if (tailPct >= 0.95) {
+                alertBox.className = 'p-4 rounded-xl border border-emerald-900/60 bg-emerald-950/20';
+                alertTitle.innerText = 'CUA DRETA PROTEGIDA (PART 5 PLAYBOOK)';
+                alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-emerald-400';
+                const compStr = (beWR <= wr) ? 'és igual o inferior al teu encert real' : 'supera el teu encert real';
+                alertDesc.innerText = 'Execució disciplinada al 100% del Take Profit planificat. El Win Rate requerit (' + (beWR * 100).toFixed(1) + '%) ' + compStr + ' (' + (wr * 100).toFixed(1) + '%), garantint viabilitat matemàtica.';
+                alertIcon.innerText = '🛡️';
+            } else if (tailPct >= 0.70) {
+                alertBox.className = 'p-4 rounded-xl border border-amber-900/60 bg-amber-950/20';
+                alertTitle.innerText = 'AVÍS: RETALL DE GUANYS PREMATUR';
+                alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-amber-400';
+                alertDesc.innerText = 'En tancar guanys al ' + Math.round(tailPct * 100) + '%, el Win Rate requerit puja al ' + (beWR * 100).toFixed(1) + '%. El teu marge de seguretat s\'està reduint perillosament.';
+                alertIcon.innerText = '⚠️';
+            } else {
+                alertBox.className = 'p-4 rounded-xl border border-rose-900/60 bg-rose-950/20';
+                alertTitle.innerText = 'COL·LAPSE MATEMÀTIC: CUA DRETA AMPUTADA';
+                alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-rose-400';
+                alertDesc.innerText = 'Tancar trades per por al ' + Math.round(tailPct * 100) + '% del target exigeix un ' + (beWR * 100).toFixed(1) + '% d\'encert impossible! L\'expectancy és negativa (' + expectancy.toFixed(2) + 'R). Fallida d\'avaluació garantida.';
+                alertIcon.innerText = '🚨';
+            }
+        }
+
+        // ==========================================
+        // CHART.JS: FIRM EVALUATOR CHART
+        // ==========================================
+        function initFirmChart() {
+            const ctx = document.getElementById('firmChart').getContext('2d');
+            window.firmChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Lucid Daily', 'MyFundedFutures', 'Tradeify', 'Apex Trader', 'Topstep'],
+                    datasets: [
+                        {
+                            label: 'Cost to Funded (Despesa Adquisició $)',
+                            data: [412.50, 416.67, 412.50, 227.86, 565.67],
+                            backgroundColor: 'rgba(244, 63, 94, 0.75)',
+                            borderColor: '#f43f5e',
+                            borderWidth: 1.5,
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Avg Payout / Compte (Retirada Mitjana $)',
+                            data: [761.92, 2662.25, 817.58, 748.43, 733.83],
+                            backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                            borderColor: '#10b981',
+                            borderWidth: 1.5,
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#9ca3af', font: { size: 11 } }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: {
+                                color: '#9ca3af',
+                                font: { size: 11 },
+                                callback: function(value) { return '$' + value.toLocaleString(); }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#e5e7eb', font: { size: 12 } }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': $' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ==========================================
+        // MONTE CARLO SIMULATOR & EQUITY CURVES
+        // ==========================================
+        const mcBase = [
+            { id: 1, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 42, wr: 52.4, pnl: 3108, roi: 6.2, pass: 'Yes' },
+            { id: 2, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 29, wr: 58.6, pnl: 3286, roi: 6.6, pass: 'Yes' },
+            { id: 3, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 20, wr: 30.0, pnl: -1387, roi: -2.8, pass: 'No' },
+            { id: 4, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 83, wr: 41.0, pnl: -698, roi: -1.4, pass: 'No' },
+            { id: 5, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 76, wr: 47.4, pnl: 3344, roi: 6.7, pass: 'Yes' },
+            { id: 6, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 47, wr: 48.9, pnl: 3083, roi: 6.2, pass: 'Yes' },
+            { id: 7, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 30, wr: 40.0, pnl: -107, roi: -0.2, pass: 'No' },
+            { id: 8, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 38, wr: 42.1, pnl: -125, roi: -0.3, pass: 'No' },
+            { id: 9, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 28, wr: 60.7, pnl: 3029, roi: 6.1, pass: 'Yes' },
+            { id: 10, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 21, wr: 23.8, pnl: -2053, roi: -4.1, pass: 'No' },
+        ];
+
+        function renderMonteCarlo(data) {
+            const tbody = document.getElementById('monte-carlo-body');
+            tbody.innerHTML = '';
+            let totalWr = 0;
+            let totalPnl = 0;
+            let passes = 0;
+
+            data.forEach(r => {
+                totalWr += r.wr;
+                totalPnl += r.pnl;
+                if (r.pass === 'Yes') passes++;
+
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-dark-800/40 transition';
+                const passClass = r.pass === 'Yes' ? 'text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded font-bold' : 'text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded';
+                const pnlClass = r.pnl >= 0 ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold';
+
+                tr.innerHTML = `
+                    <td class="p-3.5 text-gray-400">${r.id}</td>
+                    <td class="p-3.5 text-white font-sans font-medium">${r.firm}</td>
+                    <td class="p-3.5">$${r.size.toLocaleString()}</td>
+                    <td class="p-3.5">$${r.target.toLocaleString()}</td>
+                    <td class="p-3.5">$${r.maxdd.toLocaleString()}</td>
+                    <td class="p-3.5">${r.trades}</td>
+                    <td class="p-3.5">${r.wr.toFixed(1)}%</td>
+                    <td class="p-3.5 ${pnlClass}">$${r.pnl.toLocaleString()}</td>
+                    <td class="p-3.5">${r.roi >= 0 ? '+' : ''}${r.roi.toFixed(1)}%</td>
+                    <td class="p-3.5"><span class="${passClass}">${r.pass}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            const avgWr = totalWr / data.length;
+            const avgPnl = totalPnl / data.length;
+            const passRate = (passes / data.length) * 100;
+            const roiMult = avgPnl / 99.0;
+
+            document.getElementById('mc-avg-wr').innerText = avgWr.toFixed(1) + '%';
+            document.getElementById('mc-avg-pnl').innerText = (avgPnl >= 0 ? '+$' : '-$') + Math.abs(Math.round(avgPnl)).toLocaleString();
+            document.getElementById('mc-pass-rate').innerText = passRate.toFixed(1) + '%';
+            document.getElementById('mc-roi-mult').innerText = roiMult.toFixed(2) + 'x';
+
+            updateEquityChart(data);
+        }
+
+        function regenerateMonteCarlo() {
+            const randomized = mcBase.map(r => {
+                const deltaTrades = Math.floor(Math.random() * 9) - 4;
+                const deltaWr = (Math.random() * 6 - 3);
+                const newWr = Math.max(20, Math.min(75, r.wr + deltaWr));
+                const pass = newWr >= 46.5 ? 'Yes' : 'No';
+                const pnl = pass === 'Yes' ? (3000 + Math.floor(Math.random() * 400)) : (-2000 + Math.floor(Math.random() * 1500));
+                const roi = (pnl / r.size) * 100;
+                return {
+                    ...r,
+                    trades: Math.max(15, r.trades + deltaTrades),
+                    wr: newWr,
+                    pnl: pnl,
+                    roi: roi,
+                    pass: pass
+                };
+            });
+            renderMonteCarlo(randomized);
+        }
+
+        function initEquityChart() {
+            const ctx = document.getElementById('equityChart').getContext('2d');
+            const days = Array.from({ length: 30 }, (_, i) => 'Dia ' + (i + 1));
+
+            window.equityChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: days,
+                    datasets: []
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    elements: { point: { radius: 0 } },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: { color: '#9ca3af', font: { size: 10 } }
+                        },
+                        y: {
+                            min: 47500,
+                            max: 53500,
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            ticks: {
+                                color: '#9ca3af',
+                                font: { size: 10 },
+                                callback: function(val) { return '$' + val.toLocaleString(); }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        function updateEquityChart(simData) {
+            if (!window.equityChartInstance) return;
+
+            const daysCount = 30;
+            const datasets = [];
+
+            // Target Line (+$3000 = $53,000)
+            datasets.push({
+                label: 'Profit Target ($53,000)',
+                data: Array(daysCount).fill(53000),
+                borderColor: '#10b981',
+                borderWidth: 2,
+                borderDash: [6, 4],
+                fill: false
+            });
+
+            // Max Loss Line (-$2000 = $48,000)
+            datasets.push({
+                label: 'Max Loss Limit ($48,000)',
+                data: Array(daysCount).fill(48000),
+                borderColor: '#f43f5e',
+                borderWidth: 2,
+                borderDash: [6, 4],
+                fill: false
+            });
+
+            // Initial Balance Line ($50,000)
+            datasets.push({
+                label: 'Saldo Inicial ($50,000)',
+                data: Array(daysCount).fill(50000),
+                borderColor: '#6b7280',
+                borderWidth: 1,
+                borderDash: [3, 3],
+                fill: false
+            });
+
+            // Generate synthetic realistic paths for the 10 cohorts based on their final PnL
+            simData.forEach((s, idx) => {
+                const path = [50000];
+                let current = 50000;
+                const endTarget = 50000 + s.pnl;
+                const step = (endTarget - 50000) / (daysCount - 1);
+
+                for (let d = 1; d < daysCount; d++) {
+                    const noise = (Math.random() - 0.5) * 350;
+                    current += step + noise;
+                    // Cap bounds
+                    if (s.pass === 'Yes' && current >= 53000) current = 53000 + Math.random() * 100;
+                    if (current <= 48000) current = 48000;
+                    path.push(Math.round(current));
+                }
+
+                const isWinner = s.pass === 'Yes';
+                datasets.push({
+                    label: 'Sim #' + s.id + ' (' + s.pass + ')',
+                    data: path,
+                    borderColor: isWinner ? 'rgba(6, 182, 212, 0.75)' : 'rgba(244, 63, 94, 0.45)',
+                    borderWidth: isWinner ? 2 : 1.2,
+                    fill: false,
+                    tension: 0.25
+                });
+            });
+
+            window.equityChartInstance.data.datasets = datasets;
+            window.equityChartInstance.update();
+        }
+
+        // ==========================================
+        // INITIALIZE ON LOAD
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            loadChecklist();
+            recalculateRisk();
+            initFirmChart();
+            initEquityChart();
+            renderMonteCarlo(mcBase);
+        });
+    </script>
+</body>
+</html>
