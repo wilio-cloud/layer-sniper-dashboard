@@ -34,34 +34,48 @@
 </head>
 <body class="bg-dark-950 text-gray-100 min-h-screen flex flex-col antialiased">
 
-    <!-- Header -->
-    <header class="border-b border-gray-800 bg-dark-900/90 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <!-- Header amb Pestanyes Natives -->
+    <!-- __MC27_HEADER_START__ -->
+    <header class="border-b border-gray-800 bg-dark-900/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-black text-sm shadow-lg">
-                    BV
+                    JJ
                 </div>
                 <div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 flex-wrap">
                         <h1 class="text-base font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent">
-                            BACKTEST VISUAL & ROTACIÓ DE COMPTES
+                            JJ LAYER SNIPER PRO · 2026–2027
                         </h1>
                         <span id="badge-days-count" class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
                             0 Dies Registrats
                         </span>
                     </div>
-                    <p class="text-[11px] text-gray-400">Auditoria dia a dia (09:30h - 11:00h NY) + Simulació exacta d'Evals, Funded, Petades i Payouts</p>
+                    <p class="text-[11px] text-gray-400">Auditoria 1s + Rotació Exacta Prop Firms + Monte Carlo Institucional 10.000 Anys</p>
                 </div>
             </div>
-            <div class="flex items-center gap-2">
-                <a href="propfirm_dashboard.html" class="text-xs px-3 py-1.5 rounded-lg bg-dark-800 hover:bg-dark-700 border border-gray-700 text-gray-300 transition">
-                    ← Tornar al Centre Quant
+
+            <!-- Barra de Pestanyes Principal -->
+            <nav class="flex flex-wrap items-center gap-1.5 bg-dark-950 p-1 rounded-xl border border-gray-800 text-xs">
+                <button id="tab-btn-backtest" onclick="switchMainDashboardTab('backtest')" class="px-3.5 py-1.5 rounded-lg font-bold transition bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow">
+                    📸 Backtest Visual &amp; Rotació 1s
+                </button>
+                <button id="tab-btn-montecarlo" onclick="switchMainDashboardTab('montecarlo')" class="px-3.5 py-1.5 rounded-lg font-bold transition text-gray-300 hover:text-white border border-transparent hover:bg-dark-800">
+                    🎲 Monte Carlo 2027 (10K Anys)
+                </button>
+                <a href="propfirm_dashboard.html" class="px-3 py-1.5 rounded-lg font-semibold text-gray-400 hover:text-cyan-300 hover:bg-dark-800 transition">
+                    🧭 Playbook Quant
                 </a>
-            </div>
+                <a href="manual_operatiu_pro.html" class="px-3 py-1.5 rounded-lg font-semibold text-gray-400 hover:text-amber-300 hover:bg-dark-800 transition">
+                    📘 Manual Operatiu
+                </a>
+            </nav>
         </div>
     </header>
+    <!-- __MC27_HEADER_END__ -->
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
+        <div id="view-backtest" class="space-y-6">
 
         <!-- Controls de Simulació en Temps Real -->
         <section class="glass p-5 rounded-2xl border border-cyan-900/40">
@@ -143,20 +157,34 @@
                     <label class="block text-gray-400 mb-1 font-medium">3. Flota Inicial i Mida MNQ</label>
                     <div class="flex flex-col gap-1.5">
                         <select id="ctrl-fleet" onchange="runSimulationUI()" class="w-full bg-dark-900 border border-gray-700 rounded-lg px-2 py-1.5 text-white focus:border-cyan-500 outline-none">
-                            <option value="fresh_5">Des de Zero: 5 Comptes 50k</option>
-                            <option value="fresh_10" selected>Des de Zero: 10 Comptes 50k</option>
-                            <option value="fresh_15">Des de Zero: 15 Comptes 50k</option>
-                            <option value="fresh_20">Des de Zero: 20 Comptes 50k</option>
-                            <option value="fresh_30">Des de Zero: 30 Comptes 50k</option>
+                            <option value="lucid150_5">🔥 5 Comptes LucidDaily 150K ($137.40 · Daily ASAP)</option>
+                            <option value="lucid150_10">🔥 10 Comptes LucidDaily 150K ($137.40 · Daily ASAP)</option>
+                            <option value="lucid150_20">🔥 20 Comptes LucidDaily 150K ($137.40 · Daily ASAP)</option>
+                            <option value="lucid150_30">🔥 30 Comptes LucidDaily 150K ($137.40 · Daily ASAP)</option>
+                            <option value="eod150_5">🏆 5 Comptes Alpha/Topstep 150K (EOD 5d · Cap $5k)</option>
+                            <option value="eod150_15">🏆 15 Comptes EOD 150K (Alpha+Topstep+Tradeify)</option>
+                            <option value="lucid50_5">⚡ 5 Comptes LucidDaily 50K ($56.40 · Daily ASAP)</option>
+                            <option value="lucid50_10">⚡ 10 Comptes LucidDaily 50K ($56.40 · Daily ASAP)</option>
+                            <option value="fresh_5">Des de Zero: 5 Comptes Apex 50k ($19)</option>
+                            <option value="fresh_10" selected>Des de Zero: 10 Comptes Apex 50k ($19)</option>
+                            <option value="fresh_15">Des de Zero: 15 Comptes Apex 50k ($19)</option>
+                            <option value="fresh_20">Des de Zero: 20 Comptes Apex 50k ($19)</option>
+                            <option value="fresh_30">Des de Zero: 30 Comptes Apex 50k ($19)</option>
                             <option value="real_current">Flota Actual (6 Apex PA + 5 Lucid Eval)</option>
                         </select>
                         <select id="ctrl-sizing" onchange="runSimulationUI(); renderMatrix10();" class="w-full bg-dark-900 border border-emerald-700/80 rounded-lg px-2 py-1.5 text-emerald-300 font-semibold focus:border-emerald-400 outline-none" title="Contractes MNQ tant en fase Eval com en Funded (PA)">
-                            <option value="FIXED_10" selected>💎 10 MNQ (1 NQ) Fix (±$600/tr · Mode JJ Pur)</option>
+                            <option value="FIXED_10" selected>💎 10 MNQ (1 NQ) Fix (±$600/tr · Estàndard 50K)</option>
+                            <option value="FIXED_30">🚀 30 MNQ (3 NQ) Fix (±$1,800/tr · Agressiu 150K)</option>
+                            <option value="FIXED_22">🎯 22 MNQ Fix (±$1,320/tr · Clavell 150K = 2.2x DD)</option>
+                            <option value="EVAL22_PA18">🏆 Híbrid 150K: 22 MNQ Eval / 18 MNQ PA (±$1,080)</option>
+                            <option value="FIXED_20">⚡ 20 MNQ (2 NQ) Fix (±$1,200/tr)</option>
+                            <option value="FIXED_18">🛡️ 18 MNQ Fix (±$1,080/tr · Segura 150K)</option>
+                            <option value="FIXED_8">🛡️ 8 MNQ Fix (±$480/tr · Segura 50K)</option>
+                            <option value="FIXED_7">🚀 7 MNQ Fix a Eval i Funded (±$420/tr)</option>
                             <option value="FIXED_5">🔥 5 MNQ Fix a Eval i Funded (±$300/tr)</option>
                             <option value="EVAL10_PA5_DEF2">🏆 10 MNQ Eval / 5 MNQ PA (2 MNQ si coixí &lt;$1k)</option>
                             <option value="SMART_BUFFER_2_5_10">🛡️ Per Coixí Real: 2 MNQ (&lt;$1k) ➔ 5 MNQ ➔ 10 MNQ (&gt;=$2.2k)</option>
                             <option value="HYBRID_A10_B5">⚡ Híbrid JJ: 10 MNQ Bloc A (±$600) / 5 MNQ Bloc B (±$300)</option>
-                            <option value="FIXED_7">🚀 7 MNQ Fix a Eval i Funded (±$420/tr)</option>
                             <option value="EVAL5_PA5_DEF3">🛡️ 5 MNQ Eval i PA (Baixa a 3 MNQ si coixí &lt;$1k)</option>
                             <option value="LEGACY_3_FUNDED">🐢 Antic: 5 MNQ Eval / 3 MNQ PA</option>
                         </select>
@@ -447,6 +475,212 @@
                 <div id="events-list-container" class="flex-1 overflow-y-auto space-y-2 pr-1 text-xs font-mono"></div>
             </div>
         </section>
+
+        </div>
+
+        <!-- __MC27_TAB_START__ -->
+        <div id="view-montecarlo" class="hidden space-y-6">
+            <!-- Guia Pedagògica Ràpida -->
+            <section class="glass rounded-2xl p-5 border border-cyan-500/30 bg-gradient-to-r from-cyan-950/30 via-slate-900/60 to-emerald-950/20">
+                <div class="space-y-2.5 text-xs text-gray-300 leading-relaxed">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+                            <span>🎲 SIMULADOR MONTE CARLO 2027 · 10.000 ANYS SINTÈTICS (BLOCK-BOOTSTRAP SETMANAL)</span>
+                        </h2>
+                        <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-700/60">
+                            SNIPER COMBO ELITE · BE +0.50p (+2 ticks) · Comissions $1.24/MNQ
+                        </span>
+                    </div>
+                    <p>
+                        Un backtest normal només mostra <strong>1 únic ordre històric</strong>. Per saber què passa si el gener de 2027 comença amb 3 setmanes difícils seguides (com les Setmanes 4 post-OPEX), hem generat <strong>10.000 anys complets (252 sessions/any)</strong> barrejant setmanes reals senceres de 5 dies i simulant cada compte, MLL, recompra i payout:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-rose-400 font-bold block">📉 Percentil P5 (Mala Sort)</span>
+                            <span class="text-[11px] text-gray-400">Només 5 de cada 100 anys són pitjors que això. És el teu sòl pessimista si enganxes un any molt travat.</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-teal-300 font-bold block">🎯 Mediana P50 (Any Normal)</span>
+                            <span class="text-[11px] text-gray-400">El centre exacte (5.000 anys per sota, 5.000 per sobre). És l'expectativa anual més realista.</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-emerald-400 font-bold block">🚀 Percentil P95 (Any Top)</span>
+                            <span class="text-[11px] text-gray-400">El sostre del top 5% d'anys quan enganxes ratxes netes de reversió a l'àncora.</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-amber-500/30">
+                            <span class="text-amber-300 font-bold block">🛡️ Matalàs P95 / P99 (Corba en J)</span>
+                            <span class="text-[11px] text-gray-400">Els diners màxims que avances de butxaca comprant/renovant Evals <strong>abans del 1r Payout</strong> perquè no t'aturis mai.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Selector dels 6 Blocs -->
+            <section class="space-y-2.5">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-gray-400">1. Selecciona quin Bloc de Flota vols Analitzar:</span>
+                    <span class="text-[11px] text-cyan-300 font-mono" id="mc27-subtitle">--</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5" id="mc27-profile-selector"></div>
+            </section>
+
+            <!-- 6 Targetes KPI -->
+            <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                <div class="glass-card rounded-2xl p-4 border border-emerald-500/30">
+                    <span class="text-[11px] text-gray-400 block">Probabilitat d'Any en Verd</span>
+                    <span class="text-2xl font-black text-emerald-400 font-mono mt-1 block" id="mc27-kpi-prob">--%</span>
+                    <span class="text-[10px] text-gray-500">Sobre 10.000 anys simulats</span>
+                </div>
+                <div class="glass-card rounded-2xl p-4 border border-rose-500/25">
+                    <span class="text-[11px] text-gray-400 block">Any Mala Sort (P5)</span>
+                    <span class="text-xl font-extrabold text-rose-300 font-mono mt-1 block" id="mc27-kpi-p5">--</span>
+                    <span class="text-[10px] text-gray-500">95% d'anys superen això</span>
+                </div>
+                <div class="glass-card rounded-2xl p-4 border-2 border-teal-500/50 bg-teal-950/15">
+                    <span class="text-[11px] text-teal-300 font-bold block">🎯 Any Normal Medià (P50)</span>
+                    <span class="text-2xl font-black text-white font-mono mt-1 block" id="mc27-kpi-p50">--</span>
+                    <span class="text-[10px] text-teal-300">Net després de tots els fees</span>
+                </div>
+                <div class="glass-card rounded-2xl p-4 border border-emerald-500/25">
+                    <span class="text-[11px] text-gray-400 block">Any Excel·lent (P95)</span>
+                    <span class="text-xl font-extrabold text-emerald-300 font-mono mt-1 block" id="mc27-kpi-p95">--</span>
+                    <span class="text-[10px] text-gray-500">Top 5% de trajectòries</span>
+                </div>
+                <div class="glass-card rounded-2xl p-4 border-2 border-amber-500/40 bg-amber-950/15">
+                    <span class="text-[11px] text-amber-300 font-bold block">🛡️ Matalàs Segur (P95)</span>
+                    <span class="text-2xl font-black text-amber-300 font-mono mt-1 block" id="mc27-kpi-br95">--</span>
+                    <span class="text-[10px] text-gray-300">Blindat P99 (99%): <strong id="mc27-kpi-br99" class="text-white">--</strong></span>
+                </div>
+                <div class="glass-card rounded-2xl p-4 border border-cyan-500/30">
+                    <span class="text-[11px] text-gray-400 block">Temps fins al 1r Payout</span>
+                    <span class="text-xl font-extrabold text-cyan-300 font-mono mt-1 block" id="mc27-kpi-paydays">--</span>
+                    <span class="text-[10px] text-gray-400">Ràpid P25: <strong id="mc27-kpi-pay25" class="text-gray-200">--</strong> · Lent P95: <strong id="mc27-kpi-pay95" class="text-gray-200">--</strong></span>
+                </div>
+            </section>
+
+            <!-- Gràfic Con de Probabilitat + Calculadora Matalàs -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="glass rounded-2xl p-5 lg:col-span-2 flex flex-col justify-between border border-gray-800">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <div>
+                            <h3 class="text-sm font-bold text-white">📈 Con de Probabilitat Mensual (Cashflow Net Acumulat: Payouts − Despesa Evals)</h3>
+                            <p class="text-[11px] text-gray-400">Evolució des del Dia 1 fins al Mes 12 (P95 verd, P75/P50/P25 turquesa, P5 rosa + 5 trajectòries mostra)</p>
+                        </div>
+                        <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-dark-950 border border-gray-700 text-teal-300" id="mc27-fan-badge">--</span>
+                    </div>
+                    <div class="h-80 w-full">
+                        <canvas id="mc27-fanChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-5 border border-amber-500/30 flex flex-col justify-between space-y-4">
+                    <div class="space-y-1">
+                        <h3 class="text-sm font-bold text-amber-300">🛡️ Calculadora del Teu Matalàs Inicial</h3>
+                        <p class="text-[11px] text-gray-400">Mou el cursor per veure quina probabilitat tens de <strong>NO quedar-te mai sense caixa</strong> abans que els payouts autofinancin tota la flota:</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-dark-950/90 border border-gray-800 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-300 font-semibold">El teu Matalàs Disponible:</span>
+                            <span class="text-xl font-black font-mono text-amber-300" id="mc27-budget-val">$3,500</span>
+                        </div>
+                        <input type="range" id="mc27-budget-slider" min="500" max="20000" step="250" value="3500"
+                               class="w-full accent-teal-400 cursor-pointer" oninput="mc27UpdateBudgetCalc()">
+                        <div class="grid grid-cols-2 gap-2.5 pt-1">
+                            <div class="p-2.5 rounded-lg bg-dark-900 border border-gray-800">
+                                <span class="text-[10px] text-gray-400 block">Supervivència (Sense Ruïna)</span>
+                                <span class="text-lg font-black font-mono text-emerald-400" id="mc27-surv-pct">--%</span>
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-dark-900 border border-gray-800">
+                                <span class="text-[10px] text-gray-400 block">Risc d'esgotar caixa</span>
+                                <span class="text-lg font-black font-mono text-rose-400" id="mc27-ruin-pct">--%</span>
+                            </div>
+                        </div>
+                        <p class="text-[11px] leading-relaxed font-medium" id="mc27-verdict">--</p>
+                    </div>
+
+                    <div class="h-44 w-full">
+                        <canvas id="mc27-survivalChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histograma Anual + Anatomia de Rotació -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-5 border border-gray-800 space-y-3">
+                    <div>
+                        <h3 class="text-sm font-bold text-white">📊 Distribució de Benefici Net Anual (10.000 Anys)</h3>
+                        <p class="text-[11px] text-gray-400">Quants anys de cada 100 acaben en cada tram de benefici net a la butxaca:</p>
+                    </div>
+                    <div class="h-60 w-full">
+                        <canvas id="mc27-histChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass rounded-2xl p-5 border border-gray-800 space-y-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-sm font-bold text-white">⚙️ Anatomia de Rotació Anual d'Aquest Bloc (Valors Medians P50)</h3>
+                        <p class="text-[11px] text-gray-400">Per què cremar comptes forma part normal del negoci (com l'inventari d'una botiga) i el ROI net és massiu:</p>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-mono">
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-[10px] text-gray-400 font-sans block">Cost Dia 1 (1a Compra)</span>
+                            <span class="text-base font-bold text-white mt-0.5 block" id="mc27-anat-day1">--</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-[10px] text-gray-400 font-sans block">Pou Medià Abans 1r Cobrament</span>
+                            <span class="text-base font-bold text-amber-300 mt-0.5 block" id="mc27-anat-br50">--</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-[10px] text-gray-400 font-sans block">Comptes Cremats / Any (P50)</span>
+                            <span class="text-base font-bold text-rose-300 mt-0.5 block" id="mc27-anat-blown">--</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-[10px] text-gray-400 font-sans block">Despesa Total Anual Fees</span>
+                            <span class="text-base font-bold text-gray-200 mt-0.5 block" id="mc27-anat-spend">--</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-dark-950/80 border border-gray-800">
+                            <span class="text-[10px] text-gray-400 font-sans block">Payouts Cobrats / Any (P50)</span>
+                            <span class="text-base font-bold text-teal-300 mt-0.5 block" id="mc27-anat-payouts">--</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+                            <span class="text-[10px] text-emerald-300 font-sans font-bold block">Multiplicador s/ Matalàs P95</span>
+                            <span class="text-base font-black text-emerald-400 mt-0.5 block" id="mc27-anat-mult">--x</span>
+                        </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-cyan-950/30 border border-cyan-500/30 text-[11px] text-cyan-200 leading-relaxed font-sans">
+                        💡 <strong>Truc d'Escalat Esglaonat:</strong> Si comences amb <strong>5x 50K LucidDaily ($2,820 matalàs P95)</strong> o amb <strong>1-2 comptes 150K</strong> i només compres la resta amb els diners del 1r Payout, redueixes la caixa inicial necessària per construir tot l'Imperi de 65 comptes a menys de $3,000!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Taula Mestra Comparativa -->
+            <section class="glass rounded-2xl overflow-hidden border border-gray-800">
+                <div class="px-5 py-4 border-b border-gray-800 flex flex-wrap items-center justify-between gap-2">
+                    <h3 class="text-sm font-bold text-white">📋 Taula Mestra Comparativa — Els 6 Escenaris Auditats (10.000 Anys cadascun)</h3>
+                    <span class="text-[11px] text-gray-400">Fes clic a qualsevol fila per carregar-ne els gràfics</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono">
+                        <thead class="bg-dark-900 text-gray-400 uppercase text-[10px] border-b border-gray-800 font-sans">
+                            <tr>
+                                <th class="p-3.5">Bloc / Prop Firm</th>
+                                <th class="p-3.5">Èxit Anual</th>
+                                <th class="p-3.5">Any P5 (Mala Sort)</th>
+                                <th class="p-3.5 text-teal-300">Any P50 (Normal)</th>
+                                <th class="p-3.5">Any P95 (Top)</th>
+                                <th class="p-3.5 text-amber-300">Matalàs P95 (&lt;5% Risc)</th>
+                                <th class="p-3.5">Matalàs P99 (&lt;1% Risc)</th>
+                                <th class="p-3.5">1r Payout (P50)</th>
+                                <th class="p-3.5">Payouts/Any</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mc27-master-tbody" class="divide-y divide-gray-800/70"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <!-- __MC27_TAB_END__ -->
 
     </main>
 
@@ -18109,10 +18343,24 @@ const EMBEDDED_TRADES_LOG = {
             },
             Lucid: {
                 start_balance: 50000, profit_target: 53000, max_drawdown: 2000, daily_loss_limit: 1200,
-                eod_trailing: false, lock_mll_eval: 50100, lock_mll_funded: 50000, min_eval_days: 5,
-                eval_consistency_max_ratio: 0.50, eval_cost: 35, activation_fee: 0,
-                payout_min_days: 8, payout_min_pos_days: 5, payout_pos_day_threshold: 100,
-                payout_min_balance: 52100, payout_amount: 1500, payout_split: 0.90, funded_consistency_max_ratio: 0.40
+                eod_trailing: false, lock_mll_eval: 50100, lock_mll_funded: 50100, min_eval_days: 1,
+                eval_consistency_max_ratio: 0.40, eval_cost: 56.40, activation_fee: 0,
+                payout_min_days: 1, payout_min_pos_days: 1, payout_pos_day_threshold: 50,
+                payout_min_balance: 52100, payout_amount: 8000, payout_split: 0.90, funded_consistency_max_ratio: 1.0
+            },
+            Lucid150: {
+                start_balance: 150000, profit_target: 159000, max_drawdown: 4500, daily_loss_limit: 2700,
+                eod_trailing: false, lock_mll_eval: 150100, lock_mll_funded: 150100, min_eval_days: 1,
+                eval_consistency_max_ratio: 0.40, eval_cost: 137.40, activation_fee: 0,
+                payout_min_days: 1, payout_min_pos_days: 1, payout_pos_day_threshold: 50,
+                payout_min_balance: 154600, payout_amount: 12000, payout_split: 0.90, funded_consistency_max_ratio: 1.0
+            },
+            EOD150: {
+                start_balance: 150000, profit_target: 159000, max_drawdown: 4500, daily_loss_limit: 3000,
+                eod_trailing: true, lock_mll_eval: 150100, lock_mll_funded: 150100, min_eval_days: 2,
+                eval_consistency_max_ratio: 0.50, eval_cost: 185.00, activation_fee: 0,
+                payout_min_days: 5, payout_min_pos_days: 5, payout_pos_day_threshold: 200,
+                payout_min_balance: 154600, payout_amount: 5000, payout_split: 0.90, funded_consistency_max_ratio: 1.0
             }
         };
 
@@ -18143,14 +18391,21 @@ const EMBEDDED_TRADES_LOG = {
                     accs.push({ id, firm: 'Lucid', block: 'B', phase: 'EVAL', status: 'ACTIVE', balance: bal, peak: Math.max(50000, bal), mll, days_traded: days, pos_days: pos, daily_profits: [...profs], payouts_count: 0, total_payout_dollars: 0, defensive: false });
                 }
             } else {
-                const countMap = { fresh_5: 5, fresh_10: 10, fresh_15: 15, fresh_20: 20, fresh_30: 30 };
-                const count = countMap[preset] || 10;
+                const presetSpec = {
+                    fresh_5: [5, 'Apex'], fresh_10: [10, 'Apex'], fresh_15: [15, 'Apex'], fresh_20: [20, 'Apex'], fresh_30: [30, 'Apex'],
+                    lucid50_5: [5, 'Lucid'], lucid50_10: [10, 'Lucid'],
+                    lucid150_5: [5, 'Lucid150'], lucid150_10: [10, 'Lucid150'], lucid150_20: [20, 'Lucid150'], lucid150_30: [30, 'Lucid150'],
+                    eod150_5: [5, 'EOD150'], eod150_15: [15, 'EOD150']
+                };
+                const [count, firmKey] = presetSpec[preset] || [10, 'Apex'];
+                const rules = FIRM_RULES[firmKey];
                 const half = Math.ceil(count / 2);
                 for (let i = 1; i <= count; i++) {
                     const block = i <= half ? 'A' : 'B';
                     accs.push({
-                        id: `EV-AP-${String(i).padStart(2, '0')}`, firm: 'Apex', block, phase: 'EVAL', status: 'ACTIVE',
-                        balance: 50000, peak: 50000, mll: 47500, days_traded: 0, pos_days: 0, daily_profits: [], payouts_count: 0, total_payout_dollars: 0, defensive: false
+                        id: `EV-${firmKey.slice(0,2).toUpperCase()}-${String(i).padStart(2, '0')}`, firm: firmKey, block, phase: 'EVAL', status: 'ACTIVE',
+                        balance: rules.start_balance, peak: rules.start_balance, mll: rules.start_balance - rules.max_drawdown,
+                        days_traded: 0, pos_days: 0, daily_profits: [], payouts_count: 0, total_payout_dollars: 0, defensive: false
                     });
                 }
             }
@@ -18599,6 +18854,18 @@ const EMBEDDED_TRADES_LOG = {
                         } else if (sizingMode === 'EVAL10_PA5_DEF2') {
                             if (!isFunded) baseFar = 10;
                             else baseFar = curBuf < 1000 ? 2 : 5;
+                        } else if (sizingMode === 'EVAL22_PA18') {
+                            baseFar = isFunded ? 18 : 22;
+                        } else if (sizingMode === 'FIXED_30') {
+                            baseFar = 30;
+                        } else if (sizingMode === 'FIXED_22') {
+                            baseFar = 22;
+                        } else if (sizingMode === 'FIXED_20') {
+                            baseFar = 20;
+                        } else if (sizingMode === 'FIXED_18') {
+                            baseFar = 18;
+                        } else if (sizingMode === 'FIXED_8') {
+                            baseFar = 8;
                         } else if (sizingMode === 'HYBRID_A10_B5') {
                             baseFar = (acc.block || 'A') === 'A' ? 10 : 5;
                         } else if (sizingMode === 'FIXED_7') {
@@ -18649,7 +18916,7 @@ const EMBEDDED_TRADES_LOG = {
                                 evalBoughtCount++;
                                 accounts.push({
                                     id: newId, firm: acc.firm, phase: 'EVAL', status: 'ACTIVE', block: acc.block || 'A',
-                                    balance: 50000, peak: 50000, mll: 50000 - rules.max_drawdown,
+                                    balance: rules.start_balance, peak: rules.start_balance, mll: rules.start_balance - rules.max_drawdown,
                                     days_traded: 0, pos_days: 0, daily_profits: [], payouts_count: 0, total_payout_dollars: 0, defensive: false
                                 });
                                 events.push({
@@ -18668,6 +18935,13 @@ const EMBEDDED_TRADES_LOG = {
                     const isFunded = acc.phase === 'FUNDED';
                     const dPnl = dayPnl[acc.id] || 0;
 
+                    if (rules.eod_trailing && acc.balance > acc.peak) {
+                        acc.peak = acc.balance;
+                        const cap = isFunded ? rules.lock_mll_funded : rules.lock_mll_eval;
+                        const newMll = Math.min(cap, acc.peak - rules.max_drawdown);
+                        if (newMll > acc.mll) acc.mll = newMll;
+                    }
+
                     acc.days_traded++;
                     if (dPnl >= rules.payout_pos_day_threshold) acc.pos_days++;
                     acc.daily_profits.push(Math.max(0, dPnl));
@@ -18683,7 +18957,7 @@ const EMBEDDED_TRADES_LOG = {
                             const paId = `PA-${acc.id.replace('EV-', '')}`;
                             accounts.push({
                                 id: paId, firm: acc.firm, phase: 'FUNDED', status: 'ACTIVE', block: acc.block || 'A',
-                                balance: 50000, peak: 50000, mll: 50000 - rules.max_drawdown,
+                                balance: rules.start_balance, peak: rules.start_balance, mll: rules.start_balance - rules.max_drawdown,
                                 days_traded: 0, pos_days: 0, daily_profits: [], payouts_count: 0, total_payout_dollars: 0, defensive: false
                             });
                             events.push({
@@ -18947,7 +19221,7 @@ const EMBEDDED_TRADES_LOG = {
             const maxLosses = parseInt((document.getElementById('ctrl-max-losses') || {}).value || '2', 10);
             const rawSize = (document.getElementById('matrix-size') || {}).value || 'SYNC';
             const topSizing = (document.getElementById('ctrl-sizing') || {}).value || 'FIXED_5';
-            const sizeMap = { FIXED_5: 300, EVAL5_PA5_DEF3: 300, EVAL10_PA5_DEF2: 600, FIXED_7: 420, FIXED_10: 600, LEGACY_3_FUNDED: 180 };
+            const sizeMap = { FIXED_30: 1800, FIXED_22: 1320, EVAL22_PA18: 1320, FIXED_20: 1200, FIXED_18: 1080, FIXED_10: 600, EVAL10_PA5_DEF2: 600, FIXED_8: 480, FIXED_7: 420, FIXED_5: 300, EVAL5_PA5_DEF3: 300, LEGACY_3_FUNDED: 180 };
             const dPerTrade = rawSize === 'SYNC' ? (sizeMap[topSizing] || 300) : parseFloat(rawSize);
 
             const allDays = EMBEDDED_TRADES_LOG.days || [];
@@ -19117,6 +19391,263 @@ const EMBEDDED_TRADES_LOG = {
         window.addEventListener('DOMContentLoaded', () => {
             runSimulationUI();
         });
+    
+
+        /* __MC27_SCRIPT_START__ */
+        const MC27_DATA = {"generated_for": "2027 Institutional Execution", "strategy": "SNIPER COMBO ELITE (Max 2/Dia · Dev 50p/40p · BE +0.50p +2 ticks · Comissions $1.24/MNQ)", "methodology": "10.000 Anys Sintètics (252 sessions/any) amb Block-Bootstrap Setmanal de 5 dies", "simulations_per_profile": 10000, "profiles": [{"id": "lucid_50k_5x", "label": "1. LucidDaily 5x 50K (Intra ASAP · 10 MNQ) — Ideal Arrencada", "subtitle": "5 comptes 50K simultanis · Target $3,000 · MLL $2,000 Intra · Cobrament Diari ASAP · 0$ Activation", "slots": 5, "mnq": 10, "eval_cost_unit": 56.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.79, "net_cash_p5": 14100.0, "net_cash_p25": 44573.0, "net_cash_p50_median": 65604.0, "net_cash_mean": 66415.0, "net_cash_p75": 88738.0, "net_cash_p95": 121547.0, "bankroll_day1_initial": 282.0, "bankroll_p50_median": 846.0, "bankroll_p90": 2256.0, "bankroll_p95_safe": 2820.0, "bankroll_p99_ultra_safe": 4230.0, "first_payout_days_p25": 28, "first_payout_days_p50": 47, "first_payout_days_p75": 80, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 75, "payouts_p50": 90, "spend_p50": 3102.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-282.0, -846.0, -1410.0, -1692.0, -1974.0, -2256.0, -2256.0, -2256.0, 691.0, 3484.0, 6505.0, 10048.0, 14101.0], "p25": [-282.0, -564.0, -846.0, -1128.0, 1935.0, 6851.0, 11899.0, 17378.0, 22620.0, 27746.0, 33074.0, 38936.0, 44573.0], "p50": [-282.0, -564.0, -564.0, 7628.0, 15312.0, 22730.0, 29750.0, 36850.0, 44005.0, 47762.0, 53481.0, 59445.0, 65604.0], "p75": [-282.0, -282.0, 10655.0, 22833.0, 32407.0, 41544.0, 48026.0, 51951.0, 59374.0, 66826.0, 73963.0, 81736.0, 88738.0], "p95": [-282.0, 8656.0, 28994.0, 46047.0, 49154.0, 56898.0, 68353.0, 78841.0, 88222.0, 97083.0, 103585.0, 112392.0, 121546.0], "sample_paths": [[-282.0, -564.0, -846.0, 2355.0, 4717.0, 4153.0, 4153.0, 3871.0, 3871.0, 30338.0, 45592.0, 53589.0, 53307.0], [-282.0, 8367.0, 34676.0, 49436.0, 49436.0, 48590.0, 48308.0, 48026.0, 47462.0, 69487.0, 87006.0, 96898.0, 96616.0], [-282.0, 5654.0, 18104.0, 18104.0, 31771.0, 47125.0, 46561.0, 45997.0, 51901.0, 93776.0, 95151.0, 94869.0, 94587.0], [-282.0, -282.0, 23573.0, 43593.0, 49154.0, 49154.0, 75477.0, 80191.0, 88962.0, 104305.0, 104023.0, 103741.0, 103741.0], [-282.0, 8299.0, 7735.0, 7171.0, 6889.0, 12957.0, 15175.0, 14611.0, 14329.0, 14047.0, 13483.0, 13483.0, 19271.0], [-282.0, -846.0, -1128.0, -1692.0, 3967.0, 18662.0, 23376.0, 22812.0, 22530.0, 21966.0, 21684.0, 21684.0, 48518.0], [-282.0, 13688.0, 26632.0, 44029.0, 49154.0, 49154.0, 70386.0, 70104.0, 84174.0, 95682.0, 102847.0, 107375.0, 106811.0], [-282.0, 3478.0, 3478.0, 36272.0, 35426.0, 41527.0, 41245.0, 44623.0, 48873.0, 57443.0, 77814.0, 77532.0, 77250.0], [-282.0, -564.0, -1128.0, 4920.0, 9304.0, 25878.0, 25596.0, 34039.0, 40288.0, 62182.0, 83757.0, 83475.0, 83193.0], [-282.0, -282.0, -564.0, 5436.0, 23546.0, 22982.0, 22700.0, 22136.0, 21854.0, 21290.0, 47869.0, 70655.0, 71008.0], [-282.0, -564.0, -846.0, -1128.0, -1410.0, -1692.0, -1974.0, -1974.0, 24583.0, 31623.0, 47744.0, 47462.0, 47180.0], [-282.0, -564.0, 20269.0, 49154.0, 48590.0, 48308.0, 48026.0, 47462.0, 55553.0, 80861.0, 80015.0, 88653.0, 88089.0]]}, "survival_curve": [{"bankroll": 500, "survival_pct": 26.13, "ruin_pct": 73.87}, {"bankroll": 1000, "survival_pct": 60.58, "ruin_pct": 39.42}, {"bankroll": 1500, "survival_pct": 79.61, "ruin_pct": 20.39}, {"bankroll": 2000, "survival_pct": 88.77, "ruin_pct": 11.23}, {"bankroll": 2500, "survival_pct": 91.92, "ruin_pct": 8.08}, {"bankroll": 3000, "survival_pct": 95.64, "ruin_pct": 4.36}, {"bankroll": 3500, "survival_pct": 97.65, "ruin_pct": 2.35}, {"bankroll": 4230, "survival_pct": 99.28, "ruin_pct": 0.72}, {"bankroll": 5000, "survival_pct": 99.72, "ruin_pct": 0.28}], "histogram": [{"label": "$-6k..$13k", "pct": 4.5, "count": 445}, {"label": "$13k..$31k", "pct": 10.3, "count": 1027}, {"label": "$31k..$49k", "pct": 16.1, "count": 1607}, {"label": "$49k..$68k", "pct": 22.1, "count": 2209}, {"label": "$68k..$86k", "pct": 20.0, "count": 1997}, {"label": "$86k..$105k", "pct": 14.6, "count": 1457}, {"label": "$105k..$123k", "pct": 8.2, "count": 815}, {"label": "$123k..$142k", "pct": 3.4, "count": 335}, {"label": "$142k..$160k", "pct": 0.9, "count": 89}, {"label": "$160k..$179k", "pct": 0.2, "count": 19}]}, {"id": "alpha_150k_5x", "label": "2. Alpha Futures 5x 150K (EOD · 30 MNQ) — Top EOD Sense Erosió BE", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 EOD Pur · Cicle 5 dies · 0$ Activation", "slots": 5, "mnq": 30, "eval_cost_unit": 199.0, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 99.07, "net_cash_p5": 36112.0, "net_cash_p25": 107849.0, "net_cash_p50_median": 154368.0, "net_cash_mean": 155933.0, "net_cash_p75": 207489.0, "net_cash_p95": 271967.0, "bankroll_day1_initial": 995.0, "bankroll_p50_median": 2985.0, "bankroll_p90": 6965.0, "bankroll_p95_safe": 8955.0, "bankroll_p99_ultra_safe": 13930.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 10945.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-995.0, -2985.0, -4975.0, -5970.0, -6965.0, -7015.0, -7960.0, -601.0, 5665.0, 10595.0, 17830.0, 26884.0, 36112.0], "p25": [-995.0, -1990.0, -2985.0, -3980.0, 7965.0, 15535.0, 29078.0, 41892.0, 57305.0, 74058.0, 86800.0, 97450.0, 107849.0], "p50": [-995.0, -1990.0, -1990.0, 17525.0, 35791.0, 55340.0, 75560.0, 92795.0, 102275.0, 113191.0, 125333.0, 139432.0, 154368.0], "p75": [-995.0, -995.0, 20510.0, 49090.0, 77167.0, 97106.0, 105744.0, 119524.0, 136524.0, 154744.0, 173892.0, 192113.0, 207490.0], "p95": [-995.0, 21505.0, 54803.0, 88010.0, 109218.0, 120957.0, 146398.0, 173307.0, 198520.0, 212930.0, 229498.0, 249197.0, 271967.0], "sample_paths": [[-995.0, -1990.0, -2985.0, -3980.0, 17525.0, 15535.0, 15535.0, 15535.0, 15535.0, 57148.0, 102148.0, 123653.0, 122658.0], [-995.0, 10321.0, 55321.0, 99326.0, 98331.0, 96341.0, 95346.0, 95346.0, 93356.0, 138356.0, 160856.0, 183356.0, 203866.0], [-995.0, 21505.0, 44005.0, 61704.0, 80682.0, 123918.0, 140105.0, 139110.0, 158024.0, 203024.0, 246034.0, 245039.0, 244044.0], [-995.0, -1990.0, 20510.0, 65510.0, 88010.0, 108520.0, 131020.0, 168296.0, 212301.0, 212301.0, 211306.0, 210311.0, 210311.0], [-995.0, 21505.0, 19515.0, 17525.0, 16530.0, 15535.0, 34123.0, 32133.0, 31138.0, 30143.0, 29148.0, 28153.0, 49658.0], [-995.0, -1990.0, -2985.0, -4975.0, 6157.0, 48615.0, 83596.0, 82601.0, 81606.0, 79616.0, 90088.0, 90088.0, 135088.0], [-995.0, 21505.0, 66505.0, 110510.0, 109515.0, 120084.0, 119089.0, 119089.0, 160601.0, 181087.0, 214405.0, 213410.0, 212415.0], [-995.0, -995.0, 26247.0, 71247.0, 88391.0, 106844.0, 105849.0, 104854.0, 122822.0, 145322.0, 167822.0, 204563.0, 225318.0], [-995.0, -995.0, -2985.0, 19515.0, 36520.0, 59020.0, 100521.0, 144526.0, 143531.0, 158478.0, 203478.0, 225978.0, 233996.0], [-995.0, -995.0, -1990.0, -1990.0, 43010.0, 83584.0, 104094.0, 102104.0, 101109.0, 99119.0, 140630.0, 185630.0, 207135.0], [-995.0, -1990.0, -2985.0, -4975.0, -5970.0, -6965.0, -6965.0, 26661.0, 49161.0, 71661.0, 93166.0, 130176.0, 129181.0], [-995.0, -1990.0, 30805.0, 97310.0, 95320.0, 94325.0, 93330.0, 92335.0, 103116.0, 137152.0, 158657.0, 177857.0, 176862.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.99, "ruin_pct": 71.01}, {"bankroll": 3000, "survival_pct": 63.99, "ruin_pct": 36.01}, {"bankroll": 5000, "survival_pct": 82.18, "ruin_pct": 17.82}, {"bankroll": 7000, "survival_pct": 90.85, "ruin_pct": 9.15}, {"bankroll": 9000, "survival_pct": 95.54, "ruin_pct": 4.46}, {"bankroll": 11000, "survival_pct": 97.72, "ruin_pct": 2.28}, {"bankroll": 13000, "survival_pct": 98.86, "ruin_pct": 1.14}, {"bankroll": 15000, "survival_pct": 99.57, "ruin_pct": 0.43}, {"bankroll": 18000, "survival_pct": 99.92, "ruin_pct": 0.08}], "histogram": [{"label": "$-21k..$20k", "pct": 2.9, "count": 291}, {"label": "$20k..$61k", "pct": 6.9, "count": 690}, {"label": "$61k..$102k", "pct": 13.0, "count": 1301}, {"label": "$102k..$144k", "pct": 21.8, "count": 2177}, {"label": "$144k..$185k", "pct": 19.5, "count": 1954}, {"label": "$185k..$226k", "pct": 19.6, "count": 1964}, {"label": "$226k..$267k", "pct": 10.5, "count": 1047}, {"label": "$267k..$308k", "pct": 4.4, "count": 441}, {"label": "$308k..$349k", "pct": 1.2, "count": 125}, {"label": "$349k..$390k", "pct": 0.1, "count": 10}]}, {"id": "lucid_150k_5x", "label": "3. LucidDaily 5x 150K (Intra ASAP · 30 MNQ) — Cobrament Diari Ràpid", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 Intra (amb BE +0.50p) · Payout Diari ASAP", "slots": 5, "mnq": 30, "eval_cost_unit": 137.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.44, "net_cash_p5": 27292.0, "net_cash_p25": 89385.0, "net_cash_p50_median": 137658.0, "net_cash_mean": 140678.0, "net_cash_p75": 188868.0, "net_cash_p95": 261462.0, "bankroll_day1_initial": 687.0, "bankroll_p50_median": 2748.0, "bankroll_p90": 7578.0, "bankroll_p95_safe": 10305.0, "bankroll_p99_ultra_safe": 15114.0, "first_payout_days_p25": 22, "first_payout_days_p50": 41, "first_payout_days_p75": 71, "first_payout_days_p95": 143, "blown_p50": 85, "blown_p95": 125, "payouts_p50": 85, "spend_p50": 13053.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-687.0, -3435.0, -4809.0, -6183.0, -6870.0, -7557.0, -8244.0, -7378.0, -75.0, 6466.0, 12561.0, 19921.0, 27292.0], "p25": [-687.0, -2061.0, -3435.0, -3435.0, 4461.0, 15111.0, 27075.0, 39167.0, 52078.0, 61947.0, 67070.0, 78145.0, 89385.0], "p50": [-687.0, -1374.0, -337.0, 21240.0, 37192.0, 55364.0, 66756.0, 73890.0, 86244.0, 98844.0, 112330.0, 125574.0, 137658.0], "p75": [-687.0, -687.0, 31721.0, 61016.0, 70191.0, 79772.0, 96794.0, 115920.0, 132452.0, 143318.0, 158903.0, 174706.0, 188867.0], "p95": [-687.0, 33742.0, 72939.0, 80170.0, 112251.0, 137483.0, 147252.0, 167985.0, 188414.0, 209513.0, 224674.0, 242353.0, 261462.0], "sample_paths": [[-687.0, -1374.0, -2748.0, 14664.0, 20536.0, 17788.0, 17788.0, 17788.0, 20151.0, 92101.0, 90727.0, 90727.0, 89353.0], [-687.0, 32910.0, 73626.0, 122354.0, 147252.0, 143817.0, 143130.0, 141756.0, 140382.0, 214695.0, 214695.0, 246946.0, 256696.0], [-687.0, 24772.0, 62279.0, 61592.0, 94714.0, 134531.0, 132470.0, 131096.0, 132805.0, 204722.0, 202661.0, 220937.0, 219563.0], [-687.0, -1374.0, 47164.0, 57730.0, 55669.0, 54982.0, 104606.0, 118378.0, 152342.0, 192004.0, 191317.0, 189943.0, 189256.0], [-687.0, 32705.0, 32018.0, 31331.0, 29957.0, 48136.0, 54949.0, 52888.0, 52201.0, 50827.0, 48766.0, 50842.0, 65686.0], [-687.0, -2061.0, -4122.0, -4809.0, 11918.0, 34360.0, 32986.0, 31612.0, 28864.0, 27490.0, 26803.0, 29868.0, 99742.0], [-687.0, 48872.0, 72252.0, 71565.0, 70878.0, 70191.0, 87380.0, 97037.0, 135181.0, 134494.0, 150405.0, 150405.0, 148344.0], [-687.0, 18244.0, 22936.0, 73626.0, 72939.0, 99050.0, 97676.0, 114931.0, 114244.0, 155503.0, 186496.0, 185809.0, 184435.0], [-687.0, -1374.0, -2748.0, 15848.0, 28471.0, 85844.0, 85157.0, 103098.0, 120590.0, 119216.0, 117842.0, 134502.0, 133815.0], [-687.0, -687.0, -1374.0, 24435.0, 70878.0, 70878.0, 69504.0, 67443.0, 66756.0, 68113.0, 139695.0, 138321.0, 137634.0], [-687.0, -1374.0, -3435.0, 5390.0, 4016.0, 2642.0, 1955.0, 1955.0, 76268.0, 73520.0, 72146.0, 73837.0, 73150.0], [-687.0, -2061.0, 24370.0, 72252.0, 70878.0, 69504.0, 68817.0, 66756.0, 65382.0, 90504.0, 89130.0, 122695.0, 119947.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 34.47, "ruin_pct": 65.53}, {"bankroll": 3000, "survival_pct": 56.85, "ruin_pct": 43.15}, {"bankroll": 5000, "survival_pct": 77.29, "ruin_pct": 22.71}, {"bankroll": 7500, "survival_pct": 87.87, "ruin_pct": 12.13}, {"bankroll": 9500, "survival_pct": 93.27, "ruin_pct": 6.73}, {"bankroll": 11000, "survival_pct": 96.37, "ruin_pct": 3.63}, {"bankroll": 13000, "survival_pct": 97.81, "ruin_pct": 2.19}, {"bankroll": 15000, "survival_pct": 98.9, "ruin_pct": 1.1}, {"bankroll": 18000, "survival_pct": 99.82, "ruin_pct": 0.18}], "histogram": [{"label": "$-23k..$21k", "pct": 4.0, "count": 401}, {"label": "$21k..$65k", "pct": 11.0, "count": 1096}, {"label": "$65k..$110k", "pct": 20.1, "count": 2006}, {"label": "$110k..$154k", "pct": 23.9, "count": 2392}, {"label": "$154k..$198k", "pct": 19.5, "count": 1951}, {"label": "$198k..$242k", "pct": 13.5, "count": 1346}, {"label": "$242k..$287k", "pct": 5.7, "count": 569}, {"label": "$287k..$331k", "pct": 1.9, "count": 188}, {"label": "$331k..$375k", "pct": 0.4, "count": 38}, {"label": "$375k..$420k", "pct": 0.1, "count": 13}]}, {"id": "topstep_150k_5x", "label": "4. Topstep 5x 150K XFA (EOD · 30 MNQ) — Estàndard Institucional", "subtitle": "5 comptes 150K XFA · Target $9,000 · MLL $4,500 EOD · Cicle 5 dies +$150 · Cap $5,000", "slots": 5, "mnq": 30, "eval_cost_unit": 149.0, "act_fee_unit": 149.0, "simulations": 10000, "prob_profitable_year_pct": 99.02, "net_cash_p5": 34903.0, "net_cash_p25": 106671.0, "net_cash_p50_median": 153020.0, "net_cash_mean": 154712.0, "net_cash_p75": 206389.0, "net_cash_p95": 270576.0, "bankroll_day1_initial": 745.0, "bankroll_p50_median": 2980.0, "bankroll_p90": 7450.0, "bankroll_p95_safe": 9685.0, "bankroll_p99_ultra_safe": 14155.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 11920.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-745.0, -2980.0, -4470.0, -5960.0, -6705.0, -7450.0, -7450.0, -824.0, 5252.0, 10075.0, 16971.0, 25764.0, 34903.0], "p25": [-745.0, -2235.0, -2980.0, -3725.0, 7644.0, 15503.0, 28519.0, 41032.0, 56433.0, 73112.0, 85906.0, 96456.0, 106670.0], "p50": [-745.0, -1490.0, -1490.0, 17285.0, 35508.0, 54612.0, 74752.0, 92250.0, 101694.0, 112327.0, 124570.0, 138180.0, 153020.0], "p75": [-745.0, -1490.0, 20265.0, 48720.0, 76602.0, 96590.0, 105708.0, 118610.0, 135295.0, 153483.0, 172659.0, 190990.0, 206389.0], "p95": [-745.0, 21010.0, 54308.0, 87765.0, 108775.0, 120013.0, 145561.0, 172374.0, 197285.0, 212191.0, 228380.0, 247595.0, 270576.0], "sample_paths": [[-745.0, -1490.0, -2980.0, -4470.0, 17285.0, 15795.0, 15795.0, 15795.0, 15050.0, 56663.0, 101663.0, 123418.0, 121928.0], [-745.0, 9826.0, 54826.0, 99081.0, 97591.0, 96101.0, 94611.0, 94611.0, 93121.0, 137376.0, 159876.0, 182376.0, 202641.0], [-745.0, 21010.0, 43510.0, 61459.0, 79692.0, 122928.0, 139365.0, 138620.0, 156789.0, 201789.0, 245299.0, 243809.0, 242319.0], [-745.0, -2980.0, 19520.0, 64520.0, 87020.0, 108030.0, 129785.0, 167061.0, 211316.0, 210571.0, 209826.0, 208336.0, 208336.0], [-745.0, 21010.0, 18775.0, 16540.0, 15795.0, 14305.0, 33143.0, 30908.0, 29418.0, 28673.0, 27183.0, 25693.0, 47448.0], [-745.0, -1490.0, -2980.0, -4470.0, 5917.0, 48375.0, 83856.0, 82366.0, 81621.0, 80131.0, 90108.0, 89363.0, 134363.0], [-745.0, 21010.0, 66010.0, 110265.0, 109520.0, 119594.0, 118104.0, 117359.0, 158871.0, 179357.0, 212925.0, 211435.0, 209945.0], [-745.0, -1490.0, 25752.0, 70752.0, 88396.0, 106354.0, 105609.0, 104119.0, 122337.0, 144092.0, 166592.0, 203333.0, 224338.0], [-745.0, -745.0, -2235.0, 19520.0, 36280.0, 58780.0, 100281.0, 144536.0, 143046.0, 157248.0, 202248.0, 224748.0, 233016.0], [-745.0, -1490.0, -2235.0, -2980.0, 42020.0, 82594.0, 103604.0, 102114.0, 100624.0, 98389.0, 139900.0, 184900.0, 206655.0], [-745.0, -2235.0, -2980.0, -5960.0, -6705.0, -8195.0, -8940.0, 24686.0, 47186.0, 69686.0, 90696.0, 127706.0, 126961.0], [-745.0, -2235.0, 30560.0, 97315.0, 95825.0, 94335.0, 92845.0, 91355.0, 102136.0, 136172.0, 157927.0, 176382.0, 175637.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.91, "ruin_pct": 71.09}, {"bankroll": 3000, "survival_pct": 56.36, "ruin_pct": 43.64}, {"bankroll": 5000, "survival_pct": 73.82, "ruin_pct": 26.18}, {"bankroll": 7500, "survival_pct": 90.77, "ruin_pct": 9.23}, {"bankroll": 9500, "survival_pct": 94.43, "ruin_pct": 5.57}, {"bankroll": 11500, "survival_pct": 97.61, "ruin_pct": 2.39}, {"bankroll": 13500, "survival_pct": 98.91, "ruin_pct": 1.09}, {"bankroll": 15000, "survival_pct": 99.36, "ruin_pct": 0.64}, {"bankroll": 18000, "survival_pct": 99.91, "ruin_pct": 0.09}], "histogram": [{"label": "$-19k..$21k", "pct": 3.1, "count": 307}, {"label": "$21k..$62k", "pct": 7.3, "count": 727}, {"label": "$62k..$103k", "pct": 13.1, "count": 1305}, {"label": "$103k..$144k", "pct": 21.9, "count": 2185}, {"label": "$144k..$184k", "pct": 19.4, "count": 1938}, {"label": "$184k..$225k", "pct": 19.4, "count": 1943}, {"label": "$225k..$266k", "pct": 10.2, "count": 1024}, {"label": "$266k..$307k", "pct": 4.4, "count": 436}, {"label": "$307k..$348k", "pct": 1.2, "count": 125}, {"label": "$348k..$388k", "pct": 0.1, "count": 10}]}, {"id": "apex_50k_10x", "label": "5. Apex 3.0 10x 50K (Promo $19 · 10 MNQ) — Baix Cost d'Entrada", "subtitle": "10 comptes 50K en promo 90% OFF ($19 Eval + $125 PA) · 100% Split primers payouts", "slots": 10, "mnq": 10, "eval_cost_unit": 19.0, "act_fee_unit": 125.0, "simulations": 10000, "prob_profitable_year_pct": 98.82, "net_cash_p5": 30891.0, "net_cash_p25": 93546.0, "net_cash_p50_median": 129366.0, "net_cash_mean": 132024.0, "net_cash_p75": 177103.0, "net_cash_p95": 221441.0, "bankroll_day1_initial": 190.0, "bankroll_p50_median": 1820.0, "bankroll_p90": 4700.0, "bankroll_p95_safe": 6140.0, "bankroll_p99_ultra_safe": 8830.0, "first_payout_days_p25": 32, "first_payout_days_p50": 50, "first_payout_days_p75": 82, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 90, "payouts_p50": 90, "spend_p50": 6140.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-190.0, -1630.0, -2880.0, -3260.0, -3640.0, -4510.0, -4700.0, -4020.0, 1352.0, 6327.0, 13521.0, 20712.0, 30891.0], "p25": [-190.0, -1440.0, -1630.0, -1820.0, 3333.0, 10170.0, 22211.0, 35250.0, 49239.0, 63098.0, 76458.0, 85545.0, 93546.0], "p50": [-190.0, -570.0, -760.0, 7360.0, 25512.0, 43670.0, 62065.0, 78445.0, 89143.0, 97253.0, 105140.0, 116074.0, 129366.0], "p75": [-190.0, -380.0, 11492.0, 32862.0, 57884.0, 81992.0, 94728.0, 102666.0, 109726.0, 125140.0, 142050.0, 160926.0, 177103.0], "p95": [-190.0, 7448.0, 33981.0, 67000.0, 96482.0, 106819.0, 113835.0, 133570.0, 158679.0, 183947.0, 200295.0, 209724.0, 221441.0], "sample_paths": [[-190.0, -190.0, -1630.0, -3070.0, 5356.0, 4976.0, 4976.0, 4976.0, 3726.0, 31894.0, 71894.0, 105484.0, 104234.0], [-190.0, 12780.0, 52780.0, 92780.0, 112590.0, 112020.0, 110580.0, 110580.0, 110200.0, 143562.0, 163562.0, 183562.0, 223182.0], [-190.0, 6752.0, 23292.0, 43780.0, 63780.0, 83590.0, 80900.0, 80520.0, 86918.0, 126918.0, 166918.0, 186728.0, 185478.0], [-190.0, -1440.0, 26280.0, 66280.0, 86280.0, 104658.0, 112296.0, 132296.0, 163616.0, 203426.0, 203236.0, 201986.0, 201986.0], [-190.0, 6752.0, 23068.0, 21628.0, 21438.0, 29110.0, 38366.0, 58366.0, 64402.0, 62772.0, 62582.0, 61332.0, 61332.0], [-190.0, -380.0, -1820.0, -2010.0, -3260.0, 20456.0, 31120.0, 49872.0, 49682.0, 49492.0, 48052.0, 46802.0, 80374.0], [-190.0, 7248.0, 47248.0, 87248.0, 100246.0, 98996.0, 116940.0, 131272.0, 171272.0, 191082.0, 189832.0, 188392.0, 186952.0], [-190.0, -1440.0, 5392.0, 45392.0, 65392.0, 101930.0, 101550.0, 100110.0, 99920.0, 106838.0, 126838.0, 152410.0, 158798.0], [-190.0, -190.0, -380.0, -1630.0, 4802.0, 13546.0, 43618.0, 83618.0, 103428.0, 102178.0, 135278.0, 155278.0, 173338.0], [-190.0, -1440.0, -1630.0, -2880.0, 31932.0, 44172.0, 52660.0, 61148.0, 59708.0, 58268.0, 85940.0, 125940.0, 145940.0], [-190.0, -1630.0, -3070.0, -3260.0, -5950.0, -6140.0, -7390.0, 5886.0, 36526.0, 56526.0, 96336.0, 94896.0, 93266.0], [-190.0, -190.0, 7048.0, 67048.0, 87048.0, 106668.0, 105418.0, 103978.0, 116958.0, 146486.0, 158622.0, 198432.0, 198242.0]]}, "survival_curve": [{"bankroll": 1000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 2000, "survival_pct": 54.58, "ruin_pct": 45.42}, {"bankroll": 3500, "survival_pct": 81.12, "ruin_pct": 18.88}, {"bankroll": 5000, "survival_pct": 91.59, "ruin_pct": 8.41}, {"bankroll": 6500, "survival_pct": 96.2, "ruin_pct": 3.8}, {"bankroll": 8000, "survival_pct": 98.54, "ruin_pct": 1.46}, {"bankroll": 9500, "survival_pct": 99.48, "ruin_pct": 0.52}, {"bankroll": 11000, "survival_pct": 99.77, "ruin_pct": 0.23}, {"bankroll": 13000, "survival_pct": 99.98, "ruin_pct": 0.02}], "histogram": [{"label": "$-13k..$22k", "pct": 3.7, "count": 366}, {"label": "$22k..$57k", "pct": 6.7, "count": 666}, {"label": "$57k..$92k", "pct": 14.0, "count": 1399}, {"label": "$92k..$128k", "pct": 24.4, "count": 2436}, {"label": "$128k..$163k", "pct": 19.4, "count": 1942}, {"label": "$163k..$198k", "pct": 17.5, "count": 1751}, {"label": "$198k..$233k", "pct": 11.3, "count": 1131}, {"label": "$233k..$268k", "pct": 2.4, "count": 243}, {"label": "$268k..$304k", "pct": 0.5, "count": 55}, {"label": "$304k..$339k", "pct": 0.1, "count": 11}]}, {"id": "imperi_65", "label": "👑 Imperi Complet 65 Comptes 150K (Flota Total)", "subtitle": "15x EOD (Alpha/Tradeify/MFFU) + 10x Intra ASAP (Lucid/TPT) + 40x Grup C (Apex/Legends) @ 30 MNQ", "slots": 65, "mnq": 30, "eval_cost_unit": 135.5, "act_fee_unit": 97.3, "simulations": 10000, "prob_profitable_year_pct": 98.78, "net_cash_p5": 371864.0, "net_cash_p25": 1008876.0, "net_cash_p50_median": 1342835.0, "net_cash_mean": 1344390.0, "net_cash_p75": 1717598.0, "net_cash_p95": 2215096.0, "bankroll_day1_initial": 8809.0, "bankroll_p50_median": 36874.0, "bankroll_p90": 93024.0, "bankroll_p95_safe": 116138.0, "bankroll_p99_ultra_safe": 162160.0, "first_payout_days_p25": 21, "first_payout_days_p50": 35, "first_payout_days_p75": 59, "first_payout_days_p95": 114, "blown_p50": 510, "blown_p95": 905, "payouts_p50": 570, "spend_p50": 113574.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-8809.0, -34126.0, -50634.0, -64394.0, -74928.0, -81185.0, -79809.0, -53987.0, 1784.0, 82121.0, 156639.0, 246859.0, 371864.0], "p25": [-8809.0, -25317.0, -35500.0, -35050.0, 26956.0, 148303.0, 273743.0, 414264.0, 559207.0, 697144.0, 819593.0, 921762.0, 1008876.0], "p50": [-8809.0, -17882.0, -2629.0, 152540.0, 309564.0, 475538.0, 641572.0, 789138.0, 922960.0, 1028549.0, 1124301.0, 1220931.0, 1342836.0], "p75": [-8809.0, -8809.0, 193484.0, 386682.0, 569480.0, 750679.0, 900222.0, 1051463.0, 1174839.0, 1295535.0, 1423519.0, 1566847.0, 1717598.0], "p95": [-8809.0, 121226.0, 395308.0, 624489.0, 838653.0, 1014335.0, 1218158.0, 1381845.0, 1514583.0, 1678355.0, 1861274.0, 2032872.0, 2215096.0], "sample_paths": [[-8809.0, -17618.0, -34126.0, -13062.0, 115437.0, 95071.0, 95071.0, 95071.0, 93472.0, 457211.0, 684463.0, 939128.0, 932420.0], [-8809.0, 86007.0, 492439.0, 817060.0, 957896.0, 1040356.0, 1125422.0, 1122674.0, 1105056.0, 1477357.0, 1639857.0, 1866859.0, 1947063.0], [-8809.0, 103284.0, 340799.0, 487671.0, 704725.0, 1009066.0, 1148657.0, 1224274.0, 1278107.0, 1746941.0, 1967149.0, 2094741.0, 2183033.0], [-8809.0, -30268.0, 229307.0, 480439.0, 543817.0, 699273.0, 1054897.0, 1284669.0, 1479562.0, 1652761.0, 1743552.0, 1831844.0, 1830470.0], [-8809.0, 119150.0, 205981.0, 292812.0, 382229.0, 585793.0, 655335.0, 730218.0, 715084.0, 704901.0, 687019.0, 677411.0, 771763.0], [-8809.0, -18992.0, -36874.0, -53118.0, 102408.0, 369664.0, 567159.0, 655451.0, 647120.0, 733702.0, 848568.0, 838574.0, 1208321.0], [-8809.0, 151485.0, 428244.0, 749035.0, 839826.0, 964184.0, 1080403.0, 1093391.0, 1389214.0, 1544301.0, 1771224.0, 1862264.0, 1949182.0], [-8809.0, 22727.0, 169849.0, 501229.0, 646589.0, 848196.0, 937613.0, 1053961.0, 1102039.0, 1245733.0, 1470218.0, 1674069.0, 1828736.0], [-8809.0, -10183.0, -27801.0, 70566.0, 336002.0, 613249.0, 831377.0, 1094425.0, 1215848.0, 1251617.0, 1478869.0, 1674689.0, 1792518.0], [-8809.0, -15134.0, -23943.0, 21350.0, 344236.0, 560957.0, 715039.0, 800247.0, 889913.0, 885832.0, 1238731.0, 1465983.0, 1624274.0], [-8809.0, -23943.0, -35500.0, -45370.0, -55553.0, -72061.0, -79760.0, 116117.0, 427243.0, 584247.0, 740039.0, 949454.0, 1035645.0], [-8809.0, -25317.0, 220931.0, 706359.0, 792941.0, 786233.0, 875899.0, 953017.0, 1077613.0, 1324964.0, 1386881.0, 1700484.0, 1692153.0]]}, "survival_curve": [{"bankroll": 15000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 25000, "survival_pct": 30.21, "ruin_pct": 69.79}, {"bankroll": 35000, "survival_pct": 47.61, "ruin_pct": 52.39}, {"bankroll": 50000, "survival_pct": 65.26, "ruin_pct": 34.74}, {"bankroll": 65000, "survival_pct": 78.06, "ruin_pct": 21.94}, {"bankroll": 80000, "survival_pct": 85.58, "ruin_pct": 14.42}, {"bankroll": 100000, "survival_pct": 91.89, "ruin_pct": 8.11}, {"bankroll": 120000, "survival_pct": 95.57, "ruin_pct": 4.43}, {"bankroll": 150000, "survival_pct": 98.4, "ruin_pct": 1.6}], "histogram": [{"label": "$-226k..$100k", "pct": 2.1, "count": 213}, {"label": "$100k..$426k", "pct": 3.7, "count": 370}, {"label": "$426k..$752k", "pct": 6.4, "count": 638}, {"label": "$752k..$1078k", "pct": 17.9, "count": 1790}, {"label": "$1078k..$1404k", "pct": 24.4, "count": 2439}, {"label": "$1404k..$1730k", "pct": 21.1, "count": 2114}, {"label": "$1730k..$2056k", "pct": 14.8, "count": 1480}, {"label": "$2056k..$2382k", "pct": 7.3, "count": 734}, {"label": "$2382k..$2708k", "pct": 1.9, "count": 194}, {"label": "$2708k..$3033k", "pct": 0.3, "count": 28}]}]};
+        let mc27CurrentIdx = 0;
+        let mc27FanChart = null;
+        let mc27SurvChart = null;
+        let mc27HistChart = null;
+        let mc27Initialized = false;
+
+        const mc27FmtUSD = (n) => (n < 0 ? '-$' : '+$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+        const mc27FmtPlain = (n) => '$' + Math.abs(Math.round(n)).toLocaleString('en-US');
+
+        function switchMainDashboardTab(tab) {
+            const vBt = document.getElementById('view-backtest');
+            const vMc = document.getElementById('view-montecarlo');
+            const bBt = document.getElementById('tab-btn-backtest');
+            const bMc = document.getElementById('tab-btn-montecarlo');
+            const activeCls = 'px-3.5 py-1.5 rounded-lg font-bold transition bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow';
+            const idleCls = 'px-3.5 py-1.5 rounded-lg font-bold transition text-gray-300 hover:text-white border border-transparent hover:bg-dark-800';
+
+            if (tab === 'montecarlo') {
+                vBt.classList.add('hidden');
+                vMc.classList.remove('hidden');
+                bMc.className = activeCls;
+                bBt.className = idleCls;
+                if (!mc27Initialized) {
+                    mc27Initialized = true;
+                    mc27SelectProfile(0);
+                } else {
+                    if (mc27FanChart) mc27FanChart.resize();
+                    if (mc27SurvChart) mc27SurvChart.resize();
+                    if (mc27HistChart) mc27HistChart.resize();
+                }
+                if (history.replaceState) history.replaceState(null, '', '#montecarlo');
+            } else {
+                vMc.classList.add('hidden');
+                vBt.classList.remove('hidden');
+                bBt.className = activeCls;
+                bMc.className = idleCls;
+                if (history.replaceState) history.replaceState(null, '', window.location.pathname);
+            }
+        }
+
+        function mc27RenderSelectorAndTable() {
+            const sel = document.getElementById('mc27-profile-selector');
+            const tbody = document.getElementById('mc27-master-tbody');
+            if (!sel || !tbody) return;
+            sel.innerHTML = '';
+            tbody.innerHTML = '';
+
+            MC27_DATA.profiles.forEach((p, idx) => {
+                const isAct = idx === mc27CurrentIdx;
+                const btn = document.createElement('button');
+                btn.className = 'p-3 rounded-xl border text-left transition flex flex-col justify-between ' +
+                    (isAct ? 'bg-teal-950/40 border-teal-400 text-teal-200 shadow-lg' : 'bg-dark-900/80 border-gray-800 hover:border-gray-600 text-gray-300');
+                btn.onclick = () => mc27SelectProfile(idx);
+                btn.innerHTML = `
+                    <div class="text-xs font-bold truncate">${p.label}</div>
+                    <div class="flex items-center justify-between text-[11px] font-mono mt-1.5 text-gray-400">
+                        <span>P50: <strong class="text-emerald-400">${mc27FmtUSD(p.net_cash_p50_median)}</strong></span>
+                        <span>Matalàs P95: <strong class="text-amber-300">${mc27FmtPlain(p.bankroll_p95_safe)}</strong></span>
+                    </div>
+                `;
+                sel.appendChild(btn);
+
+                const tr = document.createElement('tr');
+                tr.className = 'cursor-pointer hover:bg-dark-800/60 transition ' + (isAct ? 'bg-teal-950/30' : '');
+                tr.onclick = () => mc27SelectProfile(idx);
+                tr.innerHTML = `
+                    <td class="p-3.5 font-sans font-semibold text-white">${p.label}</td>
+                    <td class="p-3.5 text-emerald-400 font-bold">${p.prob_profitable_year_pct.toFixed(1)}%</td>
+                    <td class="p-3.5 text-rose-300">${mc27FmtUSD(p.net_cash_p5)}</td>
+                    <td class="p-3.5 text-teal-300 font-bold text-sm">${mc27FmtUSD(p.net_cash_p50_median)}</td>
+                    <td class="p-3.5 text-emerald-300">${mc27FmtUSD(p.net_cash_p95)}</td>
+                    <td class="p-3.5 text-amber-300 font-bold">${mc27FmtPlain(p.bankroll_p95_safe)}</td>
+                    <td class="p-3.5 text-gray-300">${mc27FmtPlain(p.bankroll_p99_ultra_safe)}</td>
+                    <td class="p-3.5 text-cyan-300">${p.first_payout_days_p50} dies</td>
+                    <td class="p-3.5 text-gray-200">${p.payouts_p50}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function mc27SelectProfile(idx) {
+            mc27CurrentIdx = idx;
+            const p = MC27_DATA.profiles[idx];
+            mc27RenderSelectorAndTable();
+
+            document.getElementById('mc27-subtitle').textContent = p.subtitle;
+            document.getElementById('mc27-kpi-prob').textContent = p.prob_profitable_year_pct.toFixed(1) + '%';
+            document.getElementById('mc27-kpi-p5').textContent = mc27FmtUSD(p.net_cash_p5);
+            document.getElementById('mc27-kpi-p50').textContent = mc27FmtUSD(p.net_cash_p50_median);
+            document.getElementById('mc27-kpi-p95').textContent = mc27FmtUSD(p.net_cash_p95);
+            document.getElementById('mc27-kpi-br95').textContent = mc27FmtPlain(p.bankroll_p95_safe);
+            document.getElementById('mc27-kpi-br99').textContent = mc27FmtPlain(p.bankroll_p99_ultra_safe);
+            document.getElementById('mc27-kpi-paydays').textContent = p.first_payout_days_p50 + ' dies';
+            document.getElementById('mc27-kpi-pay25').textContent = p.first_payout_days_p25 + 'd';
+            document.getElementById('mc27-kpi-pay95').textContent = p.first_payout_days_p95 + 'd';
+            document.getElementById('mc27-fan-badge').textContent = `${p.slots} Comptes · ${p.mnq} MNQ · 10.000 Anys`;
+
+            document.getElementById('mc27-anat-day1').textContent = mc27FmtPlain(p.bankroll_day1_initial);
+            document.getElementById('mc27-anat-br50').textContent = mc27FmtPlain(p.bankroll_p50_median);
+            document.getElementById('mc27-anat-blown').textContent = p.blown_p50 + ' ctes';
+            document.getElementById('mc27-anat-spend').textContent = mc27FmtPlain(p.spend_p50);
+            document.getElementById('mc27-anat-payouts').textContent = p.payouts_p50 + ' cobraments';
+            const mult = p.bankroll_p95_safe > 0 ? (p.net_cash_p50_median / p.bankroll_p95_safe).toFixed(1) : '0';
+            document.getElementById('mc27-anat-mult').textContent = mult + 'x / any';
+
+            const slider = document.getElementById('mc27-budget-slider');
+            const maxGrid = p.survival_curve[p.survival_curve.length - 1].bankroll;
+            const minGrid = p.survival_curve[0].bankroll;
+            slider.min = minGrid;
+            slider.max = maxGrid;
+            slider.step = Math.max(100, Math.round((maxGrid - minGrid) / 40));
+            slider.value = p.bankroll_p95_safe;
+
+            mc27RenderCharts(p);
+            mc27UpdateBudgetCalc();
+        }
+
+        function mc27UpdateBudgetCalc() {
+            const p = MC27_DATA.profiles[mc27CurrentIdx];
+            const val = Number(document.getElementById('mc27-budget-slider').value);
+            document.getElementById('mc27-budget-val').textContent = mc27FmtPlain(val);
+
+            const sc = p.survival_curve;
+            let surv = sc[sc.length - 1].survival_pct;
+            if (val <= sc[0].bankroll) {
+                surv = sc[0].survival_pct * (val / Math.max(1, sc[0].bankroll));
+            } else {
+                for (let i = 0; i < sc.length - 1; i++) {
+                    if (val >= sc[i].bankroll && val <= sc[i + 1].bankroll) {
+                        const r = (val - sc[i].bankroll) / Math.max(1, sc[i + 1].bankroll - sc[i].bankroll);
+                        surv = sc[i].survival_pct + r * (sc[i + 1].survival_pct - sc[i].survival_pct);
+                        break;
+                    }
+                }
+            }
+            surv = Math.min(99.9, Math.max(0, surv));
+            const ruin = Math.max(0, 100 - surv);
+
+            document.getElementById('mc27-surv-pct').textContent = surv.toFixed(1) + '%';
+            document.getElementById('mc27-ruin-pct').textContent = ruin.toFixed(1) + '%';
+
+            const verd = document.getElementById('mc27-verdict');
+            if (surv >= 98.5) {
+                verd.className = 'text-[11px] leading-relaxed font-semibold text-emerald-400';
+                verd.textContent = "🛡️ CAIXA BLINDADA INSTITUCIONAL (<1.5% risc): Pots absorbir fins i tot el pitjor inici d'any de cada 100 anys sense aturar la roda.";
+            } else if (surv >= 94.5) {
+                verd.className = 'text-[11px] leading-relaxed font-semibold text-teal-300';
+                verd.textContent = "✅ MATALÀS SEGUR RECOMANAT (~95% èxit): Cobreix gairebé qualsevol mala ratxa inicial abans del 1r payout.";
+            } else if (surv >= 80.0) {
+                verd.className = 'text-[11px] leading-relaxed font-semibold text-amber-300';
+                verd.textContent = "⚠️ MATALÀS JUST (80-94%): Si enganxes 3 setmanes dolentes seguides el Mes 1, comença amb la meitat dels comptes fins al 1r cobrament.";
+            } else {
+                verd.className = 'text-[11px] leading-relaxed font-semibold text-rose-400';
+                verd.textContent = "🛑 SOTA-CAPITALITZAT PER ENCENDRE TOTS ELS SLOTS DE COP: Arrenca amb 1 o 2 comptes (o amb el bloc 50K) i escala amb els beneficis!";
+            }
+        }
+
+        function mc27RenderCharts(p) {
+            const ctxFan = document.getElementById('mc27-fanChart').getContext('2d');
+            if (mc27FanChart) mc27FanChart.destroy();
+            const sampleDatasets = p.fan_chart.sample_paths.slice(0, 5).map((sp, i) => ({
+                label: 'Mostra #' + (i + 1),
+                data: sp,
+                borderColor: 'rgba(148, 163, 184, 0.18)',
+                borderWidth: 1,
+                pointRadius: 0,
+                tension: 0.25,
+                fill: false
+            }));
+            mc27FanChart = new Chart(ctxFan, {
+                type: 'line',
+                data: {
+                    labels: p.fan_chart.months,
+                    datasets: [
+                        { label: 'P95 (Any Excel·lent)', data: p.fan_chart.p95, borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.08)', borderWidth: 2, borderDash: [4,4], pointRadius: 2, tension: 0.3, fill: '+1' },
+                        { label: 'P75 (Any Bo)', data: p.fan_chart.p75, borderColor: '#38bdf8', backgroundColor: 'rgba(20,184,166,0.16)', borderWidth: 1.5, pointRadius: 0, tension: 0.3, fill: '+2' },
+                        { label: '🎯 Mediana P50 (Any Normal)', data: p.fan_chart.p50, borderColor: '#2dd4bf', borderWidth: 3.5, pointRadius: 3, tension: 0.3, fill: false },
+                        { label: 'P25 (Any Moderat)', data: p.fan_chart.p25, borderColor: '#0284c7', backgroundColor: 'rgba(244,63,94,0.06)', borderWidth: 1.5, pointRadius: 0, tension: 0.3, fill: '+1' },
+                        { label: 'P5 (Any Mala Sort)', data: p.fan_chart.p5, borderColor: '#fb7185', borderWidth: 2, borderDash: [4,4], pointRadius: 2, tension: 0.3, fill: false },
+                        ...sampleDatasets
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { labels: { color: '#cbd5e1', font: { size: 11 }, filter: (it) => !it.text.startsWith('Mostra') } },
+                        tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${mc27FmtUSD(c.parsed.y)}` } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: 'rgba(31,41,55,0.5)' } },
+                        y: { ticks: { color: '#94a3b8', font: { size: 11 }, callback: (v) => (v < 0 ? '-$' : '$') + Math.abs(v / 1000).toFixed(0) + 'k' }, grid: { color: 'rgba(31,41,55,0.6)' } }
+                    }
+                }
+            });
+
+            const ctxSurv = document.getElementById('mc27-survivalChart').getContext('2d');
+            if (mc27SurvChart) mc27SurvChart.destroy();
+            mc27SurvChart = new Chart(ctxSurv, {
+                type: 'line',
+                data: {
+                    labels: p.survival_curve.map(x => '$' + (x.bankroll >= 1000 ? (x.bankroll / 1000).toFixed(1).replace('.0','') + 'k' : x.bankroll)),
+                    datasets: [{ label: '% Supervivència', data: p.survival_curve.map(x => x.survival_pct), borderColor: '#fbbf24', backgroundColor: 'rgba(251,191,36,0.18)', borderWidth: 2.5, pointRadius: 3, fill: true, tension: 0.3 }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: 'rgba(31,41,55,0.4)' } },
+                        y: { min: 0, max: 100, ticks: { color: '#94a3b8', font: { size: 10 }, callback: (v) => v + '%' }, grid: { color: 'rgba(31,41,55,0.5)' } }
+                    }
+                }
+            });
+
+            const ctxHist = document.getElementById('mc27-histChart').getContext('2d');
+            if (mc27HistChart) mc27HistChart.destroy();
+            mc27HistChart = new Chart(ctxHist, {
+                type: 'bar',
+                data: {
+                    labels: p.histogram.map(b => b.label),
+                    datasets: [{
+                        label: "% d'Anys Simulats",
+                        data: p.histogram.map(b => b.pct),
+                        backgroundColor: p.histogram.map(b => b.label.startsWith('$-') ? 'rgba(244,63,94,0.65)' : 'rgba(20,184,166,0.65)'),
+                        borderColor: p.histogram.map(b => b.label.startsWith('$-') ? '#f43f5e' : '#14b8a6'),
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (c) => `${c.parsed.y}% dels anys (${p.histogram[c.dataIndex].count} de 10.000)` } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { display: false } },
+                        y: { ticks: { color: '#94a3b8', font: { size: 10 }, callback: (v) => v + '%' }, grid: { color: 'rgba(31,41,55,0.5)' } }
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#montecarlo') {
+                switchMainDashboardTab('montecarlo');
+            }
+        });
+        /* __MC27_SCRIPT_END__ */
+
     </script>
 </body>
 </html>

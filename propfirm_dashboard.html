@@ -90,6 +90,9 @@
                 <button onclick="switchTab('tab-comparison')" id="nav-comparison" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
                     ⚖️ 30/30 vs 38/25 (Veredicte)
                 </button>
+                <a href="visual_backtest.html#montecarlo" class="px-3 py-1.5 rounded-lg transition-all text-cyan-300 bg-cyan-950/70 border border-cyan-700/70 hover:bg-cyan-900/70 font-semibold flex items-center gap-1">
+                    🎲 Monte Carlo 2027 (10K)
+                </a>
                 <a href="visual_backtest.html" class="px-3 py-1.5 rounded-lg transition-all text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 hover:bg-emerald-900/60 font-semibold flex items-center gap-1">
                     📸 Backtest Visual
                 </a>
@@ -501,13 +504,186 @@
             <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                     <h2 class="text-lg font-bold text-cyan-400 flex items-center gap-2">
-                        <span>📊</span> Prop Firm Expected Value Analysis & Scorecard
+                        <span>📊</span> Imperi Replikanto 150K & Rànquing Oficial de 10 Prop Firms (SNIPER_COMBO_ELITE)
                     </h2>
-                    <p class="text-xs text-gray-400">Replicació exacta del full de càlcul de JJ Simon (Captura 1) sobre 1 any de dades reals de MNQ.</p>
+                    <p class="text-xs text-gray-400">Simulació exacta 1-Segon (327 trades, 60% WR, +1.470p) amb Tall Real a Live (5/6 Payouts o $15k) i regla JJ Simon "Withdraw ASAP".</p>
                 </div>
                 <div class="bg-emerald-950/80 border border-emerald-800 px-4 py-2 rounded-xl text-right">
-                    <span class="text-[10px] uppercase tracking-wider text-emerald-400 block font-semibold">Best Fit (Based on EV)</span>
-                    <span class="text-sm font-bold text-white">MyFundedFutures (6.39x) & Lucid Daily (1.85x)</span>
+                    <span class="text-[10px] uppercase tracking-wider text-emerald-400 block font-semibold">Imperi 65 Comptes 150K (30 MNQ)</span>
+                    <span class="text-sm font-bold text-white">+$2,415,685 Nets/Any (ROI 22.7x)</span>
+                </div>
+            </div>
+
+            <!-- Replikanto 10-Firm Ranking Table -->
+            <div class="glass rounded-2xl overflow-hidden border border-cyan-800/50">
+                <div class="p-4 bg-dark-900/90 border-b border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
+                    <div>
+                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Rànquing Multi-Firma Replikanto (150K @ 30 MNQ)</span>
+                        <h3 class="text-sm font-bold text-white mt-1">Ordre d'Escalada Òptim amb Jubilació Automàtica abans de Live (5 Payouts o $15k/PA)</h3>
+                    </div>
+                    <span class="text-xs text-emerald-400 font-mono font-bold">Regla JJ Simon: Retirar SEMPRE cada dia sobre el Buffer (+$16k–$20k vs esperar)</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-dark-800/90 text-gray-400 uppercase text-[10px] border-b border-gray-800">
+                            <tr>
+                                <th class="p-3"># Ordre</th>
+                                <th class="p-3">Prop Firm & Pla (150K)</th>
+                                <th class="p-3">Drawdown</th>
+                                <th class="p-3">Slots Màx</th>
+                                <th class="p-3">Evals Compr.</th>
+                                <th class="p-3">Petats/Any</th>
+                                <th class="p-3">Tall Live/Reset</th>
+                                <th class="p-3">Payouts</th>
+                                <th class="p-3">Cost Total</th>
+                                <th class="p-3 bg-dark-900 text-emerald-400 font-bold">Net Anual Bloc</th>
+                                <th class="p-3 text-cyan-400 font-bold">Net / 1 Compte</th>
+                                <th class="p-3">ROI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60 font-mono text-gray-300">
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-amber-400">#1 (Onada 2)</td>
+                                <td class="p-3 font-sans font-bold text-white">Alpha Futures 150K Std</td>
+                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">40</td>
+                                <td class="p-3">25</td>
+                                <td class="p-3 text-amber-300">5 Payouts ($5k cap)</td>
+                                <td class="p-3">55</td>
+                                <td class="p-3 text-rose-400">-$7,960</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$233,240</td>
+                                <td class="p-3 font-bold text-cyan-400">+$46,648</td>
+                                <td class="p-3 font-bold text-white">30.3x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-amber-400">#2 (Onada 2)</td>
+                                <td class="p-3 font-sans font-bold text-white">Topstep 150K XFA</td>
+                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">40</td>
+                                <td class="p-3">25</td>
+                                <td class="p-3 text-amber-300">5 Payouts ($5k cap)</td>
+                                <td class="p-3">55</td>
+                                <td class="p-3 text-rose-400">-$8,195</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$233,005</td>
+                                <td class="p-3 font-bold text-cyan-400">+$46,601</td>
+                                <td class="p-3 font-bold text-white">29.4x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-cyan-400">#3 (Onada 1)</td>
+                                <td class="p-3 font-sans font-bold text-white">LucidDaily 150K ($137.40)</td>
+                                <td class="p-3 text-rose-300">Intraday 1s ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">100</td>
+                                <td class="p-3">85</td>
+                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
+                                <td class="p-3">110</td>
+                                <td class="p-3 text-rose-400">-$13,740</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$208,260</td>
+                                <td class="p-3 font-bold text-cyan-400">+$41,652</td>
+                                <td class="p-3 font-bold text-white">16.2x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-cyan-400">#4 (Onada 1)</td>
+                                <td class="p-3 font-sans font-bold text-white">MyFundedFutures Rapid 150K</td>
+                                <td class="p-3 text-amber-300">EOD Eval / Intra PA</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">75</td>
+                                <td class="p-3">60</td>
+                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
+                                <td class="p-3">110</td>
+                                <td class="p-3 text-rose-400">-$14,925</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$207,075</td>
+                                <td class="p-3 font-bold text-cyan-400">+$41,415</td>
+                                <td class="p-3 font-bold text-white">14.9x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-amber-400">#5 (Onada 2)</td>
+                                <td class="p-3 font-sans font-bold text-white">Tradeify Select Flex 150K</td>
+                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">40</td>
+                                <td class="p-3">25</td>
+                                <td class="p-3 text-amber-300">5 Payouts ($4.5k cap)</td>
+                                <td class="p-3">55</td>
+                                <td class="p-3 text-rose-400">-$8,360</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$205,840</td>
+                                <td class="p-3 font-bold text-cyan-400">+$41,168</td>
+                                <td class="p-3 font-bold text-white">25.6x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-violet-400">#6 (Onada 3)</td>
+                                <td class="p-3 font-sans font-bold text-white">FundedNext Rapid 150K</td>
+                                <td class="p-3 text-emerald-400">EOD / Static ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">65</td>
+                                <td class="p-3">50</td>
+                                <td class="p-3 text-cyan-300">Daily ($4k cap)</td>
+                                <td class="p-3">100</td>
+                                <td class="p-3 text-rose-400">-$12,935</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$191,365</td>
+                                <td class="p-3 font-bold text-cyan-400">+$38,273</td>
+                                <td class="p-3 font-bold text-white">15.8x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-violet-400">#7 (Onada 3)</td>
+                                <td class="p-3 font-sans font-bold text-white">Take Profit Trader 150K PRO</td>
+                                <td class="p-3 text-amber-300">EOD Eval / Intra PA</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">75</td>
+                                <td class="p-3">60</td>
+                                <td class="p-3 text-emerald-300">PRO+ Live = EOD 0 Buf!</td>
+                                <td class="p-3">115</td>
+                                <td class="p-3 text-rose-400">-$16,200</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$184,200</td>
+                                <td class="p-3 font-bold text-cyan-400">+$36,840</td>
+                                <td class="p-3 font-bold text-white">12.4x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-violet-400">#8 (Onada 3)</td>
+                                <td class="p-3 font-sans font-bold text-white">Phidias 150K E2L (0% Cons.)</td>
+                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">40</td>
+                                <td class="p-3">25</td>
+                                <td class="p-3 text-amber-300">5 Payouts ($4k cap)</td>
+                                <td class="p-3">55</td>
+                                <td class="p-3 text-rose-400">-$7,200</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$163,200</td>
+                                <td class="p-3 font-bold text-cyan-400">+$32,640</td>
+                                <td class="p-3 font-bold text-white">23.7x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-gray-400">#9 (Onada 4)</td>
+                                <td class="p-3 font-sans font-bold text-white">Legends Trading 150K Elite</td>
+                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3">40</td>
+                                <td class="p-3">25</td>
+                                <td class="p-3 text-amber-300">5 Payouts ($3.5k cap)</td>
+                                <td class="p-3">55</td>
+                                <td class="p-3 text-rose-400">-$7,400</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$161,800</td>
+                                <td class="p-3 font-bold text-cyan-400">+$32,360</td>
+                                <td class="p-3 font-bold text-white">22.9x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-gray-400">#10 (Onada 4)</td>
+                                <td class="p-3 font-sans font-bold text-white">Apex 3.0 150K (Flota 20)</td>
+                                <td class="p-3 text-rose-300">Intraday 1s ($5.0k)</td>
+                                <td class="p-3">20</td>
+                                <td class="p-3">200</td>
+                                <td class="p-3">160</td>
+                                <td class="p-3 text-rose-300">Tancament al 6è Payout</td>
+                                <td class="p-3">220</td>
+                                <td class="p-3 text-rose-400">-$14,300</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$627,700</td>
+                                <td class="p-3 font-bold text-cyan-400">+$31,385</td>
+                                <td class="p-3 font-bold text-white">44.9x</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ca" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎲 Monte Carlo 2027 (10.000 Anys) · JJ Layer Sniper Pro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bgDark: '#070B14',
+            cardDark: '#0F172A',
+            borderDark: '#1E293B',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .glass { background: rgba(15, 23, 42, 0.80); backdrop-filter: blur(12px); border: 1px solid rgba(148, 163, 184, 0.12); }
+    .active-pill { background: linear-gradient(135deg, rgba(20,184,166,0.25), rgba(14,165,233,0.25)); border-color: #14b8a6 !important; color: #5eead4 !important; box-shadow: 0 0 20px -5px rgba(20,184,166,0.4); }
+  </style>
+</head>
+<body class="bg-bgDark text-slate-100 min-h-screen antialiased pb-16">
+
+  <!-- HEADER -->
+  <header class="border-b border-borderDark bg-cardDark/90 backdrop-blur sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-teal-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-teal-500/20 text-black font-black text-lg">
+          <i class="fa-solid fa-dice"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h1 class="text-lg font-extrabold tracking-tight text-white">SIMULADOR MONTE CARLO 2027 <span class="text-teal-400">· 10.000 ANYS SINTÈTICS</span></h1>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+              SNIPER COMBO ELITE · BE +0.50p (+2 ticks) · 1s Validat
+            </span>
+          </div>
+          <p class="text-xs text-slate-400">Metodologia Institucional: Block-Bootstrap Setmanal (blocs reals de 5 dies) · Comissions $1.24/MNQ incloses · Regles exactes MLL/Payout</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 flex-wrap">
+        <a href="/" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-tower-broadcast text-teal-400"></i> HUD Railway
+        </a>
+        <a href="propfirm_dashboard.html" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-book-open text-amber-400"></i> Playbook Flota
+        </a>
+        <a href="index.html" class="px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 text-xs font-bold flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-chart-candlestick"></i> Backtest Visual 1s
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+    <!-- EXPLICACIÓ PEDAGÒGICA RÀPIDA (QUÈ ÉS I COM ES LLEGEIX) -->
+    <section class="glass rounded-2xl p-5 border border-cyan-500/25 bg-gradient-to-r from-cyan-950/30 via-slate-900/60 to-emerald-950/20">
+      <div class="flex items-start gap-3">
+        <div class="w-8 h-8 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300 shrink-0 mt-0.5">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="space-y-2 text-xs text-slate-300 leading-relaxed">
+          <h2 class="text-sm font-bold text-white">Com s'interpreta aquest Monte Carlo de 10.000 Anys?</h2>
+          <p>
+            Un backtest normal només t'ensenya <strong>1 únic ordre històric</strong> (el de l'últim any). Però, <em>i si el gener de 2027 et toquen de cop 3 setmanes dolentes seguides (com les Setmanes 4 post-OPEX) just quan acabes de comprar els teus primers comptes?</em>
+            Per respondre-ho amb rigor quantitatiu, hem agafat les 50 setmanes reals del teu backtest a 1 segon i hem creat <strong>10.000 anys complets (252 dies cadascun)</strong> barrejant setmanes senceres a l'atzar:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3 pt-1">
+            <div class="p-2.5 rounded-xl bg-black/35 border border-slate-800">
+              <span class="text-rose-400 font-bold block">📉 Percentil P5 (Mala Sort)</span>
+              <span> Només 5 de cada 100 anys són pitjors que això. És el teu <strong>sòl pessimista</strong> si enganxes un any molt travat.</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-black/35 border border-slate-800">
+              <span class="text-teal-300 font-bold block">🎯 Mediana P50 (Any Normal)</span>
+              <span>El resultat central exacte (5.000 anys per sota, 5.000 per sobre). És l'<strong>expectativa més realista</strong>.</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-black/35 border border-slate-800">
+              <span class="text-emerald-400 font-bold block">🚀 Percentil P95 (Any Vent a Favor)</span>
+              <span>El sostre del top 5% d'anys quan enganxes ratxes netes de reversió a l'àncora.</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-black/35 border border-amber-500/30">
+              <span class="text-amber-300 font-bold block">🛡️ Matalàs P95 / P99 (La "Corba en J")</span>
+              <span>Els diners màxims que surten de la teva butxaca comprant/renovant Evals <strong>abans de cobrar el 1r Payout</strong> i que la roda s'autofinanci sola.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTOR DE FLOTA / BLOC -->
+    <section class="space-y-2.5">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">1. Selecciona el Bloc de Comptes a Analitzar:</span>
+        <span class="text-[11px] text-slate-400 font-mono" id="selected-subtitle">--</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5" id="profile-selector"></div>
+    </section>
+
+    <!-- KPI CARDS DEL PERFIL SELECCIONAT -->
+    <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5">
+      <div class="glass rounded-2xl p-4 border border-emerald-500/30">
+        <span class="text-[11px] text-slate-400 block">Probabilitat d'Any en Verd</span>
+        <span class="text-2xl font-black text-emerald-400 font-mono mt-1 block" id="kpi-prob">--%</span>
+        <span class="text-[10px] text-slate-400">Sobre 10.000 anys simulats</span>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-rose-500/25">
+        <span class="text-[11px] text-slate-400 block">Any Mala Sort (P5)</span>
+        <span class="text-xl font-extrabold text-rose-300 font-mono mt-1 block" id="kpi-p5">--</span>
+        <span class="text-[10px] text-slate-400">95% d'anys superen això</span>
+      </div>
+      <div class="glass rounded-2xl p-4 border-2 border-teal-500/50 bg-teal-950/15">
+        <span class="text-[11px] text-teal-300 font-bold block">🎯 Any Normal Medià (P50)</span>
+        <span class="text-2xl font-black text-white font-mono mt-1 block" id="kpi-p50">--</span>
+        <span class="text-[10px] text-teal-300">Net després de tots els fees</span>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-emerald-500/25">
+        <span class="text-[11px] text-slate-400 block">Any Excel·lent (P95)</span>
+        <span class="text-xl font-extrabold text-emerald-300 font-mono mt-1 block" id="kpi-p95">--</span>
+        <span class="text-[10px] text-slate-400">Top 5% de trajectòries</span>
+      </div>
+      <div class="glass rounded-2xl p-4 border-2 border-amber-500/40 bg-amber-950/15">
+        <span class="text-[11px] text-amber-300 font-bold block">🛡️ Matalàs Segur (P95)</span>
+        <span class="text-2xl font-black text-amber-300 font-mono mt-1 block" id="kpi-br95">--</span>
+        <span class="text-[10px] text-slate-300">Blindat P99 (99%): <strong id="kpi-br99" class="text-white">--</strong></span>
+      </div>
+      <div class="glass rounded-2xl p-4 border border-sky-500/30">
+        <span class="text-[11px] text-slate-400 block">Temps fins al 1r Payout</span>
+        <span class="text-xl font-extrabold text-sky-300 font-mono mt-1 block" id="kpi-paydays">--</span>
+        <span class="text-[10px] text-slate-400">Ràpid P25: <strong id="kpi-pay25" class="text-slate-200">--</strong> · Lent P95: <strong id="kpi-pay95" class="text-slate-200">--</strong></span>
+      </div>
+    </section>
+
+    <!-- GRÀFIC PRINCIPAL: VENTALL DE PERCENTILS MENSUALS (CORBA EN J + CREIXEMENT ANUAL) -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-5 lg:col-span-2 flex flex-col justify-between">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div>
+            <h3 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-chart-area text-teal-400"></i> Con de Probabilitat Mensual (Cashflow Net Acumulat: Payouts − Despesa Evals)
+            </h3>
+            <p class="text-[11px] text-slate-400">Evolució des del Dia 1 fins al Mes 12 (P95 verd, P75/P50/P25 blau-turquesa, P5 vermell suau + 6 trajectòries individuals mostra)</p>
+          </div>
+          <span class="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-700 text-teal-300" id="fan-badge">--</span>
+        </div>
+        <div class="h-80 w-full">
+          <canvas id="fanChart"></canvas>
+        </div>
+      </div>
+
+      <!-- CALCULADORA INTERACTIVA DE CAPITAL INICIAL / RISC DE RUÏNA -->
+      <div class="glass rounded-2xl p-5 border border-amber-500/30 flex flex-col justify-between space-y-4">
+        <div class="space-y-1">
+          <h3 class="text-sm font-bold text-amber-300 flex items-center gap-2">
+            <i class="fa-solid fa-shield-heart"></i> Calculadora del Teu Matalàs Inicial
+          </h3>
+          <p class="text-[11px] text-slate-400">
+            Mou el cursor per veure quina probabilitat tens de <strong>NO quedar-te mai sense caixa</strong> abans que els payouts autofinancin tota la flota:
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-black/40 border border-slate-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-300 font-semibold">El teu Matalàs Disponible:</span>
+            <span class="text-xl font-black font-mono text-amber-300" id="calc-budget-val">$3,500</span>
+          </div>
+          <input type="range" id="calc-budget-slider" min="500" max="20000" step="250" value="3500"
+                 class="w-full accent-teal-400 cursor-pointer" oninput="updateBudgetCalc()">
+          <div class="grid grid-cols-2 gap-2.5 pt-1">
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block">Supervivència (Sense Ruïna)</span>
+              <span class="text-lg font-black font-mono text-emerald-400" id="calc-surv-pct">--%</span>
+            </div>
+            <div class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <span class="text-[10px] text-slate-400 block">Risc d'esgotar caixa</span>
+              <span class="text-lg font-black font-mono text-rose-400" id="calc-ruin-pct">--%</span>
+            </div>
+          </div>
+          <p class="text-[11px] leading-relaxed font-medium" id="calc-verdict">--</p>
+        </div>
+
+        <div class="h-44 w-full">
+          <canvas id="survivalChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGONA FILA DE GRÀFICS: HISTOGRAMA DE BENEFICI ANUAL + DETALL OPERATIU DE ROTACIÓ -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="glass rounded-2xl p-5 space-y-3">
+        <div>
+          <h3 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-chart-column text-cyan-400"></i> Distribució de Benefici Net Anual (10.000 Anys)
+          </h3>
+          <p class="text-[11px] text-slate-400">Quants anys de cada 100 acaben en cada tram de benefici net a la butxaca:</p>
+        </div>
+        <div class="h-60 w-full">
+          <canvas id="histChart"></canvas>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-5 space-y-3 flex flex-col justify-between">
+        <div>
+          <h3 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-gears text-emerald-400"></i> Anatomia de Rotació Anual d'Aquest Bloc (Valors Medians P50)
+          </h3>
+          <p class="text-[11px] text-slate-400">Per què cremar comptes forma part normal del negoci (com l'inventari d'una botiga) i aun així el ROI és massiu:</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-mono">
+          <div class="p-3 rounded-xl bg-black/35 border border-slate-800">
+            <span class="text-[10px] text-slate-400 font-sans block">Cost Dia 1 (1a Compra)</span>
+            <span class="text-base font-bold text-white mt-0.5 block" id="anat-day1">--</span>
+          </div>
+          <div class="p-3 rounded-xl bg-black/35 border border-slate-800">
+            <span class="text-[10px] text-slate-400 font-sans block">Pou Medià Abans 1r Cobrament</span>
+            <span class="text-base font-bold text-amber-300 mt-0.5 block" id="anat-br50">--</span>
+          </div>
+          <div class="p-3 rounded-xl bg-black/35 border border-slate-800">
+            <span class="text-[10px] text-slate-400 font-sans block">Comptes Cremats / Any (P50)</span>
+            <span class="text-base font-bold text-rose-300 mt-0.5 block" id="anat-blown">--</span>
+          </div>
+          <div class="p-3 rounded-xl bg-black/35 border border-slate-800">
+            <span class="text-[10px] text-slate-400 font-sans block">Despesa Total Anual Fees</span>
+            <span class="text-base font-bold text-slate-200 mt-0.5 block" id="anat-spend">--</span>
+          </div>
+          <div class="p-3 rounded-xl bg-black/35 border border-slate-800">
+            <span class="text-[10px] text-slate-400 font-sans block">Payouts Cobrats / Any (P50)</span>
+            <span class="text-base font-bold text-teal-300 mt-0.5 block" id="anat-payouts">--</span>
+          </div>
+          <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+            <span class="text-[10px] text-emerald-300 font-sans font-bold block">Multiplicador s/ Matalàs P95</span>
+            <span class="text-base font-black text-emerald-400 mt-0.5 block" id="anat-mult">--x</span>
+          </div>
+        </div>
+        <div class="p-3 rounded-xl bg-indigo-950/30 border border-indigo-500/30 text-[11px] text-indigo-200 leading-relaxed font-sans">
+          💡 <strong>Truc d'Escalat sense Risc (Esglaonat):</strong> El Matalàs P95 assumeix que encens els 5 comptes de cop el Dia 1. Si comences amb <strong>5x 50K LucidDaily ($2,820 de matalàs P95)</strong> o amb <strong>1-2 comptes 150K</strong> i només compres la resta amb els diners del 1r Payout, el capital que arrisques de la teva butxaca baixa a <strong>$1,800 – $2,800 en total</strong> per construir tot l'Imperi de 65 comptes!
+        </div>
+      </div>
+    </section>
+
+    <!-- TAULA COMPARATIVA COMPLETA DE TOTS ELS PERFILS -->
+    <section class="glass rounded-2xl overflow-hidden border border-slate-800">
+      <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+          <i class="fa-solid fa-table-list text-teal-400"></i> Taula Mestra Comparativa — Els 6 Escenaris Auditats (10.000 Anys cadascun)
+        </h3>
+        <span class="text-[11px] text-slate-400">Fes clic a qualsevol fila per carregar-ne els gràfics</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-mono">
+          <thead class="bg-slate-900/90 text-slate-400 uppercase text-[10px] border-b border-slate-800 font-sans">
+            <tr>
+              <th class="p-3.5">Bloc / Prop Firm</th>
+              <th class="p-3.5">Èxit Anual</th>
+              <th class="p-3.5">Any P5 (Mala Sort)</th>
+              <th class="p-3.5 text-teal-300">Any P50 (Normal)</th>
+              <th class="p-3.5">Any P95 (Top)</th>
+              <th class="p-3.5 text-amber-300">Matalàs P95 (&lt;5% Risc)</th>
+              <th class="p-3.5">Matalàs P99 (&lt;1% Risc)</th>
+              <th class="p-3.5">1r Payout (P50)</th>
+              <th class="p-3.5">Payouts/Any</th>
+            </tr>
+          </thead>
+          <tbody id="master-table-body" class="divide-y divide-slate-800/70"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const MC_DATA = {"generated_for": "2027 Institutional Execution", "strategy": "SNIPER COMBO ELITE (Max 2/Dia · Dev 50p/40p · BE +0.50p +2 ticks · Comissions $1.24/MNQ)", "methodology": "10.000 Anys Sintètics (252 sessions/any) amb Block-Bootstrap Setmanal de 5 dies", "simulations_per_profile": 10000, "profiles": [{"id": "lucid_50k_5x", "label": "1. LucidDaily 5x 50K (Intra ASAP · 10 MNQ) — Ideal Arrencada", "subtitle": "5 comptes 50K simultanis · Target $3,000 · MLL $2,000 Intra · Cobrament Diari ASAP · 0$ Activation", "slots": 5, "mnq": 10, "eval_cost_unit": 56.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.79, "net_cash_p5": 14100.0, "net_cash_p25": 44573.0, "net_cash_p50_median": 65604.0, "net_cash_mean": 66415.0, "net_cash_p75": 88738.0, "net_cash_p95": 121547.0, "bankroll_day1_initial": 282.0, "bankroll_p50_median": 846.0, "bankroll_p90": 2256.0, "bankroll_p95_safe": 2820.0, "bankroll_p99_ultra_safe": 4230.0, "first_payout_days_p25": 28, "first_payout_days_p50": 47, "first_payout_days_p75": 80, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 75, "payouts_p50": 90, "spend_p50": 3102.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-282.0, -846.0, -1410.0, -1692.0, -1974.0, -2256.0, -2256.0, -2256.0, 691.0, 3484.0, 6505.0, 10048.0, 14101.0], "p25": [-282.0, -564.0, -846.0, -1128.0, 1935.0, 6851.0, 11899.0, 17378.0, 22620.0, 27746.0, 33074.0, 38936.0, 44573.0], "p50": [-282.0, -564.0, -564.0, 7628.0, 15312.0, 22730.0, 29750.0, 36850.0, 44005.0, 47762.0, 53481.0, 59445.0, 65604.0], "p75": [-282.0, -282.0, 10655.0, 22833.0, 32407.0, 41544.0, 48026.0, 51951.0, 59374.0, 66826.0, 73963.0, 81736.0, 88738.0], "p95": [-282.0, 8656.0, 28994.0, 46047.0, 49154.0, 56898.0, 68353.0, 78841.0, 88222.0, 97083.0, 103585.0, 112392.0, 121546.0], "sample_paths": [[-282.0, -564.0, -846.0, 2355.0, 4717.0, 4153.0, 4153.0, 3871.0, 3871.0, 30338.0, 45592.0, 53589.0, 53307.0], [-282.0, 8367.0, 34676.0, 49436.0, 49436.0, 48590.0, 48308.0, 48026.0, 47462.0, 69487.0, 87006.0, 96898.0, 96616.0], [-282.0, 5654.0, 18104.0, 18104.0, 31771.0, 47125.0, 46561.0, 45997.0, 51901.0, 93776.0, 95151.0, 94869.0, 94587.0], [-282.0, -282.0, 23573.0, 43593.0, 49154.0, 49154.0, 75477.0, 80191.0, 88962.0, 104305.0, 104023.0, 103741.0, 103741.0], [-282.0, 8299.0, 7735.0, 7171.0, 6889.0, 12957.0, 15175.0, 14611.0, 14329.0, 14047.0, 13483.0, 13483.0, 19271.0], [-282.0, -846.0, -1128.0, -1692.0, 3967.0, 18662.0, 23376.0, 22812.0, 22530.0, 21966.0, 21684.0, 21684.0, 48518.0], [-282.0, 13688.0, 26632.0, 44029.0, 49154.0, 49154.0, 70386.0, 70104.0, 84174.0, 95682.0, 102847.0, 107375.0, 106811.0], [-282.0, 3478.0, 3478.0, 36272.0, 35426.0, 41527.0, 41245.0, 44623.0, 48873.0, 57443.0, 77814.0, 77532.0, 77250.0], [-282.0, -564.0, -1128.0, 4920.0, 9304.0, 25878.0, 25596.0, 34039.0, 40288.0, 62182.0, 83757.0, 83475.0, 83193.0], [-282.0, -282.0, -564.0, 5436.0, 23546.0, 22982.0, 22700.0, 22136.0, 21854.0, 21290.0, 47869.0, 70655.0, 71008.0], [-282.0, -564.0, -846.0, -1128.0, -1410.0, -1692.0, -1974.0, -1974.0, 24583.0, 31623.0, 47744.0, 47462.0, 47180.0], [-282.0, -564.0, 20269.0, 49154.0, 48590.0, 48308.0, 48026.0, 47462.0, 55553.0, 80861.0, 80015.0, 88653.0, 88089.0]]}, "survival_curve": [{"bankroll": 500, "survival_pct": 26.13, "ruin_pct": 73.87}, {"bankroll": 1000, "survival_pct": 60.58, "ruin_pct": 39.42}, {"bankroll": 1500, "survival_pct": 79.61, "ruin_pct": 20.39}, {"bankroll": 2000, "survival_pct": 88.77, "ruin_pct": 11.23}, {"bankroll": 2500, "survival_pct": 91.92, "ruin_pct": 8.08}, {"bankroll": 3000, "survival_pct": 95.64, "ruin_pct": 4.36}, {"bankroll": 3500, "survival_pct": 97.65, "ruin_pct": 2.35}, {"bankroll": 4230, "survival_pct": 99.28, "ruin_pct": 0.72}, {"bankroll": 5000, "survival_pct": 99.72, "ruin_pct": 0.28}], "histogram": [{"label": "$-6k..$13k", "pct": 4.5, "count": 445}, {"label": "$13k..$31k", "pct": 10.3, "count": 1027}, {"label": "$31k..$49k", "pct": 16.1, "count": 1607}, {"label": "$49k..$68k", "pct": 22.1, "count": 2209}, {"label": "$68k..$86k", "pct": 20.0, "count": 1997}, {"label": "$86k..$105k", "pct": 14.6, "count": 1457}, {"label": "$105k..$123k", "pct": 8.2, "count": 815}, {"label": "$123k..$142k", "pct": 3.4, "count": 335}, {"label": "$142k..$160k", "pct": 0.9, "count": 89}, {"label": "$160k..$179k", "pct": 0.2, "count": 19}]}, {"id": "alpha_150k_5x", "label": "2. Alpha Futures 5x 150K (EOD · 30 MNQ) — Top EOD Sense Erosió BE", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 EOD Pur · Cicle 5 dies · 0$ Activation", "slots": 5, "mnq": 30, "eval_cost_unit": 199.0, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 99.07, "net_cash_p5": 36112.0, "net_cash_p25": 107849.0, "net_cash_p50_median": 154368.0, "net_cash_mean": 155933.0, "net_cash_p75": 207489.0, "net_cash_p95": 271967.0, "bankroll_day1_initial": 995.0, "bankroll_p50_median": 2985.0, "bankroll_p90": 6965.0, "bankroll_p95_safe": 8955.0, "bankroll_p99_ultra_safe": 13930.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 10945.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-995.0, -2985.0, -4975.0, -5970.0, -6965.0, -7015.0, -7960.0, -601.0, 5665.0, 10595.0, 17830.0, 26884.0, 36112.0], "p25": [-995.0, -1990.0, -2985.0, -3980.0, 7965.0, 15535.0, 29078.0, 41892.0, 57305.0, 74058.0, 86800.0, 97450.0, 107849.0], "p50": [-995.0, -1990.0, -1990.0, 17525.0, 35791.0, 55340.0, 75560.0, 92795.0, 102275.0, 113191.0, 125333.0, 139432.0, 154368.0], "p75": [-995.0, -995.0, 20510.0, 49090.0, 77167.0, 97106.0, 105744.0, 119524.0, 136524.0, 154744.0, 173892.0, 192113.0, 207490.0], "p95": [-995.0, 21505.0, 54803.0, 88010.0, 109218.0, 120957.0, 146398.0, 173307.0, 198520.0, 212930.0, 229498.0, 249197.0, 271967.0], "sample_paths": [[-995.0, -1990.0, -2985.0, -3980.0, 17525.0, 15535.0, 15535.0, 15535.0, 15535.0, 57148.0, 102148.0, 123653.0, 122658.0], [-995.0, 10321.0, 55321.0, 99326.0, 98331.0, 96341.0, 95346.0, 95346.0, 93356.0, 138356.0, 160856.0, 183356.0, 203866.0], [-995.0, 21505.0, 44005.0, 61704.0, 80682.0, 123918.0, 140105.0, 139110.0, 158024.0, 203024.0, 246034.0, 245039.0, 244044.0], [-995.0, -1990.0, 20510.0, 65510.0, 88010.0, 108520.0, 131020.0, 168296.0, 212301.0, 212301.0, 211306.0, 210311.0, 210311.0], [-995.0, 21505.0, 19515.0, 17525.0, 16530.0, 15535.0, 34123.0, 32133.0, 31138.0, 30143.0, 29148.0, 28153.0, 49658.0], [-995.0, -1990.0, -2985.0, -4975.0, 6157.0, 48615.0, 83596.0, 82601.0, 81606.0, 79616.0, 90088.0, 90088.0, 135088.0], [-995.0, 21505.0, 66505.0, 110510.0, 109515.0, 120084.0, 119089.0, 119089.0, 160601.0, 181087.0, 214405.0, 213410.0, 212415.0], [-995.0, -995.0, 26247.0, 71247.0, 88391.0, 106844.0, 105849.0, 104854.0, 122822.0, 145322.0, 167822.0, 204563.0, 225318.0], [-995.0, -995.0, -2985.0, 19515.0, 36520.0, 59020.0, 100521.0, 144526.0, 143531.0, 158478.0, 203478.0, 225978.0, 233996.0], [-995.0, -995.0, -1990.0, -1990.0, 43010.0, 83584.0, 104094.0, 102104.0, 101109.0, 99119.0, 140630.0, 185630.0, 207135.0], [-995.0, -1990.0, -2985.0, -4975.0, -5970.0, -6965.0, -6965.0, 26661.0, 49161.0, 71661.0, 93166.0, 130176.0, 129181.0], [-995.0, -1990.0, 30805.0, 97310.0, 95320.0, 94325.0, 93330.0, 92335.0, 103116.0, 137152.0, 158657.0, 177857.0, 176862.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.99, "ruin_pct": 71.01}, {"bankroll": 3000, "survival_pct": 63.99, "ruin_pct": 36.01}, {"bankroll": 5000, "survival_pct": 82.18, "ruin_pct": 17.82}, {"bankroll": 7000, "survival_pct": 90.85, "ruin_pct": 9.15}, {"bankroll": 9000, "survival_pct": 95.54, "ruin_pct": 4.46}, {"bankroll": 11000, "survival_pct": 97.72, "ruin_pct": 2.28}, {"bankroll": 13000, "survival_pct": 98.86, "ruin_pct": 1.14}, {"bankroll": 15000, "survival_pct": 99.57, "ruin_pct": 0.43}, {"bankroll": 18000, "survival_pct": 99.92, "ruin_pct": 0.08}], "histogram": [{"label": "$-21k..$20k", "pct": 2.9, "count": 291}, {"label": "$20k..$61k", "pct": 6.9, "count": 690}, {"label": "$61k..$102k", "pct": 13.0, "count": 1301}, {"label": "$102k..$144k", "pct": 21.8, "count": 2177}, {"label": "$144k..$185k", "pct": 19.5, "count": 1954}, {"label": "$185k..$226k", "pct": 19.6, "count": 1964}, {"label": "$226k..$267k", "pct": 10.5, "count": 1047}, {"label": "$267k..$308k", "pct": 4.4, "count": 441}, {"label": "$308k..$349k", "pct": 1.2, "count": 125}, {"label": "$349k..$390k", "pct": 0.1, "count": 10}]}, {"id": "lucid_150k_5x", "label": "3. LucidDaily 5x 150K (Intra ASAP · 30 MNQ) — Cobrament Diari Ràpid", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 Intra (amb BE +0.50p) · Payout Diari ASAP", "slots": 5, "mnq": 30, "eval_cost_unit": 137.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.44, "net_cash_p5": 27292.0, "net_cash_p25": 89385.0, "net_cash_p50_median": 137658.0, "net_cash_mean": 140678.0, "net_cash_p75": 188868.0, "net_cash_p95": 261462.0, "bankroll_day1_initial": 687.0, "bankroll_p50_median": 2748.0, "bankroll_p90": 7578.0, "bankroll_p95_safe": 10305.0, "bankroll_p99_ultra_safe": 15114.0, "first_payout_days_p25": 22, "first_payout_days_p50": 41, "first_payout_days_p75": 71, "first_payout_days_p95": 143, "blown_p50": 85, "blown_p95": 125, "payouts_p50": 85, "spend_p50": 13053.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-687.0, -3435.0, -4809.0, -6183.0, -6870.0, -7557.0, -8244.0, -7378.0, -75.0, 6466.0, 12561.0, 19921.0, 27292.0], "p25": [-687.0, -2061.0, -3435.0, -3435.0, 4461.0, 15111.0, 27075.0, 39167.0, 52078.0, 61947.0, 67070.0, 78145.0, 89385.0], "p50": [-687.0, -1374.0, -337.0, 21240.0, 37192.0, 55364.0, 66756.0, 73890.0, 86244.0, 98844.0, 112330.0, 125574.0, 137658.0], "p75": [-687.0, -687.0, 31721.0, 61016.0, 70191.0, 79772.0, 96794.0, 115920.0, 132452.0, 143318.0, 158903.0, 174706.0, 188867.0], "p95": [-687.0, 33742.0, 72939.0, 80170.0, 112251.0, 137483.0, 147252.0, 167985.0, 188414.0, 209513.0, 224674.0, 242353.0, 261462.0], "sample_paths": [[-687.0, -1374.0, -2748.0, 14664.0, 20536.0, 17788.0, 17788.0, 17788.0, 20151.0, 92101.0, 90727.0, 90727.0, 89353.0], [-687.0, 32910.0, 73626.0, 122354.0, 147252.0, 143817.0, 143130.0, 141756.0, 140382.0, 214695.0, 214695.0, 246946.0, 256696.0], [-687.0, 24772.0, 62279.0, 61592.0, 94714.0, 134531.0, 132470.0, 131096.0, 132805.0, 204722.0, 202661.0, 220937.0, 219563.0], [-687.0, -1374.0, 47164.0, 57730.0, 55669.0, 54982.0, 104606.0, 118378.0, 152342.0, 192004.0, 191317.0, 189943.0, 189256.0], [-687.0, 32705.0, 32018.0, 31331.0, 29957.0, 48136.0, 54949.0, 52888.0, 52201.0, 50827.0, 48766.0, 50842.0, 65686.0], [-687.0, -2061.0, -4122.0, -4809.0, 11918.0, 34360.0, 32986.0, 31612.0, 28864.0, 27490.0, 26803.0, 29868.0, 99742.0], [-687.0, 48872.0, 72252.0, 71565.0, 70878.0, 70191.0, 87380.0, 97037.0, 135181.0, 134494.0, 150405.0, 150405.0, 148344.0], [-687.0, 18244.0, 22936.0, 73626.0, 72939.0, 99050.0, 97676.0, 114931.0, 114244.0, 155503.0, 186496.0, 185809.0, 184435.0], [-687.0, -1374.0, -2748.0, 15848.0, 28471.0, 85844.0, 85157.0, 103098.0, 120590.0, 119216.0, 117842.0, 134502.0, 133815.0], [-687.0, -687.0, -1374.0, 24435.0, 70878.0, 70878.0, 69504.0, 67443.0, 66756.0, 68113.0, 139695.0, 138321.0, 137634.0], [-687.0, -1374.0, -3435.0, 5390.0, 4016.0, 2642.0, 1955.0, 1955.0, 76268.0, 73520.0, 72146.0, 73837.0, 73150.0], [-687.0, -2061.0, 24370.0, 72252.0, 70878.0, 69504.0, 68817.0, 66756.0, 65382.0, 90504.0, 89130.0, 122695.0, 119947.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 34.47, "ruin_pct": 65.53}, {"bankroll": 3000, "survival_pct": 56.85, "ruin_pct": 43.15}, {"bankroll": 5000, "survival_pct": 77.29, "ruin_pct": 22.71}, {"bankroll": 7500, "survival_pct": 87.87, "ruin_pct": 12.13}, {"bankroll": 9500, "survival_pct": 93.27, "ruin_pct": 6.73}, {"bankroll": 11000, "survival_pct": 96.37, "ruin_pct": 3.63}, {"bankroll": 13000, "survival_pct": 97.81, "ruin_pct": 2.19}, {"bankroll": 15000, "survival_pct": 98.9, "ruin_pct": 1.1}, {"bankroll": 18000, "survival_pct": 99.82, "ruin_pct": 0.18}], "histogram": [{"label": "$-23k..$21k", "pct": 4.0, "count": 401}, {"label": "$21k..$65k", "pct": 11.0, "count": 1096}, {"label": "$65k..$110k", "pct": 20.1, "count": 2006}, {"label": "$110k..$154k", "pct": 23.9, "count": 2392}, {"label": "$154k..$198k", "pct": 19.5, "count": 1951}, {"label": "$198k..$242k", "pct": 13.5, "count": 1346}, {"label": "$242k..$287k", "pct": 5.7, "count": 569}, {"label": "$287k..$331k", "pct": 1.9, "count": 188}, {"label": "$331k..$375k", "pct": 0.4, "count": 38}, {"label": "$375k..$420k", "pct": 0.1, "count": 13}]}, {"id": "topstep_150k_5x", "label": "4. Topstep 5x 150K XFA (EOD · 30 MNQ) — Estàndard Institucional", "subtitle": "5 comptes 150K XFA · Target $9,000 · MLL $4,500 EOD · Cicle 5 dies +$150 · Cap $5,000", "slots": 5, "mnq": 30, "eval_cost_unit": 149.0, "act_fee_unit": 149.0, "simulations": 10000, "prob_profitable_year_pct": 99.02, "net_cash_p5": 34903.0, "net_cash_p25": 106671.0, "net_cash_p50_median": 153020.0, "net_cash_mean": 154712.0, "net_cash_p75": 206389.0, "net_cash_p95": 270576.0, "bankroll_day1_initial": 745.0, "bankroll_p50_median": 2980.0, "bankroll_p90": 7450.0, "bankroll_p95_safe": 9685.0, "bankroll_p99_ultra_safe": 14155.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 11920.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-745.0, -2980.0, -4470.0, -5960.0, -6705.0, -7450.0, -7450.0, -824.0, 5252.0, 10075.0, 16971.0, 25764.0, 34903.0], "p25": [-745.0, -2235.0, -2980.0, -3725.0, 7644.0, 15503.0, 28519.0, 41032.0, 56433.0, 73112.0, 85906.0, 96456.0, 106670.0], "p50": [-745.0, -1490.0, -1490.0, 17285.0, 35508.0, 54612.0, 74752.0, 92250.0, 101694.0, 112327.0, 124570.0, 138180.0, 153020.0], "p75": [-745.0, -1490.0, 20265.0, 48720.0, 76602.0, 96590.0, 105708.0, 118610.0, 135295.0, 153483.0, 172659.0, 190990.0, 206389.0], "p95": [-745.0, 21010.0, 54308.0, 87765.0, 108775.0, 120013.0, 145561.0, 172374.0, 197285.0, 212191.0, 228380.0, 247595.0, 270576.0], "sample_paths": [[-745.0, -1490.0, -2980.0, -4470.0, 17285.0, 15795.0, 15795.0, 15795.0, 15050.0, 56663.0, 101663.0, 123418.0, 121928.0], [-745.0, 9826.0, 54826.0, 99081.0, 97591.0, 96101.0, 94611.0, 94611.0, 93121.0, 137376.0, 159876.0, 182376.0, 202641.0], [-745.0, 21010.0, 43510.0, 61459.0, 79692.0, 122928.0, 139365.0, 138620.0, 156789.0, 201789.0, 245299.0, 243809.0, 242319.0], [-745.0, -2980.0, 19520.0, 64520.0, 87020.0, 108030.0, 129785.0, 167061.0, 211316.0, 210571.0, 209826.0, 208336.0, 208336.0], [-745.0, 21010.0, 18775.0, 16540.0, 15795.0, 14305.0, 33143.0, 30908.0, 29418.0, 28673.0, 27183.0, 25693.0, 47448.0], [-745.0, -1490.0, -2980.0, -4470.0, 5917.0, 48375.0, 83856.0, 82366.0, 81621.0, 80131.0, 90108.0, 89363.0, 134363.0], [-745.0, 21010.0, 66010.0, 110265.0, 109520.0, 119594.0, 118104.0, 117359.0, 158871.0, 179357.0, 212925.0, 211435.0, 209945.0], [-745.0, -1490.0, 25752.0, 70752.0, 88396.0, 106354.0, 105609.0, 104119.0, 122337.0, 144092.0, 166592.0, 203333.0, 224338.0], [-745.0, -745.0, -2235.0, 19520.0, 36280.0, 58780.0, 100281.0, 144536.0, 143046.0, 157248.0, 202248.0, 224748.0, 233016.0], [-745.0, -1490.0, -2235.0, -2980.0, 42020.0, 82594.0, 103604.0, 102114.0, 100624.0, 98389.0, 139900.0, 184900.0, 206655.0], [-745.0, -2235.0, -2980.0, -5960.0, -6705.0, -8195.0, -8940.0, 24686.0, 47186.0, 69686.0, 90696.0, 127706.0, 126961.0], [-745.0, -2235.0, 30560.0, 97315.0, 95825.0, 94335.0, 92845.0, 91355.0, 102136.0, 136172.0, 157927.0, 176382.0, 175637.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.91, "ruin_pct": 71.09}, {"bankroll": 3000, "survival_pct": 56.36, "ruin_pct": 43.64}, {"bankroll": 5000, "survival_pct": 73.82, "ruin_pct": 26.18}, {"bankroll": 7500, "survival_pct": 90.77, "ruin_pct": 9.23}, {"bankroll": 9500, "survival_pct": 94.43, "ruin_pct": 5.57}, {"bankroll": 11500, "survival_pct": 97.61, "ruin_pct": 2.39}, {"bankroll": 13500, "survival_pct": 98.91, "ruin_pct": 1.09}, {"bankroll": 15000, "survival_pct": 99.36, "ruin_pct": 0.64}, {"bankroll": 18000, "survival_pct": 99.91, "ruin_pct": 0.09}], "histogram": [{"label": "$-19k..$21k", "pct": 3.1, "count": 307}, {"label": "$21k..$62k", "pct": 7.3, "count": 727}, {"label": "$62k..$103k", "pct": 13.1, "count": 1305}, {"label": "$103k..$144k", "pct": 21.9, "count": 2185}, {"label": "$144k..$184k", "pct": 19.4, "count": 1938}, {"label": "$184k..$225k", "pct": 19.4, "count": 1943}, {"label": "$225k..$266k", "pct": 10.2, "count": 1024}, {"label": "$266k..$307k", "pct": 4.4, "count": 436}, {"label": "$307k..$348k", "pct": 1.2, "count": 125}, {"label": "$348k..$388k", "pct": 0.1, "count": 10}]}, {"id": "apex_50k_10x", "label": "5. Apex 3.0 10x 50K (Promo $19 · 10 MNQ) — Baix Cost d'Entrada", "subtitle": "10 comptes 50K en promo 90% OFF ($19 Eval + $125 PA) · 100% Split primers payouts", "slots": 10, "mnq": 10, "eval_cost_unit": 19.0, "act_fee_unit": 125.0, "simulations": 10000, "prob_profitable_year_pct": 98.82, "net_cash_p5": 30891.0, "net_cash_p25": 93546.0, "net_cash_p50_median": 129366.0, "net_cash_mean": 132024.0, "net_cash_p75": 177103.0, "net_cash_p95": 221441.0, "bankroll_day1_initial": 190.0, "bankroll_p50_median": 1820.0, "bankroll_p90": 4700.0, "bankroll_p95_safe": 6140.0, "bankroll_p99_ultra_safe": 8830.0, "first_payout_days_p25": 32, "first_payout_days_p50": 50, "first_payout_days_p75": 82, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 90, "payouts_p50": 90, "spend_p50": 6140.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-190.0, -1630.0, -2880.0, -3260.0, -3640.0, -4510.0, -4700.0, -4020.0, 1352.0, 6327.0, 13521.0, 20712.0, 30891.0], "p25": [-190.0, -1440.0, -1630.0, -1820.0, 3333.0, 10170.0, 22211.0, 35250.0, 49239.0, 63098.0, 76458.0, 85545.0, 93546.0], "p50": [-190.0, -570.0, -760.0, 7360.0, 25512.0, 43670.0, 62065.0, 78445.0, 89143.0, 97253.0, 105140.0, 116074.0, 129366.0], "p75": [-190.0, -380.0, 11492.0, 32862.0, 57884.0, 81992.0, 94728.0, 102666.0, 109726.0, 125140.0, 142050.0, 160926.0, 177103.0], "p95": [-190.0, 7448.0, 33981.0, 67000.0, 96482.0, 106819.0, 113835.0, 133570.0, 158679.0, 183947.0, 200295.0, 209724.0, 221441.0], "sample_paths": [[-190.0, -190.0, -1630.0, -3070.0, 5356.0, 4976.0, 4976.0, 4976.0, 3726.0, 31894.0, 71894.0, 105484.0, 104234.0], [-190.0, 12780.0, 52780.0, 92780.0, 112590.0, 112020.0, 110580.0, 110580.0, 110200.0, 143562.0, 163562.0, 183562.0, 223182.0], [-190.0, 6752.0, 23292.0, 43780.0, 63780.0, 83590.0, 80900.0, 80520.0, 86918.0, 126918.0, 166918.0, 186728.0, 185478.0], [-190.0, -1440.0, 26280.0, 66280.0, 86280.0, 104658.0, 112296.0, 132296.0, 163616.0, 203426.0, 203236.0, 201986.0, 201986.0], [-190.0, 6752.0, 23068.0, 21628.0, 21438.0, 29110.0, 38366.0, 58366.0, 64402.0, 62772.0, 62582.0, 61332.0, 61332.0], [-190.0, -380.0, -1820.0, -2010.0, -3260.0, 20456.0, 31120.0, 49872.0, 49682.0, 49492.0, 48052.0, 46802.0, 80374.0], [-190.0, 7248.0, 47248.0, 87248.0, 100246.0, 98996.0, 116940.0, 131272.0, 171272.0, 191082.0, 189832.0, 188392.0, 186952.0], [-190.0, -1440.0, 5392.0, 45392.0, 65392.0, 101930.0, 101550.0, 100110.0, 99920.0, 106838.0, 126838.0, 152410.0, 158798.0], [-190.0, -190.0, -380.0, -1630.0, 4802.0, 13546.0, 43618.0, 83618.0, 103428.0, 102178.0, 135278.0, 155278.0, 173338.0], [-190.0, -1440.0, -1630.0, -2880.0, 31932.0, 44172.0, 52660.0, 61148.0, 59708.0, 58268.0, 85940.0, 125940.0, 145940.0], [-190.0, -1630.0, -3070.0, -3260.0, -5950.0, -6140.0, -7390.0, 5886.0, 36526.0, 56526.0, 96336.0, 94896.0, 93266.0], [-190.0, -190.0, 7048.0, 67048.0, 87048.0, 106668.0, 105418.0, 103978.0, 116958.0, 146486.0, 158622.0, 198432.0, 198242.0]]}, "survival_curve": [{"bankroll": 1000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 2000, "survival_pct": 54.58, "ruin_pct": 45.42}, {"bankroll": 3500, "survival_pct": 81.12, "ruin_pct": 18.88}, {"bankroll": 5000, "survival_pct": 91.59, "ruin_pct": 8.41}, {"bankroll": 6500, "survival_pct": 96.2, "ruin_pct": 3.8}, {"bankroll": 8000, "survival_pct": 98.54, "ruin_pct": 1.46}, {"bankroll": 9500, "survival_pct": 99.48, "ruin_pct": 0.52}, {"bankroll": 11000, "survival_pct": 99.77, "ruin_pct": 0.23}, {"bankroll": 13000, "survival_pct": 99.98, "ruin_pct": 0.02}], "histogram": [{"label": "$-13k..$22k", "pct": 3.7, "count": 366}, {"label": "$22k..$57k", "pct": 6.7, "count": 666}, {"label": "$57k..$92k", "pct": 14.0, "count": 1399}, {"label": "$92k..$128k", "pct": 24.4, "count": 2436}, {"label": "$128k..$163k", "pct": 19.4, "count": 1942}, {"label": "$163k..$198k", "pct": 17.5, "count": 1751}, {"label": "$198k..$233k", "pct": 11.3, "count": 1131}, {"label": "$233k..$268k", "pct": 2.4, "count": 243}, {"label": "$268k..$304k", "pct": 0.5, "count": 55}, {"label": "$304k..$339k", "pct": 0.1, "count": 11}]}, {"id": "imperi_65", "label": "👑 Imperi Complet 65 Comptes 150K (Flota Total)", "subtitle": "15x EOD (Alpha/Tradeify/MFFU) + 10x Intra ASAP (Lucid/TPT) + 40x Grup C (Apex/Legends) @ 30 MNQ", "slots": 65, "mnq": 30, "eval_cost_unit": 135.5, "act_fee_unit": 97.3, "simulations": 10000, "prob_profitable_year_pct": 98.78, "net_cash_p5": 371864.0, "net_cash_p25": 1008876.0, "net_cash_p50_median": 1342835.0, "net_cash_mean": 1344390.0, "net_cash_p75": 1717598.0, "net_cash_p95": 2215096.0, "bankroll_day1_initial": 8809.0, "bankroll_p50_median": 36874.0, "bankroll_p90": 93024.0, "bankroll_p95_safe": 116138.0, "bankroll_p99_ultra_safe": 162160.0, "first_payout_days_p25": 21, "first_payout_days_p50": 35, "first_payout_days_p75": 59, "first_payout_days_p95": 114, "blown_p50": 510, "blown_p95": 905, "payouts_p50": 570, "spend_p50": 113574.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-8809.0, -34126.0, -50634.0, -64394.0, -74928.0, -81185.0, -79809.0, -53987.0, 1784.0, 82121.0, 156639.0, 246859.0, 371864.0], "p25": [-8809.0, -25317.0, -35500.0, -35050.0, 26956.0, 148303.0, 273743.0, 414264.0, 559207.0, 697144.0, 819593.0, 921762.0, 1008876.0], "p50": [-8809.0, -17882.0, -2629.0, 152540.0, 309564.0, 475538.0, 641572.0, 789138.0, 922960.0, 1028549.0, 1124301.0, 1220931.0, 1342836.0], "p75": [-8809.0, -8809.0, 193484.0, 386682.0, 569480.0, 750679.0, 900222.0, 1051463.0, 1174839.0, 1295535.0, 1423519.0, 1566847.0, 1717598.0], "p95": [-8809.0, 121226.0, 395308.0, 624489.0, 838653.0, 1014335.0, 1218158.0, 1381845.0, 1514583.0, 1678355.0, 1861274.0, 2032872.0, 2215096.0], "sample_paths": [[-8809.0, -17618.0, -34126.0, -13062.0, 115437.0, 95071.0, 95071.0, 95071.0, 93472.0, 457211.0, 684463.0, 939128.0, 932420.0], [-8809.0, 86007.0, 492439.0, 817060.0, 957896.0, 1040356.0, 1125422.0, 1122674.0, 1105056.0, 1477357.0, 1639857.0, 1866859.0, 1947063.0], [-8809.0, 103284.0, 340799.0, 487671.0, 704725.0, 1009066.0, 1148657.0, 1224274.0, 1278107.0, 1746941.0, 1967149.0, 2094741.0, 2183033.0], [-8809.0, -30268.0, 229307.0, 480439.0, 543817.0, 699273.0, 1054897.0, 1284669.0, 1479562.0, 1652761.0, 1743552.0, 1831844.0, 1830470.0], [-8809.0, 119150.0, 205981.0, 292812.0, 382229.0, 585793.0, 655335.0, 730218.0, 715084.0, 704901.0, 687019.0, 677411.0, 771763.0], [-8809.0, -18992.0, -36874.0, -53118.0, 102408.0, 369664.0, 567159.0, 655451.0, 647120.0, 733702.0, 848568.0, 838574.0, 1208321.0], [-8809.0, 151485.0, 428244.0, 749035.0, 839826.0, 964184.0, 1080403.0, 1093391.0, 1389214.0, 1544301.0, 1771224.0, 1862264.0, 1949182.0], [-8809.0, 22727.0, 169849.0, 501229.0, 646589.0, 848196.0, 937613.0, 1053961.0, 1102039.0, 1245733.0, 1470218.0, 1674069.0, 1828736.0], [-8809.0, -10183.0, -27801.0, 70566.0, 336002.0, 613249.0, 831377.0, 1094425.0, 1215848.0, 1251617.0, 1478869.0, 1674689.0, 1792518.0], [-8809.0, -15134.0, -23943.0, 21350.0, 344236.0, 560957.0, 715039.0, 800247.0, 889913.0, 885832.0, 1238731.0, 1465983.0, 1624274.0], [-8809.0, -23943.0, -35500.0, -45370.0, -55553.0, -72061.0, -79760.0, 116117.0, 427243.0, 584247.0, 740039.0, 949454.0, 1035645.0], [-8809.0, -25317.0, 220931.0, 706359.0, 792941.0, 786233.0, 875899.0, 953017.0, 1077613.0, 1324964.0, 1386881.0, 1700484.0, 1692153.0]]}, "survival_curve": [{"bankroll": 15000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 25000, "survival_pct": 30.21, "ruin_pct": 69.79}, {"bankroll": 35000, "survival_pct": 47.61, "ruin_pct": 52.39}, {"bankroll": 50000, "survival_pct": 65.26, "ruin_pct": 34.74}, {"bankroll": 65000, "survival_pct": 78.06, "ruin_pct": 21.94}, {"bankroll": 80000, "survival_pct": 85.58, "ruin_pct": 14.42}, {"bankroll": 100000, "survival_pct": 91.89, "ruin_pct": 8.11}, {"bankroll": 120000, "survival_pct": 95.57, "ruin_pct": 4.43}, {"bankroll": 150000, "survival_pct": 98.4, "ruin_pct": 1.6}], "histogram": [{"label": "$-226k..$100k", "pct": 2.1, "count": 213}, {"label": "$100k..$426k", "pct": 3.7, "count": 370}, {"label": "$426k..$752k", "pct": 6.4, "count": 638}, {"label": "$752k..$1078k", "pct": 17.9, "count": 1790}, {"label": "$1078k..$1404k", "pct": 24.4, "count": 2439}, {"label": "$1404k..$1730k", "pct": 21.1, "count": 2114}, {"label": "$1730k..$2056k", "pct": 14.8, "count": 1480}, {"label": "$2056k..$2382k", "pct": 7.3, "count": 734}, {"label": "$2382k..$2708k", "pct": 1.9, "count": 194}, {"label": "$2708k..$3033k", "pct": 0.3, "count": 28}]}]};
+
+    let currentIdx = 0;
+    let fanChartObj = null;
+    let survChartObj = null;
+    let histChartObj = null;
+
+    const fmtUSD = (n) => {
+      const sign = n < 0 ? '-' : '+';
+      return sign + '$' + Math.abs(Math.round(n)).toLocaleString('en-US');
+    };
+    const fmtPlainUSD = (n) => '$' + Math.abs(Math.round(n)).toLocaleString('en-US');
+
+    function renderSelectorAndTable() {
+      const sel = document.getElementById('profile-selector');
+      const tbody = document.getElementById('master-table-body');
+      sel.innerHTML = '';
+      tbody.innerHTML = '';
+
+      MC_DATA.profiles.forEach((p, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'p-3 rounded-xl border border-slate-800 bg-cardDark/80 hover:border-slate-600 text-left transition flex flex-col justify-between ' + (idx === currentIdx ? 'active-pill' : 'text-slate-300');
+        btn.onclick = () => selectProfile(idx);
+        btn.innerHTML = `
+          <div class="text-xs font-bold truncate">${p.label}</div>
+          <div class="flex items-center justify-between text-[11px] font-mono mt-1.5 text-slate-400">
+            <span>P50: <strong class="text-emerald-400">${fmtUSD(p.net_cash_p50_median)}</strong></span>
+            <span>Matalàs P95: <strong class="text-amber-300">${fmtPlainUSD(p.bankroll_p95_safe)}</strong></span>
+          </div>
+        `;
+        sel.appendChild(btn);
+
+        const tr = document.createElement('tr');
+        tr.className = 'cursor-pointer hover:bg-slate-800/50 transition ' + (idx === currentIdx ? 'bg-teal-950/30' : '');
+        tr.onclick = () => selectProfile(idx);
+        tr.innerHTML = `
+          <td class="p-3.5 font-sans font-semibold text-white">${p.label}</td>
+          <td class="p-3.5 text-emerald-400 font-bold">${p.prob_profitable_year_pct.toFixed(1)}%</td>
+          <td class="p-3.5 text-rose-300">${fmtUSD(p.net_cash_p5)}</td>
+          <td class="p-3.5 text-teal-300 font-bold text-sm">${fmtUSD(p.net_cash_p50_median)}</td>
+          <td class="p-3.5 text-emerald-300">${fmtUSD(p.net_cash_p95)}</td>
+          <td class="p-3.5 text-amber-300 font-bold">${fmtPlainUSD(p.bankroll_p95_safe)}</td>
+          <td class="p-3.5 text-slate-300">${fmtPlainUSD(p.bankroll_p99_ultra_safe)}</td>
+          <td class="p-3.5 text-sky-300">${p.first_payout_days_p50} dies</td>
+          <td class="p-3.5 text-slate-200">${p.payouts_p50}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function selectProfile(idx) {
+      currentIdx = idx;
+      const p = MC_DATA.profiles[idx];
+      renderSelectorAndTable();
+
+      document.getElementById('selected-subtitle').textContent = p.subtitle;
+      document.getElementById('kpi-prob').textContent = p.prob_profitable_year_pct.toFixed(1) + '%';
+      document.getElementById('kpi-p5').textContent = fmtUSD(p.net_cash_p5);
+      document.getElementById('kpi-p50').textContent = fmtUSD(p.net_cash_p50_median);
+      document.getElementById('kpi-p95').textContent = fmtUSD(p.net_cash_p95);
+      document.getElementById('kpi-br95').textContent = fmtPlainUSD(p.bankroll_p95_safe);
+      document.getElementById('kpi-br99').textContent = fmtPlainUSD(p.bankroll_p99_ultra_safe);
+      document.getElementById('kpi-paydays').textContent = p.first_payout_days_p50 + ' dies';
+      document.getElementById('kpi-pay25').textContent = p.first_payout_days_p25 + 'd';
+      document.getElementById('kpi-pay95').textContent = p.first_payout_days_p95 + 'd';
+      document.getElementById('fan-badge').textContent = `${p.slots} Comptes · ${p.mnq} MNQ · 10.000 Anys`;
+
+      document.getElementById('anat-day1').textContent = fmtPlainUSD(p.bankroll_day1_initial);
+      document.getElementById('anat-br50').textContent = fmtPlainUSD(p.bankroll_p50_median);
+      document.getElementById('anat-blown').textContent = p.blown_p50 + ' ctes';
+      document.getElementById('anat-spend').textContent = fmtPlainUSD(p.spend_p50);
+      document.getElementById('anat-payouts').textContent = p.payouts_p50 + ' cobraments';
+      const mult = p.bankroll_p95_safe > 0 ? (p.net_cash_p50_median / p.bankroll_p95_safe).toFixed(1) : '0';
+      document.getElementById('anat-mult').textContent = mult + 'x / any';
+
+      // Ajustar slider segons el perfil
+      const slider = document.getElementById('calc-budget-slider');
+      const maxGrid = p.survival_curve[p.survival_curve.length - 1].bankroll;
+      const minGrid = p.survival_curve[0].bankroll;
+      slider.min = minGrid;
+      slider.max = maxGrid;
+      slider.step = Math.max(100, Math.round((maxGrid - minGrid) / 40));
+      slider.value = p.bankroll_p95_safe;
+
+      renderFanChart(p);
+      renderSurvivalChart(p);
+      renderHistChart(p);
+      updateBudgetCalc();
+    }
+
+    function updateBudgetCalc() {
+      const p = MC_DATA.profiles[currentIdx];
+      const val = Number(document.getElementById('calc-budget-slider').value);
+      document.getElementById('calc-budget-val').textContent = fmtPlainUSD(val);
+
+      // Interpolació lineal sobre p.survival_curve
+      const sc = p.survival_curve;
+      let surv = sc[sc.length - 1].survival_pct;
+      if (val <= sc[0].bankroll) {
+        surv = sc[0].survival_pct * (val / Math.max(1, sc[0].bankroll));
+      } else {
+        for (let i = 0; i < sc.length - 1; i++) {
+          if (val >= sc[i].bankroll && val <= sc[i + 1].bankroll) {
+            const ratio = (val - sc[i].bankroll) / Math.max(1, sc[i + 1].bankroll - sc[i].bankroll);
+            surv = sc[i].survival_pct + ratio * (sc[i + 1].survival_pct - sc[i].survival_pct);
+            break;
+          }
+        }
+      }
+      surv = Math.min(99.9, Math.max(0, surv));
+      const ruin = Math.max(0, 100 - surv);
+
+      document.getElementById('calc-surv-pct').textContent = surv.toFixed(1) + '%';
+      document.getElementById('calc-ruin-pct').textContent = ruin.toFixed(1) + '%';
+
+      const verd = document.getElementById('calc-verdict');
+      if (surv >= 98.5) {
+        verd.className = 'text-[11px] leading-relaxed font-semibold text-emerald-400';
+        verd.textContent = '🛡️ CAIXA BLINDADA INSTITUCIONAL (<1.5% risc): Pots absorbir fins i tot el pitjor inici d\'any de cada 100 anys sense aturar la roda.';
+      } else if (surv >= 94.5) {
+        verd.className = 'text-[11px] leading-relaxed font-semibold text-teal-300';
+        verd.textContent = '✅ MATALÀS SEGUR RECOMANAT (~95% èxit): Cobreix gairebé qualsevol mala ratxa inicial abans del 1r payout.';
+      } else if (surv >= 80.0) {
+        verd.className = 'text-[11px] leading-relaxed font-semibold text-amber-300';
+        verd.textContent = '⚠️ MATALÀS JUST (80-94%): Si enganxes 3 setmanes dolentes seguides el Mes 1, et convé començar amb la meitat dels comptes fins al 1r cobrament.';
+      } else {
+        verd.className = 'text-[11px] leading-relaxed font-semibold text-rose-400';
+        verd.textContent = '🛑 SOTA-CAPITALITZAT PER ENCENDRE TOTS ELS SLOTS DE COP: Arrenca amb 1 o 2 comptes (o amb el bloc 50K) i escala amb els beneficis!';
+      }
+    }
+
+    function renderFanChart(p) {
+      const ctx = document.getElementById('fanChart').getContext('2d');
+      if (fanChartObj) fanChartObj.destroy();
+
+      const sampleDatasets = p.fan_chart.sample_paths.slice(0, 5).map((sp, i) => ({
+        label: 'Mostra #' + (i + 1),
+        data: sp,
+        borderColor: 'rgba(148, 163, 184, 0.18)',
+        borderWidth: 1,
+        pointRadius: 0,
+        tension: 0.25,
+        fill: false,
+      }));
+
+      fanChartObj = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: p.fan_chart.months,
+          datasets: [
+            {
+              label: 'P95 (Any Excel·lent)',
+              data: p.fan_chart.p95,
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.08)',
+              borderWidth: 2,
+              borderDash: [4, 4],
+              pointRadius: 2,
+              tension: 0.3,
+              fill: '+1'
+            },
+            {
+              label: 'P75 (Any Bo)',
+              data: p.fan_chart.p75,
+              borderColor: '#38bdf8',
+              backgroundColor: 'rgba(20, 184, 166, 0.16)',
+              borderWidth: 1.5,
+              pointRadius: 0,
+              tension: 0.3,
+              fill: '+2'
+            },
+            {
+              label: '🎯 Mediana P50 (Any Normal)',
+              data: p.fan_chart.p50,
+              borderColor: '#2dd4bf',
+              backgroundColor: 'rgba(45, 212, 191, 0.2)',
+              borderWidth: 3.5,
+              pointRadius: 3,
+              tension: 0.3,
+              fill: false
+            },
+            {
+              label: 'P25 (Any Moderat)',
+              data: p.fan_chart.p25,
+              borderColor: '#0284c7',
+              backgroundColor: 'rgba(244, 63, 94, 0.06)',
+              borderWidth: 1.5,
+              pointRadius: 0,
+              tension: 0.3,
+              fill: '+1'
+            },
+            {
+              label: 'P5 (Any Mala Sort)',
+              data: p.fan_chart.p5,
+              borderColor: '#fb7185',
+              borderWidth: 2,
+              borderDash: [4, 4],
+              pointRadius: 2,
+              tension: 0.3,
+              fill: false
+            },
+            ...sampleDatasets
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: {
+              labels: {
+                color: '#cbd5e1',
+                font: { size: 11 },
+                filter: (item) => !item.text.startsWith('Mostra')
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${fmtUSD(ctx.parsed.y)}`
+              }
+            }
+          },
+          scales: {
+            x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { color: 'rgba(30,41,59,0.5)' } },
+            y: {
+              ticks: {
+                color: '#94a3b8',
+                font: { size: 11 },
+                callback: (v) => (v < 0 ? '-$' : '$') + Math.abs(v / 1000).toFixed(0) + 'k'
+              },
+              grid: { color: 'rgba(30,41,59,0.6)' }
+            }
+          }
+        }
+      });
+    }
+
+    function renderSurvivalChart(p) {
+      const ctx = document.getElementById('survivalChart').getContext('2d');
+      if (survChartObj) survChartObj.destroy();
+
+      survChartObj = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: p.survival_curve.map(x => '$' + (x.bankroll >= 1000 ? (x.bankroll / 1000).toFixed(1).replace('.0','') + 'k' : x.bankroll)),
+          datasets: [{
+            label: '% Supervivència sense esgotar caixa',
+            data: p.survival_curve.map(x => x.survival_pct),
+            borderColor: '#fbbf24',
+            backgroundColor: 'rgba(251, 191, 36, 0.18)',
+            borderWidth: 2.5,
+            pointRadius: 3,
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { color: 'rgba(30,41,59,0.4)' } },
+            y: {
+              min: 0, max: 100,
+              ticks: { color: '#94a3b8', font: { size: 10 }, callback: (v) => v + '%' },
+              grid: { color: 'rgba(30,41,59,0.5)' }
+            }
+          }
+        }
+      });
+    }
+
+    function renderHistChart(p) {
+      const ctx = document.getElementById('histChart').getContext('2d');
+      if (histChartObj) histChartObj.destroy();
+
+      histChartObj = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: p.histogram.map(b => b.label),
+          datasets: [{
+            label: '% d\'Anys Simulats',
+            data: p.histogram.map(b => b.pct),
+            backgroundColor: p.histogram.map(b => b.label.startsWith('$-') ? 'rgba(244, 63, 94, 0.65)' : 'rgba(20, 184, 166, 0.65)'),
+            borderColor: p.histogram.map(b => b.label.startsWith('$-') ? '#f43f5e' : '#14b8a6'),
+            borderWidth: 1,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { callbacks: { label: (c) => `${c.parsed.y}% dels anys (${p.histogram[c.dataIndex].count} de 10.000)` } }
+          },
+          scales: {
+            x: { ticks: { color: '#94a3b8', font: { size: 10 } }, grid: { display: false } },
+            y: { ticks: { color: '#94a3b8', font: { size: 10 }, callback: (v) => v + '%' }, grid: { color: 'rgba(30,41,59,0.5)' } }
+          }
+        }
+      });
+    }
+
+    selectProfile(0);
+  </script>
+</body>
+</html>
