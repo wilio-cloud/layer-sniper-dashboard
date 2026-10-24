@@ -161,17 +161,127 @@
     color: #94a3b8;
     letter-spacing: 0.04em;
   }
+  @media screen {
+    .page {
+      margin: 18px auto;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+      border: 1px solid #1e293b;
+      border-radius: 6px;
+    }
+  }
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    body {
+      background: #060913;
+    }
+  }
+  .screen-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1f2937;
+    padding: 10px 20px;
+  }
+  .screen-nav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .screen-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    background: #070a13;
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+  }
+  .screen-nav-links a, .screen-nav-links span, .screen-nav-links button {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #cbd5e1;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .screen-nav-links a:hover, .screen-nav-links button:hover {
+    background: #111827;
+    color: #34d399;
+  }
+  .screen-nav-links .active-tab {
+    background: rgba(245, 158, 11, 0.16);
+    color: #fbbf24;
+    border-color: rgba(245, 158, 11, 0.45);
+    font-weight: 700;
+    cursor: default;
+  }
+  .screen-banner-2027 {
+    max-width: 210mm;
+    margin: 16px auto 0 auto;
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.35), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    border-radius: 10px;
+    padding: 12px 16px;
+  }
 </style>
 </head>
 <body>
+
+<!-- Barra Superior de Navegació Web (Oculta en Imprimir A4) -->
+<header class="screen-nav no-print">
+  <div class="screen-nav-inner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#06b6d4,#10b981);display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:13px;">JJ</div>
+      <div>
+        <div style="font-size:14px;font-weight:800;color:#fff;">MANUAL OPERATIU A4 · JJ LAYER SNIPER PRO (2026–2027)</div>
+        <div style="font-size:11px;color:#94a3b8;">Format d'escriptori i impressió A4 directa · Actualitzat amb BE +0.50p (+2 ticks) i Compliance Apex Manual</div>
+      </div>
+    </div>
+    <nav class="screen-nav-links">
+      <a href="visual_backtest.html">📸 Backtest Visual &amp; Rotació 1s</a>
+      <a href="visual_backtest.html#montecarlo">🎲 Monte Carlo 2027 (10K Anys)</a>
+      <a href="propfirm_dashboard.html">🧭 Playbook Quant</a>
+      <span class="active-tab">📘 Manual Operatiu</span>
+      <button onclick="window.print()" style="background:rgba(16,185,129,0.18);color:#34d399;border-color:rgba(16,185,129,0.4);">🖨️ Imprimir / PDF A4</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Síntesi d'Actualització 2027 en Pantalla (Oculta en Imprimir per mantenir 4 pàgines A4 exactes) -->
+<div class="screen-banner-2027 no-print">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+    <span class="badge badge-emerald">ACTUALITZACIÓ QUANTITATIVA 2027 · 227 SESSIONS 1S</span>
+    <span class="mono" style="font-size:10px;color:#fbbf24;font-weight:700;">SNIPER COMBO ELITE: 60.0% WR · +1,511.0p · BE +0.50p (+2 ticks)</span>
+  </div>
+  <p style="font-size:11px;color:#e2e8f0;line-height:1.45;">
+    Aquest manual conserva el format de 4 pàgines A4 per tenir davant del monitor i incorpora les regles validades a 1 segon per al 2027:
+    <strong>(1) Escut BE +0.50p (+2 ticks)</strong> quan toca TP1 (0/535 TPs trencats, neutralitza les comissions CME de $1.24/MNQ i salva comptes EOD);
+    <strong>(2) SNIPER COMBO ELITE</strong> (Màx 2 trades/dia: 1r LAYER 09:30 &ge;50p, 1r LAYER 10:00 &ge;40p, Cont L10_2 &ge;55p sense L09, o L11_1 si només portes 1 trade);
+    <strong>(3) Llei 5A/5B/5C</strong> (pausa 09:59–10:02 en Red Folder 10:00 AM, Rollover CME dijous previ i 50% MNQ en Setmana 4 si rang &lt;220p);
+    <strong>(4) Apex (Grup C) 100% Manual</strong> (prohibit bots/webhooks: clic humà + Replikanto local i 1 TP/dia en PA per regla del 30%).
+  </p>
+</div>
 
 <!-- ==================== PÀGINA 1: PORTADA EXECUTIVA + ANATOMIA VISUAL + 4 LLEIS ==================== -->
 <div class="page">
   <div>
     <div class="top-bar">
       <div style="display:flex;align-items:center;gap:8px;">
-        <span class="badge badge-emerald">JJ FAIR PRICING · MNQ 1M</span>
-        <span class="mono" style="font-size:9px;color:#94a3b8;">SISTEMA AUDITAT SOBRE 121 SESSIONS REALS (MAIG – OCTUBRE)</span>
+        <span class="badge badge-emerald">JJ FAIR PRICING · MNQ 1M / 1S</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">VALIDAT A 1 SEGON (227 SESSIONS COMBO ELITE + ARQUITECTURA DOBLE FLOTA)</span>
       </div>
       <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 01 / 04</span>
     </div>
@@ -181,51 +291,51 @@
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;">
         <div>
           <div style="display:flex;gap:6px;margin-bottom:5px;">
-            <span class="badge badge-emerald">PLAYBOOK OFICIAL D'EXECUCIÓ</span>
-            <span class="badge badge-amber">1 BLOC O DOBLE FLOTA A+B (0% SOLAPAMENT)</span>
+            <span class="badge badge-emerald">PLAYBOOK OFICIAL D'EXECUCIÓ 2027</span>
+            <span class="badge badge-amber">COMBO ELITE · BE +0.50P (+2 TICKS) · APEX MANUAL</span>
           </div>
-          <h1>MANUAL OPERATIU: LAYER SNIPER 10:00</h1>
+          <h1>MANUAL OPERATIU: LAYER SNIPER PRO</h1>
           <p style="font-size:10.2px;color:#a7f3d0;margin-top:3px;">
-            Estratègia d'alta precisió sobre el segon toc extrem (<strong class="mono">🔷 LAYER</strong>) amb escut automàtic de Breakeven en <strong class="mono">TP 1</strong> i escalat multi-empresa.
+            Estratègia d'alta precisió sobre el segon toc extrem (<strong class="mono">🔷 LAYER</strong>) amb escut de Breakeven <strong class="mono">+0.50p (+2 ticks)</strong> en <strong class="mono">TP 1</strong> i escalat multi-empresa.
           </p>
         </div>
         <div style="text-align:right;min-width:135px;background:rgba(6,9,19,0.75);padding:8px 10px;border-radius:8px;border:1px solid rgba(16,185,129,0.35);">
           <div class="kpi-lbl">FINESTRA OPERATIVA</div>
-          <div class="mono" style="font-size:13px;font-weight:800;color:#34d399;">10:00 – 10:59 NY</div>
-          <div class="mono" style="font-size:8.5px;color:#94a3b8;">16:00 – 16:59 CET</div>
+          <div class="mono" style="font-size:13px;font-weight:800;color:#34d399;">09:30 – 11:59 NY</div>
+          <div class="mono" style="font-size:8.5px;color:#94a3b8;">Nucli 10h · Hard Stop 12:30</div>
         </div>
       </div>
 
       <div class="grid-6" style="margin-top:10px;">
         <div class="kpi-box">
-          <div class="kpi-lbl">Win Rate (Bloc A)</div>
-          <div class="kpi-val mono" style="color:#34d399;">71.6% – 75.0%</div>
-          <div style="font-size:7.5px;color:#64748b;">83W / 33L / 24BE</div>
+          <div class="kpi-lbl">Combo Elite (1s)</div>
+          <div class="kpi-val mono" style="color:#34d399;">60.0% WR</div>
+          <div style="font-size:7.5px;color:#64748b;">147W / 98L / 82BE</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Balanç 1 Bloc</div>
-          <div class="kpi-val mono" style="color:#22d3ee;">+1,500 pts</div>
-          <div style="font-size:7.5px;color:#64748b;">+$15,000 / compte (5 MNQ)</div>
+          <div class="kpi-lbl">Punts Any (BE +2t)</div>
+          <div class="kpi-val mono" style="color:#22d3ee;">+1,511 pts</div>
+          <div style="font-size:7.5px;color:#64748b;">0/535 TPs trencats</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Balanç 2 Blocs A+B</div>
-          <div class="kpi-val mono" style="color:#fbbf24;">+1,740 / +2,310p</div>
-          <div style="font-size:7.5px;color:#64748b;">0% Solapament</div>
+          <div class="kpi-lbl">Sniper Pur 10h</div>
+          <div class="kpi-val mono" style="color:#fbbf24;">71.6% – 75%</div>
+          <div style="font-size:7.5px;color:#64748b;">Bloc A pur &ge;10:00</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Max Drawdown</div>
-          <div class="kpi-val mono" style="color:#a5b4fc;">-60p / -120p</div>
-          <div style="font-size:7.5px;color:#64748b;">-$600 / -$1,200 (5 MNQ)</div>
+          <div class="kpi-lbl">Escut BE Offset</div>
+          <div class="kpi-val mono" style="color:#a5b4fc;">+0.50p (+2t)</div>
+          <div style="font-size:7.5px;color:#64748b;">Cobreix $1.24/MNQ CME</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Mesos Positius</div>
-          <div class="kpi-val mono" style="color:#34d399;">6 de 6 (100%)</div>
-          <div style="font-size:7.5px;color:#64748b;">Mai · Jun · Jul · Ago · Set · Oct</div>
+          <div class="kpi-lbl">Èxit MC 10K Anys</div>
+          <div class="kpi-val mono" style="color:#34d399;">98.8% – 99%</div>
+          <div style="font-size:7.5px;color:#64748b;">Block-Bootstrap 5d</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Mida Posició</div>
-          <div class="kpi-val mono" style="color:#f43f5e;">5 o 10 MNQ</div>
-          <div style="font-size:7.5px;color:#64748b;">±$300 o ±$600 / trade</div>
+          <div class="kpi-lbl">Mida 50K / 150K</div>
+          <div class="kpi-val mono" style="color:#f43f5e;">10 / 30 MNQ</div>
+          <div style="font-size:7.5px;color:#64748b;">±$600 o ±$1,800 / tr</div>
         </div>
       </div>
     </div>
@@ -235,8 +345,8 @@
     <div class="grid-3" style="margin-bottom:10px;">
       <div class="card">
         <span class="badge badge-cyan" style="margin-bottom:4px;">PILAR 1 · FILTRE D'OBERTURA</span>
-        <h3>Ignorar el Soroll 09:30–09:59 (Bloc A)</h3>
-        <p>Entre les <span class="mono" style="color:#fff;">09:30 i 09:59 NY</span> es produeix el <em>Judas Swing</em> inicial que concentra la majoria d'SLs dels <span class="mono">PRIMARY</span>. A partir de les <span class="mono" style="color:#34d399;">10:00 NY</span> l'estructura institucional ja està fixada.</p>
+        <h3>Selectivitat Màxima 09:30–11:59</h3>
+        <p>A les <span class="mono" style="color:#fff;">09:30 NY</span> s'exigeix desviació <span class="mono">&ge;50p</span> (o s'ignora al Bloc A pur), i a les <span class="mono" style="color:#34d399;">10:00 NY</span> s'exigeix <span class="mono">&ge;40p</span> (Cont <span class="mono">L10_2 &ge;55p</span>). Màxim 2 bales al dia.</p>
       </div>
       <div class="card">
         <span class="badge badge-emerald" style="margin-bottom:4px;">PILAR 2 · 2n BOS DE CONFIRMACIÓ</span>
@@ -244,9 +354,9 @@
         <p>Quan surt un <span class="mono">PRIMARY</span> (ex. <span class="mono">20,000</span>) no entrem. Esperem el <strong>2n BOS de confirmació cap a l'Àncora</strong> que imprimeix <strong style="color:#22d3ee;">🔷 LAYER</strong> (ex. <span class="mono">20,010</span>): entrem amb el gir ja confirmat per estructura.</p>
       </div>
       <div class="card">
-        <span class="badge badge-amber" style="margin-bottom:4px;">PILAR 3 · ESCUT TP1 ➔ BE</span>
-        <h3>Protecció Automàtica a Risc Zero</h3>
-        <p>Com que el <span class="mono">PRIMARY</span> va entrar a <span class="mono">20,000</span>, el seu <strong style="color:#34d399;">TP 1 (20,030)</strong> s'assoleix quan el nostre <span class="mono">LAYER (20,010)</span> ja porta <span class="mono">+20p</span> a favor. En tocar <span class="mono">TP 1</span>, pugem l'SL a <strong style="color:#fbbf24;">Breakeven (20,010 = 0p)</strong>.</p>
+        <span class="badge badge-amber" style="margin-bottom:4px;">PILAR 3 · ESCUT TP1 ➔ BE +2T</span>
+        <h3>Protecció Automàtica + Comissions</h3>
+        <p>Com que el <span class="mono">PRIMARY</span> va entrar a <span class="mono">20,000</span>, el seu <strong style="color:#34d399;">TP 1 (20,030)</strong> s'assoleix quan el nostre <span class="mono">LAYER (20,010)</span> ja porta <span class="mono">+20p</span>. En tocar <span class="mono">TP 1</span>, pugem l'SL a <strong style="color:#fbbf24;">20,010.50 (+0.50p / +2t)</strong>.</p>
       </div>
     </div>
 
@@ -325,8 +435,8 @@
 
         <line x1="245" y1="185" x2="245" y2="126" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="3,2"/>
         <polygon points="245,121 241,128 249,128" fill="#fbbf24"/>
-        <rect x="252" y="123" width="90" height="15" rx="3" fill="#451a03" stroke="#fbbf24" stroke-width="0.9"/>
-        <text x="297" y="133" text-anchor="middle" fill="#fde68a" font-size="7.2" font-weight="bold" font-family="Inter, sans-serif">NOU SL = 20,010 (0p)</text>
+        <rect x="248" y="123" width="98" height="15" rx="3" fill="#451a03" stroke="#fbbf24" stroke-width="0.9"/>
+        <text x="297" y="133" text-anchor="middle" fill="#fde68a" font-size="7.0" font-weight="bold" font-family="Inter, sans-serif">NOU SL = 20,010.5 (+2t)</text>
 
         <line x1="285" y1="68" x2="285" y2="96" stroke="#64748b" stroke-width="1.2"/>
         <rect x="280" y="72" width="10" height="18" fill="#334155" stroke="#64748b" stroke-width="1"/>
@@ -348,41 +458,41 @@
           Al 2n BOS de confirmació tanca l'espelma <strong>LAYER BUY</strong> a <strong class="mono">20,010</strong>. Entrem amb <strong>TP 2 a 20,040 (+30p)</strong> i <strong>SL 2 a 19,980 (-30p)</strong>.
         </div>
         <div style="background:#2e1905;border-left:3px solid #fbbf24;padding:5px 8px;border-radius:4px;">
-          <strong style="color:#fbbf24;">3. EL PREU TOCA 20,030 (TP 1) ➔ ESCUT BE:</strong><br/>
-          Quan l'espelma toca el sostre de la Caixa Verda (<strong class="mono">20,030</strong>), ja portem <strong>+20p</strong> de guany. Pugem l'SL de 19,980 a <strong class="mono">20,010 (Breakeven 0p)</strong>.
+          <strong style="color:#fbbf24;">3. EL PREU TOCA 20,030 (TP 1) ➔ ESCUT BE +2T:</strong><br/>
+          Quan l'espelma toca el sostre de la Caixa Verda (<strong class="mono">20,030</strong>), ja portem <strong>+20p</strong> a favor. Pugem l'SL de 19,980 a <strong class="mono">20,010.50 (+0.50p = +2 ticks)</strong>.
         </div>
         <div style="background:#052e24;border-left:3px solid #10b981;padding:5px 8px;border-radius:4px;">
-          <strong style="color:#34d399;">4. DESENLLAÇ A RISC ZERO (20,040 o 20,010):</strong><br/>
-          Si puja 10p més fins a <strong class="mono">20,040</strong> cobrem <strong>+30p (+$300 / +$600)</strong>; si es gira, sortim a <strong class="mono">20,010 (0p = $0)</strong>.
+          <strong style="color:#34d399;">4. DESENLLAÇ A RISC ZERO (20,040 o 20,010.50):</strong><br/>
+          Si puja 10p més fins a <strong class="mono">20,040</strong> cobrem <strong>+30p (+$600 / +$1,800)</strong>; si es gira, sortim a <strong class="mono">20,010.50 (+0.50p, cobrint comissions)</strong>.
         </div>
       </div>
     </div>
 
     <!-- Les 4 Lleis Innegociables -->
-    <h2><span>⚖️</span> 3. Les 4 Lleis Innegociables d'Execució i Risc</h2>
+    <h2><span>⚖️</span> 3. Les Lleis Innegociables d'Execució i Risc 2027</h2>
     <div class="grid-2">
       <div class="card-cyan">
-        <h3>LLEI 1 · Gatell d'Entrada (<span class="mono">🔷 LAYER</span>)</h3>
-        <p>S'entra al tancament de l'espelma d'1m que imprimeix <strong style="color:#22d3ee;">🔷 LAYER BUY / SELL</strong> mentre el <span class="mono">PRIMARY</span> segueix obert. Si el <span class="mono">PRIMARY</span> va sortir a les <span class="mono">09:56</span> però el <span class="mono">LAYER</span> surt a les <span class="mono">10:01</span>, <strong>SÍ que s'opera</strong> (mana l'hora del <span class="mono">LAYER</span>).</p>
+        <h3>LLEI 1 · Gatell d'Entrada (<span class="mono">🔷 LAYER</span> · Àncora 09:30 NY)</h3>
+        <p>S'entra al tancament de l'espelma d'1m que imprimeix <strong style="color:#22d3ee;">🔷 LAYER BUY / SELL</strong> mentre el <span class="mono">PRIMARY</span> segueix obert. Pausa en <span class="mono">09:59–10:02 NY</span> si hi ha notícia Red Folder a les 10:00 AM (ISM / JOLTS / Michigan).</p>
       </div>
       <div class="card-amber">
-        <h3>LLEI 2 · Escut de Breakeven (<span class="mono">TP 1 ➔ BE 0p</span>)</h3>
-        <p>En l'instant exacte en què el preu toca la línia del <strong style="color:#34d399;">TP 1</strong> del <span class="mono">PRIMARY</span>, mous el teu Stop Loss a <strong style="color:#fbbf24;">Breakeven (+1 punt / 4 ticks)</strong>. Aquesta regla ha salvat <strong>35 operacions de -30p</strong> convertint-les en <strong>0p ($0)</strong>.</p>
+        <h3>LLEI 2 · Escut de Breakeven +2 Ticks (<span class="mono">TP 1 ➔ BE +0.50p</span>)</h3>
+        <p>En l'instant exacte en què el preu toca el <strong style="color:#34d399;">TP 1</strong> del <span class="mono">PRIMARY</span>, mous l'SL a <strong style="color:#fbbf24;">+0.50p (+2 ticks)</strong> sobre l'entrada. Auditant les 535 operacions a 1s, trenca <strong>0% dels TPs</strong> i neutralitza les comissions CME ($1.24/MNQ).</p>
       </div>
       <div class="card-rose">
-        <h3>LLEI 3 · Tall per "Doble SL" en Operació Nostra (<span class="mono">&gt;= 10:00</span>)</h3>
-        <p>Si un clúster que <strong>TU has operat a partir de les 10:00 NY</strong> acaba en <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>), <strong>s'acaba el dia immediatament</strong>. <br><strong style="color:#fda4af;">Important:</strong> Si hi ha hagut un Doble SL entre les <span class="mono">09:30 i 09:59 NY</span> (abans de la nostra finestra), <strong>s'ignora completament</strong> (<span class="mono">5W - 3L, +60p</span> després de les 10h en aquests dies).</p>
+        <h3>LLEI 3 · Tall per "Doble SL" (<span class="mono">P1 SL + L2 SL</span>) i Màx 2 Trades</h3>
+        <p>Si un clúster operat acaba en <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>), <strong>s'acaba el dia immediatament</strong>. Màxim <strong>2 operacions al dia</strong> en Combo Elite i Hard Stop absolut a les <span class="mono">12:00 / 12:30 NY</span>.</p>
       </div>
       <div class="card-emerald">
-        <h3>LLEI 4 · Exposició Màxima i Circuit Breaker Diari</h3>
-        <p>Un segon <span class="mono">LAYER</span> mai pot aparèixer fins que el clúster anterior s'hagi tancat: <strong>mai tindràs dues operacions obertes alhora</strong> en un mateix compte. Si un compte acumula <strong>2 SLs en un mateix dia</strong>, s'atura fins l'endemà.</p>
+        <h3>LLEI 4 &amp; 5 · Setmana 4 (&lt;220p) i Apex 100% Manual</h3>
+        <p>En <strong>Setmana 4 post-OPEX</strong> (dies 22–28) amb rang previ &lt;220p, redueix la mida al <strong>50% MNQ</strong>. A <strong>Apex (Grup C)</strong>: prohibit bots/webhooks; s'opera <strong>100% Manual + Replikanto</strong> i <strong>1 TP/dia màxim en PA</strong> (regla 30%).</p>
       </div>
     </div>
   </div>
 
   <div class="footer-bar">
-    <span>JJ FAIR PRICING · MANUAL OPERATIU LAYER SNIPER</span>
-    <span class="mono">121 SESSIONS AUDITADES · 0% LOOK-AHEAD BIAS</span>
+    <span>JJ FAIR PRICING · MANUAL OPERATIU LAYER SNIPER 2027</span>
+    <span class="mono">VALIDAT A 1 SEGON · BE +0.50P (+2 TICKS) · 0% LOOK-AHEAD BIAS</span>
     <span>PÀGINA 01 / 04</span>
   </div>
 </div>
@@ -862,8 +972,8 @@
   <div>
     <div class="top-bar">
       <div style="display:flex;align-items:center;gap:8px;">
-        <span class="badge badge-amber">RUTINA DIÀRIA I FULL DE RUTA</span>
-        <span class="mono" style="font-size:9px;color:#94a3b8;">PROTOCOL D'EXECUCIÓ 15:25 – 17:00 CET (09:25 – 11:00 NY)</span>
+        <span class="badge badge-amber">RUTINA DIÀRIA I FULL DE RUTA 2027</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">PROTOCOL D'EXECUCIÓ 15:25 – 18:00 CET (09:25 – 12:00 NY · HARD STOP 12:30)</span>
       </div>
       <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 04 / 04</span>
     </div>
@@ -875,11 +985,11 @@
           <span class="badge badge-cyan">FASE 1 · 09:25 NY (15:25 CET)</span>
           <span class="mono" style="font-size:8.5px;color:#94a3b8;">PREPARACIÓ</span>
         </div>
-        <h3>Configuració d'ATMs i Trade Copiers</h3>
+        <h3>Configuració d'ATMs, Símbol CME i Copiers</h3>
         <ul>
-          <li>Obre el gràfic d'<strong>1 minut de l'MNQ</strong> amb l'indicador <span class="mono">JJ Fair Pricing</span>.</li>
-          <li>Revisa que el <strong>Copier del Bloc A</strong> tingui tots els comptes connectats amb l'ATM a <strong class="mono" style="color:#34d399;">5 MNQ</strong> (o <span class="mono" style="color:#fbbf24;">10 MNQ</span> en mode JJ) i <span class="mono">+30p TP / -30p SL</span>.</li>
-          <li>Si operes Doble Flota, verifica que el <strong>Copier del Bloc B</strong> tingui l'ATM a <strong class="mono" style="color:#a5b4fc;">5 MNQ</strong> (<span class="mono">+30p TP / -30p SL</span>).</li>
+          <li>Obre l'<strong>MNQ 1m</strong> amb <span class="mono">JJ Layer Sniper 2026</span> (dijous pre-venciment = nou contracte CME) i comprova l'alerta taronja de <strong>Setmana 4 (&lt;220p = 50% MNQ)</strong>.</li>
+          <li>Configura l'ATM a <strong class="mono" style="color:#34d399;">10 MNQ (50K)</strong> o <strong class="mono" style="color:#fbbf24;">30 MNQ (150K)</strong> amb <span class="mono">120t TP (+30p) / 120t SL (-30p)</span> i <span class="mono">BE +2t (+0.50p)</span>.</li>
+          <li><strong>Apex (Grup C):</strong> 100% Manual Clic Humà + Replikanto local (prohibit qualsevol webhook o bot).</li>
         </ul>
       </div>
 
@@ -888,39 +998,39 @@
           <span class="badge badge-indigo">FASE 2 · 09:30 – 09:59 NY (15:30 – 15:59 CET)</span>
           <span class="mono" style="font-size:8.5px;color:#a5b4fc;">OBERTURA NY</span>
         </div>
-        <h3>Bloc A en Espera · Bloc B Atent a <span class="mono">🔷 LAYER</span></h3>
+        <h3>Àncora 09:30 NY i 1r Senyal Sniper 09h</h3>
         <ul>
-          <li>Es fixa la línia groga de l'<strong>Àncora de les 09:30 NY</strong>.</li>
-          <li><strong>🅰️ BLOC A:</strong> No fa absolutament res entre 09:30 i 09:59. Qualsevol SL o Doble SL que passi en aquesta mitja hora <strong>s'ignora completament</strong> per al Bloc A.</li>
-          <li><strong>🅱️ BLOC B (si actives Doble Flota):</strong> Si apareix un <strong style="color:#22d3ee;">🔷 LAYER</strong> entre 09:30 i 09:59, l'executa el Bloc B (amb escut BE en TP 1).</li>
+          <li>Es fixa la línia groga de l'<strong>Àncora de les 09:30 NY</strong> (única àncora validada; mai 08:30).</li>
+          <li><strong>SNIPER COMBO ELITE:</strong> Només s'admet el <strong>1r <span class="mono">🔷 LAYER</span> 09:30–09:59</strong> si la desviació és <span class="mono" style="color:#34d399;">&ge;50p</span>. (En arquitectura Doble Bloc Opció 1, el 09:30 va al Bloc B).</li>
+          <li><strong>09:59 – 10:02 NY:</strong> Pausa si hi ha notícia Red Folder de les 10:00 AM (ISM / JOLTS / Confiança).</li>
         </ul>
       </div>
 
       <div class="card-emerald">
         <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
-          <span class="badge badge-emerald">FASE 3 · 10:00 – 10:59 NY (16:00 – 16:59 CET)</span>
+          <span class="badge badge-emerald">FASE 3 · 10:00 – 11:59 NY (16:00 – 17:59 CET)</span>
           <span class="mono" style="font-size:8.5px;color:#34d399;">FINESTRA D'OR</span>
         </div>
-        <h3>Execució quirúrgica del <span class="mono">🔷 LAYER</span></h3>
+        <h3>Execució quirúrgica del <span class="mono">🔷 LAYER</span> (Màx 2/Dia)</h3>
         <ul>
           <li><strong>En sortir un <span class="mono">PRIMARY</span>:</strong> No entres; localitzes on quedarà la línia verda del <span class="mono">TP 1</span>.</li>
           <li><strong>En tancar l'espelma <span class="mono">🔷 LAYER</span>:</strong>
-            <br>• Si vas amb <strong>1 Sol Bloc</strong>: entres tots els <span class="mono">LAYER &gt;= 10:00</span> al Copier únic.
-            <br>• Si vas amb <strong>2 Blocs (Opció 1)</strong>: el <strong>1r <span class="mono">LAYER &gt;= 10:00</span></strong> va al <strong>🅰️ Bloc A</strong>; si més tard surt un <strong>2n/3r <span class="mono">LAYER &gt;= 10:00</span></strong> (i el 1r no va ser Doble SL), va al <strong>🅱️ Bloc B</strong>.
+            <br>• <strong>Combo Elite:</strong> 1r <span class="mono">L10 &ge;40p</span>; Continuació <span class="mono">L10_2 &ge;55p</span> (si 0 trades a les 9h) o <span class="mono">L11_1</span> (si portes 1 sol trade).
+            <br>• <strong>Apex PA:</strong> Si ja has cobrat <strong>1 TP avui</strong>, atura els PA d'Apex (regla 30% consistència).
           </li>
         </ul>
       </div>
 
       <div class="card-amber">
         <div style="display:flex;justify-content:space-between;margin-bottom:3px;">
-          <span class="badge badge-amber">FASE 4 · GESTIÓ I TANCAMENT (17:00 CET)</span>
+          <span class="badge badge-amber">FASE 4 · GESTIÓ I TANCAMENT (18:00 CET)</span>
           <span class="mono" style="font-size:8.5px;color:#fbbf24;">DISCIPLINA ESTRICTA</span>
         </div>
-        <h3>Escut BE i Final de Sessió</h3>
+        <h3>Escut BE +2 Ticks i Final de Sessió</h3>
         <ul>
-          <li>Mentre el <span class="mono">LAYER</span> està obert, vigila la línia del <strong style="color:#34d399;">TP 1</strong>: tan bon punt el preu la toqui, mou l'SL a <strong style="color:#fbbf24;">BE (+1p)</strong>.</li>
-          <li>Si un clúster de les <span class="mono">10:00+</span> fa <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>), <strong>apagues la plataforma fins demà</strong>.</li>
-          <li>A les <strong>11:00 NY (17:00 CET)</strong> no s'obre cap més operació nova.</li>
+          <li>Mentre el <span class="mono">LAYER</span> està obert, vigila la línia del <strong style="color:#34d399;">TP 1</strong>: tan bon punt el preu la toqui, mou l'SL a <strong style="color:#fbbf24;">BE +0.50p (+2 ticks)</strong>.</li>
+          <li>Si un clúster operat fa <strong>Doble SL</strong> (<span class="mono">PRIMARY SL + LAYER SL</span>) o arribes a <strong>2 trades</strong>, <strong>plegues fins demà</strong>.</li>
+          <li>A les <strong>12:00 NY (18:00 CET)</strong> zero noves entrades; <strong>12:30 NY</strong> tancament forçós (Hard Flat).</li>
         </ul>
       </div>
     </div>
@@ -946,24 +1056,24 @@
         <path d="M 286 45 L 315 24 L 340 24" fill="none" stroke="#818cf8" stroke-width="1.5" />
         <polygon points="340,24 334,20 334,28" fill="#818cf8" />
         <rect x="342" y="5" width="155" height="38" rx="6" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.3" />
-        <text x="419" y="20" text-anchor="middle" fill="#a5b4fc" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">09:30 – 09:59 NY (&lt;10:00)</text>
-        <text x="419" y="33" text-anchor="middle" fill="#e2e8f0" font-size="8">➔ Dispara <tspan fill="#a5b4fc" font-weight="bold">🅱️ BLOC B</tspan> (Bloc A ignora)</text>
+        <text x="419" y="20" text-anchor="middle" fill="#a5b4fc" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">09:30 – 09:59 NY (&ge;50p)</text>
+        <text x="419" y="33" text-anchor="middle" fill="#e2e8f0" font-size="8">➔ 1r L09 (Combo / <tspan fill="#a5b4fc" font-weight="bold">🅱️ BLOC B</tspan>)</text>
 
         <!-- Branch Down (>=10:00) -->
         <path d="M 286 67 L 315 84 L 340 84" fill="none" stroke="#10b981" stroke-width="1.5" />
         <polygon points="340,84 334,80 334,88" fill="#10b981" />
         <rect x="342" y="62" width="155" height="44" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="1.3" />
-        <text x="419" y="77" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">10:00 – 10:59 NY (&gt;=10:00)</text>
+        <text x="419" y="77" text-anchor="middle" fill="#6ee7b7" font-size="8" font-weight="bold" font-family="JetBrains Mono, monospace">10:00 – 11:59 NY (&ge;40p/55p)</text>
         <text x="419" y="89" text-anchor="middle" fill="#fde68a" font-size="7.8">• 1r LAYER 10h ➔ <tspan font-weight="bold">🅰️ BLOC A</tspan></text>
-        <text x="419" y="100" text-anchor="middle" fill="#a5b4fc" font-size="7.8">• 2n/3r LAYER 10h ➔ <tspan font-weight="bold">🅱️ BLOC B</tspan></text>
+        <text x="419" y="100" text-anchor="middle" fill="#a5b4fc" font-size="7.8">• Cont L10_2 / L11_1 ➔ <tspan font-weight="bold">🅱️ BLOC B</tspan></text>
 
         <!-- Final Box (Shield + Stop) -->
         <line x1="497" y1="24" x2="525" y2="48" stroke="#64748b" stroke-width="1.2" />
         <line x1="497" y1="84" x2="525" y2="62" stroke="#10b981" stroke-width="1.5" />
         <rect x="525" y="28" width="146" height="56" rx="7" fill="#0f172a" stroke="#f59e0b" stroke-width="1.4" />
         <text x="598" y="45" text-anchor="middle" fill="#fbbf24" font-size="8.5" font-weight="bold">🛡️ GESTIÓ ACTIVA</text>
-        <text x="598" y="59" text-anchor="middle" fill="#34d399" font-size="7.8" font-family="JetBrains Mono, monospace">1. Toca TP1 ➔ SL a BE (0p)</text>
-        <text x="598" y="72" text-anchor="middle" fill="#fb7185" font-size="7.8" font-family="JetBrains Mono, monospace">2. Doble SL 10h+ ➔ Plegar!</text>
+        <text x="598" y="59" text-anchor="middle" fill="#34d399" font-size="7.6" font-family="JetBrains Mono, monospace">1. Toca TP1 ➔ BE +0.50p (+2t)</text>
+        <text x="598" y="72" text-anchor="middle" fill="#fb7185" font-size="7.8" font-family="JetBrains Mono, monospace">2. Doble SL / 2 Tr ➔ Plegar!</text>
       </svg>
     </div>
 
@@ -971,31 +1081,31 @@
     <h2><span>✅</span> 9. Targeta de Monitor: Checklist Ràpid de 5 Punts Abans de Fer Clic</h2>
     <div class="card-emerald" style="padding:12px 14px;">
       <p style="font-size:9.8px;color:#d1fae5;margin-bottom:8px;font-weight:600;">
-        Abans de prémer <strong class="mono" style="color:#ffffff;">BUY / SELL</strong> al Trade Copier, totes 5 comprovacions han de ser <strong style="color:#34d399;">SÍ</strong>:
+        Abans de prémer <strong class="mono" style="color:#ffffff;">BUY / SELL</strong> (manualment a Replikanto per a Apex o al Copier), totes 5 comprovacions han de ser <strong style="color:#34d399;">SÍ</strong>:
       </p>
       <div style="display:grid;grid-template-columns:1fr;gap:6px;" class="mono">
         <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #10b981;font-size:9.2px;">
-          <strong style="color:#34d399;">[ 1 ] FINESTRA HORÀRIA:</strong> El rellotge marca entre les <strong>10:00 i les 10:59 NY (16:00 – 16:59 CET)</strong> per al Bloc A? <em>(O 09:30–09:59 / 2n LAYER &gt;= 10:00 per al Bloc B).</em>
+          <strong style="color:#34d399;">[ 1 ] FINESTRA I NOTÍCIES 10H:</strong> Estem dins la finestra Combo Elite (<strong>09:30–11:59 NY</strong>, menys de 2 trades avui) i fora dels 3 minuts d'una notícia Red Folder de les 10:00 AM?
         </div>
         <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #06b6d4;font-size:9.2px;">
-          <strong style="color:#22d3ee;">[ 2 ] GATELL CONFIRMAT:</strong> El <span style="color:#fff;">PRIMARY</span> segueix obert i acaba de <strong>tancar</strong> una espelma d'1 minut amb l'etiqueta <strong style="color:#22d3ee;">🔷 LAYER BUY / SELL</strong>?
+          <strong style="color:#22d3ee;">[ 2 ] GATELL CONFIRMAT:</strong> El <span style="color:#fff;">PRIMARY</span> segueix obert i acaba de <strong>tancar</strong> una espelma d'1m amb el senyal vàlid <strong style="color:#22d3ee;">🎯 SNIPER / ⚡ CONT</strong>?
         </div>
         <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #f43f5e;font-size:9.2px;">
-          <strong style="color:#fb7185;">[ 3 ] RÈGIM NET DES DE LES 10:00:</strong> Avui encara <strong>NO hem patit cap Doble SL (P:SL + L:SL) en una operació NOSTRA oberta des de les 10:00 NY</strong>? <em>(Recorda: els SLs de 09:30–09:59 s'ignoren).</em>
+          <strong style="color:#fb7185;">[ 3 ] SENSE DOBLE SL AVUI:</strong> Avui encara <strong>NO hem patit cap Doble SL (P1:SL + L2:SL)</strong> ni hem superat el límit diari del compte (i a <strong>Apex PA</strong> portem 0 TPs avui)?
         </div>
         <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #f59e0b;font-size:9.2px;">
-          <strong style="color:#fbbf24;">[ 4 ] ATM I COPIER CORRECTES:</strong> Tinc seleccionat el Copier del Bloc corresponent (<strong style="color:#fbbf24;">🅰️ Bloc A</strong> o <strong style="color:#a5b4fc;">🅱️ Bloc B</strong>) amb l'ATM a <strong>5 MNQ</strong> (o <strong>10 MNQ</strong> al Bloc A en mode JJ) i <strong>+30p TP / -30p SL</strong>?
+          <strong style="color:#fbbf24;">[ 4 ] ATM, SETMANA 4 I COMPLIANCE:</strong> ATM a <strong>+30p TP / -30p SL</strong>, mida reduïda al 50% si hi ha alerta taronja de <strong>Setmana 4 (&lt;220p)</strong> i <strong>Apex 100% Manual</strong>?
         </div>
         <div style="background:rgba(6,9,19,0.75);padding:6.5px 10px;border-radius:6px;border-left:3px solid #a855f7;font-size:9.2px;">
-          <strong style="color:#c084fc;">[ 5 ] ESCUT TP 1 LOCALITZAT:</strong> Tinc localitzada la línia verda del <strong>TP 1 del PRIMARY</strong> a la pantalla per arrossegar el meu SL a <strong>Breakeven (+1p)</strong> a l'instant en què el preu la toqui?
+          <strong style="color:#c084fc;">[ 5 ] ESCUT TP 1 (+2 TICKS):</strong> Tinc localitzada la línia verda del <strong>TP 1 del PRIMARY</strong> a la pantalla per moure el meu SL a <strong>Breakeven +0.50p (+2 ticks)</strong> a l'instant en què la toqui?
         </div>
       </div>
     </div>
   </div>
 
   <div class="footer-bar">
-    <span>JJ FAIR PRICING · CHECKLIST OPERATIU PRE-CLIC</span>
-    <span class="mono">DISCIPLINA = CONSISTÈNCIA · ZERO IMPROVISACIÓ</span>
+    <span>JJ FAIR PRICING · CHECKLIST OPERATIU PRE-CLIC 2027</span>
+    <span class="mono">BE +0.50P (+2 TICKS) · APEX MANUAL · ZERO IMPROVISACIÓ</span>
     <span>PÀGINA 04 / 04</span>
   </div>
 </div>

@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JJ Layer Sniper Pro 2026 | Playbook Executiu Prop Firm</title>
-    <meta property="og:title" content="🏆 JJ Layer Sniper Pro 2026 — Playbook Executiu Prop Firm">
-    <meta property="og:description" content="Full de ruta operatiu i arquitectura de rotació per a 10, 20 i 30 comptes Apex 50k (Primary >=50p · Layer >=40p).">
+    <title>JJ Layer Sniper Pro 2026–2027 | Centre de Comandament Quant</title>
+    <meta property="og:title" content="🧭 JJ Layer Sniper Pro 2026–2027 — Centre de Comandament Quant">
+    <meta property="og:description" content="Playbook Executiu 2027: SNIPER COMBO ELITE 1s (60.0% WR, BE +0.50p +2 ticks), Rànquing 10 Prop Firms, Solucionador de Risc i Monte Carlo 10.000 Anys.">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#06b6d4">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
@@ -40,11 +38,10 @@
     </script>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .glass { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-card { background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); }
+        .glass { background: rgba(17, 24, 39, 0.78); backdrop-filter: blur(14px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(15, 23, 42, 0.68); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); }
         .glow-cyan { box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35); }
         .glow-emerald { box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35); }
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #0b0f19; }
         ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
@@ -53,50 +50,62 @@
 </head>
 <body class="bg-dark-950 text-gray-100 min-h-screen flex flex-col antialiased selection:bg-cyan-500 selection:text-black">
 
-    <!-- Top Navigation Header -->
-    <header class="border-b border-gray-800 bg-dark-900/90 sticky top-0 z-50 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Capçalera Global Unificada amb la resta del Dashboard -->
+    <header class="border-b border-gray-800 bg-dark-900/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tab-funnel')">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-cyan to-brand-emerald flex items-center justify-center font-black text-black shadow-lg glow-cyan text-sm">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-black text-sm shadow-lg glow-cyan">
                     JJ
                 </div>
                 <div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 flex-wrap">
                         <h1 class="text-base font-bold tracking-tight bg-gradient-to-r from-cyan-400 via-emerald-400 to-teal-300 bg-clip-text text-transparent">
-                            CENTRE DE COMANDAMENT QUANT
+                            CENTRE DE COMANDAMENT QUANT · 2026–2027
                         </h1>
-                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-800/80">
-                            Veredicte 30/30 Actiu
+                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-950/90 text-emerald-300 border border-emerald-700/80">
+                            SNIPER COMBO ELITE · BE +0.50p (+2 ticks)
                         </span>
                     </div>
-                    <p class="text-[11px] text-gray-400">Guia Mestra del Negoci de Prop Trading · Fair Pricing Theory (MNQ)</p>
+                    <p class="text-[11px] text-gray-400">Playbook Executiu Prop Firms · Fair Pricing Theory (MNQ 1m / Validació 1s)</p>
                 </div>
             </div>
 
-            <!-- Tabs Navigation -->
-            <nav class="flex space-x-1 bg-dark-950 p-1 rounded-xl border border-gray-800 text-xs font-medium overflow-x-auto max-w-full">
-                <button onclick="switchTab('tab-funnel')" id="nav-funnel" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-cyan-400 bg-dark-800 font-semibold shadow">
-                    🧭 El Funnel & Protocol Diari
-                </button>
-                <button onclick="switchTab('tab-calculator')" id="nav-calculator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
-                    🧮 Solucionador de Risc
-                </button>
-                <button onclick="switchTab('tab-evaluator')" id="nav-evaluator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
-                    📊 Avaluador de Firmes (EV)
-                </button>
-                <button onclick="switchTab('tab-montecarlo')" id="nav-montecarlo" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
-                    🎲 Simulador Monte Carlo
-                </button>
-                <button onclick="switchTab('tab-comparison')" id="nav-comparison" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white">
-                    ⚖️ 30/30 vs 38/25 (Veredicte)
-                </button>
-                <a href="visual_backtest.html#montecarlo" class="px-3 py-1.5 rounded-lg transition-all text-cyan-300 bg-cyan-950/70 border border-cyan-700/70 hover:bg-cyan-900/70 font-semibold flex items-center gap-1">
-                    🎲 Monte Carlo 2027 (10K)
+            <!-- Navegació Global Entre Pàgines -->
+            <nav class="flex flex-wrap items-center gap-1.5 bg-dark-950 p-1 rounded-xl border border-gray-800 text-xs">
+                <a href="visual_backtest.html" class="px-3 py-1.5 rounded-lg font-semibold text-gray-300 hover:text-emerald-300 hover:bg-dark-800 transition">
+                    📸 Backtest Visual &amp; Rotació 1s
                 </a>
-                <a href="visual_backtest.html" class="px-3 py-1.5 rounded-lg transition-all text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 hover:bg-emerald-900/60 font-semibold flex items-center gap-1">
-                    📸 Backtest Visual
+                <a href="visual_backtest.html#montecarlo" class="px-3 py-1.5 rounded-lg font-semibold text-gray-300 hover:text-cyan-300 hover:bg-dark-800 transition">
+                    🎲 Monte Carlo 2027 (10K Anys)
+                </a>
+                <span class="px-3.5 py-1.5 rounded-lg font-bold bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-cyan-300 border border-cyan-500/40 shadow cursor-default">
+                    🧭 Playbook Quant
+                </span>
+                <a href="manual_operatiu_pro.html" class="px-3 py-1.5 rounded-lg font-semibold text-gray-300 hover:text-amber-300 hover:bg-dark-800 transition">
+                    📘 Manual Operatiu
                 </a>
             </nav>
+        </div>
+
+        <!-- Sub-Pestanyes Internes del Centre de Comandament Quant -->
+        <div class="border-t border-gray-800/80 bg-dark-950/90">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-1.5 text-xs">
+                <button onclick="switchTab('tab-funnel')" id="nav-funnel" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-cyan-300 bg-dark-800 border border-cyan-700/60 font-bold shadow">
+                    🧭 1. Funnel &amp; Protocol Diari 2027
+                </button>
+                <button onclick="switchTab('tab-calculator')" id="nav-calculator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 border border-transparent hover:text-white hover:bg-dark-800/60">
+                    🧮 2. Solucionador de Risc &amp; Trailing
+                </button>
+                <button onclick="switchTab('tab-evaluator')" id="nav-evaluator" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 border border-transparent hover:text-white hover:bg-dark-800/60">
+                    📊 3. Rànquing 10 Prop Firms &amp; Compliance
+                </button>
+                <button onclick="switchTab('tab-montecarlo')" id="nav-montecarlo" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 border border-transparent hover:text-white hover:bg-dark-800/60">
+                    🎲 4. Resum Monte Carlo (10K Anys)
+                </button>
+                <button onclick="switchTab('tab-comparison')" id="nav-comparison" class="nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 border border-transparent hover:text-white hover:bg-dark-800/60">
+                    ⚖️ 5. Auditoria 1s: 30/30, BE +2t &amp; Fricció
+                </button>
+            </div>
         </div>
     </header>
 
@@ -104,111 +113,109 @@
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 w-full space-y-6">
 
         <!-- ========================================================================= -->
-        <!-- TAB 0: EL FUNNEL DEL NEGOCI & PROTOCOL DIARI (LA GRAN IMATGE) -->
+        <!-- TAB 0: EL FUNNEL DEL NEGOCI & PROTOCOL DIARI 2027 -->
         <!-- ========================================================================= -->
         <section id="tab-funnel" class="tab-content space-y-6">
-            
-            <!-- Hero Banner: Com Funciona el Negoci -->
+
+            <!-- Hero Banner -->
             <div class="glass p-6 rounded-2xl border border-cyan-800/40 relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 relative z-10">
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 relative z-10">
                     <div>
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="text-xs uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
-                                Visió Executiva
+                        <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                            <span class="text-[11px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-700/80">
+                                Arquitectura Validada 2027 (1 Segon)
                             </span>
-                            <span class="text-xs text-gray-400">Com transformem avaluacions en retirades al banc</span>
+                            <span class="text-xs text-emerald-400 font-mono font-semibold">
+                                147W / 82BE (+0.50p) / 98L · 60.0% WR · +1,511.0p Bruts (+1,308.3p Nets)
+                            </span>
                         </div>
                         <h2 class="text-xl font-extrabold text-white tracking-tight">
-                            El Funnel de Negoci: De la Despesa al Payout
+                            El Funnel d'Arbitratge Quantitatiu: De la Compra d'Evals al Payout Sistemàtic
                         </h2>
-                        <p class="text-xs text-gray-300 mt-1 max-w-2xl leading-relaxed">
-                            No operis com un jugador que intenta "passar una prova ràpid". Opera com un negoci d'arbitratge estadístic: comprem inventari (avaluacions) a un cost d'adquisició conegut (<code class="text-cyan-400 font-mono">Cost to Funded</code>) i en retirem beneficis molt superiors mitjançant execució mecànica.
+                        <p class="text-xs text-gray-300 mt-1 max-w-3xl leading-relaxed">
+                            No operem per endevinar el mercat ni per protegir l'ego d'una prova individual: comprem inventari d'avaluacions amb un matalàs inicial calibrat per Monte Carlo (<code class="text-amber-300 font-mono">Risk-of-Ruin &lt; 5%</code>), executem <strong class="text-white">SNIPER COMBO ELITE</strong> amb <strong class="text-emerald-300">Escut BE +2 ticks (+0.50p)</strong> i retirem cada dòlar per sobre del Buffer (<code class="text-cyan-300 font-mono">Withdraw ASAP</code>).
                         </p>
                     </div>
-                    <div class="bg-dark-900/90 border border-gray-800 p-3 rounded-xl flex items-center gap-4 text-center">
+                    <div class="bg-dark-900/95 border border-gray-800 p-3.5 rounded-xl flex flex-wrap items-center gap-4 text-center shrink-0">
                         <div>
-                            <span class="text-[10px] text-gray-400 uppercase block">Despesa Anual (10 / 30 Comptes)</span>
-                            <span class="text-base font-bold text-amber-400 font-mono">$3,260 / $9,780</span>
+                            <span class="text-[10px] text-gray-400 uppercase block">Arrencada 5x Lucid 50K</span>
+                            <span class="text-sm font-bold text-amber-300 font-mono">Matalàs $2,820 ➔ +$65.6k (P50)</span>
                         </div>
-                        <div class="text-gray-600 font-bold text-lg">➔</div>
+                        <div class="text-gray-600 font-bold">➔</div>
                         <div>
-                            <span class="text-[10px] text-gray-400 uppercase block">1r Cicle de Payout</span>
-                            <span class="text-base font-bold text-emerald-400 font-mono">+$10k–$16k / +$30k–$48k</span>
+                            <span class="text-[10px] text-gray-400 uppercase block">5x Alpha 150K EOD</span>
+                            <span class="text-sm font-bold text-emerald-400 font-mono">Matalàs $8,955 ➔ +$154.4k (P50)</span>
                         </div>
-                        <div class="text-gray-600 font-bold text-lg">➔</div>
+                        <div class="text-gray-600 font-bold">➔</div>
                         <div>
-                            <span class="text-[10px] text-gray-400 uppercase block">Net Anual (10 / 30 Comptes)</span>
-                            <span class="text-base font-bold text-cyan-400 font-mono">+$192.7k / +$578.2k</span>
+                            <span class="text-[10px] text-gray-400 uppercase block">Imperi 65x 150K (Net 1s)</span>
+                            <span class="text-sm font-black text-cyan-300 font-mono">+$2,195,564 (+$1.34M P50 MC)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Visual 4-Stage Funnel Pipeline -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-800/80">
-                    <!-- Stage 1 -->
-                    <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-800/60 relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6 pt-6 border-t border-gray-800/80">
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-800/60">
                         <div class="text-xs font-bold text-rose-400 flex items-center justify-between mb-2">
-                            <span>1. PREPARACIÓ EMOCIONAL</span>
-                            <span class="text-[10px] bg-rose-950 px-2 py-0.5 rounded text-rose-300 font-mono">El Pedregal</span>
+                            <span>1. EL PEDREGAL (CORBA EN J)</span>
+                            <span class="text-[10px] bg-rose-950 px-2 py-0.5 rounded text-rose-300 font-mono">Inventari</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            Compres un bloc de <strong>10 comptes</strong> (o 30). Has d'estar preparat mentalment per <strong>petar 10 o 20 comptes d'Eval</strong> si arrenques en un mes lateral/baixista abans de veure un sol dòlar. A $19/Eval, petar 20 comptes són només $380 d'inventari.
+                            En arrencar l'any pots enganxar 2–3 setmanes laterals (com les Setmanes 4 post-OPEX) i cremar la 1a tongada d'Evals abans del 1r cobrament. Amb el <strong>Matalàs P95 de Monte Carlo</strong> tens caixa per reposar sense aturar-te mai.
                         </p>
                         <div class="mt-3 text-[11px] text-rose-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
-                            ⚙️ 10 MNQ (±$600/tr) · 30/30<br>
-                            🧠 Assumir 1-2 blocs petats d'inici
+                            🛡️ 5x Lucid 50K: $2,820 (P95)<br>
+                            🛡️ 10x Apex 50K: $6,140 (P95)
                         </div>
                     </div>
 
-                    <!-- Stage 2 -->
-                    <div class="bg-dark-900/80 p-4 rounded-xl border border-amber-800/60 relative">
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-amber-800/60">
                         <div class="text-xs font-bold text-amber-400 flex items-center justify-between mb-2">
-                            <span>2. BUFFER INTOCABLE</span>
-                            <span class="text-[10px] bg-amber-950 px-2 py-0.5 rounded text-amber-300 font-mono">$52,600 / $52,100</span>
+                            <span>2. ESCUT BE +2 TICKS (+0.50p)</span>
+                            <span class="text-[10px] bg-amber-950 px-2 py-0.5 rounded text-amber-300 font-mono">Zero Fricció</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            Un cop aprovats a PA, l'objectiu és superar el mur del <strong>Safety Net Buffer ($52,600 a Apex / $52,100 a Altres 50k)</strong>. Només es pot retirar el que excedeixi d'aquest nivell, deixant el buffer intacte dins del compte.
+                            Quan el <code>PRIMARY</code> toca <code>TP 1</code>, l'Stop del <code>LAYER</code> puja a <strong>Entrada +0.50p (+2 ticks)</strong>. Això conserva el <strong>100% dels 147 TPs</strong>, paga les comissions (<code>$1.24/MNQ</code>) i salva <strong>-60 comptes petats/any</strong> en firmes Intraday!
                         </p>
                         <div class="mt-3 text-[11px] text-amber-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
-                            🛡️ Apex: Retirar sobre $52,600<br>
-                            🛡️ Altres: Retirar sobre $52,100
+                            ⚡ 10 MNQ: +$10 bruts vs -$12.40 comm<br>
+                            ⚡ 30 MNQ: +$30 bruts vs -$37.20 comm
                         </div>
                     </div>
 
-                    <!-- Stage 3 -->
-                    <div class="bg-dark-900/80 p-4 rounded-xl border border-cyan-800/60 relative">
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-cyan-800/60">
                         <div class="text-xs font-bold text-cyan-400 flex items-center justify-between mb-2">
-                            <span>3. EL 1r PAYOUT HO PAGA TOT</span>
+                            <span>3. BUFFER &amp; WITHDRAW ASAP</span>
                             <span class="text-[10px] bg-cyan-950 px-2 py-0.5 rounded text-cyan-300 font-mono">Punt d'Inflexió</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            Quan enganxes el mes tendencial i cobres el primer cicle en bloc (<strong>+$10,000 a +$16,000 amb 10 comptes</strong>, o <strong>+$30,000 a +$48,000 amb 30 comptes</strong>), pagues de cop totes les Evals i activacions de l'any sencer.
+                            Un cop superat el Safety Buffer (<code>$52,100</code> Lucid 50K · <code>$52,600</code> Apex 50K · <code>$154,600</code> 150K), apliquem la regla d'or de JJ Simon: <strong>retirar immediatament tot l'excedent disponible</strong> sense deixar guanys atrapats al compte.
                         </p>
                         <div class="mt-3 text-[11px] text-cyan-300 font-mono bg-dark-950 p-2 rounded border border-gray-800/60">
-                            ⚡ SNIPER COMBO ELITE (Max 2/dia)<br>
-                            💰 1 sol cobrament = 3x-5x cost anual
+                            ⏱️ 1r Payout P50: 35–47 dies operatius<br>
+                            💰 1 sol cicle = 3x–6x el pou inicial
                         </div>
                     </div>
 
-                    <!-- Stage 4 -->
-                    <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-800/80 bg-emerald-950/20 relative">
+                    <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-700/80 bg-emerald-950/20">
                         <div class="text-xs font-bold text-emerald-300 flex items-center justify-between mb-2">
-                            <span>4. BUCLE DE PAYOUTS (10 ➔ 30)</span>
-                            <span class="text-[10px] bg-emerald-950 px-2 py-0.5 rounded text-emerald-400 font-mono font-bold">Coixí Immortal</span>
+                            <span>4. JUBILACIÓ PRE-LIVE &amp; ESCALAT</span>
+                            <span class="text-[10px] bg-emerald-950 px-2 py-0.5 rounded text-emerald-400 font-mono font-bold">98.8% Anys +</span>
                         </div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            Com que després de retirar sempre queden <strong>&ge;$52,600 / &ge;$52,100</strong> al compte (&ge;$2,500 de coixí real = &gt;4 SLs seguits), els PAs deixen de petar i entren en roda de cobraments cada 8 dies operatius (+$192.7k amb 10c / +$578.2k amb 30c).
+                            Quan un compte PA arriba al límit previ a Live (5è/6è payout o cap de <code>$15,000</code>), es retira l'últim dòlar i es renova per una Eval nova. Reinvertint només els cobraments escales de 5 comptes fins a l'Imperi multi-firma.
                         </p>
                         <div class="mt-3 text-[11px] text-emerald-300 font-mono bg-dark-950 p-2 rounded border border-emerald-800/60 font-bold">
-                            🏦 10c: +$192,740 nets (100 payouts)<br>
-                            🚀 30c: +$540k–$578k nets (300 payouts)
+                            🚀 Escalat esglaonat: &lt;$3,000 caixa<br>
+                            🏦 Probabilitat d'any verd: 98.4%–99.1%
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Two-Column Operational Layout: Checklist + Technical Infographic -->
+            <!-- Two-Column Operational Layout: Checklist + Technical Pillars -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
                 <!-- Interactive Daily Execution Checklist -->
@@ -217,7 +224,7 @@
                         <div class="flex items-center gap-2">
                             <span class="text-lg">📋</span>
                             <h3 class="text-sm font-bold text-white uppercase tracking-wider">
-                                Checklist Operativa Diària (Interactiva)
+                                Checklist Operativa Diària 2027 (Interactiva)
                             </h3>
                         </div>
                         <button onclick="resetChecklist()" class="text-[11px] text-gray-400 hover:text-cyan-400 transition underline">
@@ -225,210 +232,214 @@
                         </button>
                     </div>
                     <p class="text-xs text-gray-400 leading-relaxed">
-                        Marca cadascun dels passos abans d'enviar cap comanda a Tradovate. Si alguna casella és <strong>NO</strong>, no s'opera.
+                         Protocol oficial actualitzat amb totes les regles validades per al 2027. Marca els 8 punts cada dia a les <strong>15:15–15:25h BCN (09:15–09:25 NY)</strong>.
                     </p>
 
                     <div class="space-y-2.5 pt-1 text-xs">
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-1" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>08:15 AM EST:</strong> Comprovar ForexFactory. Hi ha notícia vermella a les 08:30 (CPI, NFP, PPI)? Si n'hi ha, fixar àncora a les 08:29:59.</span>
+                            <input type="checkbox" id="chk-1" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-rose-300">1. Calendari Festius (Lleis 5A / 5B):</strong> Avui NO és Festiu Bancari EUA, ni Pont de <em>Thanksgiving/Black Friday</em>, ni Setmana de Nadal (24 Des – 2 Gen)? <span class="text-gray-400">(Nota: Notícies de les 10:00 AM com ISM/JOLTS i dies de Rollover CME <strong>SÍ s'operen</strong>: 64.2% i 88.2% WR!)</span></span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-2" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>09:30 AM EST:</strong> Traçar l'Àncora de Preu Just. Línia horitzontal persistent al preu d'obertura exacte de les 09:30:00.</span>
+                            <input type="checkbox" id="chk-2" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-amber-300">2. Radar Setmana 4 &amp; Rang 5D (Llei 5C):</strong> He revisat la fila 7 del HUD a TradingView (<code>📊 RADAR 5D &amp; SETM.</code>)? Si surt en taronja <code>⚠️ SETM.4 COMPRESSIÓ (&lt;220p)</code>, activo prudència (opcional reduir a mitja mida).</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-3" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>09:30 - 09:35 AM EST:</strong> Prohibit entrar. Esperar l'expansió d'obertura i que el mercat s'allunyi prou de l'àncora.</span>
+                            <input type="checkbox" id="chk-3" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-cyan-300">3. Àncora Inamovible 09:30:00 NY (15:30 BCN):</strong> L'indicador ha fixat la línia groga de Preu Just exactament a l'obertura de les <code>09:30:00 NY</code> (mai es canvia a les 08:30).</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-4" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>Filtre de Desviació (50p / 40p):</strong> El <strong>PRIMARY</strong> s'ha activat a <strong>&ge;50 punts</strong> de l'àncora i el 2n BOS (<strong>LAYER</strong>) entra a <strong>&ge;40 punts</strong> en retorn (o &ge;55p per al 2n Layer de les 10h)?</span>
+                            <input type="checkbox" id="chk-4" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-emerald-300">4. Extensió 50p / 40p + Regla del 80%:</strong> Ignoro el <code>PRIMARY (&ge;50p)</code> com a entrada; espero el tancament de vela 1m del 2n BOS (<code>🔷 LAYER &ge;40p</code>, o <code>&ge;55p</code> si és <code>L10_2</code>) amb el 80% del TP (24p) abans de tocar l'àncora.</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-5" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>Senyal BOS / Displaçament:</strong> L'indicador ha marcat un trencament d'estructura en direcció de tornada cap a l'àncora?</span>
+                            <input type="checkbox" id="chk-5" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-white">5. Finestra SNIPER COMBO ELITE (Màx 2/Dia):</strong> Només s'accepta el 1r <code>LAYER 09:30–09:59</code>, el 1r <code>LAYER 10:00–10:59</code>, i si només portem 1 bala, la continuació <code>L10_2 (&ge;55p)</code> o <code>L11_1 (11:00–11:59)</code>.</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-6" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>Regla del 80%:</strong> El Take Profit de 30 punts queda almenys un 80% abans de tocar l'àncora? (No sobrepassa la línia més de 6 pts).</span>
+                            <input type="checkbox" id="chk-6" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-violet-300">6. Bracket ATM 30.0p TP / 30.0p SL + Compliance Apex:</strong> ATM clavat a <strong>120 ticks TP (30.0p) i 120 ticks SL (30.0p)</strong>. A <strong>Apex (Grup C)</strong> clic 100% manual humà + Replikanto (mai bot) i màx 1 TP/dia en PA (30% consistència).</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-7" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>Execució Bracket ATM:</strong> Comanda automàtica amb <strong>120 ticks SL (30 pts)</strong> i <strong>120 ticks TP (30 pts)</strong>. Mans fora del ratolí.</span>
+                            <input type="checkbox" id="chk-7" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-amber-300">7. Escut BE +2 Ticks (+0.50p) Instantani:</strong> En el mateix segon que el preu toca la línia verda del <code>TP 1</code> del <code>PRIMARY</code>, l'SL del <code>LAYER</code> es mou a <strong>Entrada +0.50p (+2 ticks)</strong> (alerta tick d'Indicador, mai esperar tancament d'1m!).</span>
                         </label>
                         <label class="flex items-start gap-3 p-2.5 rounded-xl bg-dark-900/70 border border-gray-800/80 hover:border-gray-700 cursor-pointer transition">
-                            <input type="checkbox" id="chk-8" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded">
-                            <span class="text-gray-300"><strong>11:00 AM EST (Hard Stop):</strong> Tancar Tradovate i TradingView. Queda absolutament prohibit operar al migdia o la tarda.</span>
+                            <input type="checkbox" id="chk-8" onchange="saveChecklist()" class="mt-0.5 w-4 h-4 accent-cyan-400 rounded shrink-0">
+                            <span class="text-gray-300"><strong class="text-rose-300">8. Stop Doble SL &amp; Cadenat 12:00 / 12:30 NY:</strong> Si un clúster operat fa <strong>Doble SL (P1+L2)</strong> o arribem a 2 trades/dia, tanquem tot. Cap entrada nova passades les <code>11:59 NY</code> i posicions tancades a les <code>12:30 NY (18:30 BCN)</code>.</span>
                         </label>
                     </div>
 
                     <div id="chk-status" class="p-3 rounded-xl bg-dark-950 border border-gray-800 flex items-center justify-between text-xs">
-                        <span class="text-gray-400">Estat de Preparació:</span>
+                        <span class="text-gray-400">Estat de Preparació Diària:</span>
                         <span id="chk-count" class="font-bold text-cyan-400 font-mono">0 / 8 passos completats</span>
                     </div>
                 </div>
 
-                <!-- Technical Indicator Infographic -->
-                <div class="glass p-6 rounded-2xl space-y-4">
-                    <div class="flex items-center gap-2 border-b border-gray-800 pb-3">
-                        <span class="text-lg">🎯</span>
-                        <h3 class="text-sm font-bold text-white uppercase tracking-wider">
-                            Els 3 Conceptes Tècnics de l'Indicador
-                        </h3>
-                    </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        L'indicador de TradingView tradueix la <em>Fair Pricing Theory</em> en regles mecàniques sense espai per a la subjectivitat.
-                    </p>
-
-                    <!-- Concept 1 -->
-                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-cyan-400">1. L'Àncora de Preu Just (Fair Price Anchor)</span>
-                            <span class="text-[10px] text-gray-500 font-mono">09:30:00 EST</span>
+                <!-- Technical Indicator & Execution Architecture -->
+                <div class="glass p-6 rounded-2xl space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3.5">
+                        <div class="flex items-center justify-between border-b border-gray-800 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">🎯</span>
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider">
+                                    Arquitectura Tècnica 2027 (Indicador + ATM)
+                                </h3>
+                            </div>
+                            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700">Pine v6 Validat</span>
                         </div>
-                        <p class="text-[11px] text-gray-300 leading-relaxed">
-                            És el preu exacte d'obertura del mercat al comptat. Aquest nivell actua com a <strong>centre de gravetat</strong>. Les institucions utilitzen l'obertura com a referència de valor just del dia.
-                        </p>
-                    </div>
 
-                    <!-- Concept 2 -->
-                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-amber-400">2. La Desviació Injusta (&gt;25 Punts)</span>
-                            <span class="text-[10px] text-gray-500 font-mono">Unfair Move</span>
+                        <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-cyan-400">1. L'Àncora RTH (09:30:00 NY) &amp; Regla del 80%</span>
+                                <span class="text-[10px] text-gray-500 font-mono">Fair Value Gravity</span>
+                            </div>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                L'obertura RTH de les <code>09:30:00 NY</code> és l'imant institucional de la sessió. Per validar qualsevol retorn a la mitjana, almenys <strong>24 dels 30 punts del TP (80%)</strong> han de cabre abans de xocar amb la línia de l'àncora.
+                            </p>
                         </div>
-                        <p class="text-[11px] text-gray-300 leading-relaxed">
-                            Quan el Nasdaq s'allunya ràpidament més de 25 punts (100 ticks) sense liquiditat suficient, es crea un buit de preu. L'indicador pinta la zona de desviació i espera el gir.
-                        </p>
-                    </div>
 
-                    <!-- Concept 3 -->
-                    <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold text-emerald-400">3. La Regla del 80% (Zona de Seguretat)</span>
-                            <span class="text-[10px] text-gray-500 font-mono">Target Validation</span>
+                        <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-emerald-400">2. Doble Filtre d'Extensió (50p ➔ 40p / 55p) &amp; 2n BOS</span>
+                                <span class="text-[10px] text-gray-500 font-mono">SNIPER COMBO ELITE</span>
+                            </div>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                El <code>PRIMARY</code> (1r BOS a <code>&ge;50p</code> de l'àncora) <strong>mai s'opera</strong>; només arma el clúster i dibuixa el <code>TP 1</code>. Només disparem quan un 2n fractals/BOS cap a l'àncora imprimeix <code>🔷 LAYER</code> amb <code>|dev| &ge; 40p</code> (o <code>&ge; 55p</code> si és el segon Layer de les 10h <code>L10_2</code>).
+                            </p>
                         </div>
-                        <p class="text-[11px] text-gray-300 leading-relaxed">
-                            Com a mínim el <strong>80% del teu Take Profit de 30 punts (24 punts)</strong> ha d'estar situat abans de tocar la línia de l'àncora. Si el preu ja és massa a prop de l'àncora, el recorregut s'ha esgotat i el trade queda invalidat.
-                        </p>
+
+                        <div class="bg-dark-900/80 p-3.5 rounded-xl border border-amber-700/40 space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-amber-300">3. Per Què el Bracket és 30.0p / 30.0p i l'Offset és al BE (+2 ticks)</span>
+                                <span class="text-[10px] text-amber-400 font-mono">120t TP / 120t SL / +2t BE</span>
+                            </div>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                <strong>Important per a execució manual i bot:</strong> El Take Profit <strong>NO</strong> es posa a 30.5p; es manté a <strong>30.0p exactes (120 ticks)</strong> i l'SL inicial a <strong>-30.0p (120 ticks)</strong> per no perdre cap TP que toqui 30.00p clavats. L'offset de <strong>+2 ticks (+0.50p)</strong> s'aplica <strong>únicament quan puges l'Stop a Breakeven</strong> (<code>Entrada + 0.50p</code> en LONG / <code>Entrada - 0.50p</code> en SHORT) en tocar-se el <code>TP 1</code>!
+                            </p>
+                        </div>
+
+                        <div class="bg-dark-900/80 p-3.5 rounded-xl border border-gray-800 space-y-1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold text-violet-300">4. Radar Estacionalitat: Lleis 5A, 5B i 5C (HUD 7 Files)</span>
+                                <span class="text-[10px] text-gray-500 font-mono">2026–2027 Ready</span>
+                            </div>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                L'indicador bloqueja automàticament Festius Bancaris EUA / Black Friday (<strong>5A</strong>) i Nadal 24 Des – 2 Gen (<strong>5B</strong>), i encén l'alerta taronja <strong>Llei 5C</strong> quan coincideixen <strong>Setmana 4 del mes (dies 22–28) + Rang mitjà 5D &lt; 220p</strong>, sense bloquejar l'operativa.
+                            </p>
+                        </div>
                     </div>
 
                     <!-- ATM Bracket Template Box -->
-                    <div class="p-3 rounded-xl border border-emerald-900/50 bg-emerald-950/20 text-xs space-y-1">
-                        <span class="text-emerald-400 font-bold block uppercase tracking-wider text-[11px]">
-                            ⚡ Plantilla de Comanda ATM a Tradovate:
+                    <div class="p-3.5 rounded-xl border border-emerald-700/50 bg-emerald-950/20 text-xs space-y-1.5">
+                        <span class="text-emerald-300 font-bold block uppercase tracking-wider text-[11px]">
+                            ⚡ Plantilla Exacta ATM (NinjaTrader 8 / Tradovate):
                         </span>
-                        <div class="font-mono text-gray-200 text-[11px] grid grid-cols-2 gap-2 pt-1">
-                            <div>• Stop Loss: <span class="text-rose-400 font-bold">120 ticks (30 pts)</span></div>
-                            <div>• Take Profit: <span class="text-emerald-400 font-bold">120 ticks (30 pts)</span></div>
-                            <div>• Sizing Eval: <span class="text-cyan-400 font-bold">5 MNQ</span> ($300 risc/guany)</div>
-                            <div>• Sizing Funded: <span class="text-amber-400 font-bold">3 MNQ</span> ($180 risc/guany)</div>
+                        <div class="font-mono text-gray-200 text-[11px] grid grid-cols-1 sm:grid-cols-2 gap-1.5 pt-1">
+                            <div>• Take Profit Inicial: <span class="text-emerald-400 font-bold">120 ticks (+30.00p)</span></div>
+                            <div>• Stop Loss Inicial: <span class="text-rose-400 font-bold">120 ticks (-30.00p)</span></div>
+                            <div>• Escut BE (en tocar TP1): <span class="text-amber-300 font-bold">Entrada + 2 ticks (+0.50p)</span></div>
+                            <div>• Comissió Real RT: <span class="text-gray-300 font-bold">$1.24 / MNQ</span> (0.62p)</div>
+                            <div>• Mida Estàndard 50K: <span class="text-cyan-300 font-bold">10 MNQ</span> (±$600/bala)</div>
+                            <div>• Mida Estàndard 150K: <span class="text-violet-300 font-bold">30 MNQ</span> (±$1,800) o <span class="text-violet-300 font-bold">22 MNQ</span></div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
         </section>
 
         <!-- ========================================================================= -->
-        <!-- TAB 1: SOLUCIONADOR DE RISC & TRAILING TRAP -->
+        <!-- TAB 1: SOLUCIONADOR DE RISC & TRAILING TRAP (CALIBRAT 2027) -->
         <!-- ========================================================================= -->
         <section id="tab-calculator" class="tab-content hidden space-y-6">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                
+
                 <!-- Controls Panel -->
                 <div class="glass p-6 rounded-2xl space-y-5 lg:col-span-1">
                     <div class="border-b border-gray-800 pb-3 flex items-center justify-between gap-2">
-                        <h2 class="text-sm font-semibold text-cyan-400 flex items-center gap-1.5 truncate">
-                            <span>⚙️</span> Paràmetres Quant
+                        <h2 class="text-sm font-semibold text-cyan-400 flex items-center gap-1.5">
+                            <span>⚙️</span> Paràmetres Quant 2027
                         </h2>
-                        <span class="text-[10px] px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 whitespace-nowrap flex-shrink-0">Part 3 Playbook</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800 font-mono">1s Validat</span>
                     </div>
 
-                    <!-- Firm Selector -->
                     <div>
-                        <label class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Firma & Model de Trailing</label>
-                        <select id="calc-firm" onchange="recalculateRisk()" class="w-full bg-dark-900 border border-gray-700 rounded-xl px-3 py-2 text-sm text-gray-200 focus:outline-none focus:border-cyan-500">
-                            <option value="luciddaily" selected>Lucid Daily 50k (EOD / Daily Trailing)</option>
-                            <option value="myfundedfutures">MyFundedFutures 50k (EOD Trailing)</option>
-                            <option value="topstep">Topstep 50k (EOD Trailing - Lock $50,100)</option>
-                            <option value="tradeify">Tradeify 50k (EOD Trailing)</option>
-                            <option value="apex">Apex 50k (Intraday Peak Trailing Trap)</option>
+                        <label class="block text-xs text-gray-400 uppercase tracking-wider mb-2">Firma &amp; Model de Compte</label>
+                        <select id="calc-firm" onchange="onCalcFirmChange()" class="w-full bg-dark-900 border border-gray-700 rounded-xl px-3 py-2 text-xs text-gray-200 focus:outline-none focus:border-cyan-500">
+                            <option value="alpha150" selected>Alpha / Topstep / Tradeify 150K (EOD Pur · MLL $4,500)</option>
+                            <option value="lucid150">LucidDaily 150K (Intraday Trailing · MLL $4,500)</option>
+                            <option value="lucid50">LucidDaily 50K (Intraday Trailing · MLL $2,000)</option>
+                            <option value="eod50">MFFU / Topstep / Tradeify 50K (EOD Trailing · MLL $2,000)</option>
+                            <option value="apex50">Apex 3.0 50K (Intraday Peak · MLL $2,500 · Manual)</option>
+                            <option value="apex150">Apex 3.0 150K (Intraday Peak · MLL $5,000 · Manual)</option>
                         </select>
                     </div>
 
-                    <!-- Account Size -->
                     <div>
                         <div class="flex justify-between text-xs mb-1">
                             <span class="text-gray-400">Mida del Compte ($)</span>
-                            <span id="lbl-size" class="text-cyan-400 font-bold">$50,000</span>
+                            <span id="lbl-size" class="text-cyan-400 font-bold font-mono">$150,000</span>
                         </div>
-                        <input type="range" id="calc-size" min="25000" max="150000" step="25000" value="50000" oninput="recalculateRisk()" class="w-full accent-cyan-400">
+                        <input type="range" id="calc-size" min="25000" max="150000" step="25000" value="150000" oninput="recalculateRisk()" class="w-full accent-cyan-400">
                     </div>
 
-                    <!-- Win Rate Slider -->
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-gray-400">Taxa d'Encert (Win Rate)</span>
-                            <span id="lbl-wr" class="text-emerald-400 font-bold">50.0%</span>
+                            <span class="text-gray-400">Win Rate Ex-BE (SNIPER COMBO = 60.0%)</span>
+                            <span id="lbl-wr" class="text-emerald-400 font-bold font-mono">60.0%</span>
                         </div>
-                        <input type="range" id="calc-wr" min="30" max="75" step="0.5" value="50.0" oninput="recalculateRisk()" class="w-full accent-emerald-400">
+                        <input type="range" id="calc-wr" min="35" max="75" step="0.5" value="60.0" oninput="recalculateRisk()" class="w-full accent-emerald-400">
                     </div>
 
-                    <!-- Average R:R -->
                     <div>
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-gray-400">Ràtio R:R Mitjà (R)</span>
-                            <span id="lbl-rr" class="text-amber-400 font-bold">1.02 R</span>
+                            <span class="text-gray-400">Ràtio R:R Nominal (30p / 30p = 1.00R)</span>
+                            <span id="lbl-rr" class="text-amber-400 font-bold font-mono">1.00 R</span>
                         </div>
-                        <input type="range" id="calc-rr" min="0.8" max="2.5" step="0.05" value="1.02" oninput="recalculateRisk()" class="w-full accent-amber-400">
+                        <input type="range" id="calc-rr" min="0.8" max="2.0" step="0.05" value="1.00" oninput="recalculateRisk()" class="w-full accent-amber-400">
                     </div>
 
-                    <!-- Stop Loss Points -->
                     <div>
                         <div class="flex justify-between text-xs mb-1">
                             <span class="text-gray-400">Stop Loss en Punts (MNQ)</span>
-                            <span id="lbl-sl" class="text-rose-400 font-bold">30.0 pts</span>
+                            <span id="lbl-sl" class="text-rose-400 font-bold font-mono">30.0 pts</span>
                         </div>
                         <input type="range" id="calc-sl" min="15" max="50" step="1" value="30" oninput="recalculateRisk()" class="w-full accent-rose-400">
                     </div>
 
-                    <!-- Tail Cut Slider -->
                     <div class="pt-3 border-t border-gray-800">
                         <div class="flex justify-between text-xs mb-1">
-                            <span class="text-gray-400">Cua Dreta: % de Target Realitzat</span>
-                            <span id="lbl-tail" class="text-cyan-400 font-bold">100% (Disciplinat)</span>
+                            <span class="text-gray-400">Cua Dreta: % del TP Mantingut sense Por</span>
+                            <span id="lbl-tail" class="text-cyan-400 font-bold font-mono">100% (Disciplinat)</span>
                         </div>
                         <input type="range" id="calc-tail" min="40" max="100" step="5" value="100" oninput="recalculateRisk()" class="w-full accent-cyan-400">
-                        <p class="text-[11px] text-gray-500 mt-1">Baixa la barra per veure el col·lapse matemàtic si tanques abans d'hora.</p>
+                        <p class="text-[11px] text-gray-500 mt-1">Mou la barra per veure com tancar el TP a meitat de camí destrueix l'esperança matemàtica.</p>
                     </div>
                 </div>
 
                 <!-- Live Results Panel -->
                 <div class="lg:col-span-2 space-y-6">
-                    <!-- Metric Cards -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                         <div class="glass p-4 rounded-xl border border-gray-800">
-                            <span class="text-xs text-gray-400 block">Expectancy (E[R])</span>
-                            <span id="out-expectancy" class="text-xl font-bold text-emerald-400 mt-1 block">+0.01 R</span>
-                            <span id="out-expectancy-note" class="text-[10px] text-gray-500">Sistema Guanyador (+EV)</span>
+                            <span class="text-xs text-gray-400 block">Expectancy Neta (post-comm)</span>
+                            <span id="out-expectancy" class="text-xl font-bold text-emerald-400 mt-1 block font-mono">+0.18 R</span>
+                            <span id="out-expectancy-note" class="text-[10px] text-gray-400">Inclou $1.24/MNQ i BE +0.5p</span>
                         </div>
                         <div class="glass p-4 rounded-xl border border-gray-800">
-                            <span class="text-xs text-gray-400 block">Win Rate Requerit</span>
-                            <span id="out-bewr" class="text-xl font-bold text-amber-400 mt-1 block">49.5%</span>
-                            <span class="text-[10px] text-gray-500">Breakeven</span>
+                            <span class="text-xs text-gray-400 block">Win Rate Mínim Requerit</span>
+                            <span id="out-bewr" class="text-xl font-bold text-amber-400 mt-1 block font-mono">51.0%</span>
+                            <span class="text-[10px] text-gray-500">Llindar Breakeven Net</span>
                         </div>
                         <div class="glass p-4 rounded-xl border border-gray-800">
-                            <span class="text-xs text-gray-400 block">Risc Òptim Recomanat</span>
-                            <span id="out-risk-dollars" class="text-xl font-bold text-cyan-400 mt-1 block">$400 - $600</span>
-                            <span id="out-risk-pct" class="text-[10px] text-gray-500">0.8% - 1.2% del compte</span>
+                            <span class="text-xs text-gray-400 block">Risc Calibrat / Bala</span>
+                            <span id="out-risk-dollars" class="text-xl font-bold text-cyan-400 mt-1 block font-mono">$1,320 - $1,800</span>
+                            <span id="out-risk-pct" class="text-[10px] text-gray-400">Target Eval: $9,000</span>
                         </div>
                         <div class="glass p-4 rounded-xl border border-gray-800">
-                            <span class="text-xs text-gray-400 block">Contractes MNQ</span>
-                            <span id="out-contracts" class="text-xl font-bold text-violet-400 mt-1 block">6 - 10 MNQ</span>
-                            <span class="text-[10px] text-gray-500">Per a SL de 30 pts</span>
+                            <span class="text-xs text-gray-400 block">Contractes MNQ Òptims</span>
+                            <span id="out-contracts" class="text-xl font-bold text-violet-400 mt-1 block font-mono">22 - 30 MNQ</span>
+                            <span id="out-contracts-sub" class="text-[10px] text-gray-400">2.5x–3.3x SLs de MLL</span>
                         </div>
                     </div>
 
@@ -436,47 +447,45 @@
                     <div class="glass p-6 rounded-2xl border border-gray-800 space-y-4">
                         <div class="flex items-center justify-between border-b border-gray-800 pb-3">
                             <h3 class="text-sm font-semibold text-gray-200 flex items-center gap-2">
-                                <span>⚠️</span> The Trailing Trap: Micro Sizing vs Sizing Calibrat
+                                <span>⚠️</span> The Trailing Trap: Per Què el Micro-Sizing Mata els Comptes Prop Firm
                             </h3>
-                            <span class="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-400 border border-amber-800">Part 1 Playbook</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800 font-mono" id="trap-target-badge">Target: +$9,000</span>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                            <!-- Micro Sizing Card -->
-                            <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-900/40 space-y-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                            <div class="bg-dark-900/80 p-4 rounded-xl border border-rose-900/50 space-y-2">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-xs font-bold text-rose-400 uppercase">Micro Sizing (1 MNQ)</span>
-                                    <span class="text-xs bg-rose-950 px-2 py-0.5 rounded text-rose-300">Tòpic Retail</span>
+                                    <span class="text-xs font-bold text-rose-400 uppercase">Micro Sizing (1–2 MNQ)</span>
+                                    <span class="text-xs bg-rose-950 px-2 py-0.5 rounded text-rose-300">Trampa Retail</span>
                                 </div>
-                                <p class="text-xs text-gray-400">Risc de $60 per trade per fer $60. Requereix <strong class="text-white" id="trap-micro-wins">50</strong> trades guanyadors per fer $3,000.</p>
+                                <p class="text-xs text-gray-400">Guany net minúscul per bala. Necessites <strong class="text-white font-mono" id="trap-micro-wins">150</strong> TPs nets per aprovar l'avaluació.</p>
                                 <div class="space-y-1">
                                     <div class="flex justify-between text-[11px]">
-                                        <span class="text-gray-400">Pujades de Terra (Ratchets):</span>
-                                        <span class="text-rose-400 font-bold" id="trap-micro-ratchets">50 vegades</span>
+                                        <span class="text-gray-400">Exposició a Ratchets / Dies de Soroll:</span>
+                                        <span class="text-rose-400 font-bold font-mono" id="trap-micro-ratchets">150 pujades</span>
                                     </div>
                                     <div class="w-full bg-dark-800 h-2 rounded-full overflow-hidden">
                                         <div class="bg-rose-500 h-full w-[95%]"></div>
                                     </div>
-                                    <span class="text-[10px] text-rose-400/80 block">⚠️ Risc Crític: El terra segueix cada impuls i devora tot el coixí (*buffer*). Qualsevol ratxa de 2 pèrdues trenca el compte.</span>
+                                    <span class="text-[10px] text-rose-300/90 block">⚠️ El Trailing MLL i les comissions devoren el coixí durant mesos sense arribar mai al cobrament.</span>
                                 </div>
                             </div>
 
-                            <!-- Calibrated Sizing Card -->
-                            <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-900/40 space-y-2">
+                            <div class="bg-dark-900/80 p-4 rounded-xl border border-emerald-900/50 space-y-2">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-xs font-bold text-emerald-400 uppercase">Sizing Calibrat (5-6 MNQ)</span>
-                                    <span class="text-xs bg-emerald-950 px-2 py-0.5 rounded text-emerald-300">JJ Quant Model</span>
+                                    <span class="text-xs font-bold text-emerald-400 uppercase" id="trap-calib-title">Sizing Calibrat JJ (22–30 MNQ)</span>
+                                    <span class="text-xs bg-emerald-950 px-2 py-0.5 rounded text-emerald-300">Òptim Quant</span>
                                 </div>
-                                <p class="text-xs text-gray-400">Risc de $300-$360 per trade per fer $300-$360. Requereix només <strong class="text-white" id="trap-calib-wins">8-10</strong> trades guanyadors.</p>
+                                <p class="text-xs text-gray-400">Impacte net directe per bala. Aproves l'avaluació en només <strong class="text-white font-mono" id="trap-calib-wins">5–7</strong> TPs nets!</p>
                                 <div class="space-y-1">
                                     <div class="flex justify-between text-[11px]">
                                         <span class="text-gray-400">Pujades de Terra (Ratchets):</span>
-                                        <span class="text-emerald-400 font-bold" id="trap-calib-ratchets">9 vegades</span>
+                                        <span class="text-emerald-400 font-bold font-mono" id="trap-calib-ratchets">5–7 pujades</span>
                                     </div>
                                     <div class="w-full bg-dark-800 h-2 rounded-full overflow-hidden">
-                                        <div class="bg-emerald-500 h-full w-[20%]"></div>
+                                        <div class="bg-emerald-500 h-full w-[22%]"></div>
                                     </div>
-                                    <span class="text-[10px] text-emerald-400/80 block">✅ Màxima Preservació: El terra puja moltes menys vegades, deixant espai de coixí per absorbir la variància normal.</span>
+                                    <span class="text-[10px] text-emerald-300/90 block">✅ Amb 60.0% WR i BE +0.50p, un sol bloc d'expansió aprova l'Eval i desbloqueja el 1r Payout.</span>
                                 </div>
                             </div>
                         </div>
@@ -487,8 +496,8 @@
                         <div class="flex items-start gap-3">
                             <span class="text-xl" id="tail-icon">🛡️</span>
                             <div class="space-y-1">
-                                <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400" id="tail-title">CUA DRETA PROTEGIDA (PART 5 PLAYBOOK)</h4>
-                                <p class="text-xs text-gray-300" id="tail-desc">Execució disciplinada al 100% del Take Profit planificat. El Win Rate requerit (49.5%) és igual o inferior al teu encert real (50.0%), garantint esperança positiva.</p>
+                                <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-400" id="tail-title">CUA DRETA PROTEGIDA (100% DEL TP = 30.0 PUNTS)</h4>
+                                <p class="text-xs text-gray-300" id="tail-desc">--</p>
                             </div>
                         </div>
                     </div>
@@ -497,20 +506,52 @@
         </section>
 
         <!-- ========================================================================= -->
-        <!-- TAB 2: AVALUADOR DE FIRMES & EXPECTED VALUE (FIGURA 1 DE JJ) -->
+        <!-- TAB 2: RÀNQUING 10 PROP FIRMS, IMPERI 65 & COMPLIANCE APEX -->
         <!-- ========================================================================= -->
         <section id="tab-evaluator" class="tab-content hidden space-y-6">
             <!-- Header Banner -->
-            <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="glass p-6 rounded-2xl flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
                 <div>
                     <h2 class="text-lg font-bold text-cyan-400 flex items-center gap-2">
-                        <span>📊</span> Imperi Replikanto 150K & Rànquing Oficial de 10 Prop Firms (SNIPER_COMBO_ELITE)
+                        <span>📊</span> Rànquing Oficial de 10 Prop Firms (150K @ 30 MNQ) &amp; Arquitectura de Compliance
                     </h2>
-                    <p class="text-xs text-gray-400">Simulació exacta 1-Segon (327 trades, 60% WR, +1.470p) amb Tall Real a Live (5/6 Payouts o $15k) i regla JJ Simon "Withdraw ASAP".</p>
+                    <p class="text-xs text-gray-400 mt-1">
+                        Validat a 1 segon amb <strong>SNIPER COMBO ELITE</strong> (327 trades · 60.0% WR · +1,511.0p amb <code>BE +0.50p</code>), Tall a Live (5/6 Payouts o $15k) i Comissions Reals (<code>$1.24/MNQ</code>).
+                    </p>
                 </div>
-                <div class="bg-emerald-950/80 border border-emerald-800 px-4 py-2 rounded-xl text-right">
-                    <span class="text-[10px] uppercase tracking-wider text-emerald-400 block font-semibold">Imperi 65 Comptes 150K (30 MNQ)</span>
-                    <span class="text-sm font-bold text-white">+$2,415,685 Nets/Any (ROI 22.7x)</span>
+                <div class="flex flex-wrap gap-3">
+                    <div class="bg-dark-900 border border-amber-700/60 px-3.5 py-2 rounded-xl text-right">
+                        <span class="text-[10px] uppercase tracking-wider text-amber-300 block font-semibold">Impacte BE +2 ticks (+0.50p)</span>
+                        <span class="text-xs font-bold text-white font-mono">-60 Petats (605➔545) · +$29,195/any</span>
+                    </div>
+                    <div class="bg-emerald-950/80 border border-emerald-700 px-4 py-2 rounded-xl text-right">
+                        <span class="text-[10px] uppercase tracking-wider text-emerald-300 block font-semibold">Imperi 65 Comptes (Net Post-Comm)</span>
+                        <span class="text-sm font-black text-white font-mono">+$2,195,564/any (890 Payouts)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Compliance Architecture Callout (Grups A/B vs Grup C Manual Apex) -->
+            <div class="glass p-5 rounded-2xl border border-amber-600/50 bg-gradient-to-r from-amber-950/30 via-slate-900/70 to-cyan-950/20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 text-xs">
+                    <div class="p-3.5 rounded-xl bg-dark-950/80 border border-emerald-800/50 space-y-1">
+                        <span class="text-emerald-400 font-bold uppercase tracking-wider block">🅰️ GRUP A · EOD Purs (Alpha, Topstep, Tradeify, Phidias)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Zero erosió intradia en els 82 Breakevens!</strong> El MLL només s'actualitza al tancament del dia. Són les firmes amb menor rotació de comptes cremats i major estabilitat (99.0%–99.1% d'anys positius a Monte Carlo).
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-dark-950/80 border border-cyan-800/50 space-y-1">
+                        <span class="text-cyan-400 font-bold uppercase tracking-wider block">🅱️ GRUP B · Intra Daily ASAP (LucidDaily, MFFU Rapid, TPT)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Velocitat màxima de retorn de caixa (1r Payout P25 en 22 dies)!</strong> El Trailing MLL puja amb el pic MFE d'1s, però l'<strong>Escut BE +0.50p (+2 ticks)</strong> evita l'erosió per comissions i el cobrament diari sense espera blinda el ROI.
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-rose-950/25 border border-rose-500/50 space-y-1">
+                        <span class="text-rose-300 font-bold uppercase tracking-wider block">⚠️ GRUP C · APEX TRADER FUNDING (100% MANUAL + REPLIKANTO)</span>
+                        <p class="text-gray-200 leading-relaxed text-[11px]">
+                            <strong>Regla Estricta de Compliance:</strong> A Apex <strong>MAI s'utilitza bot ni webhook automatitzat</strong> (prohibit per normativa). S'opera exclusivament amb <strong>clic humà manual</strong> (ATM 30/30 + BE +2t manual) copiat localment amb Replikanto, i en PA ens aturem amb <strong>1 TP al dia</strong> per complir el 30% de consistència.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -518,93 +559,61 @@
             <div class="glass rounded-2xl overflow-hidden border border-cyan-800/50">
                 <div class="p-4 bg-dark-900/90 border-b border-gray-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-2">
                     <div>
-                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Rànquing Multi-Firma Replikanto (150K @ 30 MNQ)</span>
-                        <h3 class="text-sm font-bold text-white mt-1">Ordre d'Escalada Òptim amb Jubilació Automàtica abans de Live (5 Payouts o $15k/PA)</h3>
+                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Rànquing Multi-Firma 150K @ 30 MNQ</span>
+                        <h3 class="text-sm font-bold text-white mt-1">Comparativa d'Extracció Anual per Bloc amb Jubilació Automàtica abans de Live</h3>
                     </div>
-                    <span class="text-xs text-emerald-400 font-mono font-bold">Regla JJ Simon: Retirar SEMPRE cada dia sobre el Buffer (+$16k–$20k vs esperar)</span>
+                    <span class="text-[11px] text-gray-400 font-mono">Brut Base 1s: +$2.41M · Net Post-Comissions ($1.24/MNQ) + BE +0.50p: <strong class="text-emerald-400">+$2.20M</strong></span>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs">
                         <thead class="bg-dark-800/90 text-gray-400 uppercase text-[10px] border-b border-gray-800">
                             <tr>
                                 <th class="p-3"># Ordre</th>
-                                <th class="p-3">Prop Firm & Pla (150K)</th>
+                                <th class="p-3">Prop Firm &amp; Pla (150K)</th>
                                 <th class="p-3">Drawdown</th>
-                                <th class="p-3">Slots Màx</th>
-                                <th class="p-3">Evals Compr.</th>
-                                <th class="p-3">Petats/Any</th>
-                                <th class="p-3">Tall Live/Reset</th>
+                                <th class="p-3">Slots</th>
+                                <th class="p-3">Execució</th>
+                                <th class="p-3">Tall Pre-Live</th>
                                 <th class="p-3">Payouts</th>
-                                <th class="p-3">Cost Total</th>
-                                <th class="p-3 bg-dark-900 text-emerald-400 font-bold">Net Anual Bloc</th>
-                                <th class="p-3 text-cyan-400 font-bold">Net / 1 Compte</th>
+                                <th class="p-3">Cost Bloc</th>
+                                <th class="p-3 bg-dark-900 text-emerald-400 font-bold">Net Bloc (1s)</th>
+                                <th class="p-3 text-cyan-400 font-bold">Net / Slot</th>
                                 <th class="p-3">ROI</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-800/60 font-mono text-gray-300">
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-amber-400">#1 (Onada 2)</td>
+                                <td class="p-3 font-bold text-amber-400">#1 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">Alpha Futures 150K Std</td>
-                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3 text-emerald-400">EOD Pur ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">40</td>
-                                <td class="p-3">25</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-amber-300">5 Payouts ($5k cap)</td>
                                 <td class="p-3">55</td>
                                 <td class="p-3 text-rose-400">-$7,960</td>
-                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$233,240</td>
-                                <td class="p-3 font-bold text-cyan-400">+$46,648</td>
-                                <td class="p-3 font-bold text-white">30.3x</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$228,027*</td>
+                                <td class="p-3 font-bold text-cyan-400">+$45,605</td>
+                                <td class="p-3 font-bold text-white">28.6x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-amber-400">#2 (Onada 2)</td>
+                                <td class="p-3 font-bold text-amber-400">#2 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">Topstep 150K XFA</td>
-                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3 text-emerald-400">EOD Pur ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">40</td>
-                                <td class="p-3">25</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-amber-300">5 Payouts ($5k cap)</td>
                                 <td class="p-3">55</td>
                                 <td class="p-3 text-rose-400">-$8,195</td>
-                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$233,005</td>
-                                <td class="p-3 font-bold text-cyan-400">+$46,601</td>
-                                <td class="p-3 font-bold text-white">29.4x</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$227,500*</td>
+                                <td class="p-3 font-bold text-cyan-400">+$45,500</td>
+                                <td class="p-3 font-bold text-white">27.8x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-cyan-400">#3 (Onada 1)</td>
-                                <td class="p-3 font-sans font-bold text-white">LucidDaily 150K ($137.40)</td>
-                                <td class="p-3 text-rose-300">Intraday 1s ($4.5k)</td>
-                                <td class="p-3">5</td>
-                                <td class="p-3">100</td>
-                                <td class="p-3">85</td>
-                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
-                                <td class="p-3">110</td>
-                                <td class="p-3 text-rose-400">-$13,740</td>
-                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$208,260</td>
-                                <td class="p-3 font-bold text-cyan-400">+$41,652</td>
-                                <td class="p-3 font-bold text-white">16.2x</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-cyan-400">#4 (Onada 1)</td>
-                                <td class="p-3 font-sans font-bold text-white">MyFundedFutures Rapid 150K</td>
-                                <td class="p-3 text-amber-300">EOD Eval / Intra PA</td>
-                                <td class="p-3">5</td>
-                                <td class="p-3">75</td>
-                                <td class="p-3">60</td>
-                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
-                                <td class="p-3">110</td>
-                                <td class="p-3 text-rose-400">-$14,925</td>
-                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$207,075</td>
-                                <td class="p-3 font-bold text-cyan-400">+$41,415</td>
-                                <td class="p-3 font-bold text-white">14.9x</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-amber-400">#5 (Onada 2)</td>
+                                <td class="p-3 font-bold text-amber-400">#3 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">Tradeify Select Flex 150K</td>
-                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3 text-emerald-400">EOD Pur ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">40</td>
-                                <td class="p-3">25</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-amber-300">5 Payouts ($4.5k cap)</td>
                                 <td class="p-3">55</td>
                                 <td class="p-3 text-rose-400">-$8,360</td>
@@ -613,12 +622,37 @@
                                 <td class="p-3 font-bold text-white">25.6x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-violet-400">#6 (Onada 3)</td>
+                                <td class="p-3 font-bold text-cyan-400">#4 (Grup B)</td>
+                                <td class="p-3 font-sans font-bold text-white">MyFundedFutures Rapid 150K</td>
+                                <td class="p-3 text-amber-300">EOD Eval / Intra PA</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3 text-cyan-300 font-sans">Copier / Auto OK</td>
+                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
+                                <td class="p-3">110</td>
+                                <td class="p-3 text-rose-400">-$14,925</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$207,075</td>
+                                <td class="p-3 font-bold text-cyan-400">+$41,415</td>
+                                <td class="p-3 font-bold text-white">14.9x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-cyan-400">#5 (Grup B)</td>
+                                <td class="p-3 font-sans font-bold text-white">LucidDaily 150K ($137.40)</td>
+                                <td class="p-3 text-rose-300">Intraday 1s ($4.5k)</td>
+                                <td class="p-3">5</td>
+                                <td class="p-3 text-cyan-300 font-sans">Copier / Auto OK</td>
+                                <td class="p-3 text-cyan-300">Daily ASAP ($15k cap)</td>
+                                <td class="p-3">105</td>
+                                <td class="p-3 text-rose-400">-$13,740</td>
+                                <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$171,566*</td>
+                                <td class="p-3 font-bold text-cyan-400">+$34,313</td>
+                                <td class="p-3 font-bold text-white">13.5x</td>
+                            </tr>
+                            <tr class="hover:bg-dark-800/40">
+                                <td class="p-3 font-bold text-violet-400">#6 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">FundedNext Rapid 150K</td>
                                 <td class="p-3 text-emerald-400">EOD / Static ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">65</td>
-                                <td class="p-3">50</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-cyan-300">Daily ($4k cap)</td>
                                 <td class="p-3">100</td>
                                 <td class="p-3 text-rose-400">-$12,935</td>
@@ -627,13 +661,12 @@
                                 <td class="p-3 font-bold text-white">15.8x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-violet-400">#7 (Onada 3)</td>
+                                <td class="p-3 font-bold text-violet-400">#7 (Grup B)</td>
                                 <td class="p-3 font-sans font-bold text-white">Take Profit Trader 150K PRO</td>
                                 <td class="p-3 text-amber-300">EOD Eval / Intra PA</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">75</td>
-                                <td class="p-3">60</td>
-                                <td class="p-3 text-emerald-300">PRO+ Live = EOD 0 Buf!</td>
+                                <td class="p-3 text-cyan-300 font-sans">Copier / Auto OK</td>
+                                <td class="p-3 text-emerald-300">PRO+ Live = EOD 0 Buf</td>
                                 <td class="p-3">115</td>
                                 <td class="p-3 text-rose-400">-$16,200</td>
                                 <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$184,200</td>
@@ -641,12 +674,11 @@
                                 <td class="p-3 font-bold text-white">12.4x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-violet-400">#8 (Onada 3)</td>
+                                <td class="p-3 font-bold text-violet-400">#8 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">Phidias 150K E2L (0% Cons.)</td>
-                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3 text-emerald-400">EOD Pur ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">40</td>
-                                <td class="p-3">25</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-amber-300">5 Payouts ($4k cap)</td>
                                 <td class="p-3">55</td>
                                 <td class="p-3 text-rose-400">-$7,200</td>
@@ -655,12 +687,11 @@
                                 <td class="p-3 font-bold text-white">23.7x</td>
                             </tr>
                             <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-gray-400">#9 (Onada 4)</td>
+                                <td class="p-3 font-bold text-gray-400">#9 (Grup A)</td>
                                 <td class="p-3 font-sans font-bold text-white">Legends Trading 150K Elite</td>
-                                <td class="p-3 text-emerald-400">EOD Purs ($4.5k)</td>
+                                <td class="p-3 text-emerald-400">EOD Pur ($4.5k)</td>
                                 <td class="p-3">5</td>
-                                <td class="p-3">40</td>
-                                <td class="p-3">25</td>
+                                <td class="p-3 text-emerald-300 font-sans">Copier / Auto OK</td>
                                 <td class="p-3 text-amber-300">5 Payouts ($3.5k cap)</td>
                                 <td class="p-3">55</td>
                                 <td class="p-3 text-rose-400">-$7,400</td>
@@ -668,14 +699,13 @@
                                 <td class="p-3 font-bold text-cyan-400">+$32,360</td>
                                 <td class="p-3 font-bold text-white">22.9x</td>
                             </tr>
-                            <tr class="hover:bg-dark-800/40">
-                                <td class="p-3 font-bold text-gray-400">#10 (Onada 4)</td>
+                            <tr class="hover:bg-dark-800/40 bg-rose-950/15">
+                                <td class="p-3 font-bold text-rose-300">#10 (Grup C)</td>
                                 <td class="p-3 font-sans font-bold text-white">Apex 3.0 150K (Flota 20)</td>
                                 <td class="p-3 text-rose-300">Intraday 1s ($5.0k)</td>
                                 <td class="p-3">20</td>
-                                <td class="p-3">200</td>
-                                <td class="p-3">160</td>
-                                <td class="p-3 text-rose-300">Tancament al 6è Payout</td>
+                                <td class="p-3 text-rose-300 font-sans font-bold">🖐️ 100% Manual + Replikanto</td>
+                                <td class="p-3 text-rose-300">6è Payout + 1 TP/d PA</td>
                                 <td class="p-3">220</td>
                                 <td class="p-3 text-rose-400">-$14,300</td>
                                 <td class="p-3 bg-dark-900/80 font-bold text-emerald-400">+$627,700</td>
@@ -685,323 +715,273 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="px-4 py-2.5 bg-dark-950/80 border-t border-gray-800 text-[11px] text-gray-400">
+                    * Xifres marcades amb asterisc inclouen la deducció exacta de comissions round-turn (<code>$1.24/MNQ = -$37.20/bala</code>) i l'offset <code>BE +0.50p (+2 ticks)</code> validat a 1s. Total Imperi 65 Comptes Net Post-Comissions = <strong class="text-emerald-400 font-mono">+$2,195,564/any</strong>.
+                </div>
             </div>
 
-            <!-- Chart: Cost to Funded vs Avg Payout -->
+            <!-- Chart: Net Annual per Slot vs Annual Fee Spend per Slot -->
             <div class="glass p-6 rounded-2xl border border-gray-800 space-y-3">
-                <div class="flex items-center justify-between">
+                <div class="flex flex-wrap items-center justify-between gap-2">
                     <h3 class="text-xs font-bold uppercase text-gray-300 tracking-wider">
-                        📈 Comparativa Visual: Despesa d'Adquisició (Cost to Funded) vs Retirada Mitjana per Compte
+                        📈 Comparativa Visual 2027: Benefici Net Anual per Slot (150K) vs Despesa Anual de Fees per Slot
                     </h3>
-                    <span class="text-[10px] text-gray-500 font-mono">Dades 1 Any MNQ (25 Cohorts)</span>
+                    <span class="text-[10px] text-emerald-400 font-mono">SNIPER COMBO ELITE · 1s Validat</span>
                 </div>
                 <div class="h-64 w-full">
                     <canvas id="firmChart"></canvas>
                 </div>
             </div>
-
-            <!-- Comparison Table -->
-            <div class="glass rounded-2xl overflow-hidden border border-gray-800">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs">
-                        <thead class="bg-dark-800/80 text-gray-400 uppercase text-[11px] border-b border-gray-800">
-                            <tr>
-                                <th class="p-4">Firma</th>
-                                <th class="p-4">Tipus Trailing</th>
-                                <th class="p-4">Pass Rate</th>
-                                <th class="p-4">Cost to Funded</th>
-                                <th class="p-4">Payout Ex 1</th>
-                                <th class="p-4">Payout Ex 2</th>
-                                <th class="p-4">Payout Ex 3</th>
-                                <th class="p-4 bg-dark-900/80 text-emerald-400 font-bold">Avg Payout / Compte</th>
-                                <th class="p-4 text-cyan-400 font-bold">ROI Múltiple</th>
-                                <th class="p-4">Freqüència / Regles</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-800/60 font-mono text-gray-300">
-                            <tr class="hover:bg-dark-800/40 transition">
-                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Lucid Daily
-                                </td>
-                                <td class="p-4 text-gray-400 font-sans">EOD / Daily</td>
-                                <td class="p-4 text-emerald-400 font-bold">24.0% - 50.0%</td>
-                                <td class="p-4">$412.50</td>
-                                <td class="p-4 text-gray-300">$1,275</td>
-                                <td class="p-4 text-gray-300">$1,466</td>
-                                <td class="p-4 text-gray-300">$1,083</td>
-                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$761.92</td>
-                                <td class="p-4 font-bold text-cyan-400">1.85x - 11.5x</td>
-                                <td class="p-4 font-sans text-gray-400">Setmanal, 85% split, sense fee d'activació</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40 transition">
-                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> MyFundedFutures
-                                </td>
-                                <td class="p-4 text-gray-400 font-sans">EOD Trailing</td>
-                                <td class="p-4 text-emerald-400 font-bold">24.0%</td>
-                                <td class="p-4">$416.67</td>
-                                <td class="p-4 text-gray-300">$2,662</td>
-                                <td class="p-4 text-gray-300">$3,061</td>
-                                <td class="p-4 text-gray-300">$2,262</td>
-                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$2,662.25</td>
-                                <td class="p-4 font-bold text-cyan-400">6.39x</td>
-                                <td class="p-4 font-sans text-gray-400">Cada 14 dies, 90% split, 1 sol dia avaluació</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40 transition">
-                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-blue-400"></span> Tradeify
-                                </td>
-                                <td class="p-4 text-gray-400 font-sans">EOD Trailing</td>
-                                <td class="p-4 text-emerald-400 font-bold">24.0%</td>
-                                <td class="p-4">$412.50</td>
-                                <td class="p-4 text-gray-300">$1,350</td>
-                                <td class="p-4 text-gray-300">$1,552</td>
-                                <td class="p-4 text-gray-300">$1,147</td>
-                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$817.58</td>
-                                <td class="p-4 font-bold text-cyan-400">1.98x</td>
-                                <td class="p-4 font-sans text-gray-400">Setmanal, 90% split, sense comissió activació</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40 transition">
-                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-amber-400"></span> Apex Trader Funding
-                                </td>
-                                <td class="p-4 text-rose-400 font-sans">Intraday Peak Trailing</td>
-                                <td class="p-4 text-emerald-400 font-bold">28.0%</td>
-                                <td class="p-4">$227.86</td>
-                                <td class="p-4 text-gray-300">$1,800</td>
-                                <td class="p-4 text-gray-300">$2,070</td>
-                                <td class="p-4 text-gray-300">$1,530</td>
-                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$748.43</td>
-                                <td class="p-4 font-bold text-cyan-400">3.28x</td>
-                                <td class="p-4 font-sans text-gray-400">Quinzenal, 10 dies mínims, 30% consistency</td>
-                            </tr>
-                            <tr class="hover:bg-dark-800/40 transition">
-                                <td class="p-4 font-sans font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-violet-400"></span> Topstep
-                                </td>
-                                <td class="p-4 text-gray-400 font-sans">EOD Trailing (Lock $50,100)</td>
-                                <td class="p-4 text-emerald-400 font-bold">24.0% - 35.0%</td>
-                                <td class="p-4">$565.67</td>
-                                <td class="p-4 text-gray-300">$1,350</td>
-                                <td class="p-4 text-gray-300">$1,552</td>
-                                <td class="p-4 text-gray-300">$1,147</td>
-                                <td class="p-4 bg-dark-900/80 font-bold text-emerald-400">$733.83</td>
-                                <td class="p-4 font-bold text-cyan-400">1.30x</td>
-                                <td class="p-4 font-sans text-gray-400">Immediat (5 dies guanyadors ≥ $200), 90% split</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Key Takeaway Box -->
-            <div class="glass p-5 rounded-2xl border border-cyan-800/40 bg-cyan-950/20">
-                <div class="flex items-start gap-3">
-                    <span class="text-2xl">💡</span>
-                    <div class="space-y-1">
-                        <h4 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Regla Quant d'Or de JJ Simon (Línies 71-85 de la Transcripció)</h4>
-                        <p class="text-xs text-gray-300 leading-relaxed">
-                            "Deixa de mirar el saldo simulat del teu compte i deixa de preguntar quina firma té el 'millor màrqueting'. L'única mètrica que mou el teu negoci és:
-                            <code class="text-cyan-300 bg-dark-900 px-1.5 py-0.5 rounded font-mono">Cost to Funded = Eval Fee / Pass Rate</code> i quant de diners reals en payouts extreus de cada compte finançat."
-                        </p>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- ========================================================================= -->
-        <!-- TAB 3: SIMULADOR DE MONTE CARLO (FIGURA 2 DE JJ) -->
+        <!-- TAB 3: SIMULADOR MONTE CARLO 2027 (RESUM 10.000 ANYS BLOCK-BOOTSTRAP) -->
         <!-- ========================================================================= -->
         <section id="tab-montecarlo" class="tab-content hidden space-y-6">
-            <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="glass p-6 rounded-2xl flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border border-cyan-800/40">
                 <div>
-                    <h2 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
-                        <span>🎲</span> Prop Firm Strategy Simulator (Monte Carlo)
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-700">10.000 Anys Sintètics · 252 Sessions/Any</span>
+                        <span class="text-[11px] text-cyan-300 font-mono">Block-Bootstrap Setmanal (5 dies) · BE +0.50p · Comm $1.24/MNQ</span>
+                    </div>
+                    <h2 class="text-lg font-bold text-white">
+                        🎲 Stress-Test Institucional de Monte Carlo 2027 (Substitueix l'antic model de 30 dies)
                     </h2>
-                    <p class="text-xs text-gray-400">Replicació exacta de la taula de la Figura 2: 10 simulacions independents amb seqüències aleatòries.</p>
+                    <p class="text-xs text-gray-400 mt-0.5">
+                        Selecciona qualsevol dels 6 blocs auditats per visualitzar el seu Con de Probabilitat Mensual (P5–P95) i el Matalàs de Caixa necessari perquè el teu risc de quedar-te sense fons sigui inferior al 5% (P95) o a l'1% (P99).
+                    </p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <button onclick="regenerateMonteCarlo()" class="px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-black font-bold rounded-xl text-xs shadow-lg transition flex items-center gap-2">
-                        <span>🔄</span> Re-Simular 10 Cohorts
-                    </button>
+                <a href="visual_backtest.html#montecarlo" class="px-4 py-2.5 bg-gradient-to-r from-cyan-500 to-emerald-400 hover:from-cyan-400 hover:to-emerald-300 text-black font-extrabold rounded-xl text-xs shadow-lg transition whitespace-nowrap">
+                    🚀 Obrir Calculadora Interactiva Completa
+                </a>
+            </div>
+
+            <!-- Selector Ràpid de Perfil Monte Carlo -->
+            <div class="flex flex-wrap items-center gap-2" id="qmc-selector"></div>
+
+            <!-- 5 KPIs del Perfil Seleccionat -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <div class="glass p-4 rounded-xl border border-emerald-700/40">
+                    <span class="text-[11px] text-gray-400 block">Anys Rendibles</span>
+                    <span id="qmc-prob" class="text-xl font-black text-emerald-400 font-mono mt-1 block">--%</span>
+                    <span class="text-[10px] text-gray-500">Sobre 10.000 anys</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-rose-700/30">
+                    <span class="text-[11px] text-gray-400 block">Any Mala Sort (P5)</span>
+                    <span id="qmc-p5" class="text-lg font-bold text-rose-300 font-mono mt-1 block">--</span>
+                    <span class="text-[10px] text-gray-500">95% d'anys ho superen</span>
+                </div>
+                <div class="glass p-4 rounded-xl border-2 border-cyan-500/50 bg-cyan-950/15">
+                    <span class="text-[11px] text-cyan-300 font-bold block">🎯 Mediana Anual (P50)</span>
+                    <span id="qmc-p50" class="text-xl font-black text-white font-mono mt-1 block">--</span>
+                    <span class="text-[10px] text-cyan-300">Expectativa central neta</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-emerald-700/30">
+                    <span class="text-[11px] text-gray-400 block">Any Excel·lent (P95)</span>
+                    <span id="qmc-p95" class="text-lg font-bold text-emerald-300 font-mono mt-1 block">--</span>
+                    <span class="text-[10px] text-gray-500">Top 5% d'anys</span>
+                </div>
+                <div class="glass p-4 rounded-xl border border-amber-500/40 bg-amber-950/15 col-span-2 sm:col-span-1">
+                    <span class="text-[11px] text-amber-300 font-bold block">🛡️ Matalàs P95 (&lt;5% Risc)</span>
+                    <span id="qmc-br95" class="text-xl font-black text-amber-300 font-mono mt-1 block">--</span>
+                    <span class="text-[10px] text-gray-300">Blindat P99: <strong id="qmc-br99" class="text-white font-mono">--</strong></span>
                 </div>
             </div>
 
-            <!-- Equity Curves Chart (Chart.js) -->
+            <!-- Chart: Monthly Probability Cone -->
             <div class="glass p-6 rounded-2xl border border-gray-800 space-y-3">
-                <div class="flex items-center justify-between">
+                <div class="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                        <h3 class="text-xs font-bold uppercase text-gray-300 tracking-wider">
-                            📈 Corbes de Balanç de les 10 Cohorts (Equity Curves)
+                        <h3 class="text-xs font-bold uppercase text-gray-200 tracking-wider" id="qmc-chart-title">
+                            📈 Con de Probabilitat Mensual (Mes 0 a Mes 12)
                         </h3>
-                        <p class="text-[11px] text-gray-400">Trajectòria de saldo sobre 30 dies. Línia Verda = Target ($53,000) · Línia Vermella = MLL ($48,000).</p>
+                        <p class="text-[11px] text-gray-400">Cashflow Net Acumulat a la butxaca (Payouts Cobrats menys Tots els Costos d'Evals i Activacions PA).</p>
                     </div>
-                    <span class="text-[10px] text-emerald-400 font-mono font-bold bg-emerald-950/80 px-2.5 py-1 rounded border border-emerald-800">
-                        Target Aprovació: +$3,000
-                    </span>
+                    <span class="text-[11px] font-mono text-amber-300 bg-amber-950/60 px-2.5 py-1 rounded border border-amber-700/60" id="qmc-paydays-badge">--</span>
                 </div>
                 <div class="h-72 w-full">
                     <canvas id="equityChart"></canvas>
                 </div>
             </div>
 
-            <!-- Monte Carlo Table -->
+            <!-- Taula Mestra dels 6 Perfils Monte Carlo -->
             <div class="glass rounded-2xl overflow-hidden border border-gray-800">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs font-mono">
-                        <thead class="bg-dark-800/80 text-gray-400 uppercase text-[11px] border-b border-gray-800 font-sans">
+                        <thead class="bg-dark-800/90 text-gray-400 uppercase text-[10px] border-b border-gray-800 font-sans">
                             <tr>
-                                <th class="p-3.5">Sim #</th>
-                                <th class="p-3.5">Firma</th>
-                                <th class="p-3.5">Mida Compte</th>
-                                <th class="p-3.5">Profit Target</th>
-                                <th class="p-3.5">Max Drawdown</th>
-                                <th class="p-3.5">Trades</th>
-                                <th class="p-3.5">Win Rate</th>
-                                <th class="p-3.5">Net P&L (amb Fees & Slippage)</th>
-                                <th class="p-3.5">ROI %</th>
-                                <th class="p-3.5">Pass</th>
+                                <th class="p-3.5">Bloc / Flota Simulada</th>
+                                <th class="p-3.5">Èxit Anual</th>
+                                <th class="p-3.5">P5 (Mala Sort)</th>
+                                <th class="p-3.5 text-cyan-300">P50 (Mediana)</th>
+                                <th class="p-3.5">P95 (Any Top)</th>
+                                <th class="p-3.5 text-amber-300">Matalàs P95</th>
+                                <th class="p-3.5">Matalàs P99</th>
+                                <th class="p-3.5">1r Payout (P50)</th>
                             </tr>
                         </thead>
-                        <tbody id="monte-carlo-body" class="divide-y divide-gray-800/60 text-gray-300">
-                            <!-- Populated dynamically via JS -->
-                        </tbody>
+                        <tbody id="monte-carlo-body" class="divide-y divide-gray-800/60 text-gray-300"></tbody>
                     </table>
                 </div>
-            </div>
-
-            <!-- Summary Cards -->
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                <div class="glass p-4 rounded-xl border border-gray-800">
-                    <span class="text-xs text-gray-400 block font-sans">Total Simulacions</span>
-                    <span class="text-lg font-bold text-white mt-1 block">10</span>
-                    <span class="text-[10px] text-gray-500 font-sans">Cohorts de 30 dies</span>
-                </div>
-                <div class="glass p-4 rounded-xl border border-gray-800">
-                    <span class="text-xs text-gray-400 block font-sans">Win Rate Mitjà</span>
-                    <span id="mc-avg-wr" class="text-lg font-bold text-emerald-400 mt-1 block">48.2%</span>
-                    <span class="text-[10px] text-gray-500 font-sans">Tots els trades</span>
-                </div>
-                <div class="glass p-4 rounded-xl border border-gray-800">
-                    <span class="text-xs text-gray-400 block font-sans">P&L Net Mitjà</span>
-                    <span id="mc-avg-pnl" class="text-lg font-bold text-cyan-400 mt-1 block">+$1,148</span>
-                    <span class="text-[10px] text-gray-500 font-sans">Per avaluació</span>
-                </div>
-                <div class="glass p-4 rounded-xl border border-gray-800">
-                    <span class="text-xs text-gray-400 block font-sans">Pass Rate %</span>
-                    <span id="mc-pass-rate" class="text-lg font-bold text-amber-400 mt-1 block">50.0%</span>
-                    <span class="text-[10px] text-gray-500 font-sans">5 de 10 aprovats</span>
-                </div>
-                <div class="glass p-4 rounded-xl border border-emerald-800 bg-emerald-950/20 col-span-2 sm:col-span-1">
-                    <span class="text-xs text-emerald-400 block font-sans font-bold">Avg ROI Múltiple</span>
-                    <span id="mc-roi-mult" class="text-xl font-bold text-white mt-1 block">11.59x</span>
-                    <span class="text-[10px] text-emerald-300 font-sans">Target JJ: 3.5x</span>
-                </div>
-            </div>
-
-            <!-- Assumptions Footer -->
-            <div class="glass p-4 rounded-xl border border-gray-800 text-xs text-gray-400 flex flex-wrap gap-6 items-center">
-                <span class="font-bold text-gray-300 font-sans">Hipòtesis de Càlcul Reals:</span>
-                <span>Comissions per trade: <strong class="text-white">$3.50</strong></span>
-                <span>Lliscament (Slippage): <strong class="text-white">$2.50</strong> (1 tick MNQ @ 5 contractes)</span>
-                <span>Eval Fee Mitjà: <strong class="text-white">$99 - $100</strong></span>
-                <span>Dies per simulació: <strong class="text-white">30 dies</strong></span>
             </div>
         </section>
 
         <!-- ========================================================================= -->
-        <!-- TAB 4: 30/30 VS 38/25 (EL VERDICTE DEL TEU BACKTEST) -->
+        <!-- TAB 4: VEREDICTE 30/30 VS 38/25 + AUDITORIA MICROESTRUCTURAL 1S 2027 -->
         <!-- ========================================================================= -->
         <section id="tab-comparison" class="tab-content hidden space-y-6">
             <div class="glass p-6 rounded-2xl border border-gray-800">
                 <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
-                    <span>⚖️</span> El Veredicte del Teu Backtest: 30 TP / 30 SL vs 38 TP / 25 SL
+                    <span>⚖️</span> Evidència Empírica Completa (1m &amp; 1 Segon): Bracket 30/30, Offset BE +2 Ticks, Latència i Notícies
                 </h2>
                 <p class="text-xs text-gray-400 mt-1">
-                    Anàlisi comparativa directa sobre 1 any complet de dades històriques reals de MNQ minut a minut (352.220 espelmes).
+                    Resum de totes les proves quantitatives sobre dades reals CME d'1 minut i d'1 segon per deixar cap detall a l'atzar el 2027.
                 </p>
             </div>
 
-            <!-- Head-to-Head Cards -->
+            <!-- Head-to-Head Cards: 30/30 vs 38/25 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 30/30 Card (WINNER) -->
                 <div class="glass p-6 rounded-2xl border-2 border-emerald-500/80 relative space-y-4 glow-emerald">
                     <div class="absolute -top-3 right-6 bg-emerald-500 text-black font-extrabold text-[11px] px-3 py-0.5 rounded-full uppercase tracking-wider">
-                        🏆 CONFIGURACIÓ GUANYADORA
+                        🏆 ESTÀNDARD OFICIAL 2027
                     </div>
                     <div class="border-b border-gray-800 pb-3">
-                        <h3 class="text-base font-bold text-emerald-400">30 TP / 30 SL (Ràtio 1.00:1)</h3>
-                        <p class="text-xs text-gray-400">Sizing de 5 MNQ (Far) / 10 MNQ (Close)</p>
+                        <h3 class="text-base font-bold text-emerald-400">30.0p TP / 30.0p SL + SNIPER COMBO ELITE + BE +0.50p</h3>
+                        <p class="text-xs text-gray-400"> Evolució des del motor brut 1m (49.92% WR) fins al filtre institucional d'1 segon</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 text-xs font-mono">
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">Win Rate Empíric</span>
-                            <span class="text-lg font-bold text-emerald-400">49.92% (~50%)</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">WR Brut 1m ➔ Combo Elite 1s</span>
+                            <span class="text-lg font-bold text-emerald-400">49.9% ➔ 60.0%</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">Realized R:R</span>
-                            <span class="text-lg font-bold text-white">1.02 R</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">Balanç Anual 1s (327 Bales)</span>
+                            <span class="text-lg font-bold text-white">+1,511.0p (+1,308p net)</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">P&L Total en Dòlars</span>
-                            <span class="text-lg font-bold text-emerald-400">+$4,102.50</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">Desglossament 1s Exacte</span>
+                            <span class="text-base font-bold text-cyan-300">147W / 82BE / 98L</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">Pass Rate de Flota</span>
-                            <span class="text-lg font-bold text-emerald-400">35.0% (7 de 20)</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">TPs Trencats per BE +0.50p</span>
+                            <span class="text-lg font-bold text-emerald-400">0 de 147 (0.0%)</span>
                         </div>
                     </div>
 
-                    <div class="text-xs text-gray-300 space-y-2 pt-2 border-t border-gray-800">
-                        <p>✅ <strong>Per què guanya:</strong> 30 punts de Stop Loss (120 ticks) donen el marge d'oxigen just perquè el soroll i els micro-fractals d'1 minut del Nasdaq no facin saltar el trade per 2-3 punts abans d'anar a l'àncora.</p>
-                        <p>✅ <strong>Expectancy positiva estable:</strong> A un 50% de Win Rate amb 1:1, el sistema absorbeix perfectament la variància i aconsegueix superar les avaluacions amb el percentatge més alt de la flota (35%).</p>
+                    <div class="text-xs text-gray-300 space-y-1.5 pt-2 border-t border-gray-800">
+                        <p>✅ <strong>Oxigen estructural (30p SL):</strong> Absorbeix els escombrats de liquiditat d'1 minut del Nasdaq sense saltar abans del gir cap a l'àncora.</p>
+                        <p>✅ <strong>Escut BE +2 ticks (+0.50p):</strong> Quan <code>PRIMARY</code> toca <code>TP 1</code>, el <code>LAYER</code> ja porta +15p a +25p de marge; un micro-pullback fins a <code>+0.50p</code> mai passa en cap dels 147 TPs guanyadors!</p>
                     </div>
                 </div>
 
-                <!-- 38/25 Card (The Sub-Minute Myth) -->
                 <div class="glass p-6 rounded-2xl border border-gray-800 relative space-y-4">
                     <div class="border-b border-gray-800 pb-3">
-                        <h3 class="text-base font-bold text-gray-300">38 TP / 25 SL (Ràtio 1.52:1)</h3>
-                        <p class="text-xs text-gray-500">Preset Teòric de JJ per a gràfics de segons</p>
+                        <h3 class="text-base font-bold text-gray-300">38.0p TP / 25.0p SL (Descartat en Gràfic 1m)</h3>
+                        <p class="text-xs text-gray-500">Per què un SL de 25p i un TP més llarg penalitzen l'execució a 1 minut</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 text-xs font-mono">
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">Win Rate Empíric</span>
-                            <span class="text-lg font-bold text-rose-400">39.77%</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">Win Rate Empíric Base</span>
+                            <span class="text-lg font-bold text-rose-400">39.77% (-10.2%)</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
                             <span class="text-gray-400 font-sans block text-[11px]">Realized R:R</span>
                             <span class="text-lg font-bold text-white">1.48 R</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">P&L Total en Dòlars</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">Balanç Base 1m</span>
                             <span class="text-lg font-bold text-rose-400">-$5,167.50</span>
                         </div>
                         <div class="bg-dark-900 p-3 rounded-xl border border-gray-800">
-                            <span class="text-gray-400 font-sans block text-[11px]">Pass Rate de Flota</span>
-                            <span class="text-lg font-bold text-amber-400">25.0% (5 de 20)</span>
+                            <span class="text-gray-400 font-sans block text-[11px]">Pass Rate Base Evals</span>
+                            <span class="text-lg font-bold text-amber-400">25.0% (vs 35.0%)</span>
                         </div>
                     </div>
 
-                    <div class="text-xs text-gray-400 space-y-2 pt-2 border-t border-gray-800">
-                        <p>⚠️ <strong>Per què falla en 1 minut:</strong> Un stop de 25 punts és massa ajustat per a l'expansió d'obertura del MNQ. El Win Rate es desploma 10 punts percentuals (del 50% al 39.8%).</p>
-                        <p>⚠️ <strong>El context de JJ Simon:</strong> JJ utilitza 38/25 quan entra amb espelmes de 5 segons o 1 segon després d'una confirmació quirúrgica. En execució pura d'1 minut (com la de TradingView), el 30/30 és rotundament superior.</p>
+                    <div class="text-xs text-gray-400 space-y-1.5 pt-2 border-t border-gray-800">
+                        <p>⚠️ <strong>SL de 25p massa estret per a MNQ actual (20k–25k+):</strong> Els cinc punts menys d'oxigen fan saltar desenes d'operacions bones just abans del gir.</p>
+                        <p>⚠️ <strong>TP de 38p xoca amb la Regla del 80%:</strong> En exigir més recorregut, molts retorns a l'àncora es giren entre +30p i +35p sense arribar a cobrar.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Conclusion Alert -->
-            <div class="glass p-5 rounded-2xl border border-emerald-800/50 bg-emerald-950/20">
-                <h4 class="text-sm font-bold text-emerald-400 mb-2 flex items-center gap-2">
-                    <span>🎯</span> Resposta Definitiva a la Teva Pregunta:
-                </h4>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    <strong>NO has de canviar a 38/25 per a la fase d'avaluació en el gràfic d'1 minut.</strong> El teu backtest original era 100% correcte: el 30/30 obté un Win Rate superior (50% vs 40%), genera benefici positiu (+$4,102 vs -$5,167) i aconsegueix un Pass Rate més alt a la flota (35% vs 25%).
-                    <br><br>
-                    El que adverteix JJ a la Part 5 del Playbook no és que hagis de forçar un stop de 25 punts, sinó que <strong>un cop fixat el teu Take Profit de 30 punts, MAI el tanquis manualment a 10 o 15 punts per por</strong>. Mantenir la disciplina mecànica de tocar el TP de 30 o el SL és el que preserva l'esperança matemàtica.
-                </p>
+            <!-- 3 Empirical 1-Second Audit Tables -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Table A: BE Offset Sweep -->
+                <div class="glass rounded-2xl overflow-hidden border border-emerald-800/40">
+                    <div class="p-4 bg-dark-900/90 border-b border-gray-800">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-300">
+                            🛡️ Auditoria 1s: Optimització de `beOffsetPts` (Per Què +0.50p = +2 Ticks és Òptim)
+                        </h3>
+                        <p class="text-[11px] text-gray-400 mt-0.5">Comissions reals incloses ($1.24/MNQ RT). A partir de +0.75p ja es trenquen TPs per micro-pullback!</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs font-mono">
+                            <thead class="bg-dark-800 text-gray-400 text-[10px] uppercase font-sans">
+                                <tr>
+                                    <th class="p-2.5">Offset BE</th>
+                                    <th class="p-2.5">W / BE / L</th>
+                                    <th class="p-2.5">Pts Bruts</th>
+                                    <th class="p-2.5">Pts Nets</th>
+                                    <th class="p-2.5">Petats (65c)</th>
+                                    <th class="p-2.5 text-emerald-400">Imperi 65 Net</th>
+                                </tr>
+                            </thead>
+                            <tbody id="audit-be-tbody" class="divide-y divide-gray-800/60 text-gray-300"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Table B: Webhook Latency & News/Rollover -->
+                <div class="space-y-6">
+                    <div class="glass rounded-2xl overflow-hidden border border-cyan-800/40">
+                        <div class="p-4 bg-dark-900/90 border-b border-gray-800">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-cyan-300">
+                                ⚡ Auditoria 1s: Latència del Breakeven (Tick Temps Real vs Vela 1m)
+                            </h3>
+                            <p class="text-[11px] text-gray-400 mt-0.5">Per què les alertes han de sortir de l'Indicador (`alert.freq_all`) i mai esperar al tancament d'1m:</p>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs font-mono">
+                                <thead class="bg-dark-800 text-gray-400 text-[10px] uppercase font-sans">
+                                    <tr>
+                                        <th class="p-2.5"> escenari Latència BE</th>
+                                        <th class="p-2.5">W / BE / L</th>
+                                        <th class="p-2.5">WR%</th>
+                                        <th class="p-2.5">Pts Nets</th>
+                                        <th class="p-2.5 text-cyan-300">Imperi 65 Net</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="audit-lat-tbody" class="divide-y divide-gray-800/60 text-gray-300"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="glass rounded-2xl overflow-hidden border border-amber-800/40">
+                        <div class="p-4 bg-dark-900/90 border-b border-gray-800">
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-amber-300">
+                                📰 Auditoria 1s: Notícies 10:00 AM NY (ISM/JOLTS) &amp; Rollover CME
+                            </h3>
+                            <p class="text-[11px] text-gray-400 mt-0.5">Evidència empírica de per què NO bloquegem les notícies de les 10:00 AM ni el Rollover:</p>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs font-mono">
+                                <thead class="bg-dark-800 text-gray-400 text-[10px] uppercase font-sans">
+                                    <tr>
+                                        <th class="p-2.5">Règim de Sessió</th>
+                                        <th class="p-2.5">Trades</th>
+                                        <th class="p-2.5">W / BE / L</th>
+                                        <th class="p-2.5 text-emerald-400">WR%</th>
+                                        <th class="p-2.5">Punts</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="audit-news-tbody" class="divide-y divide-gray-800/60 text-gray-300"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1009,28 +989,31 @@
 
     <!-- Footer -->
     <footer class="border-t border-gray-800 bg-dark-900 py-4 text-center text-xs text-gray-500">
-        Centre de Comandament Quantitatiu · Fair Pricing Theory (MNQ) · JJ Simon Quant Methodology
+        JJ Layer Sniper Pro 2026–2027 · Centre de Comandament Quantitatiu · Dades Auditades a 1 Segon &amp; Monte Carlo 10.000 Anys
     </footer>
 
     <!-- Interactive Logic Script -->
     <script>
-        // Tab switching logic
+        const MC27_DATA = {"generated_for": "2027 Institutional Execution", "strategy": "SNIPER COMBO ELITE (Max 2/Dia · Dev 50p/40p · BE +0.50p +2 ticks · Comissions $1.24/MNQ)", "methodology": "10.000 Anys Sintètics (252 sessions/any) amb Block-Bootstrap Setmanal de 5 dies", "simulations_per_profile": 10000, "profiles": [{"id": "lucid_50k_5x", "label": "1. LucidDaily 5x 50K (Intra ASAP · 10 MNQ) — Ideal Arrencada", "subtitle": "5 comptes 50K simultanis · Target $3,000 · MLL $2,000 Intra · Cobrament Diari ASAP · 0$ Activation", "slots": 5, "mnq": 10, "eval_cost_unit": 56.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.79, "net_cash_p5": 14100.0, "net_cash_p25": 44573.0, "net_cash_p50_median": 65604.0, "net_cash_mean": 66415.0, "net_cash_p75": 88738.0, "net_cash_p95": 121547.0, "bankroll_day1_initial": 282.0, "bankroll_p50_median": 846.0, "bankroll_p90": 2256.0, "bankroll_p95_safe": 2820.0, "bankroll_p99_ultra_safe": 4230.0, "first_payout_days_p25": 28, "first_payout_days_p50": 47, "first_payout_days_p75": 80, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 75, "payouts_p50": 90, "spend_p50": 3102.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-282.0, -846.0, -1410.0, -1692.0, -1974.0, -2256.0, -2256.0, -2256.0, 691.0, 3484.0, 6505.0, 10048.0, 14101.0], "p25": [-282.0, -564.0, -846.0, -1128.0, 1935.0, 6851.0, 11899.0, 17378.0, 22620.0, 27746.0, 33074.0, 38936.0, 44573.0], "p50": [-282.0, -564.0, -564.0, 7628.0, 15312.0, 22730.0, 29750.0, 36850.0, 44005.0, 47762.0, 53481.0, 59445.0, 65604.0], "p75": [-282.0, -282.0, 10655.0, 22833.0, 32407.0, 41544.0, 48026.0, 51951.0, 59374.0, 66826.0, 73963.0, 81736.0, 88738.0], "p95": [-282.0, 8656.0, 28994.0, 46047.0, 49154.0, 56898.0, 68353.0, 78841.0, 88222.0, 97083.0, 103585.0, 112392.0, 121546.0], "sample_paths": [[-282.0, -564.0, -846.0, 2355.0, 4717.0, 4153.0, 4153.0, 3871.0, 3871.0, 30338.0, 45592.0, 53589.0, 53307.0], [-282.0, 8367.0, 34676.0, 49436.0, 49436.0, 48590.0, 48308.0, 48026.0, 47462.0, 69487.0, 87006.0, 96898.0, 96616.0], [-282.0, 5654.0, 18104.0, 18104.0, 31771.0, 47125.0, 46561.0, 45997.0, 51901.0, 93776.0, 95151.0, 94869.0, 94587.0], [-282.0, -282.0, 23573.0, 43593.0, 49154.0, 49154.0, 75477.0, 80191.0, 88962.0, 104305.0, 104023.0, 103741.0, 103741.0], [-282.0, 8299.0, 7735.0, 7171.0, 6889.0, 12957.0, 15175.0, 14611.0, 14329.0, 14047.0, 13483.0, 13483.0, 19271.0], [-282.0, -846.0, -1128.0, -1692.0, 3967.0, 18662.0, 23376.0, 22812.0, 22530.0, 21966.0, 21684.0, 21684.0, 48518.0], [-282.0, 13688.0, 26632.0, 44029.0, 49154.0, 49154.0, 70386.0, 70104.0, 84174.0, 95682.0, 102847.0, 107375.0, 106811.0], [-282.0, 3478.0, 3478.0, 36272.0, 35426.0, 41527.0, 41245.0, 44623.0, 48873.0, 57443.0, 77814.0, 77532.0, 77250.0], [-282.0, -564.0, -1128.0, 4920.0, 9304.0, 25878.0, 25596.0, 34039.0, 40288.0, 62182.0, 83757.0, 83475.0, 83193.0], [-282.0, -282.0, -564.0, 5436.0, 23546.0, 22982.0, 22700.0, 22136.0, 21854.0, 21290.0, 47869.0, 70655.0, 71008.0], [-282.0, -564.0, -846.0, -1128.0, -1410.0, -1692.0, -1974.0, -1974.0, 24583.0, 31623.0, 47744.0, 47462.0, 47180.0], [-282.0, -564.0, 20269.0, 49154.0, 48590.0, 48308.0, 48026.0, 47462.0, 55553.0, 80861.0, 80015.0, 88653.0, 88089.0]]}, "survival_curve": [{"bankroll": 500, "survival_pct": 26.13, "ruin_pct": 73.87}, {"bankroll": 1000, "survival_pct": 60.58, "ruin_pct": 39.42}, {"bankroll": 1500, "survival_pct": 79.61, "ruin_pct": 20.39}, {"bankroll": 2000, "survival_pct": 88.77, "ruin_pct": 11.23}, {"bankroll": 2500, "survival_pct": 91.92, "ruin_pct": 8.08}, {"bankroll": 3000, "survival_pct": 95.64, "ruin_pct": 4.36}, {"bankroll": 3500, "survival_pct": 97.65, "ruin_pct": 2.35}, {"bankroll": 4230, "survival_pct": 99.28, "ruin_pct": 0.72}, {"bankroll": 5000, "survival_pct": 99.72, "ruin_pct": 0.28}], "histogram": [{"label": "$-6k..$13k", "pct": 4.5, "count": 445}, {"label": "$13k..$31k", "pct": 10.3, "count": 1027}, {"label": "$31k..$49k", "pct": 16.1, "count": 1607}, {"label": "$49k..$68k", "pct": 22.1, "count": 2209}, {"label": "$68k..$86k", "pct": 20.0, "count": 1997}, {"label": "$86k..$105k", "pct": 14.6, "count": 1457}, {"label": "$105k..$123k", "pct": 8.2, "count": 815}, {"label": "$123k..$142k", "pct": 3.4, "count": 335}, {"label": "$142k..$160k", "pct": 0.9, "count": 89}, {"label": "$160k..$179k", "pct": 0.2, "count": 19}]}, {"id": "alpha_150k_5x", "label": "2. Alpha Futures 5x 150K (EOD · 30 MNQ) — Top EOD Sense Erosió BE", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 EOD Pur · Cicle 5 dies · 0$ Activation", "slots": 5, "mnq": 30, "eval_cost_unit": 199.0, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 99.07, "net_cash_p5": 36112.0, "net_cash_p25": 107849.0, "net_cash_p50_median": 154368.0, "net_cash_mean": 155933.0, "net_cash_p75": 207489.0, "net_cash_p95": 271967.0, "bankroll_day1_initial": 995.0, "bankroll_p50_median": 2985.0, "bankroll_p90": 6965.0, "bankroll_p95_safe": 8955.0, "bankroll_p99_ultra_safe": 13930.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 10945.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-995.0, -2985.0, -4975.0, -5970.0, -6965.0, -7015.0, -7960.0, -601.0, 5665.0, 10595.0, 17830.0, 26884.0, 36112.0], "p25": [-995.0, -1990.0, -2985.0, -3980.0, 7965.0, 15535.0, 29078.0, 41892.0, 57305.0, 74058.0, 86800.0, 97450.0, 107849.0], "p50": [-995.0, -1990.0, -1990.0, 17525.0, 35791.0, 55340.0, 75560.0, 92795.0, 102275.0, 113191.0, 125333.0, 139432.0, 154368.0], "p75": [-995.0, -995.0, 20510.0, 49090.0, 77167.0, 97106.0, 105744.0, 119524.0, 136524.0, 154744.0, 173892.0, 192113.0, 207490.0], "p95": [-995.0, 21505.0, 54803.0, 88010.0, 109218.0, 120957.0, 146398.0, 173307.0, 198520.0, 212930.0, 229498.0, 249197.0, 271967.0], "sample_paths": [[-995.0, -1990.0, -2985.0, -3980.0, 17525.0, 15535.0, 15535.0, 15535.0, 15535.0, 57148.0, 102148.0, 123653.0, 122658.0], [-995.0, 10321.0, 55321.0, 99326.0, 98331.0, 96341.0, 95346.0, 95346.0, 93356.0, 138356.0, 160856.0, 183356.0, 203866.0], [-995.0, 21505.0, 44005.0, 61704.0, 80682.0, 123918.0, 140105.0, 139110.0, 158024.0, 203024.0, 246034.0, 245039.0, 244044.0], [-995.0, -1990.0, 20510.0, 65510.0, 88010.0, 108520.0, 131020.0, 168296.0, 212301.0, 212301.0, 211306.0, 210311.0, 210311.0], [-995.0, 21505.0, 19515.0, 17525.0, 16530.0, 15535.0, 34123.0, 32133.0, 31138.0, 30143.0, 29148.0, 28153.0, 49658.0], [-995.0, -1990.0, -2985.0, -4975.0, 6157.0, 48615.0, 83596.0, 82601.0, 81606.0, 79616.0, 90088.0, 90088.0, 135088.0], [-995.0, 21505.0, 66505.0, 110510.0, 109515.0, 120084.0, 119089.0, 119089.0, 160601.0, 181087.0, 214405.0, 213410.0, 212415.0], [-995.0, -995.0, 26247.0, 71247.0, 88391.0, 106844.0, 105849.0, 104854.0, 122822.0, 145322.0, 167822.0, 204563.0, 225318.0], [-995.0, -995.0, -2985.0, 19515.0, 36520.0, 59020.0, 100521.0, 144526.0, 143531.0, 158478.0, 203478.0, 225978.0, 233996.0], [-995.0, -995.0, -1990.0, -1990.0, 43010.0, 83584.0, 104094.0, 102104.0, 101109.0, 99119.0, 140630.0, 185630.0, 207135.0], [-995.0, -1990.0, -2985.0, -4975.0, -5970.0, -6965.0, -6965.0, 26661.0, 49161.0, 71661.0, 93166.0, 130176.0, 129181.0], [-995.0, -1990.0, 30805.0, 97310.0, 95320.0, 94325.0, 93330.0, 92335.0, 103116.0, 137152.0, 158657.0, 177857.0, 176862.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.99, "ruin_pct": 71.01}, {"bankroll": 3000, "survival_pct": 63.99, "ruin_pct": 36.01}, {"bankroll": 5000, "survival_pct": 82.18, "ruin_pct": 17.82}, {"bankroll": 7000, "survival_pct": 90.85, "ruin_pct": 9.15}, {"bankroll": 9000, "survival_pct": 95.54, "ruin_pct": 4.46}, {"bankroll": 11000, "survival_pct": 97.72, "ruin_pct": 2.28}, {"bankroll": 13000, "survival_pct": 98.86, "ruin_pct": 1.14}, {"bankroll": 15000, "survival_pct": 99.57, "ruin_pct": 0.43}, {"bankroll": 18000, "survival_pct": 99.92, "ruin_pct": 0.08}], "histogram": [{"label": "$-21k..$20k", "pct": 2.9, "count": 291}, {"label": "$20k..$61k", "pct": 6.9, "count": 690}, {"label": "$61k..$102k", "pct": 13.0, "count": 1301}, {"label": "$102k..$144k", "pct": 21.8, "count": 2177}, {"label": "$144k..$185k", "pct": 19.5, "count": 1954}, {"label": "$185k..$226k", "pct": 19.6, "count": 1964}, {"label": "$226k..$267k", "pct": 10.5, "count": 1047}, {"label": "$267k..$308k", "pct": 4.4, "count": 441}, {"label": "$308k..$349k", "pct": 1.2, "count": 125}, {"label": "$349k..$390k", "pct": 0.1, "count": 10}]}, {"id": "lucid_150k_5x", "label": "3. LucidDaily 5x 150K (Intra ASAP · 30 MNQ) — Cobrament Diari Ràpid", "subtitle": "5 comptes 150K simultanis · Target $9,000 · MLL $4,500 Intra (amb BE +0.50p) · Payout Diari ASAP", "slots": 5, "mnq": 30, "eval_cost_unit": 137.4, "act_fee_unit": 0.0, "simulations": 10000, "prob_profitable_year_pct": 98.44, "net_cash_p5": 27292.0, "net_cash_p25": 89385.0, "net_cash_p50_median": 137658.0, "net_cash_mean": 140678.0, "net_cash_p75": 188868.0, "net_cash_p95": 261462.0, "bankroll_day1_initial": 687.0, "bankroll_p50_median": 2748.0, "bankroll_p90": 7578.0, "bankroll_p95_safe": 10305.0, "bankroll_p99_ultra_safe": 15114.0, "first_payout_days_p25": 22, "first_payout_days_p50": 41, "first_payout_days_p75": 71, "first_payout_days_p95": 143, "blown_p50": 85, "blown_p95": 125, "payouts_p50": 85, "spend_p50": 13053.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-687.0, -3435.0, -4809.0, -6183.0, -6870.0, -7557.0, -8244.0, -7378.0, -75.0, 6466.0, 12561.0, 19921.0, 27292.0], "p25": [-687.0, -2061.0, -3435.0, -3435.0, 4461.0, 15111.0, 27075.0, 39167.0, 52078.0, 61947.0, 67070.0, 78145.0, 89385.0], "p50": [-687.0, -1374.0, -337.0, 21240.0, 37192.0, 55364.0, 66756.0, 73890.0, 86244.0, 98844.0, 112330.0, 125574.0, 137658.0], "p75": [-687.0, -687.0, 31721.0, 61016.0, 70191.0, 79772.0, 96794.0, 115920.0, 132452.0, 143318.0, 158903.0, 174706.0, 188867.0], "p95": [-687.0, 33742.0, 72939.0, 80170.0, 112251.0, 137483.0, 147252.0, 167985.0, 188414.0, 209513.0, 224674.0, 242353.0, 261462.0], "sample_paths": [[-687.0, -1374.0, -2748.0, 14664.0, 20536.0, 17788.0, 17788.0, 17788.0, 20151.0, 92101.0, 90727.0, 90727.0, 89353.0], [-687.0, 32910.0, 73626.0, 122354.0, 147252.0, 143817.0, 143130.0, 141756.0, 140382.0, 214695.0, 214695.0, 246946.0, 256696.0], [-687.0, 24772.0, 62279.0, 61592.0, 94714.0, 134531.0, 132470.0, 131096.0, 132805.0, 204722.0, 202661.0, 220937.0, 219563.0], [-687.0, -1374.0, 47164.0, 57730.0, 55669.0, 54982.0, 104606.0, 118378.0, 152342.0, 192004.0, 191317.0, 189943.0, 189256.0], [-687.0, 32705.0, 32018.0, 31331.0, 29957.0, 48136.0, 54949.0, 52888.0, 52201.0, 50827.0, 48766.0, 50842.0, 65686.0], [-687.0, -2061.0, -4122.0, -4809.0, 11918.0, 34360.0, 32986.0, 31612.0, 28864.0, 27490.0, 26803.0, 29868.0, 99742.0], [-687.0, 48872.0, 72252.0, 71565.0, 70878.0, 70191.0, 87380.0, 97037.0, 135181.0, 134494.0, 150405.0, 150405.0, 148344.0], [-687.0, 18244.0, 22936.0, 73626.0, 72939.0, 99050.0, 97676.0, 114931.0, 114244.0, 155503.0, 186496.0, 185809.0, 184435.0], [-687.0, -1374.0, -2748.0, 15848.0, 28471.0, 85844.0, 85157.0, 103098.0, 120590.0, 119216.0, 117842.0, 134502.0, 133815.0], [-687.0, -687.0, -1374.0, 24435.0, 70878.0, 70878.0, 69504.0, 67443.0, 66756.0, 68113.0, 139695.0, 138321.0, 137634.0], [-687.0, -1374.0, -3435.0, 5390.0, 4016.0, 2642.0, 1955.0, 1955.0, 76268.0, 73520.0, 72146.0, 73837.0, 73150.0], [-687.0, -2061.0, 24370.0, 72252.0, 70878.0, 69504.0, 68817.0, 66756.0, 65382.0, 90504.0, 89130.0, 122695.0, 119947.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 34.47, "ruin_pct": 65.53}, {"bankroll": 3000, "survival_pct": 56.85, "ruin_pct": 43.15}, {"bankroll": 5000, "survival_pct": 77.29, "ruin_pct": 22.71}, {"bankroll": 7500, "survival_pct": 87.87, "ruin_pct": 12.13}, {"bankroll": 9500, "survival_pct": 93.27, "ruin_pct": 6.73}, {"bankroll": 11000, "survival_pct": 96.37, "ruin_pct": 3.63}, {"bankroll": 13000, "survival_pct": 97.81, "ruin_pct": 2.19}, {"bankroll": 15000, "survival_pct": 98.9, "ruin_pct": 1.1}, {"bankroll": 18000, "survival_pct": 99.82, "ruin_pct": 0.18}], "histogram": [{"label": "$-23k..$21k", "pct": 4.0, "count": 401}, {"label": "$21k..$65k", "pct": 11.0, "count": 1096}, {"label": "$65k..$110k", "pct": 20.1, "count": 2006}, {"label": "$110k..$154k", "pct": 23.9, "count": 2392}, {"label": "$154k..$198k", "pct": 19.5, "count": 1951}, {"label": "$198k..$242k", "pct": 13.5, "count": 1346}, {"label": "$242k..$287k", "pct": 5.7, "count": 569}, {"label": "$287k..$331k", "pct": 1.9, "count": 188}, {"label": "$331k..$375k", "pct": 0.4, "count": 38}, {"label": "$375k..$420k", "pct": 0.1, "count": 13}]}, {"id": "topstep_150k_5x", "label": "4. Topstep 5x 150K XFA (EOD · 30 MNQ) — Estàndard Institucional", "subtitle": "5 comptes 150K XFA · Target $9,000 · MLL $4,500 EOD · Cicle 5 dies +$150 · Cap $5,000", "slots": 5, "mnq": 30, "eval_cost_unit": 149.0, "act_fee_unit": 149.0, "simulations": 10000, "prob_profitable_year_pct": 99.02, "net_cash_p5": 34903.0, "net_cash_p25": 106671.0, "net_cash_p50_median": 153020.0, "net_cash_mean": 154712.0, "net_cash_p75": 206389.0, "net_cash_p95": 270576.0, "bankroll_day1_initial": 745.0, "bankroll_p50_median": 2980.0, "bankroll_p90": 7450.0, "bankroll_p95_safe": 9685.0, "bankroll_p99_ultra_safe": 14155.0, "first_payout_days_p25": 27, "first_payout_days_p50": 44, "first_payout_days_p75": 72, "first_payout_days_p95": 140, "blown_p50": 45, "blown_p95": 75, "payouts_p50": 40, "spend_p50": 11920.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-745.0, -2980.0, -4470.0, -5960.0, -6705.0, -7450.0, -7450.0, -824.0, 5252.0, 10075.0, 16971.0, 25764.0, 34903.0], "p25": [-745.0, -2235.0, -2980.0, -3725.0, 7644.0, 15503.0, 28519.0, 41032.0, 56433.0, 73112.0, 85906.0, 96456.0, 106670.0], "p50": [-745.0, -1490.0, -1490.0, 17285.0, 35508.0, 54612.0, 74752.0, 92250.0, 101694.0, 112327.0, 124570.0, 138180.0, 153020.0], "p75": [-745.0, -1490.0, 20265.0, 48720.0, 76602.0, 96590.0, 105708.0, 118610.0, 135295.0, 153483.0, 172659.0, 190990.0, 206389.0], "p95": [-745.0, 21010.0, 54308.0, 87765.0, 108775.0, 120013.0, 145561.0, 172374.0, 197285.0, 212191.0, 228380.0, 247595.0, 270576.0], "sample_paths": [[-745.0, -1490.0, -2980.0, -4470.0, 17285.0, 15795.0, 15795.0, 15795.0, 15050.0, 56663.0, 101663.0, 123418.0, 121928.0], [-745.0, 9826.0, 54826.0, 99081.0, 97591.0, 96101.0, 94611.0, 94611.0, 93121.0, 137376.0, 159876.0, 182376.0, 202641.0], [-745.0, 21010.0, 43510.0, 61459.0, 79692.0, 122928.0, 139365.0, 138620.0, 156789.0, 201789.0, 245299.0, 243809.0, 242319.0], [-745.0, -2980.0, 19520.0, 64520.0, 87020.0, 108030.0, 129785.0, 167061.0, 211316.0, 210571.0, 209826.0, 208336.0, 208336.0], [-745.0, 21010.0, 18775.0, 16540.0, 15795.0, 14305.0, 33143.0, 30908.0, 29418.0, 28673.0, 27183.0, 25693.0, 47448.0], [-745.0, -1490.0, -2980.0, -4470.0, 5917.0, 48375.0, 83856.0, 82366.0, 81621.0, 80131.0, 90108.0, 89363.0, 134363.0], [-745.0, 21010.0, 66010.0, 110265.0, 109520.0, 119594.0, 118104.0, 117359.0, 158871.0, 179357.0, 212925.0, 211435.0, 209945.0], [-745.0, -1490.0, 25752.0, 70752.0, 88396.0, 106354.0, 105609.0, 104119.0, 122337.0, 144092.0, 166592.0, 203333.0, 224338.0], [-745.0, -745.0, -2235.0, 19520.0, 36280.0, 58780.0, 100281.0, 144536.0, 143046.0, 157248.0, 202248.0, 224748.0, 233016.0], [-745.0, -1490.0, -2235.0, -2980.0, 42020.0, 82594.0, 103604.0, 102114.0, 100624.0, 98389.0, 139900.0, 184900.0, 206655.0], [-745.0, -2235.0, -2980.0, -5960.0, -6705.0, -8195.0, -8940.0, 24686.0, 47186.0, 69686.0, 90696.0, 127706.0, 126961.0], [-745.0, -2235.0, 30560.0, 97315.0, 95825.0, 94335.0, 92845.0, 91355.0, 102136.0, 136172.0, 157927.0, 176382.0, 175637.0]]}, "survival_curve": [{"bankroll": 1500, "survival_pct": 28.91, "ruin_pct": 71.09}, {"bankroll": 3000, "survival_pct": 56.36, "ruin_pct": 43.64}, {"bankroll": 5000, "survival_pct": 73.82, "ruin_pct": 26.18}, {"bankroll": 7500, "survival_pct": 90.77, "ruin_pct": 9.23}, {"bankroll": 9500, "survival_pct": 94.43, "ruin_pct": 5.57}, {"bankroll": 11500, "survival_pct": 97.61, "ruin_pct": 2.39}, {"bankroll": 13500, "survival_pct": 98.91, "ruin_pct": 1.09}, {"bankroll": 15000, "survival_pct": 99.36, "ruin_pct": 0.64}, {"bankroll": 18000, "survival_pct": 99.91, "ruin_pct": 0.09}], "histogram": [{"label": "$-19k..$21k", "pct": 3.1, "count": 307}, {"label": "$21k..$62k", "pct": 7.3, "count": 727}, {"label": "$62k..$103k", "pct": 13.1, "count": 1305}, {"label": "$103k..$144k", "pct": 21.9, "count": 2185}, {"label": "$144k..$184k", "pct": 19.4, "count": 1938}, {"label": "$184k..$225k", "pct": 19.4, "count": 1943}, {"label": "$225k..$266k", "pct": 10.2, "count": 1024}, {"label": "$266k..$307k", "pct": 4.4, "count": 436}, {"label": "$307k..$348k", "pct": 1.2, "count": 125}, {"label": "$348k..$388k", "pct": 0.1, "count": 10}]}, {"id": "apex_50k_10x", "label": "5. Apex 3.0 10x 50K (Promo $19 · 10 MNQ) — Baix Cost d'Entrada", "subtitle": "10 comptes 50K en promo 90% OFF ($19 Eval + $125 PA) · 100% Split primers payouts", "slots": 10, "mnq": 10, "eval_cost_unit": 19.0, "act_fee_unit": 125.0, "simulations": 10000, "prob_profitable_year_pct": 98.82, "net_cash_p5": 30891.0, "net_cash_p25": 93546.0, "net_cash_p50_median": 129366.0, "net_cash_mean": 132024.0, "net_cash_p75": 177103.0, "net_cash_p95": 221441.0, "bankroll_day1_initial": 190.0, "bankroll_p50_median": 1820.0, "bankroll_p90": 4700.0, "bankroll_p95_safe": 6140.0, "bankroll_p99_ultra_safe": 8830.0, "first_payout_days_p25": 32, "first_payout_days_p50": 50, "first_payout_days_p75": 82, "first_payout_days_p95": 156, "blown_p50": 50, "blown_p95": 90, "payouts_p50": 90, "spend_p50": 6140.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-190.0, -1630.0, -2880.0, -3260.0, -3640.0, -4510.0, -4700.0, -4020.0, 1352.0, 6327.0, 13521.0, 20712.0, 30891.0], "p25": [-190.0, -1440.0, -1630.0, -1820.0, 3333.0, 10170.0, 22211.0, 35250.0, 49239.0, 63098.0, 76458.0, 85545.0, 93546.0], "p50": [-190.0, -570.0, -760.0, 7360.0, 25512.0, 43670.0, 62065.0, 78445.0, 89143.0, 97253.0, 105140.0, 116074.0, 129366.0], "p75": [-190.0, -380.0, 11492.0, 32862.0, 57884.0, 81992.0, 94728.0, 102666.0, 109726.0, 125140.0, 142050.0, 160926.0, 177103.0], "p95": [-190.0, 7448.0, 33981.0, 67000.0, 96482.0, 106819.0, 113835.0, 133570.0, 158679.0, 183947.0, 200295.0, 209724.0, 221441.0], "sample_paths": [[-190.0, -190.0, -1630.0, -3070.0, 5356.0, 4976.0, 4976.0, 4976.0, 3726.0, 31894.0, 71894.0, 105484.0, 104234.0], [-190.0, 12780.0, 52780.0, 92780.0, 112590.0, 112020.0, 110580.0, 110580.0, 110200.0, 143562.0, 163562.0, 183562.0, 223182.0], [-190.0, 6752.0, 23292.0, 43780.0, 63780.0, 83590.0, 80900.0, 80520.0, 86918.0, 126918.0, 166918.0, 186728.0, 185478.0], [-190.0, -1440.0, 26280.0, 66280.0, 86280.0, 104658.0, 112296.0, 132296.0, 163616.0, 203426.0, 203236.0, 201986.0, 201986.0], [-190.0, 6752.0, 23068.0, 21628.0, 21438.0, 29110.0, 38366.0, 58366.0, 64402.0, 62772.0, 62582.0, 61332.0, 61332.0], [-190.0, -380.0, -1820.0, -2010.0, -3260.0, 20456.0, 31120.0, 49872.0, 49682.0, 49492.0, 48052.0, 46802.0, 80374.0], [-190.0, 7248.0, 47248.0, 87248.0, 100246.0, 98996.0, 116940.0, 131272.0, 171272.0, 191082.0, 189832.0, 188392.0, 186952.0], [-190.0, -1440.0, 5392.0, 45392.0, 65392.0, 101930.0, 101550.0, 100110.0, 99920.0, 106838.0, 126838.0, 152410.0, 158798.0], [-190.0, -190.0, -380.0, -1630.0, 4802.0, 13546.0, 43618.0, 83618.0, 103428.0, 102178.0, 135278.0, 155278.0, 173338.0], [-190.0, -1440.0, -1630.0, -2880.0, 31932.0, 44172.0, 52660.0, 61148.0, 59708.0, 58268.0, 85940.0, 125940.0, 145940.0], [-190.0, -1630.0, -3070.0, -3260.0, -5950.0, -6140.0, -7390.0, 5886.0, 36526.0, 56526.0, 96336.0, 94896.0, 93266.0], [-190.0, -190.0, 7048.0, 67048.0, 87048.0, 106668.0, 105418.0, 103978.0, 116958.0, 146486.0, 158622.0, 198432.0, 198242.0]]}, "survival_curve": [{"bankroll": 1000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 2000, "survival_pct": 54.58, "ruin_pct": 45.42}, {"bankroll": 3500, "survival_pct": 81.12, "ruin_pct": 18.88}, {"bankroll": 5000, "survival_pct": 91.59, "ruin_pct": 8.41}, {"bankroll": 6500, "survival_pct": 96.2, "ruin_pct": 3.8}, {"bankroll": 8000, "survival_pct": 98.54, "ruin_pct": 1.46}, {"bankroll": 9500, "survival_pct": 99.48, "ruin_pct": 0.52}, {"bankroll": 11000, "survival_pct": 99.77, "ruin_pct": 0.23}, {"bankroll": 13000, "survival_pct": 99.98, "ruin_pct": 0.02}], "histogram": [{"label": "$-13k..$22k", "pct": 3.7, "count": 366}, {"label": "$22k..$57k", "pct": 6.7, "count": 666}, {"label": "$57k..$92k", "pct": 14.0, "count": 1399}, {"label": "$92k..$128k", "pct": 24.4, "count": 2436}, {"label": "$128k..$163k", "pct": 19.4, "count": 1942}, {"label": "$163k..$198k", "pct": 17.5, "count": 1751}, {"label": "$198k..$233k", "pct": 11.3, "count": 1131}, {"label": "$233k..$268k", "pct": 2.4, "count": 243}, {"label": "$268k..$304k", "pct": 0.5, "count": 55}, {"label": "$304k..$339k", "pct": 0.1, "count": 11}]}, {"id": "imperi_65", "label": "👑 Imperi Complet 65 Comptes 150K (Flota Total)", "subtitle": "15x EOD (Alpha/Tradeify/MFFU) + 10x Intra ASAP (Lucid/TPT) + 40x Grup C (Apex/Legends) @ 30 MNQ", "slots": 65, "mnq": 30, "eval_cost_unit": 135.5, "act_fee_unit": 97.3, "simulations": 10000, "prob_profitable_year_pct": 98.78, "net_cash_p5": 371864.0, "net_cash_p25": 1008876.0, "net_cash_p50_median": 1342835.0, "net_cash_mean": 1344390.0, "net_cash_p75": 1717598.0, "net_cash_p95": 2215096.0, "bankroll_day1_initial": 8809.0, "bankroll_p50_median": 36874.0, "bankroll_p90": 93024.0, "bankroll_p95_safe": 116138.0, "bankroll_p99_ultra_safe": 162160.0, "first_payout_days_p25": 21, "first_payout_days_p50": 35, "first_payout_days_p75": 59, "first_payout_days_p95": 114, "blown_p50": 510, "blown_p95": 905, "payouts_p50": 570, "spend_p50": 113574.0, "fan_chart": {"months": ["Inici", "Mes 1", "Mes 2", "Mes 3", "Mes 4", "Mes 5", "Mes 6", "Mes 7", "Mes 8", "Mes 9", "Mes 10", "Mes 11", "Mes 12"], "p5": [-8809.0, -34126.0, -50634.0, -64394.0, -74928.0, -81185.0, -79809.0, -53987.0, 1784.0, 82121.0, 156639.0, 246859.0, 371864.0], "p25": [-8809.0, -25317.0, -35500.0, -35050.0, 26956.0, 148303.0, 273743.0, 414264.0, 559207.0, 697144.0, 819593.0, 921762.0, 1008876.0], "p50": [-8809.0, -17882.0, -2629.0, 152540.0, 309564.0, 475538.0, 641572.0, 789138.0, 922960.0, 1028549.0, 1124301.0, 1220931.0, 1342836.0], "p75": [-8809.0, -8809.0, 193484.0, 386682.0, 569480.0, 750679.0, 900222.0, 1051463.0, 1174839.0, 1295535.0, 1423519.0, 1566847.0, 1717598.0], "p95": [-8809.0, 121226.0, 395308.0, 624489.0, 838653.0, 1014335.0, 1218158.0, 1381845.0, 1514583.0, 1678355.0, 1861274.0, 2032872.0, 2215096.0], "sample_paths": [[-8809.0, -17618.0, -34126.0, -13062.0, 115437.0, 95071.0, 95071.0, 95071.0, 93472.0, 457211.0, 684463.0, 939128.0, 932420.0], [-8809.0, 86007.0, 492439.0, 817060.0, 957896.0, 1040356.0, 1125422.0, 1122674.0, 1105056.0, 1477357.0, 1639857.0, 1866859.0, 1947063.0], [-8809.0, 103284.0, 340799.0, 487671.0, 704725.0, 1009066.0, 1148657.0, 1224274.0, 1278107.0, 1746941.0, 1967149.0, 2094741.0, 2183033.0], [-8809.0, -30268.0, 229307.0, 480439.0, 543817.0, 699273.0, 1054897.0, 1284669.0, 1479562.0, 1652761.0, 1743552.0, 1831844.0, 1830470.0], [-8809.0, 119150.0, 205981.0, 292812.0, 382229.0, 585793.0, 655335.0, 730218.0, 715084.0, 704901.0, 687019.0, 677411.0, 771763.0], [-8809.0, -18992.0, -36874.0, -53118.0, 102408.0, 369664.0, 567159.0, 655451.0, 647120.0, 733702.0, 848568.0, 838574.0, 1208321.0], [-8809.0, 151485.0, 428244.0, 749035.0, 839826.0, 964184.0, 1080403.0, 1093391.0, 1389214.0, 1544301.0, 1771224.0, 1862264.0, 1949182.0], [-8809.0, 22727.0, 169849.0, 501229.0, 646589.0, 848196.0, 937613.0, 1053961.0, 1102039.0, 1245733.0, 1470218.0, 1674069.0, 1828736.0], [-8809.0, -10183.0, -27801.0, 70566.0, 336002.0, 613249.0, 831377.0, 1094425.0, 1215848.0, 1251617.0, 1478869.0, 1674689.0, 1792518.0], [-8809.0, -15134.0, -23943.0, 21350.0, 344236.0, 560957.0, 715039.0, 800247.0, 889913.0, 885832.0, 1238731.0, 1465983.0, 1624274.0], [-8809.0, -23943.0, -35500.0, -45370.0, -55553.0, -72061.0, -79760.0, 116117.0, 427243.0, 584247.0, 740039.0, 949454.0, 1035645.0], [-8809.0, -25317.0, 220931.0, 706359.0, 792941.0, 786233.0, 875899.0, 953017.0, 1077613.0, 1324964.0, 1386881.0, 1700484.0, 1692153.0]]}, "survival_curve": [{"bankroll": 15000, "survival_pct": 0.0, "ruin_pct": 100.0}, {"bankroll": 25000, "survival_pct": 30.21, "ruin_pct": 69.79}, {"bankroll": 35000, "survival_pct": 47.61, "ruin_pct": 52.39}, {"bankroll": 50000, "survival_pct": 65.26, "ruin_pct": 34.74}, {"bankroll": 65000, "survival_pct": 78.06, "ruin_pct": 21.94}, {"bankroll": 80000, "survival_pct": 85.58, "ruin_pct": 14.42}, {"bankroll": 100000, "survival_pct": 91.89, "ruin_pct": 8.11}, {"bankroll": 120000, "survival_pct": 95.57, "ruin_pct": 4.43}, {"bankroll": 150000, "survival_pct": 98.4, "ruin_pct": 1.6}], "histogram": [{"label": "$-226k..$100k", "pct": 2.1, "count": 213}, {"label": "$100k..$426k", "pct": 3.7, "count": 370}, {"label": "$426k..$752k", "pct": 6.4, "count": 638}, {"label": "$752k..$1078k", "pct": 17.9, "count": 1790}, {"label": "$1078k..$1404k", "pct": 24.4, "count": 2439}, {"label": "$1404k..$1730k", "pct": 21.1, "count": 2114}, {"label": "$1730k..$2056k", "pct": 14.8, "count": 1480}, {"label": "$2056k..$2382k", "pct": 7.3, "count": 734}, {"label": "$2382k..$2708k", "pct": 1.9, "count": 194}, {"label": "$2708k..$3033k", "pct": 0.3, "count": 28}]}]};
+        const FRICTION_DATA = {"be_offset_optimization": [{"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1470.0, "net_pts_after_comm": 1267.3, "be_pts_sum": 0.0, "empire_65_net": 2166369.0, "empire_65_payouts": 885, "empire_65_blown": 605, "alpha_5x_net": 226154.0, "lucid_5x_net": 170486.0, "be_offset_pts": 0.0}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1490.5, "net_pts_after_comm": 1287.8, "be_pts_sum": 20.5, "empire_65_net": 2185206.0, "empire_65_payouts": 885, "empire_65_blown": 545, "alpha_5x_net": 227588.0, "lucid_5x_net": 171026.0, "be_offset_pts": 0.25}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1511.0, "net_pts_after_comm": 1308.3, "be_pts_sum": 41.0, "empire_65_net": 2195564.0, "empire_65_payouts": 890, "empire_65_blown": 545, "alpha_5x_net": 228027.0, "lucid_5x_net": 171566.0, "be_offset_pts": 0.5}, {"W": 145, "BE": 84, "L": 98, "WR_ex_BE": 59.7, "gross_pts": 1473.0, "net_pts_after_comm": 1270.3, "be_pts_sum": 63.0, "empire_65_net": 2189307.0, "empire_65_payouts": 905, "empire_65_blown": 605, "alpha_5x_net": 227273.0, "lucid_5x_net": 171419.0, "be_offset_pts": 0.75}, {"W": 144, "BE": 85, "L": 98, "WR_ex_BE": 59.5, "gross_pts": 1465.0, "net_pts_after_comm": 1262.3, "be_pts_sum": 85.0, "empire_65_net": 2183854.0, "empire_65_payouts": 905, "empire_65_blown": 630, "alpha_5x_net": 222887.0, "lucid_5x_net": 171272.0, "be_offset_pts": 1.0}, {"W": 143, "BE": 86, "L": 98, "WR_ex_BE": 59.3, "gross_pts": 1457.5, "net_pts_after_comm": 1254.8, "be_pts_sum": 107.5, "empire_65_net": 2261099.0, "empire_65_payouts": 940, "empire_65_blown": 620, "alpha_5x_net": 224280.0, "lucid_5x_net": 172499.0, "be_offset_pts": 1.25}, {"W": 140, "BE": 89, "L": 98, "WR_ex_BE": 58.8, "gross_pts": 1393.5, "net_pts_after_comm": 1190.8, "be_pts_sum": 133.5, "empire_65_net": 2247462.0, "empire_65_payouts": 925, "empire_65_blown": 615, "alpha_5x_net": 225672.0, "lucid_5x_net": 173726.0, "be_offset_pts": 1.5}, {"W": 138, "BE": 91, "L": 98, "WR_ex_BE": 58.5, "gross_pts": 1382.0, "net_pts_after_comm": 1179.3, "be_pts_sum": 182.0, "empire_65_net": 2092463.0, "empire_65_payouts": 885, "empire_65_blown": 640, "alpha_5x_net": 199578.0, "lucid_5x_net": 158941.0, "be_offset_pts": 2.0}, {"W": 136, "BE": 93, "L": 98, "WR_ex_BE": 58.1, "gross_pts": 1372.5, "net_pts_after_comm": 1169.8, "be_pts_sum": 232.5, "empire_65_net": 2041811.0, "empire_65_payouts": 875, "empire_65_blown": 645, "alpha_5x_net": 205305.0, "lucid_5x_net": 160021.0, "be_offset_pts": 2.5}, {"W": 135, "BE": 94, "L": 98, "WR_ex_BE": 57.9, "gross_pts": 1392.0, "net_pts_after_comm": 1189.3, "be_pts_sum": 282.0, "empire_65_net": 2047802.0, "empire_65_payouts": 895, "empire_65_blown": 675, "alpha_5x_net": 207282.0, "lucid_5x_net": 161101.0, "be_offset_pts": 3.0}], "webhook_latency_audit": [{"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1470.0, "net_pts_after_comm": 1267.3, "be_pts_sum": 0.0, "empire_65_net": 2166369.0, "empire_65_payouts": 885, "empire_65_blown": 605, "alpha_5x_net": 226154.0, "lucid_5x_net": 170486.0, "label": "0s (Tick Temps Real Instantani)", "diff_vs_0s": 0.0}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1467.5, "net_pts_after_comm": 1264.8, "be_pts_sum": -2.5, "empire_65_net": 2161794.0, "empire_65_payouts": 885, "empire_65_blown": 605, "alpha_5x_net": 225817.0, "lucid_5x_net": 169811.0, "label": "1s Latència (TradingView->NT8)", "diff_vs_0s": -4575.0}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1465.2, "net_pts_after_comm": 1262.5, "be_pts_sum": -4.8, "empire_65_net": 2158756.0, "empire_65_payouts": 885, "empire_65_blown": 605, "alpha_5x_net": 225918.0, "lucid_5x_net": 170013.0, "label": "2s Latència (TradingView->Railway->NT8)", "diff_vs_0s": -7613.0}, {"W": 149, "BE": 79, "L": 99, "WR_ex_BE": 60.1, "gross_pts": 1513.8, "net_pts_after_comm": 1311.0, "be_pts_sum": -3.0, "empire_65_net": 2198331.0, "empire_65_payouts": 905, "empire_65_blown": 540, "alpha_5x_net": 229662.0, "lucid_5x_net": 175695.0, "label": "3s Latència", "diff_vs_0s": 31962.0}, {"W": 149, "BE": 79, "L": 99, "WR_ex_BE": 60.1, "gross_pts": 1502.8, "net_pts_after_comm": 1300.0, "be_pts_sum": -9.0, "empire_65_net": 2186953.0, "empire_65_payouts": 905, "empire_65_blown": 540, "alpha_5x_net": 228987.0, "lucid_5x_net": 174345.0, "label": "5s Latència", "diff_vs_0s": 20584.0}, {"W": 150, "BE": 63, "L": 114, "WR_ex_BE": 56.8, "gross_pts": 1303.0, "net_pts_after_comm": 1100.3, "be_pts_sum": -6.8, "empire_65_net": 1884111.0, "empire_65_payouts": 790, "empire_65_blown": 665, "alpha_5x_net": 175905.0, "lucid_5x_net": 161371.0, "label": "⚠️ Tancament Vela 1m (Strategy sense tick)", "diff_vs_0s": -282258.0}], "friction_stress_test": [{"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1467.5, "net_pts_after_comm": 1467.5, "be_pts_sum": -2.5, "empire_65_net": 2413860.0, "empire_65_payouts": 930, "empire_65_blown": 520, "alpha_5x_net": 233240.0, "lucid_5x_net": 207585.0, "label": "A. Ideal Sense Comissions ni Slippage"}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1467.5, "net_pts_after_comm": 1264.8, "be_pts_sum": -2.5, "empire_65_net": 2161794.0, "empire_65_payouts": 885, "empire_65_blown": 605, "alpha_5x_net": 225817.0, "lucid_5x_net": 169811.0, "label": "B. Comissions Reals ($1.24/MNQ) · 0 Slip"}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1422.5, "net_pts_after_comm": 1219.8, "be_pts_sum": -23.0, "empire_65_net": 2088706.0, "empire_65_payouts": 875, "empire_65_blown": 605, "alpha_5x_net": 198446.0, "lucid_5x_net": 168933.0, "label": "C. Comissions + 1 Tick Slip a Stop/BE (0.25p)"}, {"W": 145, "BE": 84, "L": 98, "WR_ex_BE": 59.7, "gross_pts": 1423.0, "net_pts_after_comm": 1220.3, "be_pts_sum": 37.5, "empire_65_net": 2160017.0, "empire_65_payouts": 895, "empire_65_blown": 605, "alpha_5x_net": 224347.0, "lucid_5x_net": 169529.0, "label": "D. Comissions + 1 Tick Slip Stop + Offset BE +0.75p"}, {"W": 147, "BE": 82, "L": 98, "WR_ex_BE": 60.0, "gross_pts": 1340.8, "net_pts_after_comm": 1138.0, "be_pts_sum": -43.5, "empire_65_net": 2072728.0, "empire_65_payouts": 870, "empire_65_blown": 605, "alpha_5x_net": 194430.0, "lucid_5x_net": 167043.0, "label": "E. Comissions + 1 Tick Slip Entrada i Stop (0.50p RT)"}, {"W": 144, "BE": 85, "L": 98, "WR_ex_BE": 59.5, "gross_pts": 1332.2, "net_pts_after_comm": 1129.5, "be_pts_sum": 37.2, "empire_65_net": 2020915.0, "empire_65_payouts": 855, "empire_65_blown": 700, "alpha_5x_net": 180218.0, "lucid_5x_net": 167357.0, "label": "F. Comissions + 1 Tick Entrada/Stop + Offset BE +1.0p"}], "news_and_rollover_audit": [{"name": "Dies Normals (Sense ISM/JOLTS 10AM ni Rollover)", "trades": 245, "W": 98, "BE": 70, "L": 77, "WR": 56.0, "pts": 627.5, "exp": 2.56}, {"name": "Dies amb Notícia 10:00 NY (ISM/JOLTS/Conf — Tota la sessió)", "trades": 60, "W": 34, "BE": 7, "L": 19, "WR": 64.2, "pts": 450.0, "exp": 7.5}, {"name": "↳ Entrades exactament entre 09:56 i 10:04 NY en dia ISM/JOLTS", "trades": 4, "W": 3, "BE": 0, "L": 1, "WR": 75.0, "pts": 60.0, "exp": 15.0}, {"name": "Dies de Rollover Trimestral CME (2n Dijous/Divendres H/M/U/Z)", "trades": 22, "W": 15, "BE": 5, "L": 2, "WR": 88.2, "pts": 390.0, "exp": 17.73}]};
+
+        let qmcCurrentIdx = 0;
+
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-cyan-400', 'bg-dark-800', 'font-semibold', 'shadow');
-                btn.classList.add('text-gray-400');
+                btn.className = 'nav-btn px-3 py-1.5 rounded-lg transition-all text-gray-400 border border-transparent hover:text-white hover:bg-dark-800/60';
             });
 
-            document.getElementById(tabId).classList.remove('hidden');
+            const target = document.getElementById(tabId);
+            if (target) target.classList.remove('hidden');
+
             const navId = 'nav-' + tabId.replace('tab-', '');
             const activeNav = document.getElementById(navId);
             if (activeNav) {
-                activeNav.classList.remove('text-gray-400');
-                activeNav.classList.add('text-cyan-400', 'bg-dark-800', 'font-semibold', 'shadow');
+                activeNav.className = 'nav-btn px-3 py-1.5 rounded-lg transition-all text-cyan-300 bg-dark-800 border border-cyan-700/60 font-bold shadow';
             }
 
-            // Trigger chart resize on tab switch
             if (tabId === 'tab-evaluator' && window.firmChartInstance) {
                 window.firmChartInstance.resize();
             }
@@ -1040,16 +1023,17 @@
         }
 
         // ==========================================
-        // CHECKLIST LOCAL STORAGE LOGIC
+        // CHECKLIST LOCAL STORAGE LOGIC (2027)
         // ==========================================
         const TOTAL_CHECKLIST_ITEMS = 8;
+        const CHK_PREFIX = 'propfirm_2027_chk_';
 
         function saveChecklist() {
             let checkedCount = 0;
             for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
                 const chk = document.getElementById('chk-' + i);
                 if (chk) {
-                    localStorage.setItem('propfirm_chk_' + i, chk.checked);
+                    localStorage.setItem(CHK_PREFIX + i, chk.checked);
                     if (chk.checked) checkedCount++;
                 }
             }
@@ -1061,13 +1045,8 @@
             for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
                 const chk = document.getElementById('chk-' + i);
                 if (chk) {
-                    const saved = localStorage.getItem('propfirm_chk_' + i);
-                    if (saved === 'true') {
-                        chk.checked = true;
-                        checkedCount++;
-                    } else {
-                        chk.checked = false;
-                    }
+                    chk.checked = (localStorage.getItem(CHK_PREFIX + i) === 'true');
+                    if (chk.checked) checkedCount++;
                 }
             }
             updateChecklistUI(checkedCount);
@@ -1077,7 +1056,7 @@
             for (let i = 1; i <= TOTAL_CHECKLIST_ITEMS; i++) {
                 const chk = document.getElementById('chk-' + i);
                 if (chk) chk.checked = false;
-                localStorage.removeItem('propfirm_chk_' + i);
+                localStorage.removeItem(CHK_PREFIX + i);
             }
             updateChecklistUI(0);
         }
@@ -1090,7 +1069,7 @@
             countEl.innerText = count + ' / ' + TOTAL_CHECKLIST_ITEMS + ' passos completats';
             if (count === TOTAL_CHECKLIST_ITEMS) {
                 countEl.className = 'font-bold text-emerald-400 font-mono';
-                statusBox.className = 'p-3 rounded-xl bg-emerald-950/30 border border-emerald-800 flex items-center justify-between text-xs';
+                statusBox.className = 'p-3 rounded-xl bg-emerald-950/30 border border-emerald-700 flex items-center justify-between text-xs';
             } else if (count > 0) {
                 countEl.className = 'font-bold text-cyan-400 font-mono';
                 statusBox.className = 'p-3 rounded-xl bg-dark-950 border border-cyan-900/60 flex items-center justify-between text-xs';
@@ -1101,8 +1080,19 @@
         }
 
         // ==========================================
-        // RISK CALCULATOR REACTIVE LOGIC
+        // RISK SOLVER (2027 CALIBRATED)
         // ==========================================
+        function onCalcFirmChange() {
+            const firm = document.getElementById('calc-firm').value;
+            const sizeEl = document.getElementById('calc-size');
+            if (firm.endsWith('150')) {
+                sizeEl.value = '150000';
+            } else {
+                sizeEl.value = '50000';
+            }
+            recalculateRisk();
+        }
+
         function recalculateRisk() {
             const firm = document.getElementById('calc-firm').value;
             const size = parseFloat(document.getElementById('calc-size').value);
@@ -1111,115 +1101,114 @@
             const sl = parseFloat(document.getElementById('calc-sl').value);
             const tailPct = parseFloat(document.getElementById('calc-tail').value) / 100.0;
 
-            // Labels
-            document.getElementById('lbl-size').innerText = '$' + size.toLocaleString();
+            document.getElementById('lbl-size').innerText = '$' + size.toLocaleString('en-US');
             document.getElementById('lbl-wr').innerText = (wr * 100).toFixed(1) + '%';
             document.getElementById('lbl-rr').innerText = rr.toFixed(2) + ' R';
             document.getElementById('lbl-sl').innerText = sl.toFixed(1) + ' pts';
             document.getElementById('lbl-tail').innerText = Math.round(tailPct * 100) + '% ' + (tailPct === 1 ? '(Disciplinat)' : '(Amputat)');
 
-            // Realized RR after tail cut
-            const realizedRR = rr * tailPct;
-            const beWR = 1.0 / (1.0 + realizedRR);
-            const expectancy = (wr * realizedRR) - ((1.0 - wr) * 1.0);
+            // Comissió real $1.24/MNQ = 0.62 punts sobre SL
+            const commR = 0.62 / sl;
+            const netWinR = (rr * tailPct) - commR;
+            const netLossR = 1.0 + commR;
+            const beWR = netLossR / (netWinR + netLossR);
+            const expectancy = (wr * netWinR) - ((1.0 - wr) * netLossR);
 
-            // Update Metric Outputs
             const expEl = document.getElementById('out-expectancy');
-            expEl.innerText = (expectancy > 0.005 ? '+' : '') + expectancy.toFixed(2) + ' R';
-            if (expectancy > 0.005) {
-                expEl.className = 'text-xl font-bold text-emerald-400 mt-1 block';
-                document.getElementById('out-expectancy-note').innerText = 'Sistema Guanyador (+EV)';
-            } else if (Math.abs(expectancy) <= 0.005) {
-                expEl.className = 'text-xl font-bold text-amber-400 mt-1 block';
-                document.getElementById('out-expectancy-note').innerText = 'Breakeven Neutral (0.00 EV)';
+            expEl.innerText = (expectancy > 0 ? '+' : '') + expectancy.toFixed(2) + ' R';
+            if (expectancy > 0.02) {
+                expEl.className = 'text-xl font-bold text-emerald-400 mt-1 block font-mono';
+                document.getElementById('out-expectancy-note').innerText = 'Sistema Guanyador Net (+EV post-comm)';
+            } else if (expectancy >= -0.01) {
+                expEl.className = 'text-xl font-bold text-amber-400 mt-1 block font-mono';
+                document.getElementById('out-expectancy-note').innerText = 'Zona Neutral / Fricció Alta';
             } else {
-                expEl.className = 'text-xl font-bold text-rose-400 mt-1 block';
-                document.getElementById('out-expectancy-note').innerText = 'Sistema Perdedor (-EV)';
+                expEl.className = 'text-xl font-bold text-rose-400 mt-1 block font-mono';
+                document.getElementById('out-expectancy-note').innerText = 'Expectativa Negativa (-EV)';
             }
 
             document.getElementById('out-bewr').innerText = (beWR * 100).toFixed(1) + '%';
 
-            // Risk sizing
-            let recMinPct = 0.008;
-            let recMaxPct = 0.012;
-            if (firm === 'apex') {
-                recMinPct = 0.005;
-                recMaxPct = 0.008;
-            }
-            const minDollars = size * recMinPct;
-            const maxDollars = size * recMaxPct;
-            document.getElementById('out-risk-dollars').innerText = '$' + Math.round(minDollars) + ' - $' + Math.round(maxDollars);
-            document.getElementById('out-risk-pct').innerText = (recMinPct * 100).toFixed(1) + '% - ' + (recMaxPct * 100).toFixed(1) + '% del compte';
+            const target = Math.round(size * 0.06);
+            const mll = size >= 150000 ? (firm.startsWith('apex') ? 5000 : 4500) : (firm.startsWith('apex') ? 2500 : 2000);
+            const isIntra = (firm === 'lucid150' || firm === 'lucid50' || firm.startsWith('apex'));
 
-            // MNQ contracts for given SL ($2 per pt)
+            // Risc òptim basat en el MLL (entre 25% i 40% del MLL per bala amb 60% WR)
+            const minDollars = Math.round(mll * (isIntra ? 0.24 : 0.29));
+            const maxDollars = Math.round(mll * (isIntra ? 0.36 : 0.40));
             const dollarRiskPerContract = sl * 2.0;
             const cMin = Math.max(1, Math.round(minDollars / dollarRiskPerContract));
             const cMax = Math.max(1, Math.round(maxDollars / dollarRiskPerContract));
+
+            document.getElementById('out-risk-dollars').innerText = '$' + (cMin * dollarRiskPerContract).toLocaleString('en-US') + ' - $' + (cMax * dollarRiskPerContract).toLocaleString('en-US');
+            document.getElementById('out-risk-pct').innerText = 'Target Eval: $' + target.toLocaleString('en-US') + ' · MLL: $' + mll.toLocaleString('en-US');
             document.getElementById('out-contracts').innerText = cMin + ' - ' + cMax + ' MNQ';
+            document.getElementById('out-contracts-sub').innerText = isIntra ? 'Model Intraday (amb BE +0.50p)' : 'Model EOD Pur (0 erosió BE)';
 
-            // Trailing trap calculation
-            const target = 3000.0;
-            const winDollarMicro = 1 * (sl * realizedRR) * 2.0;
-            const winsMicro = Math.max(1, Math.ceil(target / Math.max(1, winDollarMicro)));
-            const winDollarCalib = cMax * (sl * realizedRR) * 2.0;
-            const winsCalib = Math.max(1, Math.ceil(target / Math.max(1, winDollarCalib)));
+            // Trailing Trap comparison
+            const microContracts = size >= 150000 ? 2 : 1;
+            const netWinPerContract = Math.max(5.0, (sl * rr * tailPct * 2.0) - 1.24);
+            const winsMicro = Math.max(1, Math.ceil(target / (microContracts * netWinPerContract)));
+            const winsCalibMin = Math.max(1, Math.ceil(target / (cMax * netWinPerContract)));
+            const winsCalibMax = Math.max(winsCalibMin, Math.ceil(target / (cMin * netWinPerContract)));
 
+            document.getElementById('trap-target-badge').innerText = 'Target Aprovació: +$' + target.toLocaleString('en-US');
             document.getElementById('trap-micro-wins').innerText = winsMicro;
-            document.getElementById('trap-micro-ratchets').innerText = winsMicro + ' vegades';
-            document.getElementById('trap-calib-wins').innerText = winsCalib;
-            document.getElementById('trap-calib-ratchets').innerText = winsCalib + ' vegades';
+            document.getElementById('trap-micro-ratchets').innerText = winsMicro + ' pujades';
+            document.getElementById('trap-calib-title').innerText = 'Sizing Calibrat JJ (' + cMin + '–' + cMax + ' MNQ)';
+            const calibStr = winsCalibMin === winsCalibMax ? String(winsCalibMin) : (winsCalibMin + '–' + winsCalibMax);
+            document.getElementById('trap-calib-wins').innerText = calibStr;
+            document.getElementById('trap-calib-ratchets').innerText = calibStr + ' pujades';
 
-            // Tail alert box update
             const alertBox = document.getElementById('tail-alert-box');
             const alertTitle = document.getElementById('tail-title');
             const alertDesc = document.getElementById('tail-desc');
             const alertIcon = document.getElementById('tail-icon');
 
-            if (tailPct >= 0.95) {
+            if (tailPct >= 0.95 && wr > beWR) {
                 alertBox.className = 'p-4 rounded-xl border border-emerald-900/60 bg-emerald-950/20';
-                alertTitle.innerText = 'CUA DRETA PROTEGIDA (PART 5 PLAYBOOK)';
+                alertTitle.innerText = 'CUA DRETA PROTEGIDA (100% DEL TP = 30.0 PUNTS)';
                 alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-emerald-400';
-                const compStr = (beWR <= wr) ? 'és igual o inferior al teu encert real' : 'supera el teu encert real';
-                alertDesc.innerText = 'Execució disciplinada al 100% del Take Profit planificat. El Win Rate requerit (' + (beWR * 100).toFixed(1) + '%) ' + compStr + ' (' + (wr * 100).toFixed(1) + '%), garantint viabilitat matemàtica.';
+                alertDesc.innerText = 'Mantenint el TP complet, el teu Win Rate (' + (wr * 100).toFixed(1) + '%) supera amb escreix el mínim requerit post-comissions (' + (beWR * 100).toFixed(1) + '%), generant ' + (expectancy >= 0 ? '+' : '') + expectancy.toFixed(2) + 'R nets per bala jugada.';
                 alertIcon.innerText = '🛡️';
-            } else if (tailPct >= 0.70) {
+            } else if (wr > beWR) {
                 alertBox.className = 'p-4 rounded-xl border border-amber-900/60 bg-amber-950/20';
-                alertTitle.innerText = 'AVÍS: RETALL DE GUANYS PREMATUR';
+                alertTitle.innerText = 'AVÍS: REDUCCIÓ DEL MARGE D\'AVANTATGE';
                 alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-amber-400';
-                alertDesc.innerText = 'En tancar guanys al ' + Math.round(tailPct * 100) + '%, el Win Rate requerit puja al ' + (beWR * 100).toFixed(1) + '%. El teu marge de seguretat s\'està reduint perillosament.';
+                alertDesc.innerText = 'Retallar el TP al ' + Math.round(tailPct * 100) + '% fa pujar el Win Rate mínim necessari fins al ' + (beWR * 100).toFixed(1) + '%. No tanquis manualment per por abans dels 30 punts.';
                 alertIcon.innerText = '⚠️';
             } else {
                 alertBox.className = 'p-4 rounded-xl border border-rose-900/60 bg-rose-950/20';
-                alertTitle.innerText = 'COL·LAPSE MATEMÀTIC: CUA DRETA AMPUTADA';
+                alertTitle.innerText = 'COL·LAPSE MATEMÀTIC: FRICCIÓ I TALL DE GANÀNCIES';
                 alertTitle.className = 'text-xs font-bold uppercase tracking-wider text-rose-400';
-                alertDesc.innerText = 'Tancar trades per por al ' + Math.round(tailPct * 100) + '% del target exigeix un ' + (beWR * 100).toFixed(1) + '% d\'encert impossible! L\'expectancy és negativa (' + expectancy.toFixed(2) + 'R). Fallida d\'avaluació garantida.';
+                alertDesc.innerText = 'Amb aquest tall de TP necessitaries un ' + (beWR * 100).toFixed(1) + '% de Win Rate (superior al teu ' + (wr * 100).toFixed(1) + '%). L\'expectativa cau a ' + expectancy.toFixed(2) + 'R.';
                 alertIcon.innerText = '🚨';
             }
         }
 
         // ==========================================
-        // CHART.JS: FIRM EVALUATOR CHART
+        // TAB 2 CHART: 10 PROP FIRMS 150K
         // ==========================================
         function initFirmChart() {
             const ctx = document.getElementById('firmChart').getContext('2d');
             window.firmChartInstance = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: ['Lucid Daily', 'MyFundedFutures', 'Tradeify', 'Apex Trader', 'Topstep'],
+                    labels: ['Alpha 150K', 'Topstep 150K', 'MFFU 150K', 'Tradeify 150K', 'FundedNext', 'TPT 150K', 'Lucid 150K', 'Phidias', 'Legends', 'Apex 150K'],
                     datasets: [
                         {
-                            label: 'Cost to Funded (Despesa Adquisició $)',
-                            data: [412.50, 416.67, 412.50, 227.86, 565.67],
-                            backgroundColor: 'rgba(244, 63, 94, 0.75)',
-                            borderColor: '#f43f5e',
+                            label: 'Benefici Net Anual / 1 Slot ($)',
+                            data: [45605, 45500, 41415, 41168, 38273, 36840, 34313, 32640, 32360, 31385],
+                            backgroundColor: 'rgba(16, 185, 129, 0.80)',
+                            borderColor: '#10b981',
                             borderWidth: 1.5,
                             borderRadius: 6
                         },
                         {
-                            label: 'Avg Payout / Compte (Retirada Mitjana $)',
-                            data: [761.92, 2662.25, 817.58, 748.43, 733.83],
-                            backgroundColor: 'rgba(16, 185, 129, 0.8)',
-                            borderColor: '#10b981',
+                            label: 'Despesa Total Anual Fees / 1 Slot ($)',
+                            data: [1592, 1639, 2985, 1672, 2587, 3240, 2748, 1440, 1480, 715],
+                            backgroundColor: 'rgba(244, 63, 94, 0.78)',
+                            borderColor: '#f43f5e',
                             borderWidth: 1.5,
                             borderRadius: 6
                         }
@@ -1230,228 +1219,163 @@
                     maintainAspectRatio: false,
                     scales: {
                         x: {
-                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                            ticks: { color: '#9ca3af', font: { size: 11 } }
-                        },
-                        y: {
-                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                            ticks: {
-                                color: '#9ca3af',
-                                font: { size: 11 },
-                                callback: function(value) { return '$' + value.toLocaleString(); }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            labels: { color: '#e5e7eb', font: { size: 12 } }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': $' + context.raw.toLocaleString();
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        // ==========================================
-        // MONTE CARLO SIMULATOR & EQUITY CURVES
-        // ==========================================
-        const mcBase = [
-            { id: 1, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 42, wr: 52.4, pnl: 3108, roi: 6.2, pass: 'Yes' },
-            { id: 2, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 29, wr: 58.6, pnl: 3286, roi: 6.6, pass: 'Yes' },
-            { id: 3, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 20, wr: 30.0, pnl: -1387, roi: -2.8, pass: 'No' },
-            { id: 4, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 83, wr: 41.0, pnl: -698, roi: -1.4, pass: 'No' },
-            { id: 5, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 76, wr: 47.4, pnl: 3344, roi: 6.7, pass: 'Yes' },
-            { id: 6, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 47, wr: 48.9, pnl: 3083, roi: 6.2, pass: 'Yes' },
-            { id: 7, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 30, wr: 40.0, pnl: -107, roi: -0.2, pass: 'No' },
-            { id: 8, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 38, wr: 42.1, pnl: -125, roi: -0.3, pass: 'No' },
-            { id: 9, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 28, wr: 60.7, pnl: 3029, roi: 6.1, pass: 'Yes' },
-            { id: 10, firm: 'Lucid Daily', size: 50000, target: 3000, maxdd: 2000, trades: 21, wr: 23.8, pnl: -2053, roi: -4.1, pass: 'No' },
-        ];
-
-        function renderMonteCarlo(data) {
-            const tbody = document.getElementById('monte-carlo-body');
-            tbody.innerHTML = '';
-            let totalWr = 0;
-            let totalPnl = 0;
-            let passes = 0;
-
-            data.forEach(r => {
-                totalWr += r.wr;
-                totalPnl += r.pnl;
-                if (r.pass === 'Yes') passes++;
-
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-dark-800/40 transition';
-                const passClass = r.pass === 'Yes' ? 'text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded font-bold' : 'text-rose-400 bg-rose-950/60 px-2 py-0.5 rounded';
-                const pnlClass = r.pnl >= 0 ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold';
-
-                tr.innerHTML = `
-                    <td class="p-3.5 text-gray-400">${r.id}</td>
-                    <td class="p-3.5 text-white font-sans font-medium">${r.firm}</td>
-                    <td class="p-3.5">$${r.size.toLocaleString()}</td>
-                    <td class="p-3.5">$${r.target.toLocaleString()}</td>
-                    <td class="p-3.5">$${r.maxdd.toLocaleString()}</td>
-                    <td class="p-3.5">${r.trades}</td>
-                    <td class="p-3.5">${r.wr.toFixed(1)}%</td>
-                    <td class="p-3.5 ${pnlClass}">$${r.pnl.toLocaleString()}</td>
-                    <td class="p-3.5">${r.roi >= 0 ? '+' : ''}${r.roi.toFixed(1)}%</td>
-                    <td class="p-3.5"><span class="${passClass}">${r.pass}</span></td>
-                `;
-                tbody.appendChild(tr);
-            });
-
-            const avgWr = totalWr / data.length;
-            const avgPnl = totalPnl / data.length;
-            const passRate = (passes / data.length) * 100;
-            const roiMult = avgPnl / 99.0;
-
-            document.getElementById('mc-avg-wr').innerText = avgWr.toFixed(1) + '%';
-            document.getElementById('mc-avg-pnl').innerText = (avgPnl >= 0 ? '+$' : '-$') + Math.abs(Math.round(avgPnl)).toLocaleString();
-            document.getElementById('mc-pass-rate').innerText = passRate.toFixed(1) + '%';
-            document.getElementById('mc-roi-mult').innerText = roiMult.toFixed(2) + 'x';
-
-            updateEquityChart(data);
-        }
-
-        function regenerateMonteCarlo() {
-            const randomized = mcBase.map(r => {
-                const deltaTrades = Math.floor(Math.random() * 9) - 4;
-                const deltaWr = (Math.random() * 6 - 3);
-                const newWr = Math.max(20, Math.min(75, r.wr + deltaWr));
-                const pass = newWr >= 46.5 ? 'Yes' : 'No';
-                const pnl = pass === 'Yes' ? (3000 + Math.floor(Math.random() * 400)) : (-2000 + Math.floor(Math.random() * 1500));
-                const roi = (pnl / r.size) * 100;
-                return {
-                    ...r,
-                    trades: Math.max(15, r.trades + deltaTrades),
-                    wr: newWr,
-                    pnl: pnl,
-                    roi: roi,
-                    pass: pass
-                };
-            });
-            renderMonteCarlo(randomized);
-        }
-
-        function initEquityChart() {
-            const ctx = document.getElementById('equityChart').getContext('2d');
-            const days = Array.from({ length: 30 }, (_, i) => 'Dia ' + (i + 1));
-
-            window.equityChartInstance = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: days,
-                    datasets: []
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    elements: { point: { radius: 0 } },
-                    scales: {
-                        x: {
-                            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.04)' },
                             ticks: { color: '#9ca3af', font: { size: 10 } }
                         },
                         y: {
-                            min: 47500,
-                            max: 53500,
                             grid: { color: 'rgba(255, 255, 255, 0.05)' },
                             ticks: {
                                 color: '#9ca3af',
                                 font: { size: 10 },
-                                callback: function(val) { return '$' + val.toLocaleString(); }
+                                callback: v => '$' + v.toLocaleString('en-US')
                             }
                         }
                     },
                     plugins: {
-                        legend: { display: false }
+                        legend: { labels: { color: '#e5e7eb', font: { size: 11 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: c => c.dataset.label + ': $' + c.raw.toLocaleString('en-US')
+                            }
+                        }
                     }
                 }
             });
         }
 
-        function updateEquityChart(simData) {
-            if (!window.equityChartInstance) return;
+        // ==========================================
+        // TAB 3: MONTE CARLO 2027 (10,000 YEARS)
+        // ==========================================
+        const fmtUSD = n => (n < 0 ? '-$' : '+$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+        const fmtPlain = n => '$' + Math.abs(Math.round(n)).toLocaleString('en-US');
 
-            const daysCount = 30;
-            const datasets = [];
+        function selectQmcProfile(idx) {
+            qmcCurrentIdx = idx;
+            const profiles = MC27_DATA.profiles || [];
+            const p = profiles[idx];
+            if (!p) return;
 
-            // Target Line (+$3000 = $53,000)
-            datasets.push({
-                label: 'Profit Target ($53,000)',
-                data: Array(daysCount).fill(53000),
-                borderColor: '#10b981',
-                borderWidth: 2,
-                borderDash: [6, 4],
-                fill: false
-            });
+            // Selector buttons
+            const sel = document.getElementById('qmc-selector');
+            sel.innerHTML = profiles.map((item, i) => {
+                const active = i === idx;
+                return `<button onclick="selectQmcProfile(${i})" class="px-3 py-1.5 rounded-xl text-xs font-bold transition border ${active ? 'bg-cyan-950/90 border-cyan-400 text-cyan-200 shadow' : 'bg-dark-900 border-gray-800 text-gray-400 hover:text-white'}">${item.label.split('—')[0].trim()}</button>`;
+            }).join('');
 
-            // Max Loss Line (-$2000 = $48,000)
-            datasets.push({
-                label: 'Max Loss Limit ($48,000)',
-                data: Array(daysCount).fill(48000),
-                borderColor: '#f43f5e',
-                borderWidth: 2,
-                borderDash: [6, 4],
-                fill: false
-            });
+            document.getElementById('qmc-prob').innerText = p.prob_profitable_year_pct.toFixed(1) + '%';
+            document.getElementById('qmc-p5').innerText = fmtUSD(p.net_cash_p5);
+            document.getElementById('qmc-p50').innerText = fmtUSD(p.net_cash_p50_median);
+            document.getElementById('qmc-p95').innerText = fmtUSD(p.net_cash_p95);
+            document.getElementById('qmc-br95').innerText = fmtPlain(p.bankroll_p95_safe);
+            document.getElementById('qmc-br99').innerText = fmtPlain(p.bankroll_p99_ultra_safe);
+            document.getElementById('qmc-chart-title').innerText = '📈 Con de Probabilitat Mensual — ' + p.label;
+            document.getElementById('qmc-paydays-badge').innerText = '1r Payout P50: ' + p.first_payout_days_p50 + ' dies (P25: ' + p.first_payout_days_p25 + 'd)';
 
-            // Initial Balance Line ($50,000)
-            datasets.push({
-                label: 'Saldo Inicial ($50,000)',
-                data: Array(daysCount).fill(50000),
-                borderColor: '#6b7280',
-                borderWidth: 1,
-                borderDash: [3, 3],
-                fill: false
-            });
+            // Table rows
+            const tbody = document.getElementById('monte-carlo-body');
+            tbody.innerHTML = profiles.map((r, i) => `
+                <tr onclick="selectQmcProfile(${i})" class="cursor-pointer transition ${i === idx ? 'bg-cyan-950/30' : 'hover:bg-dark-800/50'}">
+                    <td class="p-3.5 font-sans font-bold ${i === idx ? 'text-cyan-300' : 'text-white'}">${r.label}</td>
+                    <td class="p-3.5 text-emerald-400 font-bold">${r.prob_profitable_year_pct.toFixed(1)}%</td>
+                    <td class="p-3.5 text-rose-300">${fmtUSD(r.net_cash_p5)}</td>
+                    <td class="p-3.5 text-cyan-300 font-extrabold">${fmtUSD(r.net_cash_p50_median)}</td>
+                    <td class="p-3.5 text-emerald-300">${fmtUSD(r.net_cash_p95)}</td>
+                    <td class="p-3.5 text-amber-300 font-bold">${fmtPlain(r.bankroll_p95_safe)}</td>
+                    <td class="p-3.5 text-gray-300">${fmtPlain(r.bankroll_p99_ultra_safe)}</td>
+                    <td class="p-3.5 text-gray-200">${r.first_payout_days_p50} dies</td>
+                </tr>
+            `).join('');
 
-            // Generate synthetic realistic paths for the 10 cohorts based on their final PnL
-            simData.forEach((s, idx) => {
-                const path = [50000];
-                let current = 50000;
-                const endTarget = 50000 + s.pnl;
-                const step = (endTarget - 50000) / (daysCount - 1);
-
-                for (let d = 1; d < daysCount; d++) {
-                    const noise = (Math.random() - 0.5) * 350;
-                    current += step + noise;
-                    // Cap bounds
-                    if (s.pass === 'Yes' && current >= 53000) current = 53000 + Math.random() * 100;
-                    if (current <= 48000) current = 48000;
-                    path.push(Math.round(current));
+            // Chart
+            const fc = p.fan_chart;
+            const ctx = document.getElementById('equityChart').getContext('2d');
+            if (window.equityChartInstance) window.equityChartInstance.destroy();
+            window.equityChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: fc.months,
+                    datasets: [
+                        { label: 'P95 (Any Top 5%)', data: fc.p95, borderColor: '#34d399', borderWidth: 2, borderDash: [5, 4], pointRadius: 2, tension: 0.25, fill: false },
+                        { label: 'P75 (Any Fort)', data: fc.p75, borderColor: 'rgba(45,212,191,0.7)', borderWidth: 1.5, pointRadius: 0, tension: 0.25, fill: '+1', backgroundColor: 'rgba(20,184,166,0.12)' },
+                        { label: 'P50 Mediana (Any Normal)', data: fc.p50, borderColor: '#ffffff', backgroundColor: '#14b8a6', borderWidth: 3.2, pointRadius: 3.5, tension: 0.25, fill: '+1' },
+                        { label: 'P25 (Any Modest)', data: fc.p25, borderColor: 'rgba(56,189,248,0.65)', borderWidth: 1.5, pointRadius: 0, tension: 0.25, fill: false },
+                        { label: 'P5 (Mala Sort)', data: fc.p5, borderColor: '#fb7185', borderWidth: 2, borderDash: [4, 4], pointRadius: 2, tension: 0.25, fill: false }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#9ca3af', font: { size: 11 } } },
+                        y: {
+                            grid: { color: c => c.tick.value === 0 ? 'rgba(255,255,255,0.28)' : 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#cbd5e1', font: { size: 11 }, callback: v => fmtUSD(v) }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0', font: { size: 11 }, boxWidth: 14 } },
+                        tooltip: { callbacks: { label: c => c.dataset.label + ': ' + fmtUSD(c.parsed.y) } }
+                    }
                 }
-
-                const isWinner = s.pass === 'Yes';
-                datasets.push({
-                    label: 'Sim #' + s.id + ' (' + s.pass + ')',
-                    data: path,
-                    borderColor: isWinner ? 'rgba(6, 182, 212, 0.75)' : 'rgba(244, 63, 94, 0.45)',
-                    borderWidth: isWinner ? 2 : 1.2,
-                    fill: false,
-                    tension: 0.25
-                });
             });
-
-            window.equityChartInstance.data.datasets = datasets;
-            window.equityChartInstance.update();
         }
 
         // ==========================================
-        // INITIALIZE ON LOAD
+        // TAB 4: POPULATE 1-SECOND AUDIT TABLES
         // ==========================================
+        function renderAuditTables() {
+            const beRows = (FRICTION_DATA.be_offset_optimization || []).filter(r => [0.0, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0].includes(r.be_offset_pts));
+            const beTbody = document.getElementById('audit-be-tbody');
+            if (beTbody) {
+                beTbody.innerHTML = beRows.map(r => {
+                    const isOpt = r.be_offset_pts === 0.5;
+                    const ticks = Math.round(r.be_offset_pts * 4);
+                    return `<tr class="${isOpt ? 'bg-emerald-950/35 font-bold' : 'hover:bg-dark-800/40'}">
+                        <td class="p-2.5 ${isOpt ? 'text-emerald-300' : 'text-white'}">+${r.be_offset_pts.toFixed(2)}p (${ticks}t)${isOpt ? ' ⭐' : ''}</td>
+                        <td class="p-2.5">${r.W}W / ${r.BE}BE / ${r.L}L</td>
+                        <td class="p-2.5">+${r.gross_pts.toFixed(1)}p</td>
+                        <td class="p-2.5 text-cyan-300">+${r.net_pts_after_comm.toFixed(1)}p</td>
+                        <td class="p-2.5 ${r.empire_65_blown <= 545 ? 'text-emerald-400' : 'text-rose-300'}">${r.empire_65_blown}</td>
+                        <td class="p-2.5 text-emerald-400">${fmtUSD(r.empire_65_net)}</td>
+                    </tr>`;
+                }).join('');
+            }
+
+            const latTbody = document.getElementById('audit-lat-tbody');
+            if (latTbody) {
+                latTbody.innerHTML = (FRICTION_DATA.webhook_latency_audit || []).map(r => {
+                    const isBad = r.label.includes('1m');
+                    return `<tr class="${isBad ? 'bg-rose-950/30 text-rose-200' : 'hover:bg-dark-800/40'}">
+                        <td class="p-2.5 font-sans ${isBad ? 'text-rose-300 font-bold' : 'text-white'}">${r.label}</td>
+                        <td class="p-2.5">${r.W}W / ${r.BE}BE / ${r.L}L</td>
+                        <td class="p-2.5 ${isBad ? 'text-rose-400 font-bold' : 'text-emerald-400'}">${r.WR_ex_BE.toFixed(1)}%</td>
+                        <td class="p-2.5">+${r.net_pts_after_comm.toFixed(1)}p</td>
+                        <td class="p-2.5 ${isBad ? 'text-rose-300 font-bold' : 'text-cyan-300'}">${fmtUSD(r.empire_65_net)}</td>
+                    </tr>`;
+                }).join('');
+            }
+
+            const newsTbody = document.getElementById('audit-news-tbody');
+            if (newsTbody) {
+                newsTbody.innerHTML = (FRICTION_DATA.news_and_rollover_audit || []).map(r => `
+                    <tr class="hover:bg-dark-800/40">
+                        <td class="p-2.5 font-sans text-white">${r.name}</td>
+                        <td class="p-2.5">${r.trades}</td>
+                        <td class="p-2.5">${r.W}W / ${r.BE}BE / ${r.L}L</td>
+                        <td class="p-2.5 text-emerald-400 font-bold">${r.WR.toFixed(1)}%</td>
+                        <td class="p-2.5 text-cyan-300">+${r.pts.toFixed(1)}p</td>
+                    </tr>
+                `).join('');
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             loadChecklist();
             recalculateRisk();
             initFirmChart();
-            initEquityChart();
-            renderMonteCarlo(mcBase);
+            selectQmcProfile(0);
+            renderAuditTables();
         });
     </script>
 </body>

@@ -88,10 +88,10 @@
                 </div>
                 <div class="flex flex-wrap items-center gap-2">
                     <button onclick="applyQuickPreset('COMBO_ELITE_10')" class="px-3 py-1.5 rounded-xl bg-amber-950/90 hover:bg-amber-900 text-amber-300 border border-amber-600/80 font-bold text-xs transition">
-                        🏆 10 Comptes · 10 MNQ (+$192.7k/any)
+                        🏆 10 Comptes · 10 MNQ (+$192.6k net)
                     </button>
                     <button onclick="applyQuickPreset('COMBO_ELITE_30')" class="px-3 py-1.5 rounded-xl bg-emerald-950/90 hover:bg-emerald-900 text-emerald-300 border border-emerald-600/80 font-bold text-xs transition">
-                        🚀 30 Comptes · 10 MNQ (+$578.2k/any)
+                        🚀 30 Comptes · 10 MNQ (+$577.7k net)
                     </button>
                     <button onclick="applyQuickPreset('DUAL_COMBO')" class="px-3 py-1.5 rounded-xl bg-cyan-950/90 hover:bg-cyan-900 text-cyan-300 border border-cyan-700/80 font-bold text-xs transition">
                         ⚡ 2 Blocs Opció B (A=Sniper Dual / B=Continuació)
@@ -106,31 +106,31 @@
                         <optgroup label="🏆 Flota Única (Copy 100% Tots els Comptes)">
                             <option value="SNIPER_COMBO_ELITE" selected>🏆 SNIPER COMBO ELITE: Dual + Continuació L10_2&gt;=55p &amp; L11_1 (Max 2/Dia)</option>
                             <option value="SNIPER_DUAL">🎯 SNIPER DUAL (Antic): 1r LAYER 09:30 + 1r LAYER 10:00 (Sense Cont.)</option>
-                            <option value="LAYER_STOP_DOUBLE_SL_10AM">🏆 LAYER Sniper &gt;=10:00 + Stop Doble SL (71.6% WR, +1,500p · 6/6m+)</option>
-                            <option value="LAYER_STOP_DOUBLE_SL">💎 Tots els LAYER 09:30–11:00 + Stop Doble SL (71.0% WR, +1,740p)</option>
+                            <option value="LAYER_STOP_DOUBLE_SL_10AM">🏆 LAYER Sniper &gt;=10:00 + Stop Doble SL (71.6% WR · 10h)</option>
+                            <option value="LAYER_STOP_DOUBLE_SL">💎 Tots els LAYER 09:30–11:00 + Stop Doble SL (71.0% WR)</option>
                         </optgroup>
                         <optgroup label="⚡ Doble Flota 0% Solapament (50% Bloc A + 50% Bloc B)">
                             <option value="DUAL_AB_COMBO_ELITE">⚡ DOBLE BLOC COMBO ELITE (A=Sniper Dual / B=Continuació L10_2&gt;=55p + L11_1)</option>
-                            <option value="DUAL_AB_ALL_LAYERS">⚡ DOBLE BLOC Opció 1 (Tots LAYER: A=1r &gt;=10h / B=Resta · 71.0% WR, +1,740p)</option>
-                            <option value="DUAL_AB_LAYER_PLUS_MIX">⚡ DOBLE BLOC Opció 2 (A=LAYER &gt;=10h / B=LAYER&lt;10h+PRIM post-SL · +2,190p)</option>
+                            <option value="DUAL_AB_ALL_LAYERS">⚡ DOBLE BLOC Opció 1 (Tots LAYER: A=1r &gt;=10h / B=Resta · 71.0% WR)</option>
+                            <option value="DUAL_AB_LAYER_PLUS_MIX">⚡ DOBLE BLOC Opció 2 (A=LAYER &gt;=10h / B=LAYER&lt;10h+PRIM post-SL)</option>
                         </optgroup>
                         <optgroup label="🔍 Auditar Blocs A i B per Separat (0% Solapament)">
-                            <option value="BLOC_A_1ST_LAYER_10AM">🅰️ Només BLOC A (Opció 1): 1r LAYER &gt;=10:00 (75.0% WR, +1,020p · DD -60p)</option>
-                            <option value="BLOC_B_REST_LAYERS_DSL">🅱️ Només BLOC B (Opció 1): LAYER 09:30 + 2n/3r LAYER &gt;=10:00 (67.1% WR, +720p)</option>
-                            <option value="BLOC_B_DISJOINT_PRIM_SL">🅱️ Només BLOC B (Opció 2): LAYER &lt;10:00 + PRIMARY &gt;=10:00 post-1r SL (57.7% WR, +810p)</option>
-                            <option value="BLOC_B_PRIM_1015_1044">🅱️ Només BLOC B (Opció 3): Només PRIMARY 10:15–10:44 Max 1 SL/dia (56.7% WR, +570p)</option>
+                            <option value="BLOC_A_1ST_LAYER_10AM">🅰️ Només BLOC A (Opció 1): 1r LAYER &gt;=10:00 (75.0% WR · DD -60p)</option>
+                            <option value="BLOC_B_REST_LAYERS_DSL">🅱️ Només BLOC B (Opció 1): LAYER 09:30 + 2n/3r LAYER &gt;=10:00 (67.1% WR)</option>
+                            <option value="BLOC_B_DISJOINT_PRIM_SL">🅱️ Només BLOC B (Opció 2): LAYER &lt;10:00 + PRIMARY &gt;=10:00 post-1r SL (57.7% WR)</option>
+                            <option value="BLOC_B_PRIM_1015_1044">🅱️ Només BLOC B (Opció 3): Només PRIMARY 10:15–10:44 Max 1 SL/dia (56.7% WR)</option>
                         </optgroup>
                         <optgroup label="📊 Referència Base">
-                            <option value="RAW">Brut Sense Filtre (Tots els 778 trades 09:30–11:00)</option>
+                            <option value="RAW">Brut Sense Filtre (Tots els trades 09:30–11:00)</option>
                         </optgroup>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-cyan-400 mb-1 font-bold">2. Període i Protecció LAYER</label>
+                    <label class="block text-cyan-400 mb-1 font-bold">2. Període i Escut BE (+2 ticks)</label>
                     <div class="flex flex-col gap-1.5">
                         <select id="ctrl-period" onchange="runSimulationUI()" class="w-full bg-dark-900 border border-cyan-800/80 rounded-lg px-2 py-1.5 text-white focus:border-cyan-500 outline-none">
-                            <option value="ALL" selected>Tot l'Any Complet: Set 2025 – Set 2026 (234 sessions · 1s)</option>
+                            <option value="ALL" selected>Tot l'Any Complet: Set 2025 – Set 2026 (227 sessions actives · 1s)</option>
                             <option value="2025-09">Només Setembre 2025</option>
                             <option value="2025-10">Només Octubre 2025</option>
                             <option value="2025-11">Només Novembre 2025</option>
@@ -145,9 +145,9 @@
                             <option value="2026-08">Només Agost 2026</option>
                             <option value="2026-09">Només Setembre 2026</option>
                         </select>
-                        <select id="ctrl-layer-be" onchange="runSimulationUI(); renderMatrix10();" class="w-full bg-dark-900 border border-amber-600/80 rounded-lg px-2 py-1.5 text-amber-300 font-semibold focus:border-amber-400 outline-none" title="Com gestionar l'SL del LAYER quan el PRIMARY toca TP 1">
-                            <option value="BE_ALL_PTP" selected>🛡️ LAYER a BE (0p) quan PRIMARY toca TP1 (71.6% WR · +1,500p)</option>
-                            <option value="BE_STRICT">🛡️ LAYER a BE Estricte (68.6% WR · +1,350p)</option>
+                        <select id="ctrl-layer-be" onchange="runSimulationUI();" class="w-full bg-dark-900 border border-amber-500/90 rounded-lg px-2 py-1.5 text-amber-300 font-semibold focus:border-amber-400 outline-none" title="Offset del Stop Loss del LAYER quan el PRIMARY toca TP 1">
+                            <option value="BE_PLUS_2T" selected>🛡️ LAYER a BE +0.50p (+2 ticks · Òptim 2027: 60.0% WR, +1,511p)</option>
+                            <option value="BE_ALL_PTP">🛡️ LAYER a BE 0.00p (Clàssic: 60.0% WR, +1,470p)</option>
                             <option value="ORIGINAL">Sense BE en TP1 (SL 2 fix a -30p)</option>
                         </select>
                     </div>
@@ -165,14 +165,14 @@
                             <option value="eod150_15">🏆 15 Comptes EOD 150K (Alpha+Topstep+Tradeify)</option>
                             <option value="lucid50_5">⚡ 5 Comptes LucidDaily 50K ($56.40 · Daily ASAP)</option>
                             <option value="lucid50_10">⚡ 10 Comptes LucidDaily 50K ($56.40 · Daily ASAP)</option>
-                            <option value="fresh_5">Des de Zero: 5 Comptes Apex 50k ($19)</option>
-                            <option value="fresh_10" selected>Des de Zero: 10 Comptes Apex 50k ($19)</option>
-                            <option value="fresh_15">Des de Zero: 15 Comptes Apex 50k ($19)</option>
-                            <option value="fresh_20">Des de Zero: 20 Comptes Apex 50k ($19)</option>
-                            <option value="fresh_30">Des de Zero: 30 Comptes Apex 50k ($19)</option>
+                            <option value="fresh_5">Des de Zero: 5 Comptes Apex 50k ($19 · Manual)</option>
+                            <option value="fresh_10" selected>Des de Zero: 10 Comptes Apex 50k ($19 · Manual)</option>
+                            <option value="fresh_15">Des de Zero: 15 Comptes Apex 50k ($19 · Manual)</option>
+                            <option value="fresh_20">Des de Zero: 20 Comptes Apex 50k ($19 · Manual)</option>
+                            <option value="fresh_30">Des de Zero: 30 Comptes Apex 50k ($19 · Manual)</option>
                             <option value="real_current">Flota Actual (6 Apex PA + 5 Lucid Eval)</option>
                         </select>
-                        <select id="ctrl-sizing" onchange="runSimulationUI(); renderMatrix10();" class="w-full bg-dark-900 border border-emerald-700/80 rounded-lg px-2 py-1.5 text-emerald-300 font-semibold focus:border-emerald-400 outline-none" title="Contractes MNQ tant en fase Eval com en Funded (PA)">
+                        <select id="ctrl-sizing" onchange="runSimulationUI();" class="w-full bg-dark-900 border border-emerald-700/80 rounded-lg px-2 py-1.5 text-emerald-300 font-semibold focus:border-emerald-400 outline-none" title="Contractes MNQ tant en fase Eval com en Funded (PA)">
                             <option value="FIXED_10" selected>💎 10 MNQ (1 NQ) Fix (±$600/tr · Estàndard 50K)</option>
                             <option value="FIXED_30">🚀 30 MNQ (3 NQ) Fix (±$1,800/tr · Agressiu 150K)</option>
                             <option value="FIXED_22">🎯 22 MNQ Fix (±$1,320/tr · Clavell 150K = 2.2x DD)</option>
@@ -200,11 +200,17 @@
                 </div>
 
                 <div>
-                    <label class="block text-gray-400 mb-1 font-medium">5. Circuit Breaker Diari</label>
-                    <select id="ctrl-max-losses" onchange="runSimulationUI()" class="w-full bg-dark-900 border border-gray-700 rounded-lg px-3 py-2 text-white focus:border-cyan-500 outline-none">
-                        <option value="2" selected>Aturar Compte amb 2 SLs al dia (Recomanat)</option>
-                        <option value="1">Aturar Compte amb 1 SL al dia</option>
-                    </select>
+                    <label class="block text-gray-400 mb-1 font-medium">5. Circuit Breaker i Comissions</label>
+                    <div class="flex flex-col gap-1.5">
+                        <select id="ctrl-max-losses" onchange="runSimulationUI()" class="w-full bg-dark-900 border border-gray-700 rounded-lg px-2 py-1.5 text-white focus:border-cyan-500 outline-none">
+                            <option value="2" selected>Aturar Compte amb 2 SLs/dia (Recomanat)</option>
+                            <option value="1">Aturar Compte amb 1 SL/dia</option>
+                        </select>
+                        <select id="ctrl-comm" onchange="runSimulationUI();" class="w-full bg-dark-900 border border-cyan-800/80 rounded-lg px-2 py-1.5 text-cyan-300 font-semibold focus:border-cyan-400 outline-none" title="Deducció de comissions Round-Turn CME ($1.24/MNQ)">
+                            <option value="1.24" selected>💸 Comissions Reals CME ($1.24/MNQ RT)</option>
+                            <option value="0">📊 Brut Sense Comissions ($0.00 · Clàssic)</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div>
@@ -263,15 +269,26 @@
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-800 pb-3">
                 <div>
                     <h3 class="text-sm font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
-                        <span>🧠 Mapa Mental, Preparació Emocional &amp; Escalat 10 ➔ 30 Comptes (10 MNQ · Buffer Intocable)</span>
+                        <span>🧠 Mapa Mental, Impacte BE +2 Ticks (+0.50p) &amp; Escalat Multi-Flota</span>
                     </h3>
                     <p class="text-[11px] text-gray-300 mt-0.5">
-                        Regla d'Or del Buffer: A <strong>Apex 50k ($52,600)</strong> i <strong>Altres 50k ($52,100)</strong> només es retira el que excedeix del buffer, deixant sempre $2,500 / $2,000 de coixí real dins del compte.
+                        Regla d'Or del Buffer: A <strong>Apex 50k ($52,600)</strong>, <strong>Altres 50k ($52,100)</strong> i <strong>150K ($154,600)</strong> només es retira l'excedent del buffer intocable. Amb <strong>BE +0.50p (+2 ticks)</strong> es trenca <strong>0% dels TPs (0/535)</strong> i els 82 BEs del Combo Elite sumen <strong>+41.0p extres (+1,511.0p)</strong> neutralitzant les comissions CME ($1.24/MNQ).
                     </p>
                 </div>
-                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-emerald-950 text-emerald-300 border border-emerald-700 font-bold">
-                    SNIPER COMBO ELITE · 234 Sessions (1s)
+                <span class="text-[10px] font-mono px-2.5 py-1 rounded bg-emerald-950 text-emerald-300 border border-emerald-700 font-bold whitespace-nowrap">
+                    SNIPER COMBO ELITE · 227 Sessions (1s) · BE +0.50p
                 </span>
+            </div>
+
+            <!-- Nota crítica de Compliance Apex 100% Manual -->
+            <div class="p-3 rounded-xl bg-amber-950/30 border border-amber-600/50 text-[11px] text-amber-200 flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <strong class="text-amber-300">⚠️ Compliance d'Execució 2027 (Separació Estricta):</strong>
+                    Els comptes <strong>Apex Trader Funding (Grup C)</strong> tenen prohibit qualsevol bot o senyal automatitzada: s'operen <strong>100% MANUALMENT (Clic Humà + Replikanto local)</strong> i amb <strong>1 TP/dia màxim en PA</strong> per blindar la regla del 30% de consistència. Els <strong>Grups A+B (Alpha, Topstep, Lucid, MFFU, TPT)</strong> admeten execució semi-auto o webhook.
+                </div>
+                <a href="propfirm_dashboard.html" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-500/40 font-bold whitespace-nowrap transition">
+                    🧭 Veure Playbook Quant 2027 →
+                </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
@@ -281,16 +298,16 @@
                         <span class="text-[10px] font-mono bg-rose-950 px-2 py-0.5 rounded text-rose-300">Mentalitat Freda</span>
                     </div>
                     <p class="text-gray-300 leading-relaxed text-[11px]">
-                        Quan arrenques amb un bloc de 10 comptes a 10 MNQ (±$600/trade), <strong>has d'estar preparat emocionalment per petar 10 o fins i tot 20 comptes d'Eval</strong> (i fins i tot la 1a tongada de PA) si enganxes un mes lateral abans d'haver acumulat sobre-coixí. Amb Evals de $19, petar 20 comptes costa només <strong>$380</strong>: és el cost d'inventari del negoci.
+                        Quan arrenques amb un bloc de 10 comptes a 10 MNQ (±$600/trade), <strong>has d'estar preparat emocionalment per petar 10 o fins i tot 20 comptes d'Eval</strong> (vegeu pestanya <em>🎲 Monte Carlo 2027</em> per al teu Matalàs P95 exacte). Amb Evals de $19, petar 20 comptes costa només <strong>$380</strong>: és el cost d'inventari del negoci.
                     </p>
                 </div>
                 <div class="p-3.5 rounded-xl bg-amber-950/20 border border-amber-800/50 space-y-1.5">
                     <div class="font-bold text-amber-300 flex items-center justify-between">
-                        <span>2️⃣ EL 1r PAYOUT HO PAGA TOT</span>
-                        <span class="text-[10px] font-mono bg-amber-950 px-2 py-0.5 rounded text-amber-300">Punt d'Inflexió</span>
+                        <span>2️⃣ EL +2 TICKS SALVA COMPTES REALS</span>
+                        <span class="text-[10px] font-mono bg-amber-950 px-2 py-0.5 rounded text-amber-300">BE +0.50p Validat 1s</span>
                     </div>
                     <p class="text-gray-300 leading-relaxed text-[11px]">
-                        Tan bon punt enganxes un mes d'expansió (+180p a +330p), els comptes aproven a PA i superen el mur del buffer ($52,600 / $52,100). <strong>El primer cicle complet de cobrament (+$10,000 a +$20,000 amb 10 comptes, o +$30,000 a +$60,000 amb 30 comptes) paga de sobres TOTA la despesa de comptes de tot l'any sencer</strong>.
+                        Amb comissions reals CME ($1.24/MNQ), un BE clàssic a 0.00p resta -$12.40 (10 MNQ) o -$37.20 (30 MNQ). Pujant l'SL a <strong>+0.50p (+2 ticks)</strong> quan toca TP1, recuperes <strong>+$10 / +$30 per BE</strong>, <strong>salves 5 comptes 150K EOD de tocar el MLL</strong> i sumes fins a <strong>+$4,995 extres</strong> en 5x LucidDaily 150K.
                     </p>
                 </div>
                 <div class="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-800/50 space-y-1.5">
@@ -299,7 +316,7 @@
                         <span class="text-[10px] font-mono bg-emerald-950 px-2 py-0.5 rounded text-emerald-300">Coixí Intacte</span>
                     </div>
                     <p class="text-gray-300 leading-relaxed text-[11px]">
-                        Com que mai retires per sota de <strong>$52,600 (Apex)</strong> o <strong>$52,100 (Altres)</strong>, després de cada cobrament els comptes conserven sempre <strong>$2,500 a $4,000+ de coixí real</strong> (&gt;4 a 7 SLs seguits). Resultat: a partir del 2n bloc de PA no torna a petar cap compte i cobres en bucle cada 8 dies operatius.
+                        Com que mai retires per sota de <strong>$52,600 (Apex)</strong>, <strong>$52,100 (50K)</strong> o <strong>$154,600 (150K)</strong>, després de cada cobrament els comptes conserven sempre el seu coixí complet (&gt;4 SLs seguits). Resultat: el primer cicle complet d'extracció autofinança tota la resta de l'any.
                     </p>
                 </div>
             </div>
@@ -308,56 +325,56 @@
                 <table class="w-full text-[11px] font-mono border-collapse">
                     <thead>
                         <tr class="bg-dark-900 text-gray-300 border-b border-gray-800">
-                            <th class="p-2 text-left">Escenari d'Escalat (Tot l'Any · 10 MNQ)</th>
+                            <th class="p-2 text-left">Escenari Auditant BE +2 Ticks (+0.50p) + Comissions $1.24/MNQ</th>
+                            <th class="p-2 text-center">Execució</th>
                             <th class="p-2 text-center">Evals Comprades</th>
-                            <th class="p-2 text-center">Passades a PA</th>
-                            <th class="p-2 text-center">Petats (EV / PA)</th>
-                            <th class="p-2 text-center">Cost Total</th>
-                            <th class="p-2 text-center">1r Cicle Payout</th>
+                            <th class="p-2 text-center">Passades PA</th>
+                            <th class="p-2 text-center">Petats</th>
+                            <th class="p-2 text-center">Impacte +2 Ticks vs 0p</th>
                             <th class="p-2 text-center">Payouts Any</th>
-                            <th class="p-2 text-right text-emerald-400">Benefici Net Butxaca</th>
+                            <th class="p-2 text-right text-emerald-400">Net Real ($1.24/MNQ)</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-800/70">
                         <tr class="hover:bg-dark-800/50">
-                            <td class="p-2 font-bold text-cyan-300">🎯 10 Comptes Apex (Buffer $52,600 · P&ge;50p / L&ge;40p)</td>
-                            <td class="p-2 text-center">40</td>
+                            <td class="p-2 font-bold text-cyan-300">🎯 10x Apex 50K · 10 MNQ (Buffer $52,600)</td>
+                            <td class="p-2 text-center text-amber-300">100% Manual</td>
+                            <td class="p-2 text-center">50</td>
                             <td class="p-2 text-center text-emerald-400">20</td>
-                            <td class="p-2 text-center text-rose-400">30 (20 EV / 10 PA)</td>
-                            <td class="p-2 text-center text-amber-300">-$3,260</td>
-                            <td class="p-2 text-center text-white">+$16,000</td>
-                            <td class="p-2 text-center font-bold">100 ($196,000)</td>
-                            <td class="p-2 text-right font-extrabold text-emerald-400">+$192,740</td>
+                            <td class="p-2 text-center text-rose-400">40</td>
+                            <td class="p-2 text-center text-emerald-300">+$1,100 net recuperat</td>
+                            <td class="p-2 text-center font-bold">110</td>
+                            <td class="p-2 text-right font-extrabold text-emerald-400">+$192,566 <span class="text-[10px] text-gray-400 font-normal">(Brut +$193.0k)</span></td>
                         </tr>
                         <tr class="hover:bg-dark-800/50">
-                            <td class="p-2 font-bold text-amber-300">⚡ 20 Comptes Apex (Límit Màxim 1 titular Apex)</td>
-                            <td class="p-2 text-center">80</td>
-                            <td class="p-2 text-center text-emerald-400">40</td>
-                            <td class="p-2 text-center text-rose-400">60 (40 EV / 20 PA)</td>
-                            <td class="p-2 text-center text-amber-300">-$6,520</td>
-                            <td class="p-2 text-center text-white">+$32,000</td>
-                            <td class="p-2 text-center font-bold">200 ($392,000)</td>
-                            <td class="p-2 text-right font-extrabold text-emerald-400">+$385,480</td>
+                            <td class="p-2 font-bold text-emerald-300">🔥 5x LucidDaily 150K · 30 MNQ (Intra ASAP)</td>
+                            <td class="p-2 text-center text-cyan-300">Auto / Copier</td>
+                            <td class="p-2 text-center">70</td>
+                            <td class="p-2 text-center text-emerald-400">25</td>
+                            <td class="p-2 text-center text-rose-400">65</td>
+                            <td class="p-2 text-center text-emerald-300 font-bold">+$4,995 extra a butxaca</td>
+                            <td class="p-2 text-center font-bold">135</td>
+                            <td class="p-2 text-right font-extrabold text-emerald-400">+$248,722 <span class="text-[10px] text-gray-400 font-normal">(Brut +$308.9k)</span></td>
+                        </tr>
+                        <tr class="hover:bg-dark-800/50">
+                            <td class="p-2 font-bold text-teal-300">🏆 5x Alpha / Topstep 150K · 30 MNQ (EOD 5d)</td>
+                            <td class="p-2 text-center text-cyan-300">Auto / Copier</td>
+                            <td class="p-2 text-center">40</td>
+                            <td class="p-2 text-center text-emerald-400">15</td>
+                            <td class="p-2 text-center text-emerald-400 font-bold">35 (-5 salvats!)</td>
+                            <td class="p-2 text-center text-emerald-300 font-bold">-5 comptes petats · +$2,005</td>
+                            <td class="p-2 text-center font-bold">50</td>
+                            <td class="p-2 text-right font-extrabold text-emerald-400">+$208,928 <span class="text-[10px] text-gray-400 font-normal">(Brut +$236.0k)</span></td>
                         </tr>
                         <tr class="hover:bg-dark-800/50 bg-emerald-950/20">
-                            <td class="p-2 font-bold text-emerald-300">🚀 30 Comptes Mix Real (20 Apex $52.6k + 10 Altres $52.1k)</td>
-                            <td class="p-2 text-center">130</td>
+                            <td class="p-2 font-bold text-violet-300">💎 30x Full Apex 50K · 10 MNQ (2 perfils · Manual)</td>
+                            <td class="p-2 text-center text-amber-300">100% Manual</td>
+                            <td class="p-2 text-center">150</td>
                             <td class="p-2 text-center text-emerald-400">60</td>
-                            <td class="p-2 text-center text-rose-400">100 (70 EV / 30 PA)</td>
-                            <td class="p-2 text-center text-amber-300">-$8,430</td>
-                            <td class="p-2 text-center text-white">+$47,000</td>
-                            <td class="p-2 text-center font-bold">300 ($549k–$555k)</td>
-                            <td class="p-2 text-right font-extrabold text-emerald-400">+$540,570 a +$546,570</td>
-                        </tr>
-                        <tr class="hover:bg-dark-800/50">
-                            <td class="p-2 font-bold text-violet-300">💎 30 Comptes Full Apex (2 perfils · Buffer $52,600)</td>
-                            <td class="p-2 text-center">120</td>
-                            <td class="p-2 text-center text-emerald-400">60</td>
-                            <td class="p-2 text-center text-rose-400">90 (60 EV / 30 PA)</td>
-                            <td class="p-2 text-center text-amber-300">-$9,780</td>
-                            <td class="p-2 text-center text-white">+$48,000</td>
-                            <td class="p-2 text-center font-bold">300 ($588,000)</td>
-                            <td class="p-2 text-right font-extrabold text-emerald-400">+$578,220</td>
+                            <td class="p-2 text-center text-rose-400">120</td>
+                            <td class="p-2 text-center text-emerald-300 font-bold">+$3,300 net recuperat</td>
+                            <td class="p-2 text-center font-bold">330</td>
+                            <td class="p-2 text-right font-extrabold text-emerald-400">+$577,698 <span class="text-[10px] text-gray-400 font-normal">(Brut +$579.1k)</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -380,7 +397,7 @@
                     <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
                         <span id="matrix-title">🔄 Matriu Visual Diària (Sincronitzada amb el Simulador)</span>
                     </h3>
-                    <p id="matrix-subtitle" class="text-[11px] text-gray-400 mt-0.5">Radiografia exacta dia a dia de cada operació executada segons el filtre actiu.</p>
+                    <p id="matrix-subtitle" class="text-[11px] text-gray-400 mt-0.5">Radiografia exacta dia a dia de cada operació executada segons el filtre, BE (+2t/0p) i comissions actives.</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-2 text-xs">
                     <select id="matrix-layout" onchange="renderMatrix10()" class="bg-dark-900 border border-cyan-700/80 rounded-lg px-3 py-1.5 text-cyan-300 font-semibold">
@@ -389,7 +406,7 @@
                     </select>
                     <select id="matrix-month" onchange="renderMatrix10()" class="bg-dark-900 border border-gray-700 rounded-lg px-3 py-1.5 text-white">
                         <option value="SYNC" selected>🔗 Període: Sincronitzat amb Dalt</option>
-                        <option value="ALL">Tot l'Any Complet: Set 2025 – Set 2026 (234 sessions · 1s)</option>
+                        <option value="ALL">Tot l'Any Complet: Set 2025 – Set 2026 (227 sessions · 1s)</option>
                         <option value="2025-09">Només Setembre 2025</option>
                         <option value="2025-10">Només Octubre 2025</option>
                         <option value="2025-11">Només Novembre 2025</option>
@@ -421,9 +438,11 @@
                     </select>
                     <select id="matrix-size" onchange="renderMatrix10()" class="bg-dark-900 border border-gray-700 rounded-lg px-3 py-1.5 text-white">
                         <option value="SYNC" selected>🔗 Mida: Sincronitzada amb Dalt</option>
+                        <option value="1800">Mida: 30 MNQ / 3 NQ (±$1,800 / trade · 150K)</option>
+                        <option value="1320">Mida: 22 MNQ (±$1,320 / trade · 150K)</option>
+                        <option value="600">Mida: 10 MNQ / 1 NQ (±$600 / trade · 50K)</option>
                         <option value="300">Mida: 5 MNQ (±$300 / trade)</option>
                         <option value="420">Mida: 7 MNQ (±$420 / trade)</option>
-                        <option value="600">Mida: 10 MNQ / 1 NQ (±$600 / trade)</option>
                         <option value="180">Mida: 3 MNQ (±$180 / trade)</option>
                     </select>
                 </div>
@@ -18429,8 +18448,26 @@ const EMBEDDED_TRADES_LOG = {
             return clusters;
         }
 
+        function isTradeBe(t) {
+            if (!t) return false;
+            if (t.is_be === true || t.result === 'BE') return true;
+            const pts = parseFloat(t.points !== undefined ? t.points : (t.pts || 0));
+            return Math.abs(pts) < 2.0;
+        }
+        function isTradeWin(t) {
+            if (!t || isTradeBe(t)) return false;
+            const pts = parseFloat(t.points !== undefined ? t.points : (t.pts || 0));
+            return pts > 0;
+        }
+        function isTradeLoss(t) {
+            if (!t || isTradeBe(t)) return false;
+            const pts = parseFloat(t.points !== undefined ? t.points : (t.pts || 0));
+            return pts < 0;
+        }
+
         function applyLayerBeProtection(tradesRaw, beModeOverride) {
-            const beMode = beModeOverride || ((document.getElementById('ctrl-layer-be') || {}).value) || 'ORIGINAL';
+            const beMode = beModeOverride || ((document.getElementById('ctrl-layer-be') || {}).value) || 'BE_PLUS_2T';
+            const bePtsVal = beMode === 'BE_PLUS_2T' ? 0.50 : 0.0;
             const out = (tradesRaw || []).map(t => ({ ...t, orig_points: parseFloat(t.points || t.pts || 0) }));
             if (beMode === 'ORIGINAL') return out;
 
@@ -18444,17 +18481,21 @@ const EMBEDDED_TRADES_LOG = {
                     const lPts = parseFloat(out[i].points || 0);
                     const nextSlot = (i + 1 < out.length) ? (out[i + 1].slot || out[i + 1].type || 'PRIMARY') : null;
                     const nextIsLayer = nextSlot === 'LAYER';
-                    if (out[i].escut_be_pts !== undefined && (beMode === 'BE_STRICT' || beMode === 'BE_ALL_PTP')) {
+                    if (out[i].escut_be_pts !== undefined && (beMode === 'BE_PLUS_2T' || beMode === 'BE_STRICT' || beMode === 'BE_ALL_PTP')) {
                         const ebPts = parseFloat(out[i].escut_be_pts);
-                        out[i].points = ebPts;
-                        if (ebPts === 0.0 && lPts < 0) {
+                        if (ebPts === 0.0) {
+                            out[i].points = bePtsVal;
                             out[i].result = 'BE';
-                            out[i].be_saved = true;
+                            out[i].is_be = true;
+                            if (lPts < 0) out[i].be_saved = true;
+                        } else {
+                            out[i].points = ebPts;
                         }
                     } else if (pPts > 0 && lPts < 0) {
-                        if ((beMode === 'BE_STRICT' || beMode === 'BE_ALL_PTP') && !nextIsLayer) {
-                            out[i].points = 0.0;
+                        if ((beMode === 'BE_PLUS_2T' || beMode === 'BE_STRICT' || beMode === 'BE_ALL_PTP') && !nextIsLayer) {
+                            out[i].points = bePtsVal;
                             out[i].result = 'BE';
+                            out[i].is_be = true;
                             out[i].be_saved = true;
                         } else if (beMode === 'CLOSE_TP1_STRICT' && !nextIsLayer) {
                             out[i].points = 18.0;
@@ -18661,7 +18702,7 @@ const EMBEDDED_TRADES_LOG = {
                 let seenTp = false;
                 for (const cl of getTradeClusters(list)) {
                     if (seenTp) out.push(...cl);
-                    if (cl.some(x => parseFloat(x.points || x.pts || 0) > 0)) seenTp = true;
+                    if (cl.some(x => isTradeWin(x))) seenTp = true;
                 }
                 return out;
             } else if (filterMode === 'AFTER_1ST_SL_REAL' || filterMode === 'AFTER_1ST_SL_10AM' || filterMode === 'AFTER_1ST_SL_CORE' || filterMode === 'AFTER_1ST_SL_LAYER') {
@@ -18669,7 +18710,7 @@ const EMBEDDED_TRADES_LOG = {
                 let seenSl = false;
                 for (const cl of getTradeClusters(list)) {
                     if (seenSl) out.push(...cl);
-                    if (cl.some(x => parseFloat(x.points || x.pts || 0) < 0)) seenSl = true;
+                    if (cl.some(x => isTradeLoss(x))) seenSl = true;
                 }
                 if (filterMode === 'AFTER_1ST_SL_10AM') {
                     return out.filter(t => (t.time_entry || t.entry_time || '') >= '10:00');
@@ -18689,7 +18730,7 @@ const EMBEDDED_TRADES_LOG = {
                 let seenTp = false;
                 for (const t of list) {
                     if (seenTp) tmp.push(t);
-                    if (parseFloat(t.points || t.pts || 0) > 0) seenTp = true;
+                    if (isTradeWin(t)) seenTp = true;
                 }
                 return tmp;
             }
@@ -18719,7 +18760,7 @@ const EMBEDDED_TRADES_LOG = {
             const mSize = document.getElementById('matrix-size');
 
             const flEl = document.getElementById('ctrl-fleet');
-            if (bEl && bEl.value === 'ORIGINAL') bEl.value = 'BE_ALL_PTP';
+            if (bEl && bEl.value === 'ORIGINAL') bEl.value = 'BE_PLUS_2T';
             if (sEl) sEl.value = 'FIXED_10';
             if (lEl) lEl.value = '2';
             if (mMode) mMode.value = 'SYNC';
@@ -18756,6 +18797,8 @@ const EMBEDDED_TRADES_LOG = {
             const sizingMode = (document.getElementById('ctrl-sizing') || {}).value || 'FIXED_5';
             const rotationMode = document.getElementById('ctrl-rotation').value;
             const maxLosses = parseInt(document.getElementById('ctrl-max-losses').value, 10);
+            const commEl = document.getElementById('ctrl-comm');
+            const commPerMnq = commEl ? parseFloat(commEl.value) : 1.24;
             const autoReplenish = document.getElementById('ctrl-replenish').value === 'true';
             const repeatCycles = parseInt(document.getElementById('ctrl-repeat').value, 10);
 
@@ -18882,12 +18925,12 @@ const EMBEDDED_TRADES_LOG = {
                             baseFar = 5;
                         }
                         const contracts = baseFar * (mode === 'CLOSE' ? 2 : 1);
-                        const pnl = pts * 2.0 * contracts;
+                        const pnl = (pts * 2.0 * contracts) - (commPerMnq * contracts);
 
                         acc.balance += pnl;
                         dayPnl[acc.id] = (dayPnl[acc.id] || 0) + pnl;
                         tradedToday.add(acc.id);
-                        if (pnl < 0) dayLosses[acc.id] = (dayLosses[acc.id] || 0) + 1;
+                        if (isTradeLoss(t)) dayLosses[acc.id] = (dayLosses[acc.id] || 0) + 1;
 
                         if (!rules.eod_trailing && acc.balance > acc.peak) {
                             acc.peak = acc.balance;
@@ -18994,9 +19037,9 @@ const EMBEDDED_TRADES_LOG = {
 
             // KPIs
             const allTrades = simDays.flatMap(d => d.trades || []);
-            const wins = allTrades.filter(t => parseFloat(t.points || 0) > 0).length;
-            const losses = allTrades.filter(t => parseFloat(t.points || 0) < 0).length;
-            const bes = allTrades.filter(t => parseFloat(t.points || 0) === 0).length;
+            const wins = allTrades.filter(t => isTradeWin(t)).length;
+            const losses = allTrades.filter(t => isTradeLoss(t)).length;
+            const bes = allTrades.filter(t => isTradeBe(t)).length;
             const totalPts = allTrades.reduce((acc, t) => acc + parseFloat(t.points || 0), 0);
             const wr = (wins + losses) > 0 ? ((wins / (wins + losses)) * 100).toFixed(1) : '0.0';
 
@@ -19089,9 +19132,9 @@ const EMBEDDED_TRADES_LOG = {
                 const activeTrades = filterDayTrades(d.trades || [], filterMode);
                 const activeMap = new Map(activeTrades.map((t, aIdx) => [`${t.time_entry}_${t.slot}_${t.sub_type || ''}`, { ...t, order_num: aIdx + 1 }]));
                 const dayPts = activeTrades.reduce((acc, t) => acc + parseFloat(t.points || 0), 0);
-                const wins = activeTrades.filter(t => parseFloat(t.points || 0) > 0).length;
-                const losses = activeTrades.filter(t => parseFloat(t.points || 0) < 0).length;
-                const bes = activeTrades.filter(t => parseFloat(t.points || 0) === 0).length;
+                const wins = activeTrades.filter(t => isTradeWin(t)).length;
+                const losses = activeTrades.filter(t => isTradeLoss(t)).length;
+                const bes = activeTrades.filter(t => isTradeBe(t)).length;
                 return `
                     <div class="p-3.5 rounded-xl bg-dark-900 border border-gray-800 space-y-2">
                         <div class="flex items-center justify-between border-b border-gray-800/80 pb-2">
@@ -19106,8 +19149,8 @@ const EMBEDDED_TRADES_LOG = {
                         <div class="space-y-1">
                             ${rawTrades.map((t, i) => {
                                 const pts = parseFloat(t.points || 0);
-                                const isWin = pts > 0;
-                                const isBe = pts === 0;
+                                const isBe = isTradeBe(t);
+                                const isWin = isTradeWin(t);
                                 const activeMatch = activeMap.get(`${t.time_entry}_${t.slot}_${t.sub_type || ''}`);
                                 const isActive = Boolean(activeMatch);
                                 const roleTag = isActive
@@ -19121,6 +19164,7 @@ const EMBEDDED_TRADES_LOG = {
                                 const dslTag = t.double_sl_1s
                                     ? '<span class="px-1.5 rounded bg-rose-950 text-rose-300 text-[9px] font-bold">🛑 DOBLE SL (P1+L2)</span>'
                                     : '';
+                                const beBadgeTxt = pts > 0 ? `+${pts.toFixed(2)}p` : '0p';
                                 return `
                                     <div class="flex items-center justify-between text-[11px] font-mono px-2 py-1 rounded ${isActive ? 'bg-dark-950/80 border border-gray-800/60' : 'bg-dark-950/30 border border-gray-900 opacity-45 line-through'}">
                                         <div class="flex items-center flex-wrap gap-1.5">
@@ -19129,7 +19173,7 @@ const EMBEDDED_TRADES_LOG = {
                                             <span class="px-1.5 py-0.2 rounded text-[10px] font-bold ${t.direction === 'LONG' ? 'bg-emerald-950 text-emerald-400' : 'bg-rose-950 text-rose-400'}">${t.direction}</span>
                                             ${roleTag}
                                             ${devTag}
-                                            ${isBe ? '<span class="px-1.5 rounded bg-amber-950 text-amber-300 text-[9px] font-bold">🛡️ ESCUT BE (TP1)</span>' : ''}
+                                            ${isBe ? `<span class="px-1.5 rounded bg-amber-950 text-amber-300 text-[9px] font-bold">🛡️ ESCUT BE (${beBadgeTxt})</span>` : ''}
                                             ${dslTag}
                                         </div>
                                         <div class="font-bold whitespace-nowrap ${isWin ? 'text-emerald-400' : (isBe ? 'text-amber-300' : 'text-rose-400')}">
@@ -19219,6 +19263,8 @@ const EMBEDDED_TRADES_LOG = {
             const monthFilter = rawMonth === 'SYNC' ? ((document.getElementById('ctrl-period') || {}).value || 'ALL') : rawMonth;
             const mode = rawMode === 'SYNC' ? ((document.getElementById('ctrl-filter') || {}).value || 'RAW') : rawMode;
             const maxLosses = parseInt((document.getElementById('ctrl-max-losses') || {}).value || '2', 10);
+            const commEl = document.getElementById('ctrl-comm');
+            const commPerMnq = commEl ? parseFloat(commEl.value) : 1.24;
             const rawSize = (document.getElementById('matrix-size') || {}).value || 'SYNC';
             const topSizing = (document.getElementById('ctrl-sizing') || {}).value || 'FIXED_5';
             const sizeMap = { FIXED_30: 1800, FIXED_22: 1320, EVAL22_PA18: 1320, FIXED_20: 1200, FIXED_18: 1080, FIXED_10: 600, EVAL10_PA5_DEF2: 600, FIXED_8: 480, FIXED_7: 420, FIXED_5: 300, EVAL5_PA5_DEF3: 300, LEGACY_3_FUNDED: 180 };
@@ -19242,7 +19288,7 @@ const EMBEDDED_TRADES_LOG = {
                         const bKey = t.target_block || 'SINGLE';
                         if (lossesByBlock[bKey] >= maxLosses) continue;
                         executed.push(t);
-                        if (parseFloat(t.points || 0) < 0) lossesByBlock[bKey]++;
+                        if (isTradeLoss(t)) lossesByBlock[bKey]++;
                     }
 
                     const cells = Array(maxCols).fill('<td class="p-1.5 text-center border border-gray-800/70 text-gray-600">·</td>');
@@ -19252,12 +19298,13 @@ const EMBEDDED_TRADES_LOG = {
                     for (let i = 0; i < Math.min(executed.length, maxCols); i++) {
                         const t = executed[i];
                         const ptsVal = parseFloat(t.points || t.pts || 0);
-                        const isWin = ptsVal > 0;
-                        const isBe = ptsVal === 0;
+                        const isBe = isTradeBe(t);
+                        const isWin = isTradeWin(t);
                         const tradeDPerTrade = (rawSize === 'SYNC' && topSizing === 'HYBRID_A10_B5')
                             ? ((t.target_block || 'A') === 'A' ? 600 : 300)
                             : dPerTrade;
-                        const pnl = (ptsVal / 30.0) * tradeDPerTrade;
+                        const tradeContracts = tradeDPerTrade / 60.0;
+                        const pnl = ((ptsVal / 30.0) * tradeDPerTrade) - (commPerMnq * tradeContracts);
                         dayDollars += pnl;
                         dayPts += ptsVal;
 
@@ -19270,8 +19317,9 @@ const EMBEDDED_TRADES_LOG = {
                         const timeTag = t.time_entry || '';
                         const dirIcon = t.direction === 'LONG' ? '🟢' : '🔴';
                         const blkPrefix = t.target_block ? (t.target_block === 'A' ? '🅰️ ' : '🅱️ ') : '';
+                        const beDollarStr = Math.round(pnl) === 0 ? '$0' : (pnl > 0 ? '+$' + Math.round(pnl) : '-$' + Math.round(Math.abs(pnl)));
                         cells[i] = `<td class="p-1.5 text-center border border-gray-800/70 font-bold ${isWin ? 'bg-emerald-950/50 text-emerald-400' : (isBe ? 'bg-amber-950/40 text-amber-300' : 'bg-rose-950/50 text-rose-400')}">
-                            <div>${blkPrefix}${isWin ? '✅ +$' + Math.round(pnl) : (isBe ? '🛡️ BE $0' : '❌ -$' + Math.round(Math.abs(pnl)))}</div>
+                            <div>${blkPrefix}${isWin ? '✅ +$' + Math.round(pnl) : (isBe ? '🛡️ BE ' + beDollarStr : '❌ -$' + Math.round(Math.abs(pnl)))}</div>
                             <span class="text-[9px] text-gray-400 font-normal block">${dirIcon} ${timeTag} (${t.slot === 'LAYER' ? 'LAYER' : 'PRIM'})</span>
                         </td>`;
                     }
@@ -19279,11 +19327,12 @@ const EMBEDDED_TRADES_LOG = {
                     cumDollars += dayDollars;
                     const dayCol = dayDollars > 0 ? 'text-emerald-400 bg-emerald-950/20' : (dayDollars < 0 ? 'text-rose-400 bg-rose-950/20' : 'text-gray-400');
                     const cumCol = cumDollars >= 0 ? 'text-cyan-300' : 'text-rose-400';
+                    const dayPtsFmt = dayPts.toFixed(1).replace(/\.0$/, '');
 
                     return `<tr class="hover:bg-dark-800/50">
                         <td class="p-1.5 border border-gray-800/70 font-bold text-gray-300 whitespace-nowrap">${d.date}</td>
                         ${cells.join('')}
-                        <td class="p-1.5 text-center border border-gray-800/70 font-bold ${dayCol}">${executed.length ? ((dayDollars >= 0 ? '+$' : '-$') + Math.round(Math.abs(dayDollars)) + ' (' + (dayPts >= 0 ? '+' : '') + dayPts + 'p)') : '—'}</td>
+                        <td class="p-1.5 text-center border border-gray-800/70 font-bold ${dayCol}">${executed.length ? ((dayDollars >= 0 ? '+$' : '-$') + Math.round(Math.abs(dayDollars)) + ' (' + (dayPts >= 0 ? '+' : '') + dayPtsFmt + 'p)') : '—'}</td>
                         <td class="p-1.5 text-center border border-gray-800/70 font-bold ${cumCol}">${cumDollars >= 0 ? '+$' : '-$'}${Math.round(Math.abs(cumDollars)).toLocaleString()}</td>
                     </tr>`;
                 }).join('');
@@ -19295,6 +19344,7 @@ const EMBEDDED_TRADES_LOG = {
                     return `<td class="p-2 text-center border border-gray-800 bg-dark-900 font-bold text-gray-200">${s.w}W - ${s.l}L${s.be ? ' - ' + s.be + 'BE' : ''} <span class="text-[10px] text-gray-400 block">(${wr}% WR · ${s.dl >= 0 ? '+$' : '-$'}${Math.round(Math.abs(s.dl))})</span></td>`;
                 }).join('');
                 const totWr = (totW + totL) ? ((totW / (totW + totL)) * 100).toFixed(1) : '0.0';
+                const totPtsFmt = totPts.toFixed(1).replace(/\.0$/, '');
 
                 table.innerHTML = `
                     <thead>
@@ -19314,8 +19364,8 @@ const EMBEDDED_TRADES_LOG = {
                             ${slotWlCells}
                             <td class="p-2 text-center border border-gray-800 bg-dark-900 font-bold text-emerald-400">${totW}W - ${totL}L - ${totBe}BE (${totWr}% WR)</td>
                             <td class="p-2 text-center border border-gray-800 bg-dark-900 font-bold text-cyan-300">
-                                <div>1 Compte (1x): ${cumDollars >= 0 ? '+$' : '-$'}${Math.round(Math.abs(cumDollars)).toLocaleString()} (${totPts >= 0 ? '+' : ''}${totPts}p)</div>
-                                <div class="text-[10px] text-emerald-400 mt-0.5">Flota 10 Comptes (10x): ${cumDollars >= 0 ? '+$' : '-$'}${Math.round(Math.abs(cumDollars * 10)).toLocaleString()} bruts ➔ Payouts a Dalt</div>
+                                <div>1 Compte (1x): ${cumDollars >= 0 ? '+$' : '-$'}${Math.round(Math.abs(cumDollars)).toLocaleString()} (${totPts >= 0 ? '+' : ''}${totPtsFmt}p)</div>
+                                <div class="text-[10px] text-emerald-400 mt-0.5">Flota 10 Comptes (10x): ${cumDollars >= 0 ? '+$' : '-$'}${Math.round(Math.abs(cumDollars * 10)).toLocaleString()} ➔ Payouts a Dalt</div>
                             </td>
                         </tr>
                     </tfoot>
@@ -19342,11 +19392,12 @@ const EMBEDDED_TRADES_LOG = {
 
                     const t = filtered[i];
                     const ptsVal = parseFloat(t.points || t.pts || 0);
-                    const isWin = ptsVal > 0;
-                    const isBe = ptsVal === 0;
+                    const isBe = isTradeBe(t);
+                    const isWin = isTradeWin(t);
                     if (isWin) targetAcc.w++; else if (isBe) targetAcc.be++; else targetAcc.l++;
                     targetAcc.pts += ptsVal;
-                    const pnl = (ptsVal / 30.0) * dPerTrade;
+                    const tradeContracts = dPerTrade / 60.0;
+                    const pnl = ((ptsVal / 30.0) * dPerTrade) - (commPerMnq * tradeContracts);
                     targetAcc.bal += pnl;
                     if (targetAcc.bal > targetAcc.peak) {
                         targetAcc.peak = targetAcc.bal;
@@ -19356,7 +19407,8 @@ const EMBEDDED_TRADES_LOG = {
                     if (targetAcc.bal >= 53000) targetAcc.passed = true;
 
                     const accIdx = targetAcc.id - 1;
-                    cells[accIdx] = `<td class="p-1.5 text-center border border-gray-800/70 font-bold ${isWin ? 'bg-emerald-950/50 text-emerald-400' : (isBe ? 'bg-amber-950/40 text-amber-300' : 'bg-rose-950/50 text-rose-400')}">${isWin ? '✅ +' + Math.round(pnl) : (isBe ? '🛡️ BE $0' : '❌ -' + Math.round(Math.abs(pnl)))}</td>`;
+                    const beDollarStr = Math.round(pnl) === 0 ? '$0' : (pnl > 0 ? '+' + Math.round(pnl) : '-' + Math.round(Math.abs(pnl)));
+                    cells[accIdx] = `<td class="p-1.5 text-center border border-gray-800/70 font-bold ${isWin ? 'bg-emerald-950/50 text-emerald-400' : (isBe ? 'bg-amber-950/40 text-amber-300' : 'bg-rose-950/50 text-rose-400')}">${isWin ? '✅ +' + Math.round(pnl) : (isBe ? '🛡️ BE ' + beDollarStr : '❌ -' + Math.round(Math.abs(pnl)))}</td>`;
                 }
                 return `<tr class="hover:bg-dark-800/50"><td class="p-1.5 border border-gray-800/70 font-bold text-gray-300 whitespace-nowrap">${d.date}</td>${cells.join('')}</tr>`;
             }).join('');
