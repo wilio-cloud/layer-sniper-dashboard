@@ -254,7 +254,8 @@
       <a href="visual_backtest.html">📸 Backtest Visual &amp; Rotació 1s</a>
       <a href="visual_backtest.html#montecarlo">🎲 Monte Carlo 2027 (10K Anys)</a>
       <a href="propfirm_dashboard.html">🧭 Playbook Quant</a>
-      <span class="active-tab">📘 Manual Operatiu</span>
+      <a href="pla_operatiu_mestre.html" style="color:#34d399;border-color:rgba(16,185,129,0.4);background:rgba(6,78,59,0.28);">📋 Pla Operatiu Mestre</a>
+      <span class="active-tab">📘 Fitxa A4</span>
       <button onclick="window.print()" style="background:rgba(16,185,129,0.18);color:#34d399;border-color:rgba(16,185,129,0.4);">🖨️ Imprimir / PDF A4</button>
     </nav>
   </div>
@@ -263,15 +264,15 @@
 <!-- Síntesi d'Actualització 2027 en Pantalla (Oculta en Imprimir per mantenir 4 pàgines A4 exactes) -->
 <div class="screen-banner-2027 no-print">
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
-    <span class="badge badge-emerald">ACTUALITZACIÓ QUANTITATIVA 2027 · 227 SESSIONS 1S</span>
-    <span class="mono" style="font-size:10px;color:#fbbf24;font-weight:700;">SNIPER COMBO ELITE: 60.0% WR · +1,511.0p · BE +0.50p (+2 ticks)</span>
+    <span class="badge badge-emerald">ACTUALITZACIÓ QUANTITATIVA · 255 SESSIONS / 366 TRADES 1S (FINS 26 OCT 2026)</span>
+    <span class="mono" style="font-size:10px;color:#fbbf24;font-weight:700;">SNIPER COMBO ELITE: 59.8% WR · +1,637.5p · BE +0.50p (+2 ticks)</span>
   </div>
   <p style="font-size:11px;color:#e2e8f0;line-height:1.45;">
-    Aquest manual conserva el format de 4 pàgines A4 per tenir davant del monitor i incorpora les regles validades a 1 segon per al 2027:
-    <strong>(1) Escut BE +0.50p (+2 ticks)</strong> quan toca TP1 (0/535 TPs trencats, neutralitza les comissions CME de $1.24/MNQ i salva comptes EOD);
+    Aquesta és la <strong>Fitxa Visual A4 Imprimible</strong> per tenir davant del monitor. Per consultar el document viu complet (incloent el <strong>Protocol d'Adaptació MNQ &lt; 24.500</strong> i el <strong>Mapa d'Estacionalitat</strong>), obre la pestanya <a href="pla_operatiu_mestre.html" style="color:#34d399;font-weight:700;text-decoration:underline;">📋 Pla Operatiu Mestre</a>:
+    <strong>(1) Escut BE +0.50p (+2 ticks)</strong> quan toca TP1 (neutralitza les comissions CME de $1.24/MNQ);
     <strong>(2) SNIPER COMBO ELITE</strong> (Màx 2 trades/dia: 1r LAYER 09:30 &ge;50p, 1r LAYER 10:00 &ge;40p, Cont L10_2 &ge;55p sense L09, o L11_1 si només portes 1 trade);
-    <strong>(3) Llei 5A/5B/5C</strong> (pausa 09:59–10:02 en Red Folder 10:00 AM, Rollover CME dijous previ i 50% MNQ en Setmana 4 si rang &lt;220p);
-    <strong>(4) Apex (Grup C) 100% Manual</strong> (prohibit bots/webhooks: clic humà + Replikanto local i 1 TP/dia en PA per regla del 30%).
+    <strong>(3) Llei 5A/5B/5C</strong> (Festius USA + Nadal bloquejats i alerta Setmana 4 si rang 5D &lt;220p);
+    <strong>(4) Apex (Grup C) 100% Manual</strong> (clic humà + Replikanto local).
   </p>
 </div>
 
@@ -281,7 +282,7 @@
     <div class="top-bar">
       <div style="display:flex;align-items:center;gap:8px;">
         <span class="badge badge-emerald">JJ FAIR PRICING · MNQ 1M / 1S</span>
-        <span class="mono" style="font-size:9px;color:#94a3b8;">VALIDAT A 1 SEGON (227 SESSIONS COMBO ELITE + ARQUITECTURA DOBLE FLOTA)</span>
+        <span class="mono" style="font-size:9px;color:#94a3b8;">VALIDAT A 1 SEGON (255 SESSIONS · 366 TRADES COMBO ELITE + DOBLE FLOTA)</span>
       </div>
       <span class="mono" style="font-size:9px;color:#38bdf8;font-weight:700;">PÀGINA 01 / 04</span>
     </div>
@@ -309,13 +310,13 @@
       <div class="grid-6" style="margin-top:10px;">
         <div class="kpi-box">
           <div class="kpi-lbl">Combo Elite (1s)</div>
-          <div class="kpi-val mono" style="color:#34d399;">60.0% WR</div>
-          <div style="font-size:7.5px;color:#64748b;">147W / 98L / 82BE</div>
+          <div class="kpi-val mono" style="color:#34d399;">59.8% WR</div>
+          <div style="font-size:7.5px;color:#64748b;">162W / 109L / 95BE</div>
         </div>
         <div class="kpi-box">
-          <div class="kpi-lbl">Punts Any (BE +2t)</div>
-          <div class="kpi-val mono" style="color:#22d3ee;">+1,511 pts</div>
-          <div style="font-size:7.5px;color:#64748b;">0/535 TPs trencats</div>
+          <div class="kpi-lbl">Punts (BE +2t)</div>
+          <div class="kpi-val mono" style="color:#22d3ee;">+1,638 pts</div>
+          <div style="font-size:7.5px;color:#64748b;">+1,411p post-comm</div>
         </div>
         <div class="kpi-box">
           <div class="kpi-lbl">Sniper Pur 10h</div>
