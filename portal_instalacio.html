@@ -1,0 +1,1803 @@
+<!DOCTYPE html>
+<html lang="ca" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layer Sniper Pro // Guia d'Instal·lació Pas a Pas i Descàrregues</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #050506;
+      --obsidian: #0B0B0E;
+      --obsidian-elevated: #111116;
+      --gold: #D4AF37;
+      --gold-bright: #F3DC99;
+      --gold-deep: #997819;
+      --platinum: #F4F4F6;
+      --titanium: #9CA3AF;
+      --jade: #10B981;
+      --crimson: #F43F5E;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--void);
+      color: var(--platinum);
+    }
+
+    body {
+      background-color: var(--void);
+      background-image:
+        radial-gradient(ellipse 80% 42% at 50% -6%, rgba(212, 175, 55, 0.11), transparent 68%),
+        radial-gradient(circle at 88% 22%, rgba(212, 175, 55, 0.045), transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      background-attachment: fixed;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .font-mono-tech {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .grain-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.024;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .obsidian-panel {
+      background: linear-gradient(180deg, rgba(16, 16, 21, 0.9) 0%, rgba(8, 8, 11, 0.96) 100%);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.075);
+      box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(243, 220, 153, 0.16);
+    }
+
+    .obsidian-subcard {
+      background: rgba(7, 7, 10, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .obsidian-subcard:hover {
+      border-color: rgba(212, 175, 55, 0.28);
+    }
+
+    .vault-master-card {
+      background: linear-gradient(155deg, rgba(212, 175, 55, 0.14) 0%, rgba(15, 15, 20, 0.95) 52%, rgba(8, 8, 11, 0.98) 100%);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      box-shadow: 0 22px 55px -16px rgba(212, 175, 55, 0.18), inset 0 1px 0 rgba(245, 225, 164, 0.42);
+      transition: transform 0.2s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .vault-master-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(243, 220, 153, 0.8);
+      box-shadow: 0 28px 65px -14px rgba(212, 175, 55, 0.28), inset 0 1px 0 rgba(245, 225, 164, 0.6);
+    }
+
+    .gold-cta {
+      background: linear-gradient(135deg, #F5E1A4 0%, #D4AF37 52%, #A67F1E 100%);
+      color: #050506;
+      box-shadow: 0 8px 26px -6px rgba(212, 175, 55, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: all 0.18s ease;
+    }
+
+    .gold-cta:hover:not(:disabled) {
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 32px -6px rgba(212, 175, 55, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    }
+
+    .gold-cta:disabled {
+      background: rgba(255, 255, 255, 0.08);
+      color: #71717A;
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+
+    .mode-switch-card {
+      position: relative;
+      background: rgba(10, 10, 14, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mode-switch-card:hover {
+      border-color: rgba(212, 175, 55, 0.35);
+      background: rgba(16, 16, 22, 0.92);
+    }
+
+    .mode-switch-card.active {
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.14) 0%, rgba(12, 12, 16, 0.96) 100%);
+      border-color: rgba(212, 175, 55, 0.7);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.24), 0 18px 40px -15px rgba(212, 175, 55, 0.22), inset 0 1px 0 rgba(243, 220, 153, 0.35);
+    }
+
+    .step-check {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      background: #050507;
+      border: 1.5px solid rgba(255, 255, 255, 0.26);
+      cursor: pointer;
+      display: inline-grid;
+      place-content: center;
+      flex-shrink: 0;
+      transition: all 0.16s ease;
+    }
+
+    .step-check:hover {
+      border-color: var(--gold);
+    }
+
+    .step-check::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      transform: scale(0);
+      transition: 0.14s transform ease-in-out;
+      background-color: #050506;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+
+    .step-check:checked {
+      background: linear-gradient(135deg, #F3DC99 0%, #D4AF37 100%);
+      border-color: #F3DC99;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+    }
+
+    .step-check:checked::before {
+      transform: scale(1);
+    }
+
+    .step-check:checked + .step-body {
+      opacity: 0.58;
+    }
+
+    .step-check:checked + .step-body .step-title {
+      text-decoration: line-through;
+      color: var(--gold-bright);
+    }
+
+    @keyframes beamFlow {
+      from { stroke-dashoffset: 36; }
+      to   { stroke-dashoffset: 0; }
+    }
+
+    .topo-edge {
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 1.6;
+      fill: none;
+      transition: stroke 0.3s ease, opacity 0.3s ease;
+    }
+
+    .topo-edge.active-beam {
+      stroke: #D4AF37;
+      stroke-width: 2.2;
+      stroke-dasharray: 6 6;
+      animation: beamFlow 0.95s linear infinite;
+      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.55));
+    }
+
+    .topo-node {
+      transition: opacity 0.3s ease, transform 0.25s ease;
+    }
+
+    .topo-node.dimmed {
+      opacity: 0.25;
+    }
+
+    .topo-node.sim-highlight rect.node-box {
+      stroke: #F5E1A4 !important;
+      stroke-width: 2 !important;
+      filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.55));
+    }
+
+    .rail-item {
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.18s ease;
+    }
+
+    .rail-item:hover {
+      border-left-color: rgba(212, 175, 55, 0.5);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .rail-item.completed {
+      border-left-color: var(--jade);
+    }
+
+    .replica-window {
+      background: #0C0D12;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    }
+
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-[#D4AF37]/30 selection:text-white">
+  <div class="grain-overlay"></div>
+
+  <!-- ======================================================================= -->
+  <!-- TOP STICKY BAR: BRAND + SIMPLE PROGRESS METER + LOGOUT                  -->
+  <!-- ======================================================================= -->
+  <header class="sticky top-0 z-50 border-b border-white/[0.07] bg-[#060608]/90 backdrop-blur-xl">
+    <div class="max-w-[1380px] mx-auto px-4 sm:px-7 py-3 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-b from-[#D4AF37]/25 to-transparent border border-[#D4AF37]/45 flex items-center justify-center shrink-0">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+            <polygon points="12,2 22,12 12,22 2,12" stroke="#F3DC99" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="2.8" fill="#D4AF37"/>
+            <line x1="12" y1="2" x2="12" y2="6" stroke="#D4AF37" stroke-width="1.4"/>
+            <line x1="12" y1="18" x2="12" y2="22" stroke="#D4AF37" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2.5 flex-wrap">
+            <span class="font-display font-bold text-base sm:text-lg text-white tracking-tight">LAYER SNIPER PRO</span>
+            <span id="pkg-version-badge" class="font-mono-tech text-[11px] font-semibold px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">
+              v1.0.0
+            </span>
+            <span id="tv-version-badge" class="hidden lg:inline-flex font-mono-tech text-[10px] px-2 py-0.5 rounded bg-white/[0.04] text-zinc-300 border border-white/[0.08]">
+              Estratègia TV: 2026.2 (Invite-Only)
+            </span>
+          </div>
+          <p class="text-xs text-[#9CA3AF] mt-0.5">
+            Guia Interactiva d'Instal·lació Pas a Pas (pensada per fer-ho des de zero i sense complicacions)
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="rounded-lg bg-[#0B0B0F] border border-white/[0.08] px-3.5 py-1.5 flex items-center gap-3">
+          <div class="text-right">
+            <div class="font-mono-tech text-[9px] uppercase tracking-[0.14em] text-[#9CA3AF]">El teu progrés</div>
+            <div id="progress-label" class="font-mono-tech text-xs font-semibold text-[#F3DC99]">00% · 0/11 passos</div>
+          </div>
+          <div class="w-24 h-1.5 bg-white/[0.07] rounded-full overflow-hidden">
+            <div id="progress-bar" class="h-full bg-gradient-to-r from-[#A67F1E] via-[#D4AF37] to-[#F5E1A4] transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <button type="button" onclick="resetChecklist()" title="Esborrar caselles marcades i començar de zero"
+            class="font-mono-tech text-[10px] text-zinc-400 hover:text-[#F3DC99] px-1.5 py-0.5 rounded border border-transparent hover:border-white/10 transition">
+            REINICIAR
+          </button>
+        </div>
+
+        <a id="logout-btn" href="/portal/logout"
+          class="font-mono-tech text-[11px] uppercase tracking-wider px-3 py-2 rounded-lg bg-white/[0.03] hover:bg-white/[0.08] text-zinc-300 border border-white/[0.09] transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+          <span>Sortir</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- NATIVE DASHBOARD TAB BAR (Shown automatically when hosted on GitHub Pages / static dashboard) -->
+    <div id="gh-dashboard-tabs-bar" class="hidden border-t border-white/[0.06] bg-[#040406]/95">
+      <div class="max-w-[1380px] mx-auto px-4 sm:px-7 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <nav class="flex flex-wrap items-center gap-1.5">
+          <a href="visual_backtest.html" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white hover:bg-white/[0.05] transition">
+            📸 Backtest Visual &amp; Rotació 1s
+          </a>
+          <a href="visual_backtest.html#montecarlo" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white hover:bg-white/[0.05] transition">
+            🎲 Monte Carlo 2027 (10K Anys)
+          </a>
+          <a href="propfirm_dashboard.html" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white hover:bg-white/[0.05] transition">
+            🧭 Playbook Quant
+          </a>
+          <a href="pla_operatiu_mestre.html" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white hover:bg-white/[0.05] transition">
+            📋 Pla Operatiu Mestre
+          </a>
+          <a href="manual_operatiu_pro.html" class="px-3 py-1.5 rounded-lg font-medium text-zinc-400 hover:text-white hover:bg-white/[0.05] transition">
+            📘 Fitxa A4
+          </a>
+          <span class="px-3.5 py-1.5 rounded-lg font-bold bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/45 shadow cursor-default">
+            🚀 Instal·lació &amp; Paquet (.zip)
+          </span>
+        </nav>
+        <a href="visual_backtest.html" class="font-mono-tech text-[10px] text-[#E5C158] hover:underline">
+          &larr; Tornar al Simulador
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 max-w-[1380px] mx-auto px-4 sm:px-7 py-7 space-y-8">
+
+    <!-- ===================================================================== -->
+    <!-- EXPLICACIÓ EN 30 SEGONS PER A TOTHOM (ZERO TECNICISMES)               -->
+    <!-- ===================================================================== -->
+    <section class="obsidian-panel rounded-2xl p-6 sm:p-7 space-y-5">
+      <div class="border-b border-white/[0.06] pb-4">
+        <span class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-[#E5C158]">
+          ABANS DE COMENÇAR · ENTÉN COM FUNCIONA EN 30 SEGONS
+        </span>
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+          Què estem a punt d'instal·lar i on va cada peça?
+        </h1>
+        <p class="text-sm text-zinc-300 mt-1.5 max-w-4xl leading-relaxed">
+          No necessites saber programar ni entendre de servidors. El sistema connecta <strong>3 peces molt simples</strong> perquè puguis operar l'estratègia amb precisió mil·limètrica:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div class="obsidian-subcard rounded-xl p-4 space-y-1.5">
+          <div class="font-mono-tech text-[10px] font-bold text-[#F3DC99]">PEÇA 1 · TRADINGVIEW (AL NÚVOL)</div>
+          <div class="font-display text-base font-bold text-white">El Cervell que vigila el gràfic</div>
+          <p class="text-zinc-300 leading-relaxed">
+            L'estratègia privada vigila <code class="font-mono-tech text-[#F3DC99]">MNQ1!</code> en 1 minut. Un cop deixes creada l'alerta, <strong>pots tancar TradingView i apagar el teu navegador</strong>: l'alerta viu als servidors de TradingView.
+          </p>
+        </div>
+
+        <div class="obsidian-subcard rounded-xl p-4 space-y-1.5">
+          <div class="font-mono-tech text-[10px] font-bold text-[#F3DC99]">PEÇA 2 · PC O VPS WINDOWS (ENCÈS)</div>
+          <div class="font-display text-base font-bold text-white">On tens obert NinjaTrader 8</div>
+          <p class="text-zinc-300 leading-relaxed">
+            Aquí és on descarregaràs el paquet. <strong>Important:</strong> NinjaTrader 8 ha d'estar obert en un ordinador Windows encès durant la sessió (un <em>VPS</em> només és un Windows llogat al núvol que no s'apaga mai).
+          </p>
+        </div>
+
+        <div class="obsidian-subcard rounded-xl p-4 space-y-1.5">
+          <div class="font-mono-tech text-[10px] font-bold text-[#F3DC99]">PEÇA 3 · REPLIKANTO (OPCIONAL)</div>
+          <div class="font-display text-base font-bold text-white">El Multiplicador de Comptes</div>
+          <p class="text-zinc-300 leading-relaxed">
+            L'operació sempre entra primer a un compte de prova guia (<code class="font-mono-tech text-white">Sim101</code> o <code class="font-mono-tech text-white">Sim102</code>) i Replikanto la copia a l'instant a tots els teus comptes de fondeig.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFLINE NOTICE (Shown automatically when opened via file:// inside the downloaded .zip) -->
+    <div id="offline-banner" class="hidden obsidian-panel rounded-2xl p-5 border-[#10B981]/40 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <div class="w-10 h-10 rounded-lg bg-[#10B981]/15 border border-[#10B981]/40 flex items-center justify-center font-mono-tech text-xs font-bold text-[#10B981]">
+          OK ✓
+        </div>
+        <div>
+          <div class="font-display text-base font-bold text-white">Ja tens el Paquet Descarregat al teu ordinador!</div>
+          <p class="text-xs text-zinc-300 mt-0.5 leading-relaxed">
+            Assegura't d'haver <strong>descomprimit el `.zip`</strong> (clic dret &rarr; <em>Extraure tot</em>). Just al costat d'aquest arxiu hi tens les carpetes <code class="font-mono-tech text-[#F3DC99]">01_Kit_NinjaTrader8_i_Replikanto</code> i <code class="font-mono-tech text-[#F3DC99]">02_Bridge_VPS_Windows</code>. Passa directament a escollir com vols operar a sota!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- PAS 0: DESCÀRREGA DEL PAQUET + AVÍS ANTI-ERROR DE DESCOMPRESSIÓ       -->
+    <!-- ===================================================================== -->
+    <section id="downloads-section" class="obsidian-panel rounded-2xl p-6 sm:p-7 space-y-5">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <div class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-[#E5C158]">
+            PAS INICIAL (FES-HO DINS DEL TEU PC O VPS WINDOWS ON TINGUIS NINJATRADER 8)
+          </div>
+          <h2 class="font-display text-xl sm:text-2xl font-bold text-white mt-1">
+            Descarrega l'Última Versió del Paquet
+          </h2>
+          <p class="text-xs text-zinc-300 mt-0.5">
+            Obre aquesta mateixa pàgina dins del teu Windows (o passa-hi el fitxer descarregat) i baixa el <strong>Paquet Complet</strong>.
+          </p>
+        </div>
+
+        <div id="release-meta-info" class="font-mono-tech text-[11px] text-[#9CA3AF] bg-black/50 border border-white/[0.07] rounded-lg px-3.5 py-2">
+          VERSIÓ ACTUAL: <span id="meta-updated-date" class="text-white font-semibold">2026-10-29</span>
+          <span id="meta-extra-stats" class="text-[#F3DC99] ml-1.5">· VERIFICAT</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+        <!-- MASTER CARD: FULL CLIENT PACKAGE -->
+        <a id="dl-full-package" href="/portal/download/full-package.zip" class="vault-master-card lg:col-span-7 rounded-xl p-5 flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono-tech text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#D4AF37] text-[#050506]">
+                SI ÉS LA TEVA 1a VEGADA, BAIXA AQUEST
+              </span>
+              <span class="font-mono-tech text-xs text-[#F3DC99] font-bold">.ZIP COMPLET &darr;</span>
+            </div>
+            <h3 class="font-display text-xl font-bold text-white mt-3">
+              Paquet Complet Layer Sniper Pro (.zip)
+            </h3>
+            <p class="text-xs text-zinc-200 mt-1.5 leading-relaxed">
+              Porta tots els instal·ladors automàtics de <strong>NinjaTrader 8</strong> (plantilles de 30 punts + botó Breakeven), l'instal·lador del <strong>VPS</strong> i aquesta mateixa guia interactiva per tenir-la sempre a mà.
+            </p>
+          </div>
+          <div class="mt-5 pt-3.5 border-t border-[#D4AF37]/25 flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs text-[#F3DC99] font-medium">Després de baixar-lo: Clic dret &rarr; Extraure tot!</span>
+            <span class="gold-cta px-4 py-2 rounded-lg font-mono-tech text-xs font-bold">DESCARREGAR PAQUET COMPLET</span>
+          </div>
+        </a>
+
+        <!-- SECONDARY CARDS (CLEARLY LABELED FOR SPECIFIC / UPDATE USE) -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+          <a id="dl-nt8-kit" href="/portal/download/nt8-kit.zip" class="obsidian-subcard rounded-xl p-4 flex items-center justify-between gap-3 group">
+            <div>
+              <div class="font-mono-tech text-[10px] uppercase text-zinc-400">Opcional · Només si operes a mà</div>
+              <div class="font-display text-sm font-bold text-white mt-0.5">Només Botons i Plantilles NT8 (.zip)</div>
+              <p class="text-[11px] text-[#9CA3AF] mt-0.5">Descàrrega ràpida si no faràs servir mai el bot automàtic.</p>
+            </div>
+            <span class="font-mono-tech text-xs text-[#F3DC99] shrink-0 px-2.5 py-1.5 rounded bg-white/[0.04] border border-white/10">Baixar &darr;</span>
+          </a>
+
+          <a id="dl-vps-bridge" href="/portal/download/vps-bridge.zip" class="obsidian-subcard rounded-xl p-4 flex items-center justify-between gap-3 group">
+            <div>
+              <div class="font-mono-tech text-[10px] uppercase text-[#E5C158]">Només per actualitzar en el futur</div>
+              <div class="font-display text-sm font-bold text-white mt-0.5">Actualitzador Ràpid de VPS (.zip)</div>
+              <p class="text-[11px] text-[#9CA3AF] mt-0.5">Posa al dia un VPS ja instal·lat sense canviar la teva clau ni les alertes.</p>
+            </div>
+            <span class="font-mono-tech text-xs text-[#F3DC99] shrink-0 px-2.5 py-1.5 rounded bg-white/[0.04] border border-white/10">Baixar &darr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ANTI-MISTAKE WARNING: UNZIP FIRST! -->
+      <div class="rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/35 px-4 py-3 flex items-start gap-3 text-xs">
+        <span class="font-mono-tech font-bold text-[#F3DC99] text-sm mt-0.5">⚠️</span>
+        <div class="text-zinc-200 leading-relaxed">
+          <strong class="text-[#F3DC99]">Molt important a Windows abans de començar:</strong> Quan s'acabi de baixar l'arxiu <code>.zip</code>, fes-hi <strong>Clic dret a sobre &rarr; «Extraure tot...» (<em>Extract All...</em>)</strong> i entra a la carpeta descomprimida. <strong>No facis mai doble clic als instal·ladors des de dins del `.zip` tancat</strong> o Windows no trobarà els fitxers!
+        </div>
+      </div>
+
+      <!-- CHANGELOG & FUTURE 1-CLICK UPDATES -->
+      <details class="rounded-xl bg-[#07070A] border border-white/[0.07] px-4 py-3">
+        <summary class="cursor-pointer flex items-center justify-between font-mono-tech text-xs text-zinc-200">
+          <span class="flex items-center gap-2.5">
+            <span class="px-2 py-0.5 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/30 text-[10px]">NOVETATS</span>
+            <span>Registre de Versions i com actualitzar en 1 clic quan traiem millores (<code class="text-[#F3DC99]">ACTUALITZAR_SISTEMA.bat</code>)</span>
+          </span>
+          <span class="text-[#9CA3AF] text-[11px]">OBRIR +</span>
+        </summary>
+        <div class="mt-3.5 pt-3.5 border-t border-white/[0.06] grid grid-cols-1 lg:grid-cols-12 gap-4 text-xs">
+          <div class="lg:col-span-7 space-y-2" id="changelog-container">
+            <div class="p-3.5 rounded-lg bg-black/50 border border-white/[0.06]">
+              <div class="font-mono-tech font-bold text-[#F3DC99]">v1.0.0 — Llançament Oficial del Portal i Paquet Modular</div>
+              <ul class="list-disc list-inside mt-1.5 space-y-1 text-zinc-300">
+                <li>Kit NinjaTrader 8 100% offline: 4 plantilles ATM + botons [BE +2t (+0.50p)], [FLAT] i ajust automàtic de contractes.</li>
+                <li>Pont automàtic per a VPS Windows amb connexió directa des de TradingView.</li>
+                <li>Actualitzador d'1 clic que manté intacta la teva configuració i alertes.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="lg:col-span-5 p-4 rounded-lg bg-[#D4AF37]/[0.06] border border-[#D4AF37]/25 space-y-2">
+            <div class="font-mono-tech text-[11px] font-bold uppercase tracking-wider text-[#F3DC99]">
+              I quan fem alguna millora més endavant?
+            </div>
+            <p class="text-zinc-300 leading-relaxed">
+              No hauràs de tornar a configurar res des de zero:
+            </p>
+            <ol id="update-instructions-list" class="list-decimal list-inside space-y-1 text-zinc-200 text-xs">
+              <li>Al teu VPS, fes doble clic a <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\ACTUALITZAR_SISTEMA.bat</code> i prem <strong>Enter</strong>.</li>
+              <li>S'actualitzarà tot sol des d'aquest Portal <strong>sense canviar la teva clau ni haver de tocar TradingView</strong>.</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TRIA LA TEVA MODALITAT (EN LLENGUATGE HUMÀ) + DIAGRAMA VISUAL ANIMAT  -->
+    <!-- ===================================================================== -->
+    <section class="obsidian-panel rounded-2xl p-6 sm:p-7 space-y-6">
+      <div class="flex flex-wrap items-end justify-between gap-4 border-b border-white/[0.06] pb-5">
+        <div>
+          <div class="font-mono-tech text-[10px] uppercase tracking-[0.2em] text-[#E5C158] flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E5C158]"></span>
+            PERSONALITZA LA GUIA AL TEU CAS
+          </div>
+          <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1.5">
+            Com vols operar els teus comptes?
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-300 mt-1 max-w-3xl">
+            Clica l'opció que encaixi amb tu. <strong>Amagarem automàticament tots els passos que no necessitis</strong> perquè només vegis el que has de fer.
+          </p>
+        </div>
+
+        <button type="button" onclick="runSignalSimulation()" id="sim-trigger-btn"
+          class="gold-cta px-4 py-2.5 rounded-xl font-mono-tech text-xs font-bold tracking-wide flex items-center gap-2 shrink-0">
+          <span id="sim-btn-icon">&#9654;</span>
+          <span id="sim-btn-text">VEURE ANIMACIÓ D'UNA OPERACIÓ</span>
+        </button>
+      </div>
+
+      <!-- 3 Human-Friendly Mode Selectors -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+        <button type="button" onclick="selectMode('manual')" id="mode-btn-manual" class="mode-switch-card text-left rounded-xl p-4">
+          <div class="flex items-center justify-between font-mono-tech text-[10px] uppercase tracking-wider">
+            <span class="text-zinc-300">OPCIÓ 1 · MÉS SENZILLA</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.06] text-white border border-white/10">100% MANUAL</span>
+          </div>
+          <div class="font-display text-base font-bold text-white mt-2">
+            Clico jo amb 1 Botó (<span class="font-mono-tech text-[#F3DC99]">Sim102</span>)
+          </div>
+          <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
+            <strong>Tria aquesta si la teva empresa prohibeix bots</strong> (<em>Apex PA, Topstep, TPT, Tradeify</em>). Reps avís al mòbil, prems <em>Buy/Sell</em> a NinjaTrader i es posen sols el TP, l'SL i el botó de Breakeven.
+          </p>
+        </button>
+
+        <button type="button" onclick="selectMode('direct')" id="mode-btn-direct" class="mode-switch-card active text-left rounded-xl p-4">
+          <div class="flex items-center justify-between font-mono-tech text-[10px] uppercase tracking-wider">
+            <span class="text-[#E5C158] font-bold">OPCIÓ 2 · LA MÉS HABITUAL</span>
+            <span class="px-2 py-0.5 rounded bg-[#D4AF37]/20 text-[#F3DC99] border border-[#D4AF37]/40">100% AUTOMÀTIC</span>
+          </div>
+          <div class="font-display text-base font-bold text-white mt-2">
+            Automàtic Directe al VPS (<span class="font-mono-tech text-[#F3DC99]">Sim101</span>)
+          </div>
+          <p class="text-xs text-zinc-300 mt-1.5 leading-relaxed">
+            <strong>Tria aquesta si vols que operi tot sol sense tocar res.</strong> TradingView envia el senyal directament al teu VPS Windows i NinjaTrader obre l'operació i mou el Breakeven sol.
+          </p>
+        </button>
+
+        <button type="button" onclick="selectMode('railway')" id="mode-btn-railway" class="mode-switch-card text-left rounded-xl p-4">
+          <div class="flex items-center justify-between font-mono-tech text-[10px] uppercase tracking-wider">
+            <span class="text-zinc-400">OPCIÓ 3 · OPCIONAL AVANÇAT</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.05] text-zinc-400 border border-white/10">EXPERTS</span>
+          </div>
+          <div class="font-display text-base font-bold text-white mt-2">
+            Servidor Propi a Railway + VPS
+          </div>
+          <p class="text-xs text-[#9CA3AF] mt-1.5 leading-relaxed">
+            <em>No el necessites per operar en automàtic.</em> Només si a més vols desplegar pel teu compte una web pròpia a Railway amb panell mòbil i avisos a Discord.
+          </p>
+        </button>
+      </div>
+
+      <!-- LIVE ANIMATED SVG SIGNAL TOPOLOGY CANVAS -->
+      <div class="rounded-xl bg-[#040406] border border-white/[0.07] p-4 sm:p-5 relative overflow-hidden">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2 text-[11px] font-mono-tech">
+          <div class="flex items-center gap-2 text-zinc-300">
+            <span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+            <span id="topo-mode-caption">RECORREGUT ACTIU: TRADINGVIEW &rarr; PONT DEL TEU VPS &rarr; NINJATRADER 8 (Sim101) &rarr; COPIADOR REPLIKANTO</span>
+          </div>
+          <div class="flex items-center gap-4 text-[10px] text-zinc-400">
+            <span class="flex items-center gap-1.5"><span class="w-3 h-0.5 bg-[#D4AF37] inline-block"></span> Camí Actiu</span>
+            <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-[#F43F5E] inline-block"></span> Compte Manual Protegit (Mai entra el Bot)</span>
+          </div>
+        </div>
+
+        <div class="w-full overflow-x-auto">
+          <svg id="topology-svg" viewBox="0 0 1060 250" class="w-full min-w-[780px] h-auto select-none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="goldNodeGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#17161C"/>
+                <stop offset="100%" stop-color="#09090C"/>
+              </linearGradient>
+            </defs>
+
+            <path id="edge-tv-manual" class="topo-edge" d="M 195 155 C 340 215, 520 215, 650 182" />
+            <path id="edge-tv-vps" class="topo-edge active-beam" d="M 195 112 L 265 82" />
+            <path id="edge-vps-bridge" class="topo-edge active-beam" d="M 435 82 L 475 112" />
+            <path id="edge-tv-railway" class="topo-edge" d="M 195 132 L 265 162" />
+            <path id="edge-railway-bridge" class="topo-edge" d="M 435 162 L 475 132" />
+            <path id="edge-bridge-sim101" class="topo-edge active-beam" d="M 625 112 L 650 76" />
+            <path id="edge-bridge-sim102-block" stroke="rgba(244,63,94,0.32)" stroke-width="1.3" stroke-dasharray="3 4" fill="none" d="M 625 135 L 650 168" />
+            <path id="edge-sim101-rep" class="topo-edge active-beam" d="M 835 76 L 875 115" />
+            <path id="edge-sim102-rep" class="topo-edge" d="M 835 175 L 875 136" />
+
+            <!-- NODE 1: TRADINGVIEW -->
+            <g id="node-tv" class="topo-node" transform="translate(20, 88)">
+              <rect class="node-box" width="175" height="72" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(212,175,55,0.45)" stroke-width="1.2"/>
+              <text x="14" y="22" fill="#E5C158" font-family="JetBrains Mono" font-size="9" font-weight="700">1. DETECTOR SENYAL</text>
+              <text x="14" y="42" fill="#FFFFFF" font-family="Space Grotesk" font-size="13" font-weight="700">TradingView MNQ1!</text>
+              <text x="14" y="58" fill="#9CA3AF" font-family="JetBrains Mono" font-size="9.5">Gràfic 1 minut (Al núvol)</text>
+            </g>
+
+            <!-- NODE 2A: VPS INGRESS -->
+            <g id="node-vps" class="topo-node" transform="translate(265, 45)">
+              <rect class="node-box" width="170" height="68" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+              <text x="13" y="21" fill="#F3DC99" font-family="JetBrains Mono" font-size="9" font-weight="700">2. ENTRADA AL VPS</text>
+              <text x="13" y="39" fill="#FFFFFF" font-family="Space Grotesk" font-size="12.5" font-weight="700">Connexió Directa</text>
+              <text x="13" y="55" fill="#9CA3AF" font-family="JetBrains Mono" font-size="9">Només accepta TradingView</text>
+            </g>
+
+            <!-- NODE 2B: RAILWAY GATEWAY -->
+            <g id="node-railway" class="topo-node dimmed" transform="translate(265, 132)">
+              <rect class="node-box" width="170" height="68" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+              <text x="13" y="21" fill="#F3DC99" font-family="JetBrains Mono" font-size="9" font-weight="700">2B. NÚVOL AVANÇAT</text>
+              <text x="13" y="39" fill="#FFFFFF" font-family="Space Grotesk" font-size="12.5" font-weight="700">Servidor Railway</text>
+              <text x="13" y="55" fill="#9CA3AF" font-family="JetBrains Mono" font-size="9">Panell Web + Filtre Notícies</text>
+            </g>
+
+            <!-- NODE 3: PYTHON BRIDGE -->
+            <g id="node-bridge" class="topo-node" transform="translate(475, 88)">
+              <rect class="node-box" width="150" height="72" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(212,175,55,0.4)" stroke-width="1.2"/>
+              <text x="12" y="22" fill="#E5C158" font-family="JetBrains Mono" font-size="9" font-weight="700">3. PONT AUTOMÀTIC</text>
+              <text x="12" y="41" fill="#FFFFFF" font-family="Space Grotesk" font-size="12.5" font-weight="700">Bridge al Windows</text>
+              <text x="12" y="57" fill="#10B981" font-family="JetBrains Mono" font-size="9">Passa l'ordre a NT8</text>
+            </g>
+
+            <!-- NODE 4A: NT8 Sim101 -->
+            <g id="node-sim101" class="topo-node" transform="translate(650, 38)">
+              <rect class="node-box" width="185" height="74" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(212,175,55,0.45)" stroke-width="1.2"/>
+              <circle cx="169" cy="18" r="3.5" fill="#10B981"/>
+              <text x="13" y="21" fill="#F3DC99" font-family="JetBrains Mono" font-size="9" font-weight="700">GUIA AUTOMÀTIC</text>
+              <text x="13" y="41" fill="#FFFFFF" font-family="Space Grotesk" font-size="13" font-weight="700">NT8 · Compte Sim101</text>
+              <text x="13" y="58" fill="#9CA3AF" font-family="JetBrains Mono" font-size="9">+30p TP / -30p SL + BE Sol</text>
+            </g>
+
+            <!-- NODE 4B: NT8 Sim102 -->
+            <g id="node-sim102" class="topo-node dimmed" transform="translate(650, 140)">
+              <rect class="node-box" width="185" height="74" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(244,63,94,0.45)" stroke-width="1.1"/>
+              <rect x="108" y="9" width="68" height="15" rx="4" fill="rgba(244,63,94,0.18)" stroke="rgba(244,63,94,0.5)" stroke-width="0.8"/>
+              <text x="142" y="19.5" text-anchor="middle" fill="#FDA4AF" font-family="JetBrains Mono" font-size="7.5" font-weight="700">BLINDAT BOT</text>
+              <text x="13" y="21" fill="#D4D4D8" font-family="JetBrains Mono" font-size="9" font-weight="700">GUIA MANUAL</text>
+              <text x="13" y="41" fill="#FFFFFF" font-family="Space Grotesk" font-size="13" font-weight="700">NT8 · Compte Sim102</text>
+              <text x="13" y="58" fill="#9CA3AF" font-family="JetBrains Mono" font-size="9">Clic Humà + Botó [BE +2t]</text>
+            </g>
+
+            <!-- NODE 5: REPLIKANTO -->
+            <g id="node-replikanto" class="topo-node" transform="translate(875, 86)">
+              <rect class="node-box" width="168" height="78" rx="10" fill="url(#goldNodeGrad)" stroke="rgba(212,175,55,0.5)" stroke-width="1.3"/>
+              <text x="13" y="22" fill="#E5C158" font-family="JetBrains Mono" font-size="9" font-weight="700">4. ELS TEUS COMPTES</text>
+              <text x="13" y="42" fill="#FFFFFF" font-family="Space Grotesk" font-size="13" font-weight="700">Copiador Replikanto</text>
+              <text x="13" y="57" fill="#10B981" font-family="JetBrains Mono" font-size="9">Mode: Ratio · Guard: ON</text>
+              <text x="13" y="69" fill="#FDA4AF" font-family="JetBrains Mono" font-size="8.5">Follower ATM: OFF</text>
+            </g>
+          </svg>
+        </div>
+
+        <div id="sim-telemetry-bar" class="mt-2 rounded-lg bg-[#09090D] border border-white/[0.06] px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 font-mono-tech text-xs">
+          <div class="flex items-center gap-2.5">
+            <span id="sim-stage-pill" class="px-2 py-0.5 rounded bg-white/[0.06] text-[#F3DC99] text-[10px] font-bold uppercase">DEMO</span>
+            <span id="sim-stage-msg" class="text-zinc-300 font-sans">Vols entendre què passa quan surt una operació? Prem el botó daurat «VEURE ANIMACIÓ D'UNA OPERACIÓ».</span>
+          </div>
+          <span id="sim-stage-clock" class="text-[11px] text-[#9CA3AF]">TEMPS REAL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- MISSION CONTROL SPLIT-SCREEN: PASSOS A L'ESQUERRA · PANTALLES DRETA   -->
+    <!-- ===================================================================== -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- ÍNDEX LATERAL FIX EN LLENGUATGE CLAR -->
+      <aside class="lg:col-span-3 lg:sticky lg:top-20 space-y-4">
+        <div class="obsidian-panel rounded-2xl p-4 space-y-3">
+          <div class="font-mono-tech text-[10px] uppercase tracking-[0.16em] text-[#9CA3AF] pb-2 border-b border-white/[0.06] flex items-center justify-between">
+            <span>PASSOS A SEGUIR</span>
+            <span id="rail-mode-tag" class="text-[#F3DC99] font-bold">AUTOMÀTIC VPS</span>
+          </div>
+
+          <nav class="space-y-1 text-xs font-medium">
+            <a href="#mod-preflight" id="rail-link-preflight" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 1 · Comprovacions</span>
+              <span id="rail-cnt-preflight" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/4</span>
+            </a>
+            <a href="#mod-nt8" id="rail-link-nt8" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 2 · NinjaTrader 8</span>
+              <span id="rail-cnt-nt8" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/3</span>
+            </a>
+            <a href="#mod-replikanto" id="rail-link-replikanto" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 3 · Copiador Replikanto</span>
+              <span id="rail-cnt-replikanto" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/1</span>
+            </a>
+            <a href="#section-railway" id="rail-link-railway" class="rail-item hidden flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 4A · Núvol Railway</span>
+              <span id="rail-cnt-railway" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/2</span>
+            </a>
+            <a href="#section-vps" id="rail-link-vps" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 4 · Pont al VPS</span>
+              <span id="rail-cnt-vps" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/3</span>
+            </a>
+            <a href="#mod-tradingview" id="rail-link-tv" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 5 · Alerta TradingView</span>
+              <span id="rail-cnt-tv" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/3</span>
+            </a>
+            <a href="#mod-daily" id="rail-link-daily" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 6 · Rutina de Cada Dia</span>
+              <span id="rail-cnt-daily" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/1</span>
+            </a>
+          </nav>
+
+          <div class="pt-3 border-t border-white/[0.06] space-y-1.5 font-mono-tech text-[10px]">
+            <div class="flex justify-between text-[#9CA3AF]">
+              <span>COMPTE GUIA:</span>
+              <span id="rail-leader-val" class="text-white font-semibold">Sim101 (Automàtic)</span>
+            </div>
+            <div class="flex justify-between text-[#9CA3AF]">
+              <span>TP / SL ESTÀNDARD:</span>
+              <span class="text-[#F3DC99]">+30p / -30p</span>
+            </div>
+            <div class="flex justify-between text-[#9CA3AF]">
+              <span>PROTECCIÓ BE:</span>
+              <span class="text-[#10B981]">Entrada + 0.50p (+2t)</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MÒDULS DE LA DRETA -->
+      <div class="lg:col-span-9 space-y-7">
+
+        <!-- ================================================================= -->
+        <!-- PAS 1: COMPROVACIONS PRÈVIES ABANS DE TOCAR RES                   -->
+        <!-- ================================================================= -->
+        <section id="mod-preflight" class="obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 1</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Comprovacions Bàsiques abans d'Instal·lar</h3>
+                <p class="text-xs text-[#9CA3AF]">Marca cada casella a mesura que ho comprovis (es queda guardat sol)</p>
+              </div>
+            </div>
+            <span class="font-mono-tech text-[11px] text-[#9CA3AF]">2 MINUTS</span>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-7 space-y-2.5">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-3.5 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="req_tv_access" data-group="preflight" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-0.5">1. Veus l'estratègia privada al teu TradingView</strong>
+                  Dins de TradingView, clica a dalt <em>Indicators &rarr; Invite-only scripts</em> (Scripts només amb invitació) i comprova que et surt <code class="font-mono-tech text-[#F3DC99]">Layer Sniper Pro</code>.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-3.5 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="req_cme_rt" data-group="preflight" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-0.5">2. Tens temps real al Nasdaq (Sense la «D» taronja al costat de MNQ1!)</strong>
+                  Mira el dibuix de la dreta: si al costat del nom <code class="font-mono-tech text-[#F3DC99]">MNQ1!</code> a TradingView hi veus una <strong class="text-amber-300">D</strong> taronja, tens 10 minuts de retard! Necessites el paquet de dades <em>CME Group</em> de TradingView (~7 USD/mes).
+                </span>
+              </label>
+
+              <label id="req-webhook-plan" class="obsidian-subcard flex items-start gap-3.5 p-3.5 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="req_tv_plan" data-group="preflight" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-0.5">3. Tens un pla de pagament a TradingView (Essential, Plus o Premium)</strong>
+                  El pla gratuït de TradingView no deixa enviar ordres automàtiques (<em>Webhooks</em>). Amb qualsevol pla a partir d'<em>Essential</em> ja en tens prou.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-3.5 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="req_nt8_rep" data-group="preflight" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-0.5">4. Tens NinjaTrader 8 obert i l'hora de Windows en Automàtic</strong>
+                  NinjaTrader 8 ha d'estar connectat a dades (llum verda a baix a l'esquerra). Si copies a diversos comptes, tingues també instal·lat <em>Flowbots Replikanto</em>.
+                </span>
+              </label>
+            </div>
+
+            <!-- Visual Inspector -->
+            <div class="xl:col-span-5 replica-window rounded-xl overflow-hidden">
+              <div class="px-3.5 py-2 bg-[#14161F] border-b border-white/[0.08] flex items-center justify-between font-mono-tech text-[10px]">
+                <span class="text-zinc-200">MIRA DALT A L'ESQUERRA DEL TEU TRADINGVIEW</span>
+                <span class="text-[#E5C158]">EXEMPLE VISUAL</span>
+              </div>
+              <div class="p-4 space-y-3 text-xs">
+                <div class="p-3 rounded-lg bg-[#10B981]/[0.08] border border-[#10B981]/35 space-y-1.5">
+                  <div class="font-mono-tech text-[10px] font-bold text-[#10B981]">✓ AIXÍ ÉS CORRECTE (TEMPS REAL)</div>
+                  <div class="px-2.5 py-2 rounded bg-[#08090D] border border-white/10 font-mono-tech text-[11px] flex items-center justify-between">
+                    <span><strong class="text-white">MNQ1!</strong> · <span class="text-[#F3DC99]">1m</span> · CME · Espelmes normals</span>
+                    <span class="inline-flex items-center gap-1 text-[10px] text-[#10B981]"><span class="w-2 h-2 rounded-full bg-[#10B981]"></span>En viu</span>
+                  </div>
+                </div>
+
+                <div class="p-3 rounded-lg bg-[#F43F5E]/[0.07] border border-[#F43F5E]/30 space-y-1.5">
+                  <div class="font-mono-tech text-[10px] font-bold text-[#FDA4AF]">✗ MALAMENT (NO OPERIS SI VEUS LA «D»)</div>
+                  <div class="px-2.5 py-2 rounded bg-[#08090D] border border-white/10 font-mono-tech text-[11px] flex items-center justify-between text-zinc-400">
+                    <span>MNQ1! · 5m · Heikin Ashi</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-500/25 text-amber-300 font-bold text-[10px]">D (Retard 10m)</span>
+                  </div>
+                  <p class="text-[11px] text-zinc-300 leading-snug">
+                    Si veus aquesta <strong class="text-amber-300">D</strong> taronja, les entrades arribaran 10 minuts tard. I usa sempre espelmes normals (<em>Candles</em>), mai <em>Heikin Ashi</em>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 2: NINJATRADER 8 I BOTONS DEL GRÀFIC                          -->
+        <!-- ================================================================= -->
+        <section id="mod-nt8" class="obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 2</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Posar les Plantilles i el Botó <code class="font-mono-tech text-[#F3DC99]">[BE +2t]</code> a NinjaTrader 8</h3>
+                <p class="text-xs text-[#9CA3AF]">Dins la carpeta descomprimida: <code class="font-mono-tech text-zinc-200">01_Kit_NinjaTrader8_i_Replikanto</code></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-7 space-y-3">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="nt8_install_bat" data-group="nt8" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">1. Doble clic a <code class="font-mono-tech text-[#F3DC99]">INSTALAR_KIT_NT8.bat</code> i prémer <kbd class="px-1.5 py-0.5 rounded bg-[#D4AF37]/20 text-[#F3DC99] font-mono-tech">F5</kbd> a NinjaTrader</strong>
+                  • Entra a la carpeta <code>01_Kit_NinjaTrader8_i_Replikanto</code> i fes doble clic a <strong>INSTALAR_KIT_NT8.bat</strong>.<br>
+                  • Ara ves a la finestra principal de NinjaTrader 8 (<em>Control Center</em>) i clica a dalt <strong>New &rarr; NinjaScript Editor</strong>.<br>
+                  • A la finestra que s'obre, prem la tecla <strong class="text-[#F3DC99]">F5</strong> del teclat. Espera 3 segons fins que soni un "ding" i ja pots tancar aquesta finestra.<br>
+                  • <em>Com veure els botons?</em> Obre un gràfic de <code>MNQ</code> i clica la icona <strong>Chart Trader</strong> a la barra superior del gràfic perquè aparegui la columna de la dreta!
+                </span>
+              </label>
+
+              <label id="nt8-ati-step" class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="nt8_enable_ati" data-group="nt8" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">2. Permetre que el Bot enviï ordres a NinjaTrader 8 (Activar ATI)</strong>
+                  A la finestra principal de NinjaTrader 8 (<em>Control Center</em>), clica a dalt <strong>Tools &rarr; Options</strong>. A l'esquerra tria <strong>Automated Trading Interface</strong>, marca la casella <strong>AT Interface [✓]</strong> i prem <em>OK</em>.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="nt8_sim_leaders" data-group="nt8" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">3. Entendre quin Compte de Prova fa de Guia (<code class="font-mono-tech text-[#F3DC99]">Sim101</code> vs <code class="font-mono-tech text-white">Sim102</code>)</strong>
+                  • Si vas en <strong>Automàtic</strong>: el bot sempre dispara a <strong class="text-[#F3DC99]">Sim101</strong> (ja ve creat de sèrie a NT8). No hi facis operacions a mà.<br>
+                  • Si vas en <strong>Manual</strong> (Apex/Topstep): ves a la pestanya <em>Accounts &rarr; clic dret &rarr; Add Simulation Account...</em> i crea un compte anomenat <strong class="text-white">Sim102</strong>. El bot té prohibit entrar a <code>Sim102</code> per seguretat.
+                </span>
+              </label>
+            </div>
+
+            <!-- Interactive NT8 Chart Trader Replica -->
+            <div class="xl:col-span-5 replica-window rounded-xl overflow-hidden">
+              <div class="px-3.5 py-2 bg-[#161821] border-b border-white/[0.09] flex items-center justify-between font-mono-tech text-[10px]">
+                <span class="text-white font-semibold">AIXÍ ET QUEDARÀ EL CHART TRADER A NT8</span>
+                <span class="text-[#F3DC99]">PROVA ELS BOTONS &darr;</span>
+              </div>
+
+              <div class="p-4 space-y-3 font-mono-tech text-xs">
+                <div class="grid grid-cols-2 gap-2">
+                  <button type="button" onclick="simulateNt8Action('entry', 'BUY')" class="py-2 rounded bg-[#10B981]/20 hover:bg-[#10B981]/30 border border-[#10B981]/50 text-[#6EE7B7] font-bold transition">
+                    Buy Mkt
+                  </button>
+                  <button type="button" onclick="simulateNt8Action('entry', 'SELL')" class="py-2 rounded bg-[#F43F5E]/20 hover:bg-[#F43F5E]/30 border border-[#F43F5E]/50 text-[#FDA4AF] font-bold transition">
+                    Sell Mkt
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5 text-[11px]">
+                  <div>
+                    <label class="text-[10px] text-[#9CA3AF] block mb-1">Account (Manual)</label>
+                    <div class="px-2.5 py-1.5 rounded bg-black/70 border border-white/10 text-white font-semibold">Sim102</div>
+                  </div>
+                  <div>
+                    <label class="text-[10px] text-[#9CA3AF] block mb-1">Order qty <span class="text-[#E5C158]">(Es posa sol!)</span></label>
+                    <div id="nt8-replica-qty" class="px-2.5 py-1.5 rounded bg-[#D4AF37]/15 border border-[#D4AF37]/45 text-[#F3DC99] font-bold">10</div>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="text-[10px] text-[#9CA3AF] block mb-1">ATM Strategy (Canvia-la per provar-ho &darr;)</label>
+                  <select id="nt8-replica-atm" onchange="syncNt8ReplicaAtm()" class="w-full px-2.5 py-2 rounded bg-black/80 border border-white/15 text-white text-[11px] focus:border-[#D4AF37] outline-none">
+                    <option value="10" selected>LS_50K_10MNQ_30TP_30SL</option>
+                    <option value="5">LS_50K_5MNQ_30TP_30SL</option>
+                    <option value="3">LS_50K_3MNQ_30TP_30SL</option>
+                    <option value="30">LS_150K_30MNQ_30TP_30SL</option>
+                  </select>
+                </div>
+
+                <div class="pt-2 border-t border-white/[0.08] space-y-1.5">
+                  <div class="text-[10px] text-[#E5C158]">Botons nous que apareixeran sota el teu Chart Trader:</div>
+                  <div class="grid grid-cols-3 gap-2">
+                    <button type="button" onclick="simulateNt8Action('be')" class="col-span-2 py-2 px-2 rounded bg-[#D4AF37]/20 hover:bg-[#D4AF37]/35 border border-[#D4AF37]/60 text-[#F3DC99] font-bold text-[11px] transition">
+                      🛡️ BE +2t (+0.50p)
+                    </button>
+                    <button type="button" onclick="simulateNt8Action('flat')" class="py-2 px-2 rounded bg-zinc-800 hover:bg-zinc-700 border border-white/15 text-zinc-200 font-bold text-[11px] transition">
+                      🛑 FLAT
+                    </button>
+                  </div>
+                </div>
+
+                <div id="nt8-replica-log" class="px-3 py-2 rounded bg-black/70 border border-white/[0.06] text-[10.5px] text-zinc-300 font-sans">
+                  Quan operes a mà, en triar la plantilla ATM es posen sols els contractes i els +30p/-30p. I amb 1 clic a <strong class="text-[#F3DC99]">BE +2t</strong> mous l'Stop a Breakeven + 2 ticks!
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 3: COPIADOR REPLIKANTO (EXPLICAT PAS A PAS)                   -->
+        <!-- ================================================================= -->
+        <section id="mod-replikanto" class="obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 3</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Configurar el Copiador Replikanto (Si tens comptes de fondeig)</h3>
+                <p class="text-xs text-[#9CA3AF]">Si de moment només vols provar amb 1 sol compte Sim sense Replikanto, marca la casella i passa al Pas 4.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-5 space-y-3.5">
+              <div class="obsidian-subcard rounded-xl p-4 space-y-3">
+                <div class="font-mono-tech text-[10px] uppercase tracking-wider text-[#E5C158]">
+                  Quin número he de posar a la casella «Ratio»?
+                </div>
+                <div>
+                  <label class="block text-[11px] text-zinc-300 mb-1">1. Quants contractes entren al compte Guia (<code class="font-mono-tech text-[#F3DC99]" id="calc-leader-acct-lbl">Sim101</code>)?</label>
+                  <select id="calc-leader-qty" onchange="updateRatioCalc()" class="w-full rounded-lg bg-black/80 border border-white/15 px-3 py-2 font-mono-tech text-xs font-semibold text-white focus:border-[#D4AF37] outline-none">
+                    <option value="10" selected>10 MNQ (El que ve per defecte)</option>
+                    <option value="5">5 MNQ (Perfil Consolidació)</option>
+                    <option value="3">3 MNQ (Perfil Defensiu)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-[11px] text-zinc-300 mb-1">2. Quants contractes vols que copiï el teu compte real/prova?</label>
+                  <select id="calc-follower-qty" onchange="updateRatioCalc()" class="w-full rounded-lg bg-black/80 border border-white/15 px-3 py-2 font-mono-tech text-xs font-semibold text-white focus:border-[#D4AF37] outline-none">
+                    <option value="3">3 MNQ (Compte 50K prudent)</option>
+                    <option value="5">5 MNQ (Compte 50K moderat)</option>
+                    <option value="10" selected>10 MNQ (Compte 50K estàndard)</option>
+                    <option value="15">15 MNQ (Compte 100K / 150K)</option>
+                    <option value="20">20 MNQ (Compte 150K avançat)</option>
+                    <option value="30">30 MNQ (Compte 150K escalat 3x)</option>
+                  </select>
+                </div>
+
+                <div class="p-3 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/35 flex items-center justify-between">
+                  <div>
+                    <div class="font-mono-tech text-[10px] uppercase text-[#F3DC99]">Escriu aquest Ratio a Replikanto:</div>
+                    <div id="calc-risk-out" class="font-mono-tech text-[11px] text-zinc-300 mt-0.5">Guany TP: +600 USD | Risc SL: -600 USD</div>
+                  </div>
+                  <div id="calc-ratio-out" class="font-display text-2xl font-bold text-[#F3DC99]">1.0</div>
+                </div>
+              </div>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="nt8_replikanto_cfg" data-group="replikanto" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-1">He deixat la finestra <code class="font-mono-tech text-[#F3DC99]">New &rarr; Replikanto</code> com a la dreta</strong>
+                  • <strong>Instrument:</strong> el <code>MNQ</code> del trimestre actual (canvia cada 3 mesos: <code>03</code>, <code>06</code>, <code>09</code>, <code>12</code>).<br>
+                  • <strong>Leader:</strong> <code id="rep-step-leader-txt" class="text-[#F3DC99]">Sim101</code>.<br>
+                  • Clica l'icona de <strong>3 punts ⋮</strong> a dalt a la dreta de Replikanto &rarr; marca <strong>Copy Mode = Ratio</strong> i <strong>Follower Guard = ON</strong>.<br>
+                  • <strong class="text-[#FDA4AF]">Molt important:</strong> deixa la columna <strong>ATM Strategy DESMARCADA (OFF)</strong> als teus comptes copiats!
+                </span>
+              </label>
+            </div>
+
+            <!-- Live Flowbots Replikanto Table Replica -->
+            <div class="xl:col-span-7 replica-window rounded-xl overflow-hidden font-mono-tech text-xs">
+              <div class="px-4 py-2.5 bg-[#161821] border-b border-white/[0.09] flex flex-wrap items-center justify-between gap-2 text-[10px]">
+                <span class="text-white font-semibold">AIXÍ HA DE QUEDAR LA TEVA FINESTRA DE REPLIKANTO</span>
+                <div class="flex items-center gap-2">
+                  <span class="px-2 py-0.5 rounded bg-white/[0.06] text-zinc-200">MNQ (Mes vigent)</span>
+                  <span id="rep-leader-pill" class="px-2 py-0.5 rounded bg-[#D4AF37]/20 text-[#F3DC99] border border-[#D4AF37]/40">Leader: Sim101</span>
+                </div>
+              </div>
+
+              <div class="p-4 space-y-3">
+                <div class="grid grid-cols-3 gap-2 text-[10px]">
+                  <div class="p-2 rounded bg-black/60 border border-white/[0.06]">
+                    <span class="text-[#9CA3AF] block">Menú ⋮ &rarr; Copy Mode</span>
+                    <strong class="text-[#F3DC99]">Ratio</strong>
+                  </div>
+                  <div class="p-2 rounded bg-[#F43F5E]/10 border border-[#F43F5E]/35">
+                    <span class="text-[#FDA4AF] block">Casella ATM als copiats</span>
+                    <strong class="text-[#FDA4AF]">DESMARCADA (OFF!)</strong>
+                  </div>
+                  <div class="p-2 rounded bg-black/60 border border-white/[0.06]">
+                    <span class="text-[#9CA3AF] block">Cross Order</span>
+                    <strong class="text-white">OFF</strong>
+                  </div>
+                </div>
+
+                <div class="overflow-x-auto rounded-lg border border-white/[0.08]">
+                  <table class="w-full text-left border-collapse text-[11px]">
+                    <thead>
+                      <tr class="bg-white/[0.04] text-[#9CA3AF] text-[10px] uppercase">
+                        <th class="py-2 px-3">Actiu</th>
+                        <th class="py-2 px-3">Compte Copiat (Follower)</th>
+                        <th class="py-2 px-3">Mode</th>
+                        <th class="py-2 px-3 text-[#F3DC99]">Ratio</th>
+                        <th class="py-2 px-3">ATM</th>
+                        <th class="py-2 px-3 text-right">Què farà</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/[0.06] bg-black/40">
+                      <tr class="bg-[#D4AF37]/[0.06]">
+                        <td class="py-2.5 px-3 text-[#10B981] font-bold">[✓]</td>
+                        <td class="py-2.5 px-3 text-white font-semibold">EL_TEU_COMPTE_01</td>
+                        <td class="py-2.5 px-3 text-zinc-300">Ratio</td>
+                        <td class="py-2.5 px-3 font-bold text-[#F3DC99]" id="rep-row1-ratio">1.0</td>
+                        <td class="py-2.5 px-3 text-[#FDA4AF]">OFF</td>
+                        <td class="py-2.5 px-3 text-right text-white font-semibold" id="rep-row1-qty">10 MNQ (±600 USD)</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2.5 px-3 text-[#10B981] font-bold">[✓]</td>
+                        <td class="py-2.5 px-3 text-zinc-300">EXEMPLE_50K_SUAU</td>
+                        <td class="py-2.5 px-3 text-zinc-400">Ratio</td>
+                        <td class="py-2.5 px-3 text-zinc-200" id="rep-row2-ratio">0.5</td>
+                        <td class="py-2.5 px-3 text-[#FDA4AF]">OFF</td>
+                        <td class="py-2.5 px-3 text-right text-zinc-400">5 MNQ (±300 USD)</td>
+                      </tr>
+                      <tr>
+                        <td class="py-2.5 px-3 text-[#10B981] font-bold">[✓]</td>
+                        <td class="py-2.5 px-3 text-zinc-300">EXEMPLE_150K_FORT</td>
+                        <td class="py-2.5 px-3 text-zinc-400">Ratio</td>
+                        <td class="py-2.5 px-3 text-zinc-200" id="rep-row3-ratio">1.5</td>
+                        <td class="py-2.5 px-3 text-[#FDA4AF]">OFF</td>
+                        <td class="py-2.5 px-3 text-right text-zinc-400">15 MNQ (±900 USD)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="text-[11px] text-zinc-300 font-sans leading-relaxed">
+                  💡 <strong>Per què l'ATM ha d'estar desmarcat (OFF) als comptes copiats?</strong> Perquè Replikanto ja copia el Take Profit, l'Stop Loss i el moviment de Breakeven del compte Guia. Si ho marquessis, es posarien ordres duplicades!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 4A (OPCIONAL AVANÇAT): SERVIDOR RAILWAY PRO                   -->
+        <!-- ================================================================= -->
+        <section id="section-railway" class="hidden obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 4A</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Desplegar Servidor Central a Railway (Només Opció 3 Avançada)</h3>
+                <p class="text-xs text-[#9CA3AF]">Carpeta: <code class="font-mono-tech text-zinc-200">03_Servidor_Railway_Pro</code></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-6 space-y-3">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="rw_deploy" data-group="railway" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-1">1. Pujar <code class="font-mono-tech text-[#F3DC99]">03_Servidor_Railway_Pro</code> i activar domini</strong>
+                  Puja la carpeta a un repositori privat de GitHub connectat a Railway i clica <strong>Settings &rarr; Networking &rarr; Generate Domain</strong>.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="rw_env_vars" data-group="railway" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white block mb-1">2. Enganxar les variables al <code class="font-mono-tech text-[#F3DC99]">RAW Editor</code> de Railway</strong>
+                  Copia la plantilla de la dreta posant la teva clau secreta i la IP del teu VPS al port <code>8090</code>.
+                </span>
+              </label>
+            </div>
+
+            <div class="xl:col-span-6 replica-window rounded-xl overflow-hidden font-mono-tech text-[11px]">
+              <div class="px-3.5 py-2 bg-[#161821] border-b border-white/[0.08] flex items-center justify-between">
+                <span class="text-zinc-300">PLANTILLA VARIABLES RAILWAY</span>
+                <button type="button" onclick="copyText('rw-env-snippet', this)" class="px-2.5 py-0.5 rounded bg-[#D4AF37]/20 text-[#F3DC99] border border-[#D4AF37]/40 text-[10px] font-bold">
+                  COPIAR PLANTILLA
+                </button>
+              </div>
+              <pre id="rw-env-snippet" class="p-4 text-zinc-300 overflow-x-auto leading-relaxed">ENGINE_MODE=paper
+WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta
+DASHBOARD_USER=admin
+DASHBOARD_PASS=posa_aqui_la_teva_contrasenya
+TRADOVATE_DIRECT_ENABLED=false
+NT8_BOT_ACCOUNT=Sim101
+FORWARD_WEBHOOK_URL=http://LA_IP_DEL_TEU_VPS:8090/webhook
+FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 4: INSTAL·LAR EL PONT AUTOMÀTIC AL VPS WINDOWS                -->
+        <!-- ================================================================= -->
+        <section id="section-vps" class="obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 4</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Instal·lar el Pont Automàtic al teu VPS Windows (3 Clics)</h3>
+                <p class="text-xs text-[#9CA3AF]">Dins la carpeta descomprimida: <code class="font-mono-tech text-zinc-200">02_Bridge_VPS_Windows</code></p>
+              </div>
+            </div>
+            <span class="font-mono-tech text-[11px] text-[#10B981]">S'ENCÉN SOL EN REINICIAR WINDOWS</span>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-6 space-y-3">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="vps_run_installer" data-group="vps" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">1. Clic dret a <code class="font-mono-tech text-[#F3DC99]">INSTALAR_BRIDGE_VPS.bat</code> &rarr; «Executar com a administrador»</strong>
+                  • Entra a la carpeta <code>02_Bridge_VPS_Windows</code>.<br>
+                  • Fes <strong>clic amb el botó dret</strong> a sobre d'<code>INSTALAR_BRIDGE_VPS.bat</code> i tria <strong>Executar com a administrador</strong> (<em>Run as administrator</em>).<br>
+                  • Quan et pregunti quina opció vols (<code>1, 2 o 3</code>): escriu <strong class="text-[#F3DC99]">1</strong> i prem <em>Enter</em> (si uses l'Opció 3 de Railway, escriu <code>3</code>). Ell sol instal·la Python si no el tens i deixa el pont funcionant!
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="vps_read_credentials" data-group="vps" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">2. Obrir l'arxiu <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\DADES_CONNEXIO_TRADINGVIEW.txt</code></strong>
+                  No has de buscar la teva IP enlloc! L'instal·lador acaba de crear aquest bloc de notes amb <strong>les teves 2 dades personals</strong> ja llestes per copiar al Pas 5:<br>
+                  • <strong>Dada A (Clau Secreta / Token):</strong> comença per <code class="font-mono-tech text-white">ls_...</code><br>
+                  • <strong>Dada B (Webhook URL):</strong> l'adreça <code class="font-mono-tech text-white">http://.../webhook</code> del teu VPS.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="vps_local_test" data-group="vps" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">3. Fer la Prova de 10 Segons amb <code class="font-mono-tech text-[#10B981]">PROVAR_CONNEXIO_LOCAL.bat</code></strong>
+                  Amb NinjaTrader 8 obert (i sense cap compte real marcat a Replikanto!), ves a <code>C:\LayerSniper</code>, fes doble clic a <strong>PROVAR_CONNEXIO_LOCAL.bat</strong> i prem <strong>S</strong>: veuràs com compra 1 MNQ de prova a <code>Sim101</code> i el tanca sol en 3 segons!
+                </span>
+              </label>
+            </div>
+
+            <!-- Safe, Zero-Fake-IP URL Verifier & Troubleshooting -->
+            <div class="xl:col-span-6 replica-window rounded-xl overflow-hidden text-xs">
+              <div class="px-3.5 py-2.5 bg-[#161821] border-b border-white/[0.08] flex items-center justify-between font-mono-tech text-[10px]">
+                <span class="text-white font-semibold">AJUDA VISUAL · LES TEVES 2 DADES DE CONNEXIÓ</span>
+                <span class="text-[#10B981]">ZERO ERRORS</span>
+              </div>
+
+              <div class="p-4 space-y-3.5">
+                <div class="p-3 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-zinc-200 leading-relaxed">
+                  💡 <strong>Consell d'or:</strong> Copia les dades directament de l'arxiu <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\DADES_CONNEXIO_TRADINGVIEW.txt</code> del teu VPS. Si només tens apuntada la IP del teu VPS i vols que et construïm la URL sense errors, escriu-la aquí sota:
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono-tech">
+                  <button type="button" onclick="setIngressType('ip80')" id="ing-btn-ip80" class="py-1.5 px-2 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3DC99] text-[10px] font-bold">
+                    [1] IP Directa VPS
+                  </button>
+                  <button type="button" onclick="setIngressType('cf443')" id="ing-btn-cf443" class="py-1.5 px-2 rounded bg-black/50 border border-white/10 text-zinc-400 text-[10px] font-bold">
+                    [2] Túnel Cloudflare
+                  </button>
+                  <button type="button" onclick="setIngressType('rw443')" id="ing-btn-rw443" class="py-1.5 px-2 rounded bg-black/50 border border-white/10 text-zinc-400 text-[10px] font-bold">
+                    [3] Domini Railway
+                  </button>
+                </div>
+
+                <div>
+                  <label id="vps-host-label" class="block text-[11px] text-zinc-300 mb-1">Enganxa aquí la IP pública del teu VPS (si vols verificar la URL):</label>
+                  <input id="vps-host-input" type="text" value="" placeholder="Ex: enganxa aquí la IP real del teu VPS..." oninput="buildWebhookUrl()"
+                    class="w-full rounded-lg bg-black/80 border border-white/15 px-3 py-2 font-mono-tech text-xs text-white placeholder:text-zinc-600 focus:border-[#D4AF37] outline-none">
+                </div>
+
+                <div class="p-3 rounded-lg bg-[#050507] border border-white/10 space-y-1.5">
+                  <div class="flex items-center justify-between text-[10px] font-mono-tech">
+                    <span class="text-[#9CA3AF]">DADA B · LA TEVA WEBHOOK URL PER A TRADINGVIEW:</span>
+                    <button type="button" id="copy-gen-url-btn" disabled onclick="copyText('generated-webhook-url', this)" class="gold-cta px-2.5 py-1 rounded text-[10px] font-bold">
+                      ESCRIU LA TEVA IP PRIMER
+                    </button>
+                  </div>
+                  <div id="generated-webhook-url" class="font-mono-tech text-zinc-400 break-all text-xs">
+                    (Obre DADES_CONNEXIO_TRADINGVIEW.txt al teu VPS o escriu la teva IP a dalt)
+                  </div>
+                </div>
+
+                <details class="rounded-lg bg-black/50 border border-white/[0.07] px-3 py-2.5 text-xs">
+                  <summary class="cursor-pointer flex items-center justify-between text-zinc-300 font-medium">
+                    <span>Què faig si en instal·lar em diu «Port 80 ocupat»?</span>
+                    <span class="font-mono-tech text-[#E5C158]">+</span>
+                  </summary>
+                  <div class="mt-2.5 pt-2.5 border-t border-white/[0.06] space-y-2 text-zinc-300 text-[11px] leading-relaxed">
+                    <p><strong>Solució A (Més fàcil):</strong> Torna a obrir <code>INSTALAR_BRIDGE_VPS.bat</code>, tria l'opció <strong>2 (Túnel Cloudflare)</strong> i fes doble clic a <code>C:\LayerSniper\INICIAR_TUNEL_HTTPS_CLOUDFLARE.bat</code>.</p>
+                    <p><strong>Solució B (Alliberar el Port 80 a Windows):</strong> Obre PowerShell com a Administrador i enganxa aquesta línia per apagar el servidor web buit que porta Windows:</p>
+                    <div class="flex items-center justify-between gap-2 bg-black border border-white/10 rounded px-2.5 py-1.5 font-mono-tech text-[10px] text-[#F3DC99]">
+                      <span id="cmd-iis">Stop-Service W3SVC -Force; Set-Service W3SVC -StartupType Disabled</span>
+                      <button type="button" onclick="copyText('cmd-iis', this)" class="px-2 py-0.5 rounded bg-white/10 text-white shrink-0">Copiar</button>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 5: TRADINGVIEW — DIFERENCIAR CLARAMENT RODA ⚙️ VS ALERTA      -->
+        <!-- ================================================================= -->
+        <section id="mod-tradingview" class="obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 5</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Configurar el Gràfic de TradingView i Crear l'Alerta</h3>
+                <p class="text-xs text-[#9CA3AF]">Segueix l'ordre exacte per no confondre on va la Clau Secreta i on va la URL</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-5 space-y-3">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="tv_chart_setup" data-group="tv" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">1. Posar <code class="font-mono-tech text-[#F3DC99]">MNQ1!</code> en <code class="font-mono-tech text-[#F3DC99]">1 minut</code> i afegir l'Estratègia</strong>
+                  • Obre el símbol <code>MNQ1!</code> en temporalitat <strong>1m</strong> amb espelmes normals (<em>Candles</em>).<br>
+                  • Mira a baix del tot a la dreta del gràfic: si veus les lletres <strong>B-ADJ</strong> o <strong>SET</strong> il·luminades, clica-les perquè quedin <strong>apagades</strong> (així el preu és idèntic al de NinjaTrader).<br>
+                  • Afegeix l'estratègia des d'<em>Indicators &rarr; Invite-only scripts &rarr; Layer Sniper Pro</em>.
+                </span>
+              </label>
+
+              <label id="tv-secret-step" class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="tv_inputs_secret" data-group="tv" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">2. Posar la Dada A (<code class="font-mono-tech text-[#F3DC99]">Clau ls_...</code>) a la Roda Dentada ⚙️ de l'Estratègia</strong>
+                  Passa el ratolí pel nom <code class="font-mono-tech text-[#F3DC99]">Layer Sniper Pro</code> (a dalt a l'esquerra del gràfic) i clica la <strong>roda dentada ⚙️</strong> (pestanya <em>Inputs</em>):<br>
+                  • A <em>Webhook Secret Token</em> enganxa la teva clau <code class="font-mono-tech text-white">ls_...</code> del Pas 4.<br>
+                  • Tria el teu <em>Perfil de Lotatge</em> (ex: <code>BLOC A 10 MNQ</code>) i prem <strong>OK</strong>.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="tv_alert_created" data-group="tv" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">3. Crear l'Alerta (<kbd class="px-1.5 py-0.5 rounded bg-white/10 font-mono-tech">Alt + A</kbd>) copiant els 3 punts de la dreta &rarr;</strong>
+                  Clica l'icona del despertador (<em>Create Alert</em>) i copia exactament la <em>Condition</em>, el codi <code>{{strategy.order.alert_message}}</code> dins de <em>Message</em> i la teva <em>Webhook URL</em>.<br>
+                  <strong class="text-[#F3DC99]">⚠️ Recorda per sempre:</strong> si algun dia entres a la roda dentada ⚙️ a canviar contractes o qualsevol opció, <strong>has d'esborrar l'alerta i tornar-la a crear</strong>!
+                </span>
+              </label>
+            </div>
+
+            <!-- Authentic TradingView Modal Replica -->
+            <div class="xl:col-span-7 replica-window rounded-xl overflow-hidden">
+              <div class="px-4 py-3 bg-[#171923] border-b border-white/[0.09] flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <div class="font-display text-sm font-bold text-white">Finestra «Create Alert» de TradingView</div>
+                  <div class="font-mono-tech text-[10px] text-[#9CA3AF]">COPIA EXACTAMENT AQUESTES OPCIONS</div>
+                </div>
+                <div class="flex rounded-lg bg-black/60 p-0.5 border border-white/10 font-mono-tech text-[10px]">
+                  <button type="button" onclick="switchTvAlertTab('webhook')" id="tv-tab-webhook" class="px-2.5 py-1 rounded-md bg-[#D4AF37] text-[#050506] font-bold transition">
+                    ⚡ Si vas en Automàtic
+                  </button>
+                  <button type="button" onclick="switchTvAlertTab('manual')" id="tv-tab-manual" class="px-2.5 py-1 rounded-md text-zinc-400 hover:text-white transition">
+                    📱 Si vas en Manual (Sim102)
+                  </button>
+                </div>
+              </div>
+
+              <!-- TAB 1: AUTOMATED WEBHOOK -->
+              <div id="tv-webhook-alert-box" class="p-4 sm:p-5 space-y-4 text-xs">
+                <div class="p-3 rounded-lg bg-[#10B981]/10 border border-[#10B981]/30 text-zinc-200 leading-relaxed">
+                  ✓ <strong>Només has de crear 1 SOLA alerta!</strong> Amb les opcions d'aquí sota, aquesta única alerta envia automàticament tant la compra/venda de l'estratègia com el moviment d'Stop a Breakeven i el tancament final.
+                </div>
+
+                <div class="space-y-3.5">
+                  <div>
+                    <div class="font-mono-tech text-[10px] uppercase text-[#9CA3AF] mb-1">1. Pestanya «Settings» &rarr; 1r Desplegable (Condition)</div>
+                    <div class="px-3 py-2 rounded-lg bg-[#131722] border border-white/15 font-medium text-white flex items-center justify-between">
+                      <span>Layer Sniper Pro</span>
+                      <span class="text-zinc-500">&#9662;</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="font-mono-tech text-[10px] uppercase text-[#F3DC99] font-bold mb-1">
+                      2. Pestanya «Settings» &rarr; 2n Desplegable (TRIA LES DUES OPCIONS JUNTES!)
+                    </div>
+                    <div class="px-3.5 py-2.5 rounded-lg bg-[#D4AF37]/15 border-2 border-[#D4AF37] font-mono-tech font-bold text-white flex flex-wrap items-center justify-between gap-2 shadow-[0_0_25px_rgba(212,175,55,0.2)]">
+                      <span>Order fills and alert() function calls</span>
+                      <span class="px-2 py-0.5 rounded bg-[#10B981] text-[#050506] text-[10px] font-extrabold">TRIA AQUESTA ✓</span>
+                    </div>
+                    <p class="text-[11px] text-zinc-400 mt-1">
+                      *(Si tens TradingView en castellà/català surt com: «Ejecuciones de órdenes y llamadas a la función alert()»)*
+                    </p>
+                  </div>
+
+                  <div>
+                    <div class="font-mono-tech text-[10px] uppercase text-[#F3DC99] font-bold mb-1">
+                      3. Caixa «Message» (ESBORRA EL TEXT PER DEFECTE I ENGANXA AIXÒ!)
+                    </div>
+                    <div class="p-3 rounded-lg bg-[#131722] border border-[#D4AF37]/50 space-y-2">
+                      <div class="flex flex-wrap items-center justify-between gap-2 bg-black/75 px-3 py-2 rounded border border-white/10">
+                        <code id="tv-strategy-msg-code" class="font-mono-tech text-xs font-bold text-[#F3DC99]">{{strategy.order.alert_message}}</code>
+                        <button type="button" onclick="copyText('tv-strategy-msg-code', this)"
+                          class="gold-cta px-2.5 py-1 rounded font-mono-tech text-[10px] font-bold shrink-0">
+                          COPIAR CODI
+                        </button>
+                      </div>
+                      <p class="text-[11px] text-zinc-300 leading-relaxed">
+                        • <strong>Molt important:</strong> TradingView escriu una frase en anglès per defecte dins de <em>Message</em>. <strong>Esborra-la tota</strong> i deixa <strong>únicament</strong> <code>{{strategy.order.alert_message}}</code>.<br>
+                        • A <em>Expiration</em> posa la data més llunyana que et deixi (o <em>Open-ended</em>).
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="pt-2 border-t border-white/[0.07]">
+                    <div class="font-mono-tech text-[10px] uppercase text-[#9CA3AF] mb-1.5">4. Pestanya «Notifications» &rarr; Enganxa aquí la Dada B (La teva URL)</div>
+                    <div class="p-3 rounded-lg bg-[#131722] border border-white/15 space-y-2">
+                      <div class="flex items-center gap-2 font-semibold text-white">
+                        <span class="w-4 h-4 rounded bg-[#D4AF37] text-[#050506] inline-flex items-center justify-center font-mono-tech text-[10px] font-bold">✓</span>
+                        <span>Marca la casella «Webhook URL» i enganxa la URL del teu fitxer .txt:</span>
+                      </div>
+                      <div class="px-3 py-2 rounded bg-black/70 border border-white/10 font-mono-tech text-[11px] text-[#F3DC99]" id="tv-replica-webhook-url">
+                        (Enganxa aquí la URL que et surt a DADES_CONNEXIO_TRADINGVIEW.txt)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: MANUAL MOBILE ALERTS -->
+              <div id="tv-manual-alert-box" class="hidden p-4 sm:p-5 space-y-3.5 text-xs">
+                <div class="p-3 rounded-lg bg-[#F43F5E]/10 border border-[#F43F5E]/30 text-[#FDA4AF] leading-relaxed">
+                  <strong>Important per a empreses manuals (Apex, Topstep, TPT):</strong> A la pestanya <em>Notifications</em>, deixa <strong>Webhook URL DESMARCADA</strong> i marca només <em>Notify in app</em> (avís al mòbil) i <em>Play sound</em>.
+                </div>
+
+                <p class="text-zinc-300 leading-relaxed">
+                  Amb l'estratègia <code class="font-mono-tech text-[#F3DC99]">Layer Sniper Pro</code> també en tens prou creant <strong>1 sola alerta d'avís al mòbil/PC</strong>:
+                </p>
+
+                <div class="space-y-2 font-mono-tech text-[11px]">
+                  <div class="p-3 rounded-lg bg-[#131722] border border-white/10 space-y-1">
+                    <div class="text-[#F3DC99] font-bold font-sans">1. Pestanya «Settings» &rarr; Condition:</div>
+                    <div class="text-white">Layer Sniper Pro &rarr; <span class="text-[#10B981]">Order fills and alert() function calls</span></div>
+                  </div>
+
+                  <div class="p-3 rounded-lg bg-[#131722] border border-white/10 space-y-1">
+                    <div class="text-[#10B981] font-bold font-sans">2. Com operaràs quan soni l'avís:</div>
+                    <div class="text-zinc-300 font-sans leading-relaxed">
+                      • <strong>Preparació visual:</strong> Quan vegis aparèixer al gràfic l'etiqueta gris <em>«👀 PREPARAT BUY/SELL (Esperant LAYER)»</em>, tingues NinjaTrader (`Sim102`) a punt.<br>
+                      • <strong>1r Avís sonor (Entrada LAYER):</strong> Prem <strong>Buy Mkt</strong> o <strong>Sell Mkt</strong> a <code>Sim102</code>.<br>
+                      • <strong>2n Avís sonor (TP 1 assolit):</strong> Prem el botó verd <strong>[🛡️ BE +2t (+0.50p)]</strong> del Chart Trader!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 6 (NOU): RUTINA DIÀRIA DE 20 SEGONS (TRANQUIL·LITAT TOTAL)    -->
+        <!-- ================================================================= -->
+        <section id="mod-daily" class="obsidian-panel rounded-2xl p-6 space-y-4 border-[#D4AF37]/35">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40">PAS 6 · FINAL</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Ja ho tens tot instal·lat! Què has de revisar cada dia en 20 segons?</h3>
+                <p class="text-xs text-[#9CA3AF]">La mini-llista diària abans que obri el mercat americà (15:30h hora d'aquí)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
+            <div class="obsidian-subcard rounded-xl p-4 space-y-1">
+              <div class="font-mono-tech text-[10px] font-bold text-[#10B981]">1. WINDOWS + NINJATRADER 8</div>
+              <div class="font-semibold text-white">Obert i amb llum verda</div>
+              <p class="text-zinc-300 leading-relaxed">
+                Comprova que el teu VPS/PC Windows està encès i que NinjaTrader 8 té la boleta <strong>verda</strong> (connectat a dades) a baix a l'esquerra.
+              </p>
+            </div>
+
+            <div class="obsidian-subcard rounded-xl p-4 space-y-1">
+              <div class="font-mono-tech text-[10px] font-bold text-[#F3DC99]">2. FINESTRA REPLIKANTO</div>
+              <div class="font-semibold text-white">Comptes marcats i ATM en OFF</div>
+              <p class="text-zinc-300 leading-relaxed">
+                Revisa que el <em>Leader</em> sigui el correcte (<code>Sim101</code> o <code>Sim102</code>) i que els comptes que vols operar avui tinguin el check verd <code>[✓]</code> posat.
+              </p>
+            </div>
+
+            <div class="obsidian-subcard rounded-xl p-4 space-y-1">
+              <div class="font-mono-tech text-[10px] font-bold text-[#E5C158]">3. ALERTA DE TRADINGVIEW</div>
+              <div class="font-semibold text-white">Activa (punt verd)</div>
+              <p class="text-zinc-300 leading-relaxed">
+                Un cop d'ull ràpid al rellotge d'alertes de TradingView per veure que no ha caducat. Després ja pots tancar TradingView tranquil·lament!
+              </p>
+            </div>
+          </div>
+
+          <label class="obsidian-subcard flex items-center gap-3.5 p-4 rounded-xl cursor-pointer border-[#10B981]/30">
+            <input type="checkbox" data-step="daily_ready_check" data-group="daily" class="step-check">
+            <span class="step-body text-xs text-zinc-200">
+              <strong class="step-title text-white">Tot entès, provat en compte Sim i llest per operar amb disciplina!</strong>
+            </span>
+          </label>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="relative z-10 max-w-[1380px] mx-auto px-4 sm:px-7 py-8 mt-6 border-t border-white/[0.06] flex flex-wrap items-center justify-between gap-3 font-mono-tech text-[11px] text-zinc-500">
+    <span>LAYER SNIPER PRO // GUIA INTERACTIVA OFICIAL</span>
+    <span>TRADINGVIEW &middot; NINJATRADER 8 &middot; REPLIKANTO</span>
+  </footer>
+
+  <!-- ======================================================================= -->
+  <!-- INTERACTIVE CONTROLLER                                                  -->
+  <!-- ======================================================================= -->
+  <script>
+    const STORAGE_MODE_KEY = 'ls_portal_mode_v2';
+    const STORAGE_CHECKS_KEY = 'ls_portal_checks_v1';
+    const isOfflineFile = window.location.protocol === 'file:';
+    const isFastApiPortal = !isOfflineFile && window.location.pathname.replace(/\/+$/, '').endsWith('/portal');
+    const isStaticSite = !isOfflineFile && !isFastApiPortal;
+    let currentMode = 'direct';
+    let currentIngress = 'ip80';
+    let simTimer = null;
+
+    function initEnvironmentMode() {
+      if (isOfflineFile) {
+        document.getElementById('offline-banner').classList.remove('hidden');
+        document.getElementById('downloads-section').classList.add('hidden');
+        document.getElementById('logout-btn').classList.add('hidden');
+      } else if (isStaticSite) {
+        document.getElementById('logout-btn').classList.add('hidden');
+        document.getElementById('gh-dashboard-tabs-bar').classList.remove('hidden');
+        document.getElementById('dl-full-package').setAttribute('href', 'downloads/LayerSniper_Pro_Client_Package.zip');
+        document.getElementById('dl-nt8-kit').setAttribute('href', 'downloads/LayerSniper_NT8_Replikanto_Kit.zip');
+        document.getElementById('dl-vps-bridge').setAttribute('href', 'downloads/LayerSniper_VPS_Update.zip');
+        fetchLiveVersionMetadata('downloads/VERSION.json?t=' + Date.now());
+      } else {
+        fetchLiveVersionMetadata('/portal/api/version');
+      }
+    }
+
+    async function fetchLiveVersionMetadata(endpointUrl) {
+      try {
+        const res = await fetch(endpointUrl || '/portal/api/version');
+        if (!res.ok) return;
+        const meta = await res.json();
+        if (meta.version) {
+          document.getElementById('pkg-version-badge').textContent = 'v' + meta.version;
+        }
+        const tvVer = meta.strategy_version || meta.indicator_version;
+        if (tvVer) {
+          document.getElementById('tv-version-badge').textContent = 'Estratègia TV: ' + tvVer;
+        }
+        if (meta.updated_at) {
+          document.getElementById('meta-updated-date').textContent = meta.updated_at;
+          const parts = [];
+          if (meta.package_size_kb) parts.push(`${meta.package_size_kb} KB`);
+          if (meta.package_files_count) parts.push(`${meta.package_files_count} arxius`);
+          if (parts.length > 0) {
+            document.getElementById('meta-extra-stats').textContent = '· ' + parts.join(' · ');
+          }
+        }
+        if (Array.isArray(meta.changelog) && meta.changelog.length > 0) {
+          const container = document.getElementById('changelog-container');
+          container.innerHTML = meta.changelog.map(entry => {
+            const items = (entry.changes || []).map(c => `<li>${escapeHtml(c)}</li>`).join('');
+            return `
+              <div class="p-3.5 rounded-lg bg-black/50 border border-white/[0.06]">
+                <div class="font-mono-tech font-bold text-[#F3DC99]">v${escapeHtml(entry.version)} (${escapeHtml(entry.date)}) — ${escapeHtml(entry.title || '')}</div>
+                <ul class="list-disc list-inside mt-1.5 space-y-1 text-zinc-300">${items}</ul>
+              </div>
+            `;
+          }).join('');
+        }
+      } catch (e) {
+        console.debug('Offline metadata fallback active');
+      }
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    function selectMode(mode) {
+      currentMode = mode;
+      localStorage.setItem(STORAGE_MODE_KEY, mode);
+
+      ['manual', 'direct', 'railway'].forEach(m => {
+        const btn = document.getElementById('mode-btn-' + m);
+        if (btn) btn.classList.toggle('active', m === mode);
+      });
+
+      const isManual = (mode === 'manual');
+      const isDirect = (mode === 'direct');
+      const isRailway = (mode === 'railway');
+
+      document.getElementById('req-webhook-plan').classList.toggle('hidden', isManual);
+      document.getElementById('nt8-ati-step').classList.toggle('hidden', isManual);
+      document.getElementById('section-vps').classList.toggle('hidden', isManual);
+      document.getElementById('section-railway').classList.toggle('hidden', !isRailway);
+      document.getElementById('tv-secret-step').classList.toggle('hidden', isManual);
+
+      document.getElementById('rail-link-vps').classList.toggle('hidden', isManual);
+      document.getElementById('rail-link-railway').classList.toggle('hidden', !isRailway);
+      document.getElementById('rail-mode-tag').textContent =
+        isManual ? 'MANUAL SIM102' : (isRailway ? 'RAILWAY PRO' : 'AUTOMÀTIC VPS');
+      document.getElementById('rail-leader-val').textContent =
+        isManual ? 'Sim102 (Manual)' : 'Sim101 (Automàtic)';
+
+      const leaderAcct = isManual ? 'Sim102' : 'Sim101';
+      document.getElementById('calc-leader-acct-lbl').textContent = leaderAcct;
+      document.getElementById('rep-leader-pill').textContent = 'Leader: ' + leaderAcct;
+      document.getElementById('rep-step-leader-txt').textContent = leaderAcct;
+
+      if (isRailway) setIngressType('rw443');
+      else if (isDirect && currentIngress === 'rw443') setIngressType('ip80');
+
+      switchTvAlertTab(isManual ? 'manual' : 'webhook');
+      updateTopologyVisuals(mode);
+      updateProgress();
+    }
+
+    function updateTopologyVisuals(mode) {
+      const isManual = (mode === 'manual');
+      const isDirect = (mode === 'direct');
+      const isRailway = (mode === 'railway');
+
+      const setBeam = (id, active) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('active-beam', active);
+      };
+      const setDim = (id, dimmed) => {
+        const el = document.getElementById(id);
+        if (el) el.classList.toggle('dimmed', dimmed);
+      };
+
+      setBeam('edge-tv-manual', isManual);
+      setBeam('edge-sim102-rep', isManual);
+
+      setBeam('edge-tv-vps', isDirect);
+      setBeam('edge-vps-bridge', isDirect);
+
+      setBeam('edge-tv-railway', isRailway);
+      setBeam('edge-railway-bridge', isRailway);
+
+      setBeam('edge-bridge-sim101', !isManual);
+      setBeam('edge-sim101-rep', !isManual);
+
+      setDim('node-vps', !isDirect);
+      setDim('node-railway', !isRailway);
+      setDim('node-bridge', isManual);
+      setDim('node-sim101', isManual);
+      setDim('node-sim102', !isManual);
+
+      const caption = document.getElementById('topo-mode-caption');
+      if (isManual) {
+        caption.innerHTML = 'RECORREGUT ACTIU: AVÍS TRADINGVIEW &rarr; CLIQUES TU A NT8 (Sim102) &rarr; REPLIKANTO HO COPIA ALS TEUS COMPTES';
+      } else if (isRailway) {
+        caption.innerHTML = 'RECORREGUT ACTIU: TRADINGVIEW &rarr; SERVIDOR RAILWAY &rarr; PONT DEL VPS &rarr; NT8 (Sim101) &rarr; REPLIKANTO';
+      } else {
+        caption.innerHTML = 'RECORREGUT ACTIU: TRADINGVIEW &rarr; PONT DEL TEU VPS &rarr; NINJATRADER 8 (Sim101) &rarr; COPIADOR REPLIKANTO';
+      }
+    }
+
+    function runSignalSimulation() {
+      if (simTimer) {
+        clearInterval(simTimer);
+        simTimer = null;
+      }
+      const clearHighlights = () => {
+        document.querySelectorAll('.topo-node').forEach(n => n.classList.remove('sim-highlight'));
+      };
+      const pill = document.getElementById('sim-stage-pill');
+      const msg = document.getElementById('sim-stage-msg');
+      const clk = document.getElementById('sim-stage-clock');
+
+      const isManual = (currentMode === 'manual');
+      const ingressNode = currentMode === 'railway' ? 'node-railway' : 'node-vps';
+
+      const steps = isManual ? [
+        { nodes: ['node-tv'], tag: 'PAS 1 · AVÍS', time: '0.0s', text: 'Tanca una espelma amb senyal a TradingView -> Et sona l\'avís al mòbil i a l\'ordinador.' },
+        { nodes: ['node-sim102'], tag: 'PAS 2 · 1 CLIC', time: ' Humà', text: 'Cliques Buy Mkt o Sell Mkt a Sim102 -> Es posen sols el Take Profit (+30p) i l\'Stop Loss (-30p).' },
+        { nodes: ['node-sim102', 'node-replikanto'], tag: 'PAS 3 · CÒPIA', time: 'Instantani', text: 'Replikanto copia l\'entrada i els Stops a tots els teus comptes de fondeig al moment.' },
+        { nodes: ['node-tv', 'node-sim102', 'node-replikanto'], tag: 'PAS 4 · PROTECCIÓ BE', time: '+15 punts', text: 'Quan l\'operació va +15p a favor -> Cliques el botó [🛡️ BE +2t] i el risc passa a zero a tots els comptes!' }
+      ] : [
+        { nodes: ['node-tv'], tag: 'PAS 1 · SENYAL', time: '0.00s', text: 'Tanca una espelma amb senyal a TradingView -> Envia l\'ordre automàtica cap al teu VPS.' },
+        { nodes: [ingressNode, 'node-bridge'], tag: 'PAS 2 · PONT VPS', time: '0.01s', text: 'El Pont del teu Windows rep l\'ordre, comprova la teva clau secreta i l\'entrega a NinjaTrader 8.' },
+        { nodes: ['node-sim101', 'node-replikanto'], tag: 'PAS 3 · ENTRADA + CÒPIA', time: '0.02s', text: 'NinjaTrader 8 entra a Sim101 amb +30p TP i -30p SL, i Replikanto ho copia a tots els teus comptes.' },
+        { nodes: ['node-tv', 'node-bridge', 'node-sim101', 'node-replikanto'], tag: 'PAS 4 · BREAKEVEN SOL', time: 'Risc Zero', text: 'Quan el preu avança +15p -> El sistema mou tot sol l\'Stop Loss a Preu d\'Entrada + 2 ticks sense que toquis res!' }
+      ];
+
+      let idx = 0;
+      const execStep = () => {
+        clearHighlights();
+        if (idx >= steps.length) {
+          clearInterval(simTimer);
+          simTimer = null;
+          pill.textContent = 'COMPLETAT ✓';
+          return;
+        }
+        const st = steps[idx];
+        st.nodes.forEach(id => document.getElementById(id)?.classList.add('sim-highlight'));
+        pill.textContent = st.tag;
+        msg.textContent = st.text;
+        clk.textContent = st.time;
+        idx++;
+      };
+
+      execStep();
+      simTimer = setInterval(execStep, 2100);
+    }
+
+    function syncNt8ReplicaAtm() {
+      const qty = document.getElementById('nt8-replica-atm').value;
+      document.getElementById('nt8-replica-qty').textContent = qty;
+      document.getElementById('nt8-replica-log').innerHTML =
+        `<span class="text-[#10B981] font-semibold">✓ Automàtic:</span> En triar aquesta plantilla, els contractes es posen sols a <strong class="text-white">${qty} MNQ</strong> amb +30p TP i -30p SL!`;
+    }
+
+    function simulateNt8Action(type, side) {
+      const qty = document.getElementById('nt8-replica-qty').textContent;
+      const log = document.getElementById('nt8-replica-log');
+      if (type === 'entry') {
+        log.innerHTML = `<span class="text-[#F3DC99] font-semibold">⚡ Exemple ${side}:</span> Entren ${qty} MNQ a Sim102 amb TP (+30p) i SL (-30p) posats sols, i Replikanto ho copia.`;
+      } else if (type === 'be') {
+        log.innerHTML = `<span class="text-[#10B981] font-semibold">🛡️ Botó BE +2t premut:</span> L'Stop puja exactament al teu preu real d'entrada + 2 ticks (+0.50 punts). Operació protegida!`;
+      } else {
+        log.innerHTML = `<span class="text-[#FDA4AF] font-semibold">🛑 Botó FLAT premut:</span> Es tanca l'operació al moment i es netegen les ordres pendents.`;
+      }
+    }
+
+    function updateRatioCalc() {
+      const leaderQty = parseFloat(document.getElementById('calc-leader-qty').value || '10');
+      const follQty = parseFloat(document.getElementById('calc-follower-qty').value || '10');
+      const fmtRatio = (r) => Number.isInteger(r) ? r.toFixed(1) : parseFloat(r.toFixed(2)).toString();
+
+      const r1 = fmtRatio(follQty / leaderQty);
+      const r2 = fmtRatio(5 / leaderQty);
+      const r3 = fmtRatio(15 / leaderQty);
+      const usd = Math.round(follQty * 30 * 2);
+
+      document.getElementById('calc-ratio-out').textContent = r1;
+      document.getElementById('calc-risk-out').textContent = `Guany TP: +${usd} USD | Risc SL: -${usd} USD`;
+
+      document.getElementById('rep-row1-ratio').textContent = r1;
+      document.getElementById('rep-row1-qty').textContent = `${follQty} MNQ (±${usd} USD)`;
+      document.getElementById('rep-row2-ratio').textContent = r2;
+      document.getElementById('rep-row3-ratio').textContent = r3;
+    }
+
+    function setIngressType(type) {
+      currentIngress = type;
+      ['ip80', 'cf443', 'rw443'].forEach(t => {
+        const b = document.getElementById('ing-btn-' + t);
+        if (!b) return;
+        b.className = (t === type)
+          ? 'py-1.5 px-2 rounded bg-[#D4AF37]/20 border border-[#D4AF37]/50 text-[#F3DC99] text-[10px] font-bold'
+          : 'py-1.5 px-2 rounded bg-black/50 border border-white/10 text-zinc-400 text-[10px] font-bold';
+      });
+
+      const input = document.getElementById('vps-host-input');
+      const lbl = document.getElementById('vps-host-label');
+      input.value = '';
+      if (type === 'ip80') {
+        lbl.textContent = 'Enganxa aquí la IP pública del teu VPS (si vols verificar la URL):';
+        input.placeholder = 'Ex: enganxa aquí els números de la IP del teu VPS...';
+      } else if (type === 'cf443') {
+        lbl.textContent = 'Enganxa aquí l\'adreça trycloudflare.com que t\'ha donat la finestra del túnel:';
+        input.placeholder = 'Ex: el-meu-tunel.trycloudflare.com';
+      } else {
+        lbl.textContent = 'Enganxa aquí el domini públic del teu servidor Railway:';
+        input.placeholder = 'Ex: el-meu-projecte.up.railway.app';
+      }
+      buildWebhookUrl();
+    }
+
+    function buildWebhookUrl() {
+      let raw = (document.getElementById('vps-host-input').value || '').trim();
+      raw = raw.replace(/^https?:\/\//i, '').replace(/\/+$/, '').replace(/\/webhook.*$/i, '').replace(/\/api\/webhook.*$/i, '').replace(/:80$/i, '');
+
+      const outEl = document.getElementById('generated-webhook-url');
+      const tvEl = document.getElementById('tv-replica-webhook-url');
+      const copyBtn = document.getElementById('copy-gen-url-btn');
+
+      if (!raw) {
+        outEl.textContent = '(Obre DADES_CONNEXIO_TRADINGVIEW.txt al teu VPS o escriu la teva IP a dalt)';
+        outEl.className = 'font-mono-tech text-zinc-400 break-all text-xs';
+        tvEl.textContent = '(Enganxa aquí la URL que et surt a DADES_CONNEXIO_TRADINGVIEW.txt)';
+        copyBtn.disabled = true;
+        copyBtn.textContent = 'ESCRIU LA TEVA IP PRIMER';
+        return;
+      }
+
+      let finalUrl = '';
+      if (currentIngress === 'ip80') {
+        finalUrl = `http://${raw}/webhook`;
+      } else if (currentIngress === 'cf443') {
+        finalUrl = `https://${raw}/webhook`;
+      } else {
+        finalUrl = `https://${raw}/api/webhook/tradingview`;
+      }
+
+      outEl.textContent = finalUrl;
+      outEl.className = 'font-mono-tech text-[#F3DC99] font-bold break-all text-xs';
+      tvEl.textContent = finalUrl;
+      copyBtn.disabled = false;
+      copyBtn.textContent = 'COPIAR LA MEVA URL ✓';
+    }
+
+    function switchTvAlertTab(tab) {
+      const isWh = (tab === 'webhook');
+      document.getElementById('tv-webhook-alert-box').classList.toggle('hidden', !isWh);
+      document.getElementById('tv-manual-alert-box').classList.toggle('hidden', isWh);
+
+      document.getElementById('tv-tab-webhook').className = isWh
+        ? 'px-2.5 py-1 rounded-md bg-[#D4AF37] text-[#050506] font-bold transition'
+        : 'px-2.5 py-1 rounded-md text-zinc-400 hover:text-white transition';
+      document.getElementById('tv-tab-manual').className = !isWh
+        ? 'px-2.5 py-1 rounded-md bg-[#D4AF37] text-[#050506] font-bold transition'
+        : 'px-2.5 py-1 rounded-md text-zinc-400 hover:text-white transition';
+    }
+
+    function loadChecks() {
+      let saved = {};
+      try {
+        saved = JSON.parse(localStorage.getItem(STORAGE_CHECKS_KEY) || '{}');
+      } catch (e) {}
+
+      document.querySelectorAll('.step-check').forEach(cb => {
+        const key = cb.getAttribute('data-step');
+        cb.checked = Boolean(saved[key]);
+        cb.addEventListener('change', () => {
+          saved[key] = cb.checked;
+          localStorage.setItem(STORAGE_CHECKS_KEY, JSON.stringify(saved));
+          updateProgress();
+        });
+      });
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const visibleChecks = Array.from(document.querySelectorAll('.step-check')).filter(cb => cb.offsetParent !== null);
+      const total = visibleChecks.length || 1;
+      const done = visibleChecks.filter(cb => cb.checked).length;
+      const pct = Math.round((done / total) * 100);
+      const pctStr = String(pct).padStart(2, '0');
+
+      document.getElementById('progress-label').textContent = `${pctStr}% · ${done}/${visibleChecks.length} passos`;
+      document.getElementById('progress-bar').style.width = `${pct}%`;
+
+      ['preflight', 'nt8', 'replikanto', 'railway', 'vps', 'tv', 'daily'].forEach(grp => {
+        const grpBoxes = Array.from(document.querySelectorAll(`.step-check[data-group="${grp}"]`)).filter(cb => cb.offsetParent !== null);
+        const grpDone = grpBoxes.filter(cb => cb.checked).length;
+        const cntEl = document.getElementById('rail-cnt-' + grp);
+        const linkEl = document.getElementById('rail-link-' + grp);
+        if (cntEl) {
+          cntEl.textContent = `${grpDone}/${grpBoxes.length}`;
+          cntEl.className = (grpBoxes.length > 0 && grpDone === grpBoxes.length)
+            ? 'font-mono-tech text-[10px] text-[#10B981] font-bold'
+            : 'font-mono-tech text-[10px] text-[#9CA3AF]';
+        }
+        if (linkEl) {
+          linkEl.classList.toggle('completed', grpBoxes.length > 0 && grpDone === grpBoxes.length);
+        }
+      });
+    }
+
+    function resetChecklist() {
+      localStorage.removeItem(STORAGE_CHECKS_KEY);
+      document.querySelectorAll('.step-check').forEach(cb => { cb.checked = false; });
+      updateProgress();
+    }
+
+    function copyText(elementId, btnEl) {
+      const txt = document.getElementById(elementId)?.textContent || '';
+      navigator.clipboard.writeText(txt.trim()).then(() => {
+        const old = btnEl.textContent;
+        btnEl.textContent = 'COPIAT ✓';
+        setTimeout(() => { btnEl.textContent = old; }, 1400);
+      });
+    }
+
+    initEnvironmentMode();
+    const savedMode = localStorage.getItem(STORAGE_MODE_KEY) || 'direct';
+    selectMode(savedMode);
+    loadChecks();
+    updateRatioCalc();
+    buildWebhookUrl();
+  </script>
+</body>
+</html>

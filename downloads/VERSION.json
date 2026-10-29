@@ -1,0 +1,26 @@
+{
+  "product_name": "Layer Sniper Pro",
+  "version": "1.0.0",
+  "updated_at": "2026-10-29",
+  "strategy_name": "Layer Sniper Pro",
+  "strategy_version": "2026.2 (Invite-Only)",
+  "indicator_name": "Layer Sniper Pro",
+  "indicator_version": "2026.2 (Invite-Only)",
+  "changelog": [
+    {
+      "version": "1.0.0",
+      "date": "2026-10-29",
+      "title": "Llançament Oficial del Portal Interactiu i Paquet Modular v1.0",
+      "changes": [
+        "Guia interactiva pas a pas (online a /portal i offline a OBRIR_GUIA_INTERACTIVA.html) amb filtre per modalitat i calculadora de ràtios Replikanto.",
+        "Kit NinjaTrader 8 100% offline: 4 plantilles ATM (3, 5, 10 i 30 MNQ a 30p TP / 30p SL) + AddOn C# amb botons [BE +2t (+0.50p)], [FLAT] i Auto-Qty.",
+        "Bridge ATI autònom per a VPS Windows (Mode Directe Port 80 amb filtre de les 4 IPs oficials de TradingView, Túnel HTTPS Cloudflare 443 i Mode Railway 8090).",
+        "Càlcul exacte de Breakeven sobre el preu real d'execució (outgoing\\) i doble cadenat Compliance (HTTP 403) sobre Sim102 i comptes manuals.",
+        "Actualitzador d'1 clic (ACTUALITZAR_SISTEMA.bat) que descarrega noves versions des del Portal conservant intacte el teu Webhook Secret Token."
+      ]
+    }
+  ],
+  "package_files_count": 50,
+  "package_size_kb": 171.4,
+  "package_sha256": "609a451f962199b5"
+}
