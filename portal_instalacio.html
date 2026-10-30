@@ -690,13 +690,13 @@
               <span>Pas 3 · Copiador Replikanto</span>
               <span id="rail-cnt-replikanto" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/1</span>
             </a>
-            <a href="#section-railway" id="rail-link-railway" class="rail-item hidden flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
-              <span>Pas 4A · Núvol Railway</span>
-              <span id="rail-cnt-railway" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/2</span>
-            </a>
             <a href="#section-vps" id="rail-link-vps" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
               <span>Pas 4 · Pont al VPS</span>
               <span id="rail-cnt-vps" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/3</span>
+            </a>
+            <a href="#section-railway" id="rail-link-railway" class="rail-item hidden flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
+              <span>Pas 4B · Núvol Railway</span>
+              <span id="rail-cnt-railway" class="font-mono-tech text-[10px] text-[#9CA3AF]">0/3</span>
             </a>
             <a href="#mod-tradingview" id="rail-link-tv" class="rail-item flex items-center justify-between px-3 py-2.5 rounded-r-lg text-zinc-200">
               <span>Pas 5 · Alerta TradingView</span>
@@ -1048,58 +1048,6 @@
         </section>
 
         <!-- ================================================================= -->
-        <!-- PAS 4A (OPCIONAL AVANÇAT): SERVIDOR RAILWAY PRO                   -->
-        <!-- ================================================================= -->
-        <section id="section-railway" class="hidden obsidian-panel rounded-2xl p-6 space-y-5">
-          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
-            <div class="flex items-center gap-3">
-              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 4A</span>
-              <div>
-                <h3 class="font-display text-lg font-bold text-white">Desplegar Servidor Central a Railway (Només Opció 3 Avançada)</h3>
-                <p class="text-xs text-[#9CA3AF]">Carpeta: <code class="font-mono-tech text-zinc-200">03_Servidor_Railway_Pro</code></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
-            <div class="xl:col-span-6 space-y-3">
-              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
-                <input type="checkbox" data-step="rw_deploy" data-group="railway" class="step-check mt-0.5">
-                <span class="step-body text-xs text-zinc-200 leading-relaxed">
-                  <strong class="step-title text-white block mb-1">1. Pujar <code class="font-mono-tech text-[#F3DC99]">03_Servidor_Railway_Pro</code> i activar domini</strong>
-                  Puja la carpeta a un repositori privat de GitHub connectat a Railway i clica <strong>Settings &rarr; Networking &rarr; Generate Domain</strong>.
-                </span>
-              </label>
-
-              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
-                <input type="checkbox" data-step="rw_env_vars" data-group="railway" class="step-check mt-0.5">
-                <span class="step-body text-xs text-zinc-200 leading-relaxed">
-                  <strong class="step-title text-white block mb-1">2. Enganxar les variables al <code class="font-mono-tech text-[#F3DC99]">RAW Editor</code> de Railway</strong>
-                  Copia la plantilla de la dreta posant la teva clau secreta i la IP del teu VPS al port <code>8090</code>.
-                </span>
-              </label>
-            </div>
-
-            <div class="xl:col-span-6 replica-window rounded-xl overflow-hidden font-mono-tech text-[11px]">
-              <div class="px-3.5 py-2 bg-[#161821] border-b border-white/[0.08] flex items-center justify-between">
-                <span class="text-zinc-300">PLANTILLA VARIABLES RAILWAY</span>
-                <button type="button" onclick="copyText('rw-env-snippet', this)" class="px-2.5 py-0.5 rounded bg-[#D4AF37]/20 text-[#F3DC99] border border-[#D4AF37]/40 text-[10px] font-bold">
-                  COPIAR PLANTILLA
-                </button>
-              </div>
-              <pre id="rw-env-snippet" class="p-4 text-zinc-300 overflow-x-auto leading-relaxed">ENGINE_MODE=paper
-WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta
-DASHBOARD_USER=admin
-DASHBOARD_PASS=posa_aqui_la_teva_contrasenya
-TRADOVATE_DIRECT_ENABLED=false
-NT8_BOT_ACCOUNT=Sim101
-FORWARD_WEBHOOK_URL=http://LA_IP_DEL_TEU_VPS:8090/webhook
-FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
-            </div>
-          </div>
-        </section>
-
-        <!-- ================================================================= -->
         <!-- PAS 4: INSTAL·LAR EL PONT AUTOMÀTIC AL VPS WINDOWS                -->
         <!-- ================================================================= -->
         <section id="section-vps" class="obsidian-panel rounded-2xl p-6 space-y-5">
@@ -1122,7 +1070,7 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
                   <strong class="step-title text-white text-sm block mb-1">1. Clic dret a <code class="font-mono-tech text-[#F3DC99]">INSTALAR_BRIDGE_VPS.bat</code> &rarr; «Executar com a administrador»</strong>
                   • Entra a la carpeta <code>02_Bridge_VPS_Windows</code>.<br>
                   • Fes <strong>clic amb el botó dret</strong> a sobre d'<code>INSTALAR_BRIDGE_VPS.bat</code> i tria <strong>Executar com a administrador</strong> (<em>Run as administrator</em>).<br>
-                  • Quan et pregunti quina opció vols (<code>1, 2 o 3</code>): escriu <strong class="text-[#F3DC99]">1</strong> i prem <em>Enter</em> (si uses l'Opció 3 de Railway, escriu <code>3</code>). Ell sol instal·la Python si no el tens i deixa el pont funcionant!
+                  • Quan et pregunti quina opció vols (<code>1, 2 o 3</code>): escriu <strong id="vps-mode-choice-hint" class="text-[#F3DC99]">1</strong> i prem <em>Enter</em> (si has triat l'Opció 3 de Railway, escriu <strong class="text-white">3</strong>). Ell sol instal·la Python si no el tens i deixa el pont funcionant!
                 </span>
               </label>
 
@@ -1130,9 +1078,9 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
                 <input type="checkbox" data-step="vps_read_credentials" data-group="vps" class="step-check mt-0.5">
                 <span class="step-body text-xs text-zinc-200 leading-relaxed">
                   <strong class="step-title text-white text-sm block mb-1">2. Obrir l'arxiu <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\DADES_CONNEXIO_TRADINGVIEW.txt</code></strong>
-                  No has de buscar la teva IP enlloc! L'instal·lador acaba de crear aquest bloc de notes amb <strong>les teves 2 dades personals</strong> ja llestes per copiar al Pas 5:<br>
+                  No has de buscar la teva IP enlloc! L'instal·lador acaba de crear aquest bloc de notes amb <strong>les teves 2 dades personals</strong> ja llestes per copiar:<br>
                   • <strong>Dada A (Clau Secreta / Token):</strong> comença per <code class="font-mono-tech text-white">ls_...</code><br>
-                  • <strong>Dada B (Webhook URL):</strong> l'adreça <code class="font-mono-tech text-white">http://.../webhook</code> del teu VPS.
+                  • <strong>Dada B (IP / Webhook URL):</strong> l'adreça del teu VPS ja escrita sense errors.
                 </span>
               </label>
 
@@ -1154,7 +1102,7 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
 
               <div class="p-4 space-y-3.5">
                 <div class="p-3 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-zinc-200 leading-relaxed">
-                  💡 <strong>Consell d'or:</strong> Copia les dades directament de l'arxiu <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\DADES_CONNEXIO_TRADINGVIEW.txt</code> del teu VPS. Si només tens apuntada la IP del teu VPS i vols que et construïm la URL sense errors, escriu-la aquí sota:
+                  💡 <strong>Consell d'or:</strong> Copia les dades directament de l'arxiu <code class="font-mono-tech text-[#F3DC99]">C:\LayerSniper\DADES_CONNEXIO_TRADINGVIEW.txt</code> del teu VPS. Si només tens apuntada la IP o domini i vols que et construïm la URL per a TradingView sense errors, escriu-la aquí sota:
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 font-mono-tech">
@@ -1201,6 +1149,110 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
                     </div>
                   </div>
                 </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- PAS 4B (OPCIONAL AVANÇAT): SERVIDOR RAILWAY PRO                   -->
+        <!-- ================================================================= -->
+        <section id="section-railway" class="hidden obsidian-panel rounded-2xl p-6 space-y-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
+            <div class="flex items-center gap-3">
+              <span class="font-mono-tech text-xs font-bold px-2.5 py-1 rounded bg-[#D4AF37]/15 text-[#F3DC99] border border-[#D4AF37]/35">PAS 4B</span>
+              <div>
+                <h3 class="font-display text-lg font-bold text-white">Connectar el teu Servidor Web a Railway (Només Opció 3 Avançada)</h3>
+                <p class="text-xs text-[#9CA3AF]">Fes aquest pas <strong>després</strong> del Pas 4 (ara ja tens la IP i la clau <code class="font-mono-tech text-zinc-200">ls_...</code> al fitxer <code class="font-mono-tech text-zinc-200">.txt</code> del teu VPS) · Carpeta: <code class="font-mono-tech text-zinc-200">03_Servidor_Railway_Pro</code></p>
+              </div>
+            </div>
+            <span class="font-mono-tech text-[11px] text-[#E5C158]">GENERADOR SENSE TOCAR CODI</span>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+            <div class="xl:col-span-6 space-y-3">
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="rw_github_upload" data-group="railway" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">1. Pujar el que hi ha DINS de <code class="font-mono-tech text-[#F3DC99]">03_Servidor_Railway_Pro</code> a GitHub</strong>
+                  • Entra a <strong>github.com/new</strong> (crea compte gratuït si no en tens), posa un nom (ex: <code>layer-sniper-web</code>), marca <strong>Private</strong> i clica <em>Create repository</em>.<br>
+                  • A la pantalla següent, clica la frase petita blava <strong>uploading an existing file</strong>.<br>
+                  • <strong class="text-[#FDA4AF]">Molt important:</strong> Obre la carpeta <code>03_Servidor_Railway_Pro</code> al teu PC, <strong>selecciona tots els arxius de DINS</strong> (<code>Procfile</code>, <code>railway.json</code>, <code>requirements.txt</code>, <code>bot</code>, <code>dashboard</code>...) i arrossega'ls cap a GitHub <em>(no arrosseguis la carpeta per fora!)</em>. Prem el botó verd <strong>Commit changes</strong>.
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="rw_deploy" data-group="railway" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">2. Connectar GitHub amb Railway i crear la teva adreça web</strong>
+                  • Entra a <strong>railway.app</strong> &rarr; clica <strong>New Project &rarr; Deploy from GitHub repo</strong> i tria el repositori <code>layer-sniper-web</code>.<br>
+                  • Clica a sobre del requadre del teu servei &rarr; ves a la pestanya <strong>Settings</strong> &rarr; baixa fins a l'apartat <strong>Networking</strong> i prem el botó <strong>Generate Domain</strong>.<br>
+                  • Et sortirà una adreça tipus <code class="text-[#F3DC99]">https://...up.railway.app</code> (apunta-la per al Pas 5!).
+                </span>
+              </label>
+
+              <label class="obsidian-subcard flex items-start gap-3.5 p-4 rounded-xl cursor-pointer">
+                <input type="checkbox" data-step="rw_env_vars" data-group="railway" class="step-check mt-0.5">
+                <span class="step-body text-xs text-zinc-200 leading-relaxed">
+                  <strong class="step-title text-white text-sm block mb-1">3. Enganxar la plantilla generada dins de <code class="font-mono-tech text-[#F3DC99]">Variables &rarr; RAW Editor</code></strong>
+                  • Omple les <strong>3 caixetes de la dreta</strong> amb la IP i la clau <code>ls_...</code> del fitxer <code>DADES_CONNEXIO_TRADINGVIEW.txt</code> del teu VPS, i prem <strong>COPIAR PLANTILLA</strong>.<br>
+                  • A Railway, clica la pestanya <strong>Variables</strong> (al costat de Settings) &rarr; prem el botó <strong>RAW Editor</strong> (a dalt a la dreta), esborra el que hi hagi, enganxa la plantilla i clica <strong>Update Variables</strong>!
+                </span>
+              </label>
+            </div>
+
+            <div class="xl:col-span-6 replica-window rounded-xl overflow-hidden text-xs">
+              <div class="px-3.5 py-2.5 bg-[#161821] border-b border-white/[0.08] flex items-center justify-between font-mono-tech text-[10px]">
+                <span class="text-white font-semibold">GENERADOR AUTOMÀTIC DE VARIABLES RAILWAY</span>
+                <span class="text-[#10B981]">S'ESCRIU SOL</span>
+              </div>
+
+              <div class="p-4 space-y-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[11px] text-zinc-300 mb-1">1. IP del teu VPS <span class="text-[#9CA3AF]">(del .txt del Pas 4)</span>:</label>
+                    <input id="rw-gen-ip" type="text" value="" placeholder="Enganxa la IP del teu VPS..." oninput="updateRailwayEnvSnippet()"
+                      class="w-full rounded-lg bg-black/80 border border-white/15 px-2.5 py-1.5 font-mono-tech text-xs text-white placeholder:text-zinc-600 focus:border-[#D4AF37] outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-[11px] text-zinc-300 mb-1">2. Clau Secreta <code class="text-[#F3DC99]">ls_...</code> <span class="text-[#9CA3AF]">(del .txt)</span>:</label>
+                    <input id="rw-gen-secret" type="text" value="" placeholder="Ex: ls_9f8a7b6c5d..." oninput="updateRailwayEnvSnippet()"
+                      class="w-full rounded-lg bg-black/80 border border-white/15 px-2.5 py-1.5 font-mono-tech text-xs text-white placeholder:text-zinc-600 focus:border-[#D4AF37] outline-none">
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[11px] text-zinc-300 mb-1">3. Contrasenya per entrar a la teva web:</label>
+                    <input id="rw-gen-pass" type="text" value="" placeholder="Ex: ElMeuPanell2026!" oninput="updateRailwayEnvSnippet()"
+                      class="w-full rounded-lg bg-black/80 border border-white/15 px-2.5 py-1.5 font-mono-tech text-xs text-white placeholder:text-zinc-600 focus:border-[#D4AF37] outline-none">
+                  </div>
+                  <div>
+                    <label class="block text-[11px] text-zinc-300 mb-1">4. Domini Railway <span class="text-[#9CA3AF]">(per preparar el Pas 5)</span>:</label>
+                    <input id="rw-gen-domain" type="text" value="" placeholder="Ex: el-meu-bot.up.railway.app" oninput="syncRailwayDomainToStep5()"
+                      class="w-full rounded-lg bg-black/80 border border-white/15 px-2.5 py-1.5 font-mono-tech text-xs text-white placeholder:text-zinc-600 focus:border-[#D4AF37] outline-none">
+                  </div>
+                </div>
+
+                <div class="rounded-lg bg-[#050507] border border-white/10 overflow-hidden font-mono-tech text-[11px]">
+                  <div class="px-3 py-2 bg-white/[0.03] border-b border-white/[0.07] flex items-center justify-between">
+                    <span id="rw-gen-status" class="text-[10px] text-[#9CA3AF]">PLANTILLA PER AL «RAW EDITOR» DE RAILWAY:</span>
+                    <button type="button" onclick="copyText('rw-env-snippet', this)" class="gold-cta px-3 py-1 rounded text-[10px] font-bold">
+                      COPIAR PLANTILLA
+                    </button>
+                  </div>
+                  <pre id="rw-env-snippet" class="p-3.5 text-zinc-200 overflow-x-auto leading-relaxed">WEBHOOK_SECRET=ls_posa_aqui_la_clau_del_txt_del_vps
+DASHBOARD_USER=admin
+DASHBOARD_PASS=posa_aqui_la_teva_contrasenya
+TRADOVATE_DIRECT_ENABLED=false
+NT8_BOT_ACCOUNT=Sim101
+FORWARD_WEBHOOK_URL=http://LA_IP_DEL_TEU_VPS:8090/webhook
+FORWARD_WEBHOOK_SECRET=ls_posa_aqui_la_clau_del_txt_del_vps</pre>
+                </div>
+
+                <p class="text-[11px] text-zinc-400 leading-relaxed">
+                  💡 <strong>Què fa això exactament?</strong> Quan TradingView enviï un senyal a la teva adreça <code>https://...up.railway.app/api/webhook/tradingview</code>, Railway comprovarà la teva clau <code>ls_...</code>, passarà el filtre de notícies i el reenviarà al port <code>8090</code> del teu VPS en mil·lisegons.
+                </p>
               </div>
             </div>
           </div>
@@ -1523,6 +1575,8 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
       document.getElementById('calc-leader-acct-lbl').textContent = leaderAcct;
       document.getElementById('rep-leader-pill').textContent = 'Leader: ' + leaderAcct;
       document.getElementById('rep-step-leader-txt').textContent = leaderAcct;
+      const vpsHintEl = document.getElementById('vps-mode-choice-hint');
+      if (vpsHintEl) vpsHintEl.textContent = isRailway ? '3' : '1';
 
       if (isRailway) setIngressType('rw443');
       else if (isDirect && currentIngress === 'rw443') setIngressType('ip80');
@@ -1717,6 +1771,52 @@ FORWARD_WEBHOOK_SECRET=ls_posa_aqui_una_clau_secreta</pre>
       tvEl.textContent = finalUrl;
       copyBtn.disabled = false;
       copyBtn.textContent = 'COPIAR LA MEVA URL ✓';
+    }
+
+    function updateRailwayEnvSnippet() {
+      let ip = (document.getElementById('rw-gen-ip')?.value || '').trim();
+      ip = ip.replace(/^https?:\/\//i, '').replace(/\/+$/, '').replace(/\/webhook.*$/i, '').replace(/:8090$/i, '').replace(/:80$/i, '');
+      const secret = (document.getElementById('rw-gen-secret')?.value || '').trim();
+      const pass = (document.getElementById('rw-gen-pass')?.value || '').trim();
+
+      const cleanIp = ip || 'LA_IP_DEL_TEU_VPS';
+      const cleanSecret = secret || 'ls_posa_aqui_la_clau_del_txt_del_vps';
+      const cleanPass = pass || 'posa_aqui_la_teva_contrasenya';
+
+      const snippetEl = document.getElementById('rw-env-snippet');
+      if (snippetEl) {
+        snippetEl.textContent =
+`WEBHOOK_SECRET=${cleanSecret}
+DASHBOARD_USER=admin
+DASHBOARD_PASS=${cleanPass}
+TRADOVATE_DIRECT_ENABLED=false
+NT8_BOT_ACCOUNT=Sim101
+FORWARD_WEBHOOK_URL=http://${cleanIp}:8090/webhook
+FORWARD_WEBHOOK_SECRET=${cleanSecret}`;
+      }
+
+      const statusEl = document.getElementById('rw-gen-status');
+      if (statusEl) {
+        if (ip && secret) {
+          statusEl.textContent = '✓ PLANTILLA COMPLETA · CLICA «COPIAR PLANTILLA»!';
+          statusEl.className = 'text-[10px] text-[#10B981] font-bold';
+        } else {
+          statusEl.textContent = 'PLANTILLA PER AL «RAW EDITOR» DE RAILWAY:';
+          statusEl.className = 'text-[10px] text-[#9CA3AF]';
+        }
+      }
+    }
+
+    function syncRailwayDomainToStep5() {
+      const dom = (document.getElementById('rw-gen-domain')?.value || '').trim();
+      if (currentIngress !== 'rw443') {
+        setIngressType('rw443');
+      }
+      const hostIn = document.getElementById('vps-host-input');
+      if (hostIn) {
+        hostIn.value = dom;
+        buildWebhookUrl();
+      }
     }
 
     function switchTvAlertTab(tab) {
