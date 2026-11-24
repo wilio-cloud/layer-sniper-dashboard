@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ca" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Layer Sniper Pro // Deployment & .ZIP Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-void: #050506;
+      --gold: #D4AF37;
+      --gold-bright: #F3DC99;
+    }
+    body {
+      background-color: var(--bg-void);
+      color: #F4F4F6;
+      font-family: 'Inter', sans-serif;
+      background-image:
+        radial-gradient(ellipse 65% 45% at 50% 0%, rgba(212, 175, 55, 0.11), transparent 72%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
+      margin: 0;
+      overflow: hidden;
+    }
+    .font-display { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+    .font-mono-tech { font-family: 'JetBrains Mono', monospace; }
+    @keyframes slowOrbit {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to   { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .reticle-orbit {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 660px;
+      height: 660px;
+      pointer-events: none;
+      animation: slowOrbit 110s linear infinite;
+      opacity: 0.55;
+    }
+    .vault-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(16, 16, 20, 0.88) 0%, rgba(8, 8, 11, 0.95) 100%);
+      backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.075);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(243, 220, 153, 0.25);
+    }
+    .vault-input {
+      background: rgba(4, 4, 6, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      transition: all 0.22s ease;
+    }
+    .vault-input:focus {
+      border-color: rgba(212, 175, 55, 0.65);
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+      outline: none;
+    }
+    .gold-cta {
+      background: linear-gradient(135deg, #F5E1A4 0%, #D4AF37 52%, #A67F1E 100%);
+      color: #050506;
+      box-shadow: 0 10px 30px -8px rgba(212, 175, 55, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: transform 0.18s ease, box-shadow 0.22s ease, filter 0.22s ease;
+    }
+    .gold-cta:hover:not(:disabled) {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px -8px rgba(212, 175, 55, 0.6);
+    }
+    .gold-cta:disabled { opacity: 0.6; cursor: wait; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-5 antialiased">
+
+  <svg id="vault-bg-orbit" class="reticle-orbit" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="300" cy="300" r="285" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    <circle cx="300" cy="300" r="235" stroke="rgba(212,175,55,0.14)" stroke-width="1" stroke-dasharray="3 9"/>
+    <circle cx="300" cy="300" r="175" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="rgba(212,175,55,0.07)" stroke-width="1"/>
+    <line x1="0" y1="300" x2="600" y2="300" stroke="rgba(212,175,55,0.07)" stroke-width="1"/>
+    <polygon points="300,52 306,64 294,64" fill="rgba(212,175,55,0.45)"/>
+  </svg>
+
+  <div id="vault-login-shell" class="vault-card w-full max-w-[435px] rounded-2xl p-8 sm:p-9 z-10">
+    <div class="flex items-center justify-between text-[10px] font-mono-tech uppercase tracking-[0.18em] text-[#8E929F] pb-5 mb-6 border-b border-white/[0.06]">
+      <span class="flex items-center gap-2 text-[#E5C158]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E5C158]"></span>
+        AES-256 ENCRYPTED VAULT
+      </span>
+      <span>PRIVATE ACCESS</span>
+    </div>
+
+    <div class="mb-6">
+      <div class="flex items-center gap-3.5 mb-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-b from-[#D4AF37]/20 to-transparent border border-[#D4AF37]/40 flex items-center justify-center shrink-0">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <polygon points="12,2 22,12 12,22 2,12" stroke="#F3DC99" stroke-width="1.4"/>
+            <circle cx="12" cy="12" r="3" fill="#D4AF37"/>
+            <line x1="12" y1="2" x2="12" y2="6" stroke="#D4AF37" stroke-width="1.4"/>
+            <line x1="12" y1="18" x2="12" y2="22" stroke="#D4AF37" stroke-width="1.4"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="font-display text-2xl font-bold text-white leading-none">Layer Sniper Pro</h1>
+          <p class="font-mono-tech text-[11px] text-[#8E929F] mt-1.5">COFRE XIFRAT D'ACCÉS RESTRINGIT</p>
+        </div>
+      </div>
+      <p class="text-xs text-[#9CA3AF] leading-relaxed">
+        Totes les mètriques, manuals i paquets <code class="font-mono-tech text-[#F3DC99]">.zip</code> estan xifrats amb <strong>AES-256</strong>. Introdueix l'usuari i la contrasenya per desbloquejar la consola.
+      </p>
+    </div>
+
+    <div id="vault-err" class="hidden mb-5 px-4 py-3 rounded-lg bg-[#F43F5E]/10 border border-[#F43F5E]/35 text-xs text-[#FDA4AF] font-mono-tech tracking-tight flex items-center gap-2.5">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#F43F5E] shrink-0"></span>
+      <span id="vault-err-text">Usuari o contrasenya incorrectes.</span>
+    </div>
+
+    <form id="vault-form" class="space-y-4">
+      <div>
+        <label class="block font-mono-tech text-[10px] uppercase tracking-[0.14em] text-[#A1A1AA] mb-2">Usuari</label>
+        <input id="vault-user" type="text" required autofocus autocomplete="username" placeholder="usuari"
+          class="vault-input w-full rounded-xl px-4 py-3 text-sm text-white font-mono-tech placeholder:text-zinc-600">
+      </div>
+      <div>
+        <label class="block font-mono-tech text-[10px] uppercase tracking-[0.14em] text-[#A1A1AA] mb-2">Contrasenya</label>
+        <input id="vault-pass" type="password" required autocomplete="current-password" placeholder="••••••••••••"
+          class="vault-input w-full rounded-xl px-4 py-3 text-sm text-white font-mono-tech placeholder:text-zinc-600">
+      </div>
+      <div class="pt-2">
+        <button id="vault-submit-btn" type="submit" class="gold-cta w-full py-3.5 rounded-xl font-display font-bold text-sm tracking-wide flex items-center justify-center gap-2">
+          <span id="vault-submit-lbl">DESBLOQUEJAR COFRE</span>
+          <span class="font-mono-tech text-xs">&rarr;</span>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <iframe id="vault-frame" title="Layer Sniper Pro Console" class="hidden fixed inset-0 w-full h-full border-0 z-40 bg-[#050506]"></iframe>
+
+  <button id="vault-lock-btn" type="button" onclick="window.__lsLockVault()"
+    class="hidden fixed bottom-3.5 right-3.5 z-50 px-3 py-1.5 rounded-full bg-[#09090C]/90 hover:bg-[#14141B] border border-[#D4AF37]/40 text-[#F3DC99] font-mono-tech text-[10px] shadow-xl backdrop-blur-md transition flex items-center gap-1.5">
+    <span>🔒</span><span>Tancar Sessió</span>
+  </button>
+
+  <div id="vault-toast" class="hidden fixed bottom-12 right-3.5 z-50 px-3.5 py-2 rounded-xl bg-[#0B0B0F]/95 border border-[#D4AF37]/50 text-[#F3DC99] font-mono-tech text-[11px] shadow-2xl">
+    Desxifrant arxiu AES-256...
+  </div>
+
+  <script>
+    (function() {
+      const TARGET_ENC = "vault/portal_instalacio.html.enc";
+      const SESSION_STORAGE_KEY = "ls_vault_session_v2";
+      const PBKDF2_ITERS = 250000;
+      let activeKeys = null; // { encKey, macKey, saltHex }
+
+      const toHex = (u8) => Array.from(u8).map(b => b.toString(16).padStart(2, '0')).join('');
+      const fromHex = (hex) => {
+        const out = new Uint8Array(hex.length / 2);
+        for (let i = 0; i < out.length; i++) out[i] = parseInt(hex.substr(i * 2, 2), 16);
+        return out;
+      };
+
+      async function importRawKeys(encBytes, macBytes) {
+        const encKey = await crypto.subtle.importKey('raw', encBytes, { name: 'AES-CBC' }, false, ['decrypt']);
+        const macKey = await crypto.subtle.importKey('raw', macBytes, { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']);
+        return { encKey, macKey };
+      }
+
+      async function deriveKeysFromCredentials(username, password, saltBytes) {
+        const enc = new TextEncoder();
+        const baseKey = await crypto.subtle.importKey(
+          'raw',
+          enc.encode(username.trim() + ':' + password),
+          'PBKDF2',
+          false,
+          ['deriveBits']
+        );
+        const bits = await crypto.subtle.deriveBits(
+          { name: 'PBKDF2', salt: saltBytes, iterations: PBKDF2_ITERS, hash: 'SHA-256' },
+          baseKey,
+          512
+        );
+        const full = new Uint8Array(bits);
+        const encRaw = full.slice(0, 32);
+        const macRaw = full.slice(32, 64);
+        const imported = await importRawKeys(encRaw, macRaw);
+        return {
+          encKey: imported.encKey,
+          macKey: imported.macKey,
+          encHex: toHex(encRaw),
+          macHex: toHex(macRaw),
+          saltHex: toHex(saltBytes)
+        };
+      }
+
+      async function decryptLsv2Buffer(arrayBuffer, keys) {
+        const buf = new Uint8Array(arrayBuffer);
+        if (buf.length < 84 || buf[0] !== 0x4c || buf[1] !== 0x53 || buf[2] !== 0x56 || buf[3] !== 0x32) {
+          throw new Error('INVALID_VAULT_FORMAT');
+        }
+        const iv = buf.subarray(20, 36);
+        const signedRegion = buf.subarray(0, buf.length - 32);
+        const macTag = buf.subarray(buf.length - 32);
+        const ciphertext = buf.subarray(36, buf.length - 32);
+
+        const validMac = await crypto.subtle.verify('HMAC', keys.macKey, macTag, signedRegion);
+        if (!validMac) {
+          throw new Error('BAD_CREDENTIALS');
+        }
+        return await crypto.subtle.decrypt({ name: 'AES-CBC', iv }, keys.encKey, ciphertext);
+      }
+
+      async function fetchVaultBlob(encPath) {
+        const sep = encPath.includes('?') ? '&' : '?';
+        const res = await fetch(encPath + sep + 'v=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('FETCH_FAILED_' + res.status);
+        return await res.arrayBuffer();
+      }
+
+      function buildIframeBridgeScript() {
+        return `<base href="./"><script>
+(function() {
+  const ASSET_MAP = {
+    'downloads/LayerSniper_Pro_Client_Package.zip': ['vault/LayerSniper_Pro_Client_Package.zip.enc', 'LayerSniper_Pro_Client_Package.zip', 'application/zip'],
+    'portal/download/full-package.zip': ['vault/LayerSniper_Pro_Client_Package.zip.enc', 'LayerSniper_Pro_Client_Package.zip', 'application/zip'],
+    'downloads/LayerSniper_NT8_Replikanto_Kit.zip': ['vault/LayerSniper_NT8_Replikanto_Kit.zip.enc', 'LayerSniper_NT8_Replikanto_Kit.zip', 'application/zip'],
+    'portal/download/nt8-kit.zip': ['vault/LayerSniper_NT8_Replikanto_Kit.zip.enc', 'LayerSniper_NT8_Replikanto_Kit.zip', 'application/zip'],
+    'downloads/LayerSniper_VPS_Update.zip': ['vault/LayerSniper_VPS_Update.zip.enc', 'LayerSniper_VPS_Update.zip', 'application/zip'],
+    'portal/download/vps-bridge.zip': ['vault/LayerSniper_VPS_Update.zip.enc', 'LayerSniper_VPS_Update.zip', 'application/zip'],
+    'downloads/LayerSniper_Pro_Control_Negoci.xlsx': ['vault/LayerSniper_Pro_Control_Negoci.xlsx.enc', 'LayerSniper_Pro_Control_Negoci.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+    'portal/download/business-tracker.xlsx': ['vault/LayerSniper_Pro_Control_Negoci.xlsx.enc', 'LayerSniper_Pro_Control_Negoci.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+    'INFORME_ESTACIONALITAT_VOLATILITAT_MNQ_2026.pdf': ['vault/INFORME_ESTACIONALITAT_VOLATILITAT_MNQ_2026.pdf.enc', 'INFORME_ESTACIONALITAT_VOLATILITAT_MNQ_2026.pdf', 'application/pdf']
+  };
+  const PAGE_SET = new Set([
+    'index.html',
+    'visual_backtest.html',
+    'portal_instalacio.html'
+  ]);
+
+  const origFetch = window.fetch.bind(window);
+  window.fetch = async function(input, init) {
+    const urlStr = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+    if (urlStr.includes('downloads/VERSION.json')) {
+      const txt = await window.parent.__lsDecryptVaultText('vault/VERSION.json.enc');
+      return new Response(txt, { status: 200, headers: { 'Content-Type': 'application/json' } });
+    }
+    return origFetch(input, init);
+  };
+
+  document.addEventListener('click', function(ev) {
+    const targetEl = (ev.target && ev.target.nodeType === 3) ? ev.target.parentElement : ev.target;
+    const a = targetEl && targetEl.closest ? targetEl.closest('a[href]') : null;
+    if (!a) return;
+    const rawHref = (a.getAttribute('href') || '').trim();
+    if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('mailto:')) return;
+
+    if (rawHref.startsWith('#')) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const targetId = rawHref.slice(1);
+      if ((targetId === 'escalat' || targetId === 'escalat-antifomo') && typeof window.switchTopView === 'function') {
+        window.switchTopView('scaling');
+        return;
+      }
+      const el = targetId ? document.getElementById(targetId) : null;
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    let cleanPath = rawHref.split('?')[0].split('#')[0];
+    while (cleanPath.startsWith('./') || cleanPath.startsWith('/')) {
+      cleanPath = cleanPath.slice(cleanPath.startsWith('./') ? 2 : 1);
+    }
+    if (ASSET_MAP[cleanPath]) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const [encFile, outName, mime] = ASSET_MAP[cleanPath];
+      window.parent.__lsDownloadVaultAsset(encFile, outName, mime);
+      return;
+    }
+    if (PAGE_SET.has(cleanPath)) {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const encTarget = (cleanPath === 'index.html' || cleanPath === 'visual_backtest.html')
+        ? 'vault/visual_backtest.html.enc'
+        : ('vault/' + cleanPath + '.enc');
+      const hashPart = rawHref.includes('#') ? ('#' + rawHref.split('#')[1]) : '';
+      if (window.parent && typeof window.parent.__lsOpenVaultPage === 'function') {
+        window.parent.__lsOpenVaultPage(encTarget, cleanPath, hashPart);
+      } else {
+        window.parent.location.href = rawHref;
+      }
+    }
+  }, true);
+
+  window.addEventListener('DOMContentLoaded', function() {
+    try {
+      const h = (window.parent && (window.parent.__lsPendingHash || window.parent.location.hash)) || '';
+      if ((h === '#escalat' || h === '#escalat-antifomo') && typeof window.switchTopView === 'function') {
+        window.switchTopView('scaling');
+      }
+    } catch (e) {}
+  });
+})();
+<\/script>`;
+      }
+
+      async function mountUnlockedPage(encOverride, hashOverride) {
+        const targetEnc = encOverride || TARGET_ENC;
+        window.__lsPendingHash = hashOverride !== undefined ? hashOverride : window.location.hash;
+        const encBuf = await fetchVaultBlob(targetEnc);
+        const plainBuf = await decryptLsv2Buffer(encBuf, activeKeys);
+        let htmlText = new TextDecoder('utf-8').decode(plainBuf);
+        const shim = buildIframeBridgeScript();
+        if (htmlText.includes('<head>')) {
+          htmlText = htmlText.replace('<head>', '<head>' + shim);
+        } else {
+          htmlText = shim + htmlText;
+        }
+
+        document.getElementById('vault-login-shell').classList.add('hidden');
+        document.getElementById('vault-bg-orbit').classList.add('hidden');
+        const frame = document.getElementById('vault-frame');
+        frame.srcdoc = htmlText;
+        frame.classList.remove('hidden');
+        document.getElementById('vault-lock-btn').classList.remove('hidden');
+      }
+
+      window.__lsOpenVaultPage = async function(encPath, pageName, hashPart) {
+        try {
+          try {
+            window.history.replaceState(null, '', './' + pageName + (hashPart || ''));
+          } catch (e) {}
+          await mountUnlockedPage(encPath, hashPart || '');
+        } catch (err) {
+          window.location.href = pageName + (hashPart || '');
+        }
+      };
+
+      window.__lsDecryptVaultText = async function(encPath) {
+        const buf = await fetchVaultBlob(encPath);
+        const plain = await decryptLsv2Buffer(buf, activeKeys);
+        return new TextDecoder('utf-8').decode(plain);
+      };
+
+      window.__lsDownloadVaultAsset = async function(encPath, filename, mimeType) {
+        const toast = document.getElementById('vault-toast');
+        try {
+          toast.textContent = '🔓 Desxifrant ' + filename + ' (AES-256)...';
+          toast.classList.remove('hidden');
+          const buf = await fetchVaultBlob(encPath);
+          const plain = await decryptLsv2Buffer(buf, activeKeys);
+          const blob = new Blob([plain], { type: mimeType || 'application/octet-stream' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(() => URL.revokeObjectURL(url), 15000);
+          toast.textContent = '✓ Descarregat: ' + filename;
+          setTimeout(() => toast.classList.add('hidden'), 1800);
+        } catch (err) {
+          toast.textContent = '✗ Error desxifrant arxiu';
+          setTimeout(() => toast.classList.add('hidden'), 2500);
+        }
+      };
+
+      window.__lsLockVault = function() {
+        sessionStorage.removeItem(SESSION_STORAGE_KEY);
+        activeKeys = null;
+        window.location.reload();
+      };
+
+      async function tryAutoRestoreSession() {
+        try {
+          const raw = sessionStorage.getItem(SESSION_STORAGE_KEY);
+          if (!raw) return false;
+          const saved = JSON.parse(raw);
+          if (!saved.encHex || !saved.macHex || !saved.saltHex) return false;
+
+          const authBuf = await fetchVaultBlob('vault/auth_check.enc');
+          const authU8 = new Uint8Array(authBuf);
+          const currentSaltHex = toHex(authU8.subarray(4, 20));
+          if (currentSaltHex !== saved.saltHex) {
+            sessionStorage.removeItem(SESSION_STORAGE_KEY);
+            return false;
+          }
+
+          const imported = await importRawKeys(fromHex(saved.encHex), fromHex(saved.macHex));
+          activeKeys = { encKey: imported.encKey, macKey: imported.macKey, saltHex: saved.saltHex };
+          const checkPlain = await decryptLsv2Buffer(authBuf, activeKeys);
+          const checkStr = new TextDecoder('utf-8').decode(checkPlain);
+          if (checkStr !== 'LAYER_SNIPER_VAULT_OK_V2') throw new Error('MISMATCH');
+
+          await mountUnlockedPage();
+          return true;
+        } catch (e) {
+          sessionStorage.removeItem(SESSION_STORAGE_KEY);
+          activeKeys = null;
+          return false;
+        }
+      }
+
+      document.getElementById('vault-form').addEventListener('submit', async function(ev) {
+        ev.preventDefault();
+        const errBox = document.getElementById('vault-err');
+        const errTxt = document.getElementById('vault-err-text');
+        const btn = document.getElementById('vault-submit-btn');
+        const lbl = document.getElementById('vault-submit-lbl');
+
+        errBox.classList.add('hidden');
+        btn.disabled = true;
+        lbl.textContent = 'VERIFICANT CLAU AES-256...';
+
+        try {
+          const user = document.getElementById('vault-user').value || '';
+          const pass = document.getElementById('vault-pass').value || '';
+          const authBuf = await fetchVaultBlob('vault/auth_check.enc');
+          const authU8 = new Uint8Array(authBuf);
+          const saltBytes = authU8.subarray(4, 20);
+
+          const derived = await deriveKeysFromCredentials(user, pass, saltBytes);
+          const checkPlain = await decryptLsv2Buffer(authBuf, derived);
+          const checkStr = new TextDecoder('utf-8').decode(checkPlain);
+          if (checkStr !== 'LAYER_SNIPER_VAULT_OK_V2') throw new Error('BAD_CREDENTIALS');
+
+          activeKeys = { encKey: derived.encKey, macKey: derived.macKey, saltHex: derived.saltHex };
+          sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify({
+            encHex: derived.encHex,
+            macHex: derived.macHex,
+            saltHex: derived.saltHex
+          }));
+
+          lbl.textContent = 'OBRINT CONSOLA...';
+          await mountUnlockedPage();
+        } catch (err) {
+          errTxt.textContent = (err && err.message && err.message.startsWith('FETCH_FAILED'))
+            ? 'Error de xarxa carregant el cofre xifrat.'
+            : 'Usuari o contrasenya incorrectes.';
+          errBox.classList.remove('hidden');
+          btn.disabled = false;
+          lbl.textContent = 'DESBLOQUEJAR COFRE';
+        }
+      });
+
+      tryAutoRestoreSession();
+    })();
+  </script>
+</body>
+</html>
